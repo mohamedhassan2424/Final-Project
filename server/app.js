@@ -14,6 +14,20 @@ const catsRoutes = require("./routes/catsRoutes")
 
 app.use("/cats",catsRoutes)
 
+app.get("/dogs", (req,res)=>{
+    dogs = ["Bella",
+        "Charlie",
+        "Luna",
+        "Lucy",
+        "Max",
+        "Bailey",
+        "Cooper",
+        "Daisy"]
+        res.json(dogs);
+})
+app.get("/car", (req,res)=>{
+    res.send("Hello world")
+})
 app.get('/', (req, res) => {
 	res.json({greetings: 'hello world'});
 })

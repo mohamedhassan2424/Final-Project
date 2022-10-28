@@ -20,3 +20,6 @@ Run the following command to get all the database information
 # Starting Server and Client
 
 opening 2 terminal `npm start`
+# Pushing File 
+
+when pushing file its not the same as git push origin master its `git push -u origin main`
