@@ -2,6 +2,8 @@ import React from "react"
 import "./styles.css"
 
 function Users(props) {
+
+   
     return (
         <section>
             <h1>Connected to the User page</h1>
