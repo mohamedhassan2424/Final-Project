@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home"
 import About from "./About.js"
 import Users from "./Users"
-export default function App() {
+function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
   //   console.log(data)
@@ -61,4 +61,4 @@ export default function App() {
 
 
 
-//export default App;
+export default App;

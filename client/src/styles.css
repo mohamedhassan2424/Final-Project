@@ -7,16 +7,34 @@
     box-sizing:border-box;
 }
 
-.wrapper {
+.fontName {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    color:black;
+    display: flex;
+    justify-content: center;
+
+
+}
+.linkClass {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    color: aqua;
+
+    display: flex;
+    justify-content: center;
+
+}
+.bigContainer {
     width:100vw;
     height:100vh;
-    background-color: gray;
+    background-image: url("https://media.istockphoto.com/photos/fresh-fruits-and-vegetables-picture-id589415708?s=612x612");
     position: fixed;
     display: flex;
     justify-content: center ;
     align-items: center;
 }
-.modalForm {
+.formContainer {
     width:400px;
     min-height:80vh;
     background-color: white;
@@ -27,7 +45,7 @@
     flex-direction: column;
 }
 
-.actionBtns {
+.allButtons {
     width:80%;
     background-color: royalblue;
     margin:2em;
@@ -38,7 +56,7 @@
     box-shadow: 5px;
 }
 
-.actionBtn {
+.eachButton {
     padding:1em;
     width:50%;
     outline:none;
@@ -51,7 +69,7 @@
     cursor: pointer;
 }
 
-.moveBtn {
+.moveButtonState {
     position: absolute;
     width:50%;
     height: 90%;
@@ -64,12 +82,12 @@
     box-shadow: 5px;
 }
 
-.RightBtn {
+.RightButton {
     transform: translate(98%);
     transition: all 0.2s ease-in-out;
 }
 
-.inputGroup {
+.inputText {
     width:300px;
     margin:0.8em 0  ;
     background-color: rgb(220,220,220);
@@ -78,7 +96,7 @@
     font-weight: 500;
 }
 
-.inputGroup input {
+.inputText input {
     width:100%;
     margin:1em 1.5em ;
     background-color: transparent;
@@ -86,22 +104,25 @@
     border-radius: 50px;
 }
 
-.inputGroup input:focus{
+.inputText input:focus{
     outline:none;
 }
-.sumbitBtnCenter  {
+.sumbitButtonCenter  {
+    width:300px;
+    margin:0.5em 0.5em ;
     display: flex;
+    border: rgb(44, 44, 128);
     justify-content: center;
 }
 
-.sumbitBtn {
-    width:150px ;
+.sumbitButton {
+    width:400px ;
     padding: 1em;
     margin: 2em 0;
     border-radius: 50px;
     border:none;
     outline: none;
-    background-color: white;
+    background-color: blueviolet;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);;
     cursor: pointer;
     font-size: 0.8em;
@@ -110,7 +131,13 @@
     justify-content: center;
 
 }
-.sumbitBtn:hover {
+
+
+.imageClass {
+    width:100px;
+    height:100px;
+}
+.sumbitButton:hover {
     background-color: royalblue;
     color:white;
     transition: all 0.3s ease-in-out;
