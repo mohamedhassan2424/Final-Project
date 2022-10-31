@@ -68,3 +68,23 @@
     transform: translate(98%);
     transition: all 0.2s ease-in-out;
 }
+
+.inputGroup {
+    width:300px;
+    margin:0.8em 0  ;
+    background-color: rgb(220,220,220);
+    border-radius: 50px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.inputGroup input {
+    width:100%;
+    margin:1em 1.5em ;
+    background-color: transparent;
+    border:none;
+    border-radius: 50px;
+}
+
+.inputGroup input:focus{
+    outline:none;
+}

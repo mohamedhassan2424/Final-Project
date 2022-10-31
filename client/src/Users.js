@@ -14,7 +14,7 @@ function Users(props) {
 <div class ="actionBtns">
     <button class="actionBtn signupBtn">Signup</button>
     <button class="actionBtn loginBtn">Login</button>
-    <button class="moveBtn RightBtn">Signup</button>
+    <button class="moveBtn">Signup</button>
 </div>
             <form autocomplete="off" class="userForm">
                 <div class ="inputGroup">
