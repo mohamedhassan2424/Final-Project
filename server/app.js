@@ -56,13 +56,15 @@ app.get("/login", (req,res)=>{
     pool.query("SELECT * FROM  users WHERE email = $1 AND password = $2 ",[emalFromDatabase,passwordFromDatabase])
     .then((response)=>{
         if(response) {
+            console.log(response)
         res.send(response)
         } else {
-            res.send("Incorrect UserName and Password")
+            res.send("Incorrect email and Password")
         }
     })
     .catch((error)=>{
         console.log(error.message)
+        res.send({error:error})
     })
 })
 
