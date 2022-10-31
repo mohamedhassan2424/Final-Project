@@ -42,7 +42,11 @@ app.get("/car", (req,res)=>{
 })
 
 app.post("/reigister", (req,res)=>{
-pool.query("INSERT INTO users (firstName, lastName, email, password) VALUES (?,?)",[firstName, lastName, email, password])
+    const firstName = req.body.firstName
+    const lastName = req.body.lastName
+    const email = req.body.email
+    const password = req.body.password
+pool.query("INSERT INTO users (firstName, lastName, email, password) VALUES ($1,$2,$3,$4)",[firstName, lastName, email, password])
 }) 
 
 app.get("/content",(req,res)=>{
