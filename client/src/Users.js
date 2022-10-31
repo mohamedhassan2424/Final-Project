@@ -1,16 +1,9 @@
 import React, { useState } from "react"
 import "./styles.css"
-import classNames from "classnames";
 function Users(props) {
 const [buttonState,setButtonState] = useState(false)
-//    const signupBtn = document.querySelector(".signupBtn");
-//    const logInBtn = document.querySelector(".loginBtn");
-//    const moveBtn = document.querySelector(".moveBtn");
 
-//    logInBtn.addEventListener("click",()=>{
-// moveBtn.classList("RightBtn")
-// })
-//let buttonClass = "moveBtn"
+
 const addingClass = ()=>{
     console.log("hello word")
     //let buttonClass = classNames("moveBtn RightBtn")
@@ -31,9 +24,9 @@ const removingClass = ()=>{
 <div class ="actionBtns">
     <button className="actionBtn signupBtn" onClick = {removingClass} >Signup</button>
     <button className="actionBtn loginBtn" onClick = {addingClass} >Login</button>
-    <button className={buttonState ? "moveBtn RightBtn": "moveBtn"}>Signup</button>
+    <button className={buttonState ? "moveBtn RightBtn": "moveBtn"}>{buttonState ? "Login": "Signup"}</button>
 </div>
-            <form autocomplete="off" class="userForm">
+            <form autocomplete="off" class={buttonState ? "form": "form signupForm"}>
                 <div className ="inputGroup">
                     <input type = "text" placeholder="First Name"/>
                 </div>
@@ -49,8 +42,20 @@ const removingClass = ()=>{
                 <div class ="inputGroup">
                     <input type = "password" placeholder="Confirm Password"/>
                 </div>
+                <div class= "sumbitBtnCenter">
                 <button class="sumbitBtn" type="sumbit">Signup</button>
-                
+                </div>
+            </form>
+            <form autocomplete="off" class={buttonState ? "form loginForm": "form"}>
+                <div class ="inputGroup">
+                    <input type = "email" placeholder="Email"/>
+                </div>
+                <div class ="inputGroup">
+                    <input type = "password" placeholder="Create New Password"/>
+                </div>
+                <div class= "sumbitBtnCenter">
+                <button class="sumbitBtn" type="sumbit">Signup</button>
+                </div>
             </form>
             </div>
             </div>
