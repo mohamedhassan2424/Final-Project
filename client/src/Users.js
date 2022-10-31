@@ -1,25 +1,40 @@
-import React from "react"
+import React, { useState } from "react"
 import "./styles.css"
-
+import classNames from "classnames";
 function Users(props) {
+const [buttonState,setButtonState] = useState(false)
+//    const signupBtn = document.querySelector(".signupBtn");
+//    const logInBtn = document.querySelector(".loginBtn");
+//    const moveBtn = document.querySelector(".moveBtn");
 
-   
+//    logInBtn.addEventListener("click",()=>{
+// moveBtn.classList("RightBtn")
+// })
+//let buttonClass = "moveBtn"
+const addingClass = ()=>{
+    console.log("hello word")
+    //let buttonClass = classNames("moveBtn RightBtn")
+    setButtonState(true)
+    
+}
+const removingClass = ()=>{
+    console.log("hello word")
+    //let buttonClass = classNames("moveBtn")
+    setButtonState(false)
+}
+
     return (
         <section>
             <h1>Connected to the User page</h1>
-            <input type="checkbox" id="switch"
-                class="checkbox" />
-            <label for="switch" class="toggle">
-            </label>
             <div class='wrapper'>
                 <div class="modalForm" >
 <div class ="actionBtns">
-    <button class="actionBtn signupBtn">Signup</button>
-    <button class="actionBtn loginBtn">Login</button>
-    <button class="moveBtn">Signup</button>
+    <button className="actionBtn signupBtn" onClick = {removingClass} >Signup</button>
+    <button className="actionBtn loginBtn" onClick = {addingClass} >Login</button>
+    <button className={buttonState ? "moveBtn RightBtn": "moveBtn"}>Signup</button>
 </div>
             <form autocomplete="off" class="userForm">
-                <div class ="inputGroup">
+                <div className ="inputGroup">
                     <input type = "text" placeholder="First Name"/>
                 </div>
                 <div class ="inputGroup">
@@ -36,11 +51,6 @@ function Users(props) {
                 </div>
                 <button class="sumbitBtn" type="sumbit">Signup</button>
                 
-                {/* <label for="email">Email Address:</label>
-                <input type="email" name="email" placeholder="Enter Email" />
-                <label for="password">Password:</label>
-                <input type="password" name="password" placeholder="Password" />
-                <input type="submit" value="Register" /> */}
             </form>
             </div>
             </div>
