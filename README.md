@@ -18,8 +18,9 @@ Run the following command to get all the database information
 `npm run db:reset`
 
 # Starting Server and Client
+starting server `node app.js`
+starting client `npm start`
 
-opening 2 terminal `npm start`
 # Pushing File 
 
 when pushing file its not the same as git push origin master its `git push -u origin main`

@@ -3,7 +3,9 @@ import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import Home from "./Home"
+import About from "./About.js"
+import Users from "./Users"
 export default function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -23,7 +25,6 @@ export default function App() {
   
   return (
   <Router>
-    <h1>Acceses the React DOM Render</h1>
     <div>
       <nav>
         <ul>
@@ -57,16 +58,7 @@ export default function App() {
 )
 }
 
-export function Home() {
-  return <h2>Home</h2>;
-}
 
-export function About() {
-  return <h2>About</h2>;
-}
 
-export function Users() {
-  return <h2>Users</h2>;
-}
 
 //export default App;

@@ -1,9 +1,12 @@
-import react from "react"
+import React from "react"
 
-export default function App() {
+
+function About(props) {
 
 
     return (
-
-    )}
+        <h1>Connecting to the About page</h1>
+    );
 }
+
+export default About;
