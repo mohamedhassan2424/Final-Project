@@ -47,18 +47,22 @@ app.post("/reigister", (req,res)=>{
     const lastName = req.body.lastName
     const email = req.body.email
     const password = req.body.password
-pool.query("INSERT INTO users (firstName, lastName, email, password) VALUES ($1,$2,$3,$4)",[firstName, lastName, email, password])
+pool.query("INSERT INTO users (firstName, lastName, email, password) VALUES ($1,$2,$3,$4);",[firstName, lastName, email, password])
 }) 
-app.get("/login", (req,res)=>{
+app.post("/login", (req,res)=>{
 
     const emalFromDatabase = req.body.email;
     const passwordFromDatabase = req.body.password;
-    pool.query("SELECT * FROM  users WHERE email = $1 AND password = $2 ",[emalFromDatabase,passwordFromDatabase])
+    console.log(req.body)
+
+    pool.query("SELECT * FROM  users WHERE email = $1 AND password = $2 ;",[emalFromDatabase,passwordFromDatabase])
     .then((response)=>{
-        if(response) {
-            console.log(response)
-        res.send(response)
+        if(response.rows[0]) {
+            console.log(response.rows[0])
+            console.log("CORRECT email and password")
+            res.send(response)
         } else {
+            console.log("Incorrect email and password")
             res.send("Incorrect email and Password")
         }
     })
@@ -72,10 +76,12 @@ app.get("/content",(req,res)=>{
     return pool.query(`SELECT * FROM users;`)
     .then((response)=>{
         console.log(response.rows)
+        console.log("CORRECT email and password")
         //res.send("hello world")
         res.json(response.rows)
     })
     .catch((error)=>{
+        console.log("Incorrect email and password")
         console.log(error)
     })
 })
