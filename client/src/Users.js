@@ -1,16 +1,37 @@
 import React, { useState } from "react"
 import "./styles.css"
+import  axios  from "axios";
+
 function Users(props) {
 const [buttonState,setButtonState] = useState(false)
-const [state, setState] = useState({
-    firstName :"",
-    lastName:"",
-    email:"",
-    password:""
+const [firstName, setFirstName] = useState('')
+const [lastName, setLastName] = useState('')
+const [emailName, setEmailName] = useState('')
+const [passwordName, setPasswordName] = useState('')
+
+const [emailDatabase, setEmailDatabase] = useState('')
+const [passwordDatabase, setPasswordDatabase] = useState('')
+
+const register = ()=> {
+    axios.post("http://localhost:8080/reigister",{firstName: firstName, lastName:lastName, email:emailName, password:passwordName})
+    .then((response)=>{
+        console.log(response.data)
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+
 }
 
-)
-
+const logInButton = () =>{
+    axios.post("http://localhost:8080/login",{email:emailDatabase, password:passwordDatabase})
+    .then((response)=>{
+        console.log(response.data)
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+}
 const addingClass = ()=>{
     console.log("hello word")
     //let buttonClass = classNames("moveButtonState RightButton")
@@ -23,50 +44,70 @@ const removingClass = ()=>{
     setButtonState(false)
 }
 
+
+
     return (
         <section>
             <h1>Connected to the User page</h1>
             <div className='bigContainer'>
                 <div className="formContainer" >
-<div class ="allButtons">
+<div className ="allButtons">
     <button className="eachButton" onClick = {removingClass} >Signup</button>
     <button className="eachButton" onClick = {addingClass} >Login</button>
     <button className={buttonState ? "moveButtonState RightButton": "moveButtonState"}>{buttonState ? "Login": "Signup"}</button>
 </div>
-            <form autocomplete="off" class={buttonState ? "form": "form signupForm"}>
-            <h1 class ="fontName">Create an INSTA-CART Account</h1><br />
+            <form onSubmit={(event) => event.preventDefault()} class={buttonState ? "form": "form signupForm"}>
+            <h1 className ="fontName">Create an INSTA-CART Account</h1><br />
            
 
                 <div className ="inputText">
-                    <input type = "text" placeholder="First Name" value =""/>
+                    <input type = "text" placeholder="First Name" onChange={(event)=> {
+                setFirstName(event.target.value)
+                console.log(firstName)
+}} />
                 </div>
                 <div className ="inputText">
-                    <input type = "text" placeholder="Last Name" value =""/>
+                    <input type = "text" placeholder="Last Name"  onChange={(event)=> {
+                setLastName(event.target.value)
+                console.log(lastName)
+}}/>
                 </div>
                 <div className ="inputText">
-                    <input type = "email" placeholder="Email" value ="" />
+                    <input type = "email" placeholder="Email" onChange={(event)=> {
+                setEmailName(event.target.value)
+                console.log(emailName)
+}}/>
                 </div>
                 <div className ="inputText">
-                    <input type = "password" placeholder="Create New Password" value =""/>
+                    <input type = "password" placeholder="Create New Password" onChange={(event)=> {
+                setPasswordName(event.target.value)
+                console.log(passwordName)
+}}/>
                 </div>
                 <div className ="inputText">
-                    <input type = "password" placeholder="Confirm Password" value =""/>
+                    <input type = "password" placeholder="Confirm Password" />
                 </div>
                 <div className= "sumbitButtonCenter">
-                <button class="sumbitButton" type="sumbit">Signup</button>
+                <button class="sumbitButton" type="sumbit" onClick={register}>Signup</button>
                 </div>
 
         
             </form>
-            <form autocomplete="off" className={buttonState ? "form loginForm": "form"}>
-                <div class ="inputText">
-                    <input type = "email" placeholder="Email" value =""/>
+            <form  className={buttonState ? "form loginForm": "form"}>
+                <div className ="inputText">
+                    <input type = "email" placeholder="Email" onChange={(event)=> {
+                setEmailDatabase(event.target.value)
+                console.log(emailDatabase)
+}}/>
                 </div>
                 <div className ="inputText">
-                    <input type = "password" placeholder="Create New Password" value =""/>
+                    <input type = "password" placeholder="Create New Password" onChange={(event)=> {
+                setPasswordDatabase(event.target.value)
+                console.log(passwordDatabase)
+}}/>
                 </div>
                 <div className= "sumbitButtonCenter">
-                <button className="sumbitButton" type="sumbit">Signup</button>
+                <button className="sumbitButton" type="sumbit" onClick = {logInButton}>Signup</button>
                 </div>
             </form>
             </div>
