@@ -47,22 +47,25 @@ function About(props) {
         </div>
         <div className="outlineBox">
         <div className= "outerTopProduCtontainer">
+            <div className="toptopheaderName">
             <div className="topheaderName">
                 Featured Products
+            </div>
             </div>
             <div className="chocalteImage">
             <img src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg"/>
             </div>
+            <hr></hr>
             <div className="ProductInforamtion">
             Nestlé Aero Milk Chocolate Bar 4 Pack 42 g
             </div>
-            <div className="saleInformation">
+    
             <div className="saleImage"> 
-                <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" /><h4 className= "saledescription">Sale</h4>
+                <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" /><h4 className= "saleDescription">SALE</h4>
             </div>
-            </div>
+           
             <div className="priceInformation">
-            <span>$4.49</span> <span>$5.49</span>
+            <span className="firstPrice">$4.49</span> <span className="secoundPrice">          $5.49</span>
             </div>
             <div className ="addContent"> <h3>Add</h3>
             </div>
