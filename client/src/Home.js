@@ -25,15 +25,62 @@ function Home(props) {
 
 <div>
 <h3>All Stores in Toronto</h3>
-<div className="mainClassInStores">
-<div className="logoImage"></div>
+<ul className ="storeContainer">
+  <li className="eachStore">
+  <div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2138/19b444c0-481d-41cf-b017-4d1666e81006.png" / >
+
+  
+</div>
 <div className="contentOfStore">
-<p> NEW</p>
+<p className ="newText"> NEW</p>
 <p> METRO</p>
-<p> DELEIVER WITHTIN AN HOUR</p>
-<p> In-stores prices</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p classNames="storePriceText"> In-stores prices</p>
 </div>
 </div>
+  </li>
+
+
+  <li className="eachStore">
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/227/0b338c85-d46f-4a49-a48c-9dd281ccfdcf.png" / >
+
+  
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> City Market</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p classNames="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+  </li>
+
+  <li className="eachStore">
+
+  <div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+  
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p classNames="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+  </li>
+</ul>
+
 
 
 </div>

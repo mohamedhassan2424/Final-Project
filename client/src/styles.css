@@ -251,7 +251,7 @@ color:gray;
 }
 
 .catergories {
-    margin: 65px 0;
+    margin: 30px 0;
    background-color: #EDEADE;
 }
 
@@ -380,9 +380,56 @@ color:#CC5500;
 }
 
 .logoName {
-    
+
 }
 
+.mainClassInStores {
+    display: flex;
+    outline:0.1em solid #002D62;
+    padding-top:15px;
+    width: 90%;
+    border-radius: 5%;
+}
+.contentOfStore {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.mainClassInStores img {
+    border-radius: 50%;
+    outline:0.2em solid grey;
+}
+
+.storePriceText {
+    color: gray;
+    outline:0.1em solid yellow;
+}
+
+.newText {
+    color: #4169e1;
+    font-weight: 900;
+}
+
+.deliveryText {
+    color: #32de84;
+    font-weight: 500;
+}
+
+.storeContainer {
+    width: 100%;  
+     display: flex;   
+     justify-content: space-around;
+    
+    list-style: none;
+
+}
+.eachStore {
+    width: 2000px;
+}
+
+.contentOfStore {
+    width: 200px;
+}
 /* .parentcontainerrow {
     max-width:1080px;
     margin: auto;
