@@ -21,16 +21,21 @@ function Home(props) {
 <div>
   <h3  className ="storeTitle" >Recentely Visted</h3>
   <div className="sampleDataContainer">
-
+  <div className="storeContent">
 <div className="logoImages">
 <img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2138/19b444c0-481d-41cf-b017-4d1666e81006.png" / >
 
   
 </div>
+<p className="textAlighnment"> METRO</p>
+</div>
+<div className="storeContent">
 <div className="logoImages">
 <img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/227/0b338c85-d46f-4a49-a48c-9dd281ccfdcf.png" / >
 
-  
+
+</div>
+<p className="textAlighnments"> City Market</p>
 </div>
 </div>
 </div>
