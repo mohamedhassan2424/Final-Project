@@ -6,4 +6,5 @@ CREATE TABLE users (
   lastName VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255)
+  -- having a usertype for user and stores (1,2)
 );

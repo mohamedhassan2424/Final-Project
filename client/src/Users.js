@@ -12,8 +12,12 @@ const [passwordName, setPasswordName] = useState('')
 const [emailDatabase, setEmailDatabase] = useState('')
 const [passwordDatabase, setPasswordDatabase] = useState('')
 
+
+const linkServer = "http://localhost:8080/"
+
+
 const register = ()=> {
-    axios.post("http://localhost:8080/reigister",{firstName: firstName, lastName:lastName, email:emailName, password:passwordName})
+    axios.post(`${linkServer}reigister`,{firstName, lastName, email:emailName, password:passwordName})
     .then((response)=>{
         console.log(response.data)
     })
@@ -24,7 +28,7 @@ const register = ()=> {
 }
 
 const logInButton = () =>{
-    axios.post("http://localhost:8080/login",{email:emailDatabase, password:passwordDatabase})
+    axios.post(`${linkServer}login`,{email:emailDatabase, password:passwordDatabase})
     .then((response)=>{
         console.log(response)
     })
