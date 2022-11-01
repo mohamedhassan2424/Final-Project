@@ -5,6 +5,7 @@ function About(props) {
 
 
     return (
+        <div>
         <header className= "header">
         <div className="navContainer">
     {/* <h1>Hello world Mohamed Hassan</h1> */}
@@ -37,6 +38,27 @@ function About(props) {
     </div>
 </div>
 </header>
+
+<div className="catergories">
+    <div className="parentcontainerrow">
+    <div className="eachrow">
+        <div className= "othercolumn">
+            <img src="https://www.instacart.com/image-server/394x394/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_718c788f-82f4-4454-98b1-94f98dacaa6f.png" />
+        </div>
+        <div className= "othercolumn">
+            <img src="https://www.instacart.com/image-server/394x394/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_141ca85a-53fa-4fb2-96bc-e11b8f2ced1c.png" />
+        </div>
+        <div className= "othercolumn">
+            <img src="https://www.instacart.com/image-server/394x394/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_7f6dde71-7337-4a15-9056-da863bdad19b.png" />
+        </div>
+        
+    </div>
+    </div>
+
+</div>
+
+
+</div>
     );
 }
 
