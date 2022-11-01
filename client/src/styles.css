@@ -423,7 +423,7 @@ color:#CC5500;
      display: flex;   
      justify-content: space-around;
      flex-wrap: wrap;
-     padding-top: 50px;
+     padding-top: 15px;
     padding-left: 200px;
     padding-right: 200px;
   
@@ -439,6 +439,33 @@ color:#CC5500;
 
 .contentOfStore {
     width: 200px;
+}
+
+.storeTitle {
+    padding-left:200px;
+    font-weight:bold;
+    font-size: 25px;
+
+    
+    
+}
+.logoImages{
+    display: flex;
+    justify-content: center;
+    margin-left: 25px;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    outline: 0.1em solid #E1D9D1;
+    
+}
+.sampleDataContainer {
+    margin-right: 100px;
+    
+    display: flex;
+    flex-direction: row;
+    padding-left:200px;
+    padding-right: 100px;
 }
 /* .parentcontainerrow {
     max-width:1080px;
