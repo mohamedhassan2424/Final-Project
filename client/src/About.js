@@ -6,9 +6,11 @@ function About(props) {
 
     return (
         <div>
-        <div className = "header">
+            <div class = "header">
 
-        </div>
+            
+            <nav></nav>
+            </div>
         </div>
     );
 }

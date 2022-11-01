@@ -9,6 +9,7 @@ const app = express();
 const { Pool } = require('pg');
 // middleware setup
 app.use(morgan(ENVIROMENT));
+app.set("view engine", "ejs");
 app.use(bodyParser.json());
 app.use(cors());
 const pool = new Pool({
