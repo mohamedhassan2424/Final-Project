@@ -43,18 +43,39 @@ function About(props) {
     <div className="parentcontainerrow">
     <div className="eachrow">
         <div className= "othercolumn">
-            <img src="https://www.instacart.com/image-server/394x394/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_718c788f-82f4-4454-98b1-94f98dacaa6f.png" />
+            <img src="https://voila.ca/assets/content/2d92d19c-0354-49c0-8a91-5260ed0bf531/creatives/ff1a7020-6c07-4bee-8877-4ebea3116a83/0828551a64.png" />
         </div>
-        <div className= "othercolumn">
+        <div className= "outerTopProduCtontainer">
+            <div className="topheaderName">
+                Featured Products
+            </div>
+            <div className="chocalteImage">
+            <img src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg"/>
+            </div>
+            <div className="Product Inforamtion">
+            Nestlé Aero Milk Chocolate Bar 4 Pack 42 g
+            </div>
+            <div className="saleImage"> 
+                <img src="https://voila.ca/offers/f9bbb1dd-47a4-4bce-a69f-6abb1e32e8bf" />
+            </div>
+            <div className="priceInformation">
+            <span>$4.49</span> <span>$5.49</span>
+            </div>
+            <div className ="addContent"> <h3>Add</h3>
+            </div>
+        </div>
+        {/* <div className= "othercolumn">
             <img src="https://www.instacart.com/image-server/394x394/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_141ca85a-53fa-4fb2-96bc-e11b8f2ced1c.png" />
-        </div>
+        </div> */}
         <div className= "othercolumn">
             <img src="https://www.instacart.com/image-server/394x394/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_7f6dde71-7337-4a15-9056-da863bdad19b.png" />
         </div>
-        
+        <div className= "othercolumn">
+            <img src="https://www.instacart.com/image-server/394x394/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_68ec8023-b692-4839-a11d-586aa8f01249.png" />
+        </div>
     </div>
     </div>
-
+    
 </div>
 
 
