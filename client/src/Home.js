@@ -37,7 +37,7 @@ function Home(props) {
 <p className ="newText"> NEW</p>
 <p> METRO</p>
 <p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p classNames="storePriceText"> In-stores prices</p>
+<p className="storePriceText"> In-stores prices</p>
 </div>
 </div>
   </li>
@@ -54,7 +54,7 @@ function Home(props) {
 <p className ="newText"> NEW</p>
 <p> City Market</p>
 <p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p classNames="storePriceText"> In-stores prices</p>
+<p className="storePriceText"> In-stores prices</p>
 </div>
 </div>
 
@@ -72,13 +72,643 @@ function Home(props) {
 <p className ="newText"> NEW</p>
 <p> Loblaws</p>
 <p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p classNames="storePriceText"> In-stores prices</p>
+<p className="storePriceText"> In-stores prices</p>
 </div>
 </div>
 
 
 
   </li>
+  
+  <li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/354/fc4be33a-bff9-4076-9d57-4b5e08377771.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Costco</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/462/2eba6946-8810-481e-bd3c-6852d5121d51.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Walmart</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/523/2415d566-6141-49ff-8444-e712a9e4a4b9.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Shoppers Drug Mart</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/536/fbde4b35-8a0c-4704-a3d7-85e47576d615.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Pu</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+
+</li>
+
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+
+<li className="eachStore">
+
+<div className="mainClassInStores">
+<div className="logoImage">
+<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
+
+
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> Loblaws</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+
+
+
+</li>
+  
+
 </ul>
 
 
