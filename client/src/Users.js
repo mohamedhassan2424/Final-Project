@@ -26,7 +26,7 @@ const register = ()=> {
 const logInButton = () =>{
     axios.post("http://localhost:8080/login",{email:emailDatabase, password:passwordDatabase})
     .then((response)=>{
-        console.log(response.data)
+        console.log(response)
     })
     .catch((error)=>{
         console.log(error)

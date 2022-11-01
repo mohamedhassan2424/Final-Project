@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home"
 import About from "./About.js"
 import Users from "./Users"
+import Main from "./Main";
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -37,6 +38,9 @@ function App() {
           <li>
             <Link to="/users">Users</Link>
           </li>
+          <li>
+            <Link to="/main">Main</Link>
+          </li>
         </ul>
       </nav>
 
@@ -51,6 +55,9 @@ function App() {
         </Route>
         <Route path="/">
           <Home />
+        </Route>
+        <Route path="/main">
+          <Main />
         </Route>
       </Switch>
     </div>

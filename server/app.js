@@ -71,11 +71,15 @@ app.post("/login", (req,res)=>{
         res.send({error:error})
     })
 })
+app.get("/mainpage", (req,res)=>{
+    //res.send("Mohamed Hassan")
+    res.render("mainpage")
+})
 
 app.get("/content",(req,res)=>{
     return pool.query(`SELECT * FROM users;`)
     .then((response)=>{
-        console.log(response.rows)
+        console.log(response.rows >0)
         console.log("CORRECT email and password")
         //res.send("hello world")
         res.json(response.rows)
