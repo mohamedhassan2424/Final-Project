@@ -7,6 +7,7 @@ import Home from "./Home"
 import About from "./About.js"
 import Users from "./Users"
 import Main from "./Main";
+import Products from "./Products";
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -41,6 +42,9 @@ function App() {
           <li>
             <Link to="/main">Main</Link>
           </li>
+          <li>
+            <Link to="/products">Products</Link>
+          </li>
         </ul>
       </nav>
 
@@ -58,6 +62,9 @@ function App() {
         </Route>
         <Route path="/main">
           <Main />
+        </Route>
+        <Route path="/products">
+          <Products />
         </Route>
       </Switch>
     </div>
