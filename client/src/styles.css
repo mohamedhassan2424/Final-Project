@@ -310,9 +310,10 @@ color:gray;
 }
 
 .outlineBox {
+    margin: 10px,10px,10px,10px ;
     padding: 5px 5px 5px 5px;
     background-color: white;
-    box-shadow: 0px 0px 0px 8px darkgray;
+    box-shadow: 0px 0px 0px 4px darkgray;
     
     width: 25%;
     padding-left: 7.5px;
@@ -351,6 +352,31 @@ color:#CC5500;
     color:#006A4E;
     font-weight: 700;
     text-decoration: line-through;
+}
+
+.caloriesDescription {
+    padding-top: 5px;
+    padding-left: 25px;
+    color:#006A4E;
+    font-weight: 700;
+}
+
+.SaleImage {
+    padding-top:15px;
+    height:500px;
+}
+
+.otherPossibleProducts  {
+    background-color: #EDEADE; 
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+.productsSample {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* .parentcontainerrow {
