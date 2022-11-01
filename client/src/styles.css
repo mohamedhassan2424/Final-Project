@@ -235,4 +235,17 @@ color:gray;
     padding:10px 25px;
     margin:25px 0;
     border-radius:25px;
+    transition: background 0.5s ;
+}
+
+.header .eachrow {
+    margin-top:50px;
+}
+
+.cartIcon {
+    width:25px;
+    height:25px;
+}
+.firstbutton:hover {
+    background: powderblue;
 }
