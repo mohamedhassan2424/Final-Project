@@ -193,6 +193,38 @@ padding-right:25px;
 text-decoration: none;
 color:gray;
 }
-.navlistItems p {
+.row p {
     color:gray;
     }
+
+.eachrow {
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+.eachcloumn {
+    flex-basis:50%;
+    min-width:300px;
+}
+
+.eachcloumn h1{
+    font-size:30px;
+    line-height: 25px;
+    margin: 15px 0;
+}
+
+.secoundlogoImage {
+    border-radius:30px 30px 30px 30px;
+    width:620px;
+    height:400px;
+    padding-left:150px;
+    
+}
+.firstbutton {
+    display:inline-block;
+    background :burlywood;
+    color:aquamarine;
+    padding:8px
+}
