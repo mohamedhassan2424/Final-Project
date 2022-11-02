@@ -51,7 +51,17 @@ console.log("Checkpoint 4")
 const logInButton = () =>{
     axios.post(`${linkServer}login`,{email:emailDatabase, password:passwordDatabase})
     .then((response)=>{
-        console.log(response)
+        
+        console.log("Gotten to this part",response.data)
+        setFirstName('')
+        setLastName('')
+        setEmailName('')
+        setPasswordName('')
+        setOtherpasswordName('')
+
+        // let path = `/home`;
+      
+        // history.push(path);
     })
     .catch((error)=>{
         console.log(error)
