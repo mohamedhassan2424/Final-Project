@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
 function Home(props) {
 
     // const dummyProducts = [
@@ -30,7 +29,7 @@ function Home(props) {
 
 // /sampleProductData
     const [sampleProducts, setSampleProducts] = useState([])
-
+    const [sampleStores, setSampleStores] = useState([])
     // useEffect(() => {
     //     setProducts(dummyProducts)
     // }, [])
@@ -43,6 +42,16 @@ function Home(props) {
         setSampleProducts(response.data)
         })
         },[])
+        useEffect(() => {
+
+            axios.get('http://localhost:8080/sampleStores')
+            .then(response =>{
+            //console.log(response.data)
+            setSampleStores(response.data)
+            console.log("Samples Stores",sampleStores)
+            })
+            },[])
+    
 
     return (
         <div>
@@ -99,7 +108,7 @@ function Home(props) {
                     </div>
                 </div>
             </header>
-            <h3 className="productsSample">Products Availble</h3>
+            v
             <div className="catergories">
                 <div className="parentcontainerrow">
                     <div className="eachrow">
@@ -154,6 +163,34 @@ function Home(props) {
 
 
                     </div>
+                </div>
+                <h3 className="productsSample">Stores Availble to Shop</h3>
+                <ul className ="storeContainer">
+{ sampleStores && sampleStores.map((store) => (
+ 
+<li className="eachStore">
+  <div className="mainClassInStores">
+<div className="logoImage">
+<img src={store.image_link} />
+
+  
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> {store.store_name}</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+  </li>
+  
+  )
+  )
+}
+</ul>
+
+                <div>
+
                 </div>
 
             </div>

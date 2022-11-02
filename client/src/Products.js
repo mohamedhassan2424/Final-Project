@@ -51,7 +51,7 @@ function Product(props) {
                         </nav>
                     </div>
                     
-            <div className="eachrow"> 
+<div className="eachrow">  
 
 { products && products.map((product) => (
 
@@ -122,13 +122,13 @@ function Product(props) {
                                 <div className="addContent"> <h3>Add</h3>
                                 </div>
                             </div>
-                        </div> 
+                        </div>  */}
 
 
 
 
 
-
+{/* 
 
                      <div className="outlineBox">
                             <div className="outerTopProduCtontainer">
