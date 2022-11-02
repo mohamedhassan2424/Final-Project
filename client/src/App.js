@@ -8,6 +8,7 @@ import About from "./About.js"
 import Users from "./Users"
 import Main from "./Main.js";
 import Product from "./Products.js";
+import Stores from "./Stores";
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -45,6 +46,9 @@ function App() {
           <li>
             <Link to="/product">Product</Link>
           </li>
+          <li>
+            <Link to="/stores">Stores</Link>
+          </li>
         </ul>
       </nav>
 
@@ -62,6 +66,9 @@ function App() {
         </Route>
         <Route path="/product">
           <Product />
+        </Route>
+        <Route path="/stores">
+          <Stores />
         </Route>
         <Route path="/">
           <Home />

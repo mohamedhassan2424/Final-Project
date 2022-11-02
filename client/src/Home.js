@@ -1,705 +1,253 @@
-import React ,{useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import axios from "axios"
 
 function Home(props) {
-const [stores,setStores] = useState([])
-  useEffect(() => {
-
-    axios.get('http://localhost:8080/allStores')
-    .then(response =>{
-    console.log(response.data)
-    setStores(response.data)
-    })
-    },[])
-  return (
-
-    <div>
-      <h1>LITE-CART</h1>
-      <div>
-        <nav className="navlistItems">
-          <ul>
-            <li><a href="'">Home Page</a></li>
-            <li><a href="'">Stores</a></li>
-            <li><a href="'">Products</a></li>
-            <li><a href="'">Products</a></li>
-            <li><a href="'">Account</a></li>
-            <li><a href="'">Contact</a></li>
-          </ul>
-          <img className="cartIcon" alt="Image cart" src="../Images/5a364b6d2c5557.7578312615135076931816 (1).png"></img>
-        </nav>
-      </div>
-      <div>
-  <h3  className ="storeTitle" >Recentely Visted</h3>
-  <div className="sampleDataContainer">
-  <div className="storeContent">
-<div className="logoImages">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2138/19b444c0-481d-41cf-b017-4d1666e81006.png" / >
-
-  
-</div>
-<p className="textAlighnment"> METRO</p>
-</div>
-<div className="storeContent">
-<div className="logoImages">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/227/0b338c85-d46f-4a49-a48c-9dd281ccfdcf.png" / >
-
-
-</div>
-<p className="textAlighnments"> City Market</p>
-</div>
-</div>
-</div>
-
-<div>
-<h3 className ="storeTitle">All Stores in Toronto</h3>
-
-
-
-
-<ul>
-{ stores && stores.map((store) => (
-  <ul className ="storeContainer">
-<li className="eachStore">
-  <div className="mainClassInStores">
-<div className="logoImage">
-<img src={store.image_link} />
-
-  
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> {store.store_name}</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-  </li>
-  </ul>
-  )
-  )
-}
-
-
-
-
 
-
-  {/* <li className="eachStore">
-  <div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2138/19b444c0-481d-41cf-b017-4d1666e81006.png" / >
-
-  
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> METRO</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-  </li>
-
-
-  <li className="eachStore">
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/227/0b338c85-d46f-4a49-a48c-9dd281ccfdcf.png" / >
-
-  
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> City Market</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-  </li>
-
-  <li className="eachStore">
-
-  <div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png" / >
-
-  
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Loblaws</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-  </li>
-  
-  <li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/354/fc4be33a-bff9-4076-9d57-4b5e08377771.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Costco</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/462/2eba6946-8810-481e-bd3c-6852d5121d51.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Walmart</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/523/2415d566-6141-49ff-8444-e712a9e4a4b9.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Shoppers Drug Mart</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/536/fbde4b35-8a0c-4704-a3d7-85e47576d615.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Pusateri's</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/551/0231a932-a563-49ca-8da7-532cb5cdfeb6.png"/ >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Staples</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/610/2a87c25b-5a28-4cb8-b1bc-cd5c57d3dae6.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> M&M Food Market</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/635/8731ed2a-42a0-46a1-baf3-07713a8c6475.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Bulk Barn</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1256/7e9d582a-bf60-4a4d-8989-8705c0f39e13.jpg" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Eataly</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1427/55aae31c-6c4e-4c30-a6fd-b7fd4018e85c.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Organic Garage</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1509/77eca83d-0d98-410d-8047-6f205fe0623d.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Indigo</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1555/27f6ac04-0756-4fcc-ab3e-06bf97b9e3a2.jpg" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Sephora Canada</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1603/7d6204e2-859f-499d-8236-e15aaf252007.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Dollarama</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1634/84f40c52-a22b-4a89-a986-b82e09cb7455.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p>Mastermind Toys</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1646/1ba1f48f-c935-42ae-9129-d3979a38a395.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> LCBO</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1702/c748f770-ee1f-494d-9f6b-606a3d276429.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> No Frills</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1721/91622d5c-9f13-4f6d-9d4d-eaef6367c947.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> McEwan Fine Foods</p>
-<p> </p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1765/4c39dd8f-9554-41b9-86f8-6e13b6525da2.jpg" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> The Body Shop Canada</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1898/f7672f30-e00b-490d-8abd-ca339b4a9914.jpg" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Healthy Planet</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1928/9afc1db8-0780-4246-91c5-8f4d4de1fc33.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Micheal's Canada</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/1992/98097d7f-1969-40fd-8f4d-b8d5c6d28402.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Popeye's Supplements</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2044/15a00d4e-9520-47e6-af90-1c10d1ee76e5.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Grande Cheese Markets</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2047/99c9f3cb-3660-4d33-91fd-a590f92fa445.jpg" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Super Natural Market</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2081/82c88696-2779-4555-bd8c-0c69477af354.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Dolce & Gouramando</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2127/a8fc4dcb-5fdf-4bec-9b3c-cff8fa8ec7ac.jpg" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Greenhouse</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2147/4d6986c6-3328-4d48-95d9-760d4e4c578d.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> XMarket</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2176/ca7efb30-bbab-437c-877f-7dd37fe3c652.png" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Harvest Wagon</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-</li>
-
-
-
-<li className="eachStore">
-
-<div className="mainClassInStores">
-<div className="logoImage">
-<img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2177/2d8b7943-5619-401b-bc3d-504990263af7.jpg" / >
-
-
-</div>
-<div className="contentOfStore">
-<p className ="newText"> NEW</p>
-<p> Loblaws</p>
-<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
-<p className="storePriceText"> In-stores prices</p>
-</div>
-</div>
-
-
-
-
-</li> */}
-
-
-
-  
-
-</ul>
-
-
-
-</div>
-    </div>
-
-
-  );
+    // const dummyProducts = [
+    //     {
+    //         imageUrl: "https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg",
+    //         name: "Nestlé Aero Milk Chocolate",
+    //         description: "Chocalte",
+    //         saleprice: 3.99,
+    //         price: 5.99
+    //     },
+    //     {
+    //         imageUrl: "https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg",
+    //         name: "Nesque",
+    //         description: "Cerails",
+    //         saleprice: 3.99,
+    //         price: 5.99
+    //     },
+    //     {
+    //         imageUrl: "https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg",
+    //         name: "Lays",
+    //         description: "Chips",
+    //         saleprice: 3.99,
+    //         price: 5.99
+    //     }
+    // ]
+
+// /sampleProductData
+    const [sampleProducts, setSampleProducts] = useState([])
+
+    // useEffect(() => {
+    //     setProducts(dummyProducts)
+    // }, [])
+
+    useEffect(() => {
+
+        axios.get('http://localhost:8080/sampleProductData')
+        .then(response =>{
+        console.log(response.data)
+        setSampleProducts(response.data)
+        })
+        },[])
+
+    return (
+        <div>
+            <header className="header">
+                <div className="navContainer">
+                    {/* <h1>Hello world Mohamed Hassan</h1> */}
+                    <div className="navbar">
+                        <div className="logo">
+                            <span className="logoName">LITE CART</span>
+                            <img className="logoImage" src="https://media.istockphoto.com/vectors/vegetables-on-shopping-cart-trolley-grocery-logo-icon-design-vector-vector-id1205419959?k=20&m=1205419959&s=612x612&w=0&h=F4gyp5wuFkCaZr00OQS8KPCSE1_4pHmFiOIM2TQlOPI=" />
+                        </div>
+                        <nav className="navlistItems">
+                            <ul>
+
+                                <li><a href="'">Home Page</a></li>
+                                <li><a href="'">Stores</a></li>
+                                <li><a href="'">Products</a></li>
+                                <li><a href="'">Products</a></li>
+                                <li><a href="'">Account</a></li>
+                                <li><a href="'">Contact</a></li>
+                            </ul>
+                            <img className="cartIcon" alt="Image cart" src="../Images/5a364b6d2c5557.7578312615135076931816 (1).png"></img>
+                        </nav>
+                    </div>
+                    <div className="eachrow">
+                        <div className="eachcloumn">
+                            <h1>Look no Further! We got Everything for you.</h1>
+                            <h1>Grocery Shoppping has never been this fun.</h1>
+                            <p>To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.</p>
+                            <a href="" className="firstbutton">CHECK IT OUT &#x2192;</a>
+                        </div>
+                        <div className="eachcloumn">
+                            <img className="secoundlogoImage" src="https://media.istockphoto.com/photos/shopping-basket-with-fresh-food-grocery-supermarket-food-and-eats-picture-id1216828053?k=20&m=1216828053&s=612x612&w=0&h=mMGSO8bG8aN0gP4wyXC17WDIcf9zcqIxBd-WZto-yeg=" />
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <h3 className="productsSample">Products Availble</h3>
+            <div className="catergories">
+                <div className="parentcontainerrow">
+                    <div className="eachrow">
+                        <div className="othercolumn">
+                            <img className="SaleImage" src="https://voila.ca/assets/content/2d92d19c-0354-49c0-8a91-5260ed0bf531/creatives/ff1a7020-6c07-4bee-8877-4ebea3116a83/0828551a64.png" />
+                        </div>
+
+                        {  
+                        sampleProducts  &&   sampleProducts.map((product) => (
+                            //<div key={product.name} >{product.name}</div>
+                            
+
+                        <div key={product.name} className="outlineBox">
+                            <div className="outerTopProduCtontainer">
+                                <div className="toptopheaderName">
+                                    <div className="topheaderName">
+                                        Featured Products
+                                    </div>
+                                </div>
+                                <div className="chocalteImage">
+                                    <img src={product.product_url} />
+                                </div>
+                                <hr></hr>
+                                <div className="ProductInforamtion">
+                                    {product.product_name}
+                                </div>
+
+                                <div className="saleImage">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" /><h4 className="saleDescription">SALE</h4>
+                                </div>
+                                <hr></hr>
+                                <div className="caloriesDescription">
+                                   {product.product_description}
+                                </div>
+                                <div className="priceInformation">
+                                    <span className="firstPrice">{product.price}</span> <span className="secoundPrice">         {product.sale_price}</span>
+                                </div>
+                                <div className="addContent"> <h3>Add</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        ))
+                        }
+
+           
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div className="otherPossibleProducts">
+                {/* <div className="outlineBox">
+                    <div className="outerTopProduCtontainer">
+                        <div className="toptopheaderName">
+                            <div className="topheaderName">
+                                Featured Products
+                            </div>
+                        </div>
+                        <div className="chocalteImage">
+                            <img src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/3b020a90-fece-4b71-ae38-6a1915edde9e/300x300.jpg" />
+                        </div>
+                        <hr></hr>
+                        <div className="ProductInforamtion">
+                            Wavy Lay's Potato Chips Original 235 g
+
+                        </div>
+
+                        <div className="saleImage">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" /><h4 className="saleDescription">SALE</h4>
+                        </div>
+                        <hr></hr>
+                        <div className="caloriesDescription">
+                            235g ($1.06 per 100g)
+                        </div>
+                        <div className="priceInformation">
+                            <span className="firstPrice">2.50</span> <span className="secoundPrice">          $3.99</span>
+                        </div>
+                        <div className="addContent"> <h3>Add</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="outlineBox">
+                    <div className="outerTopProduCtontainer">
+                        <div className="toptopheaderName">
+                            <div className="topheaderName">
+                                Featured Products
+                            </div>
+                        </div>
+                        <div className="chocalteImage">
+                            <img src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/c25612e5-04e7-4a89-8e06-eaa03f14e6dd/300x300.jpg" />
+                        </div>
+                        <hr></hr>
+                        <div className="ProductInforamtion">
+                            Rainbow Trout Fillet
+
+                        </div>
+
+                        <div className="saleImage">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" /><h4 className="saleDescription">SALE</h4>
+                        </div>
+                        <hr></hr>
+                        <div className="caloriesDescription">
+                            0.34kg typically ($26.44 per kilogram)
+                        </div>
+                        <div className="priceInformation">
+                            <span className="firstPrice">$8.99</span> <span className="secoundPrice">          $11.24</span>
+                        </div>
+                        <div className="addContent"> <h3>Add</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="outlineBox">
+                    <div className="outerTopProduCtontainer">
+                        <div className="toptopheaderName">
+                            <div className="topheaderName">
+                                Featured Products
+                            </div>
+                        </div>
+                        <div className="chocalteImage">
+                            <img src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/b9ed18b8-da8c-41da-b92e-97e483668b9d/300x300.jpg" />
+                        </div>
+                        <hr></hr>
+                        <div className="ProductInforamtion">
+                            Compliments Frozen Juice Berry Punch 283 ml
+
+                        </div>
+
+                        <div className="saleImage">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" /><h4 className="saleDescription">SALE</h4>
+                        </div>
+                        <hr></hr>
+                        <div className="caloriesDescription">
+                            283ml ($0.31 per 100ml)
+                        </div>
+                        <div className="priceInformation">
+                            <span className="firstPrice">$0.88</span> <span className="secoundPrice">          $1.19</span>
+                        </div>
+                        <div className="addContent"> <h3>Add</h3>
+                        </div>
+                    </div> */}
+                {/* </div> */}
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <div classNames="stores availble">
+
+            </div>
+
+        </div>
+    );
 }
 
 export default Home;

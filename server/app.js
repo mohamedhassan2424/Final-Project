@@ -74,6 +74,21 @@ app.get('/allStores', (req,res)=>{
 
 
 })
+app.get('/allProducts', (req,res)=>{
+
+    return pool.query(`SELECT * FROM products ;`)
+    .then((response)=>{
+    
+        //res.send("hello world")
+        res.json(response.rows)
+    })
+    .catch((error)=>{
+        console.log(error.message)
+    })
+
+
+
+})
 
 app.post("/reigister", (req,res)=>{
     const firstName = req.body.firstName

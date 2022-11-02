@@ -1,8 +1,19 @@
-import React from "react";
-
+import React , {useEffect, useState} from "react";
+import axios from "axios";
 
 
 function Product(props) {
+const [products, setProducts] = useState([])
+
+
+useEffect(() => {
+
+    axios.get('http://localhost:8080/allProducts')
+    .then(response =>{
+    console.log(response.data)
+    setProducts(response.data)
+    })
+    },[])
     return (
         <div className="mainContainerElement">
              <div className="navbar">
@@ -24,10 +35,11 @@ function Product(props) {
                         </nav>
                     </div>
                     
-            <div className="eachrow"> 
+<div className="eachrow">  
 
+{products && products.map((product) => (
 
- <div className="outlineBox">
+<div className="outlineBox">
                             <div className="outerTopProduCtontainer">
                                 <div className="toptopheaderName">
                                     <div className="topheaderName">
@@ -35,11 +47,11 @@ function Product(props) {
                                     </div>
                                 </div>
                                 <div className="chocalteImage">
-                                    <img src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg" />
+                                    <img src={product.product_url} />
                                 </div>
                                 <hr></hr>
                                 <div className="ProductInforamtion">
-                                    Nestlé Aero Milk Chocolate Bar 4 Pack 42 g
+                                    {product.product_name}
                                 </div>
 
                                 <div className="saleImage">
@@ -47,20 +59,26 @@ function Product(props) {
                                 </div>
                                 <hr></hr>
                                 <div className="caloriesDescription">
-                                    4 x 42g($2.67 per 100g)
+                                {product.product_description}
                                 </div>
                                 <div className="priceInformation">
-                                    <span className="firstPrice">$4.49</span> <span className="secoundPrice">          $5.49</span>
+                                    <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
                                 </div>
                                 <div className="addContent"> <h3>Add</h3>
                                 </div>
                             </div>
                         </div> 
+
+))
+
+ 
+}
+                        
                         {/* <div className= "othercolumn">
             <img src="https://www.instacart.com/image-server/394x394/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_141ca85a-53fa-4fb2-96bc-e11b8f2ced1c.png" />
         </div> */}
 
-
+{/* 
                          <div className="outlineBox">
                             <div className="outerTopProduCtontainer">
                                 <div className="toptopheaderName">
@@ -89,13 +107,13 @@ function Product(props) {
                                 <div className="addContent"> <h3>Add</h3>
                                 </div>
                             </div>
-                        </div> 
+                        </div>  */}
 
 
 
 
 
-
+{/* 
 
                      <div className="outlineBox">
                             <div className="outerTopProduCtontainer">
@@ -126,7 +144,7 @@ function Product(props) {
                                 <div className="addContent"> <h3>Add</h3>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
 
 
