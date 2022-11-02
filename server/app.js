@@ -43,6 +43,21 @@ app.get("/car", (req,res)=>{
     res.send("Hello world")
 })
 
+app.get('/sampleProductData', (req,res)=>{
+
+    return pool.query(`SELECT * FROM products;`)
+    .then((response)=>{
+    
+        //res.send("hello world")
+        res.json(response.rows)
+    })
+    .catch((error)=>{
+        console.log(error.message)
+    })
+
+
+
+})
 app.post("/reigister", (req,res)=>{
     const firstName = req.body.firstName
     const lastName = req.body.lastName
@@ -80,13 +95,12 @@ app.get("/mainpage", (req,res)=>{
 app.get("/content",(req,res)=>{
     return pool.query(`SELECT * FROM users;`)
     .then((response)=>{
-        console.log(response.rows >0)
-        console.log("CORRECT email and password")
+        
         //res.send("hello world")
         res.json(response.rows)
     })
     .catch((error)=>{
-        console.log("Incorrect email and password")
+       
         console.log(error)
     })
 })

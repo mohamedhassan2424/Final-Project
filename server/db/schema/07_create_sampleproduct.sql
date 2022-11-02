@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS products CASCADE;
-CREATE TABLE products (
+DROP TABLE IF EXISTS sampleProduct CASCADE;
+CREATE TABLE sampleProduct (
   id SERIAL PRIMARY KEY,
   -- store_id integer REFERENCES stores(id) ON DELETE CASCADE NOT NULL,
   category_name_value VARCHAR(255) NOT NULL,
