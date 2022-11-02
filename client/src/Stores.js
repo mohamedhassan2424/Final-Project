@@ -1,6 +1,6 @@
 import React ,{useState, useEffect} from "react"
 import axios from "axios"
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function Stores(props) {
 const [stores,setStores] = useState([])
   useEffect(() => {
@@ -16,17 +16,29 @@ const [stores,setStores] = useState([])
     <div>
       <h1>LITE-CART</h1>
       <div>
-        <nav className="navlistItems">
-          <ul>
-            <li><a href="'">Home Page</a></li>
-            <li><a href="'">Stores</a></li>
-            <li><a href="'">Products</a></li>
-            <li><a href="'">Products</a></li>
-            <li><a href="'">Account</a></li>
-            <li><a href="'">Contact</a></li>
-          </ul>
-          <img className="cartIcon" alt="Image cart" src="../Images/5a364b6d2c5557.7578312615135076931816 (1).png"></img>
-        </nav>
+      <nav className="navlistItems">
+                            <ul>
+                                <li>
+                                    <Link to="/">Home</Link>
+                                </li>
+                                <li>
+                                    <Link to="/stores">Stores</Link>
+                                </li>
+                                <li>
+                                    <Link to="/product">Product</Link>
+                                </li>
+                                <li>
+                                    <Link to="/users">Users</Link>
+                                </li>
+                                <li>
+                                    <Link to="/main">Main</Link>
+                                </li>
+                                <li>
+                                    <Link to="/about">About</Link>
+                                </li>
+                            </ul>
+                            <img className="cartIcon" alt="Image cart" src="../Images/5a364b6d2c5557.7578312615135076931816 (1).png"></img>
+                        </nav>
       </div>
       <div>
   <h3  className ="storeTitle" >Recentely Visted</h3>

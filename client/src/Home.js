@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function Home(props) {
 
     // const dummyProducts = [
@@ -27,7 +27,7 @@ function Home(props) {
     //     }
     // ]
 
-// /sampleProductData
+    // /sampleProductData
     const [sampleProducts, setSampleProducts] = useState([])
 
     // useEffect(() => {
@@ -37,11 +37,11 @@ function Home(props) {
     useEffect(() => {
 
         axios.get('http://localhost:8080/sampleProductData')
-        .then(response =>{
-        console.log(response.data)
-        setSampleProducts(response.data)
-        })
-        },[])
+            .then(response => {
+                console.log(response.data)
+                setSampleProducts(response.data)
+            })
+    }, [])
 
     return (
         <div>
@@ -55,13 +55,24 @@ function Home(props) {
                         </div>
                         <nav className="navlistItems">
                             <ul>
-
-                                <li><a href="'">Home Page</a></li>
-                                <li><a href="'">Stores</a></li>
-                                <li><a href="'">Products</a></li>
-                                <li><a href="'">Products</a></li>
-                                <li><a href="'">Account</a></li>
-                                <li><a href="'">Contact</a></li>
+                                <li>
+                                    <Link to="/">Home</Link>
+                                </li>
+                                <li>
+                                    <Link to="/stores">Stores</Link>
+                                </li>
+                                <li>
+                                    <Link to="/product">Product</Link>
+                                </li>
+                                <li>
+                                    <Link to="/users">Users</Link>
+                                </li>
+                                <li>
+                                    <Link to="/main">Main</Link>
+                                </li>
+                                <li>
+                                    <Link to="/about">About</Link>
+                                </li>
                             </ul>
                             <img className="cartIcon" alt="Image cart" src="../Images/5a364b6d2c5557.7578312615135076931816 (1).png"></img>
                         </nav>
@@ -87,45 +98,45 @@ function Home(props) {
                             <img className="SaleImage" src="https://voila.ca/assets/content/2d92d19c-0354-49c0-8a91-5260ed0bf531/creatives/ff1a7020-6c07-4bee-8877-4ebea3116a83/0828551a64.png" />
                         </div>
 
-                        {  
-                        sampleProducts  &&   sampleProducts.map((product) => (
-                            //<div key={product.name} >{product.name}</div>
-                            
+                        {
+                            sampleProducts && sampleProducts.map((product) => (
+                                //<div key={product.name} >{product.name}</div>
 
-                        <div key={product.name} className="outlineBox">
-                            <div className="outerTopProduCtontainer">
-                                <div className="toptopheaderName">
-                                    <div className="topheaderName">
-                                        Featured Products
+
+                                <div key={product.name} className="outlineBox">
+                                    <div className="outerTopProduCtontainer">
+                                        <div className="toptopheaderName">
+                                            <div className="topheaderName">
+                                                Featured Products
+                                            </div>
+                                        </div>
+                                        <div className="chocalteImage">
+                                            <img src={product.product_url} />
+                                        </div>
+                                        <hr></hr>
+                                        <div className="ProductInforamtion">
+                                            {product.product_name}
+                                        </div>
+
+                                        <div className="saleImage">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" /><h4 className="saleDescription">SALE</h4>
+                                        </div>
+                                        <hr></hr>
+                                        <div className="caloriesDescription">
+                                            {product.product_description}
+                                        </div>
+                                        <div className="priceInformation">
+                                            <span className="firstPrice">{product.price}</span> <span className="secoundPrice">         {product.sale_price}</span>
+                                        </div>
+                                        <div className="addContent"> <h3>Add</h3>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="chocalteImage">
-                                    <img src={product.product_url} />
-                                </div>
-                                <hr></hr>
-                                <div className="ProductInforamtion">
-                                    {product.product_name}
-                                </div>
 
-                                <div className="saleImage">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" /><h4 className="saleDescription">SALE</h4>
-                                </div>
-                                <hr></hr>
-                                <div className="caloriesDescription">
-                                   {product.product_description}
-                                </div>
-                                <div className="priceInformation">
-                                    <span className="firstPrice">{product.price}</span> <span className="secoundPrice">         {product.sale_price}</span>
-                                </div>
-                                <div className="addContent"> <h3>Add</h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        ))
+                            ))
                         }
 
-           
+
 
 
 
