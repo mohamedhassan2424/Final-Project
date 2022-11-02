@@ -18,7 +18,7 @@ function Home(props) {
           <img className="cartIcon" alt="Image cart" src="../Images/5a364b6d2c5557.7578312615135076931816 (1).png"></img>
         </nav>
       </div>
-<div>
+      <div>
   <h3  className ="storeTitle" >Recentely Visted</h3>
   <div className="sampleDataContainer">
   <div className="storeContent">

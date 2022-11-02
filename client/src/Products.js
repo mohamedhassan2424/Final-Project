@@ -2,11 +2,15 @@ import React from "react";
 
 
 
-function Products(){
-    return(
-        <h1>connected to Product page</h1>
+function Product(props) {
+    return (
+        <div>
+
+<h1>connected to Product page</h1>
+        </div>
+        
 
     );
-    }
+}
 
-    export default Products;
+export default Product;

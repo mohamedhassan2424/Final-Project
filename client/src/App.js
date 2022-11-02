@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home"
 import About from "./About.js"
 import Users from "./Users"
-import Main from "./Main";
-import Products from "./Products";
+import Main from "./Main.js";
+import Product from "./Products.js";
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -43,7 +43,7 @@ function App() {
             <Link to="/main">Main</Link>
           </li>
           <li>
-            <Link to="/products">Products</Link>
+            <Link to="/product">Product</Link>
           </li>
         </ul>
       </nav>
@@ -63,8 +63,8 @@ function App() {
         <Route path="/main">
           <Main />
         </Route>
-        <Route path="/products">
-          <Products />
+        <Route path="/product">
+          <Product />
         </Route>
       </Switch>
     </div>
