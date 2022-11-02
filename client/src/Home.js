@@ -72,7 +72,7 @@ function Home(props) {
             <Link to="/stores">Stores</Link>
           </li>
           <li>
-            <Link to="/product">Product</Link>
+            <Link to="/products">Products</Link>
           </li>
           <li>
             <Link to="/users">Users</Link>
