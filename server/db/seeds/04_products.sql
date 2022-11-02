@@ -1,4 +1,4 @@
-
+-- Dairy Products
 
 INSERT INTO products (category_name_value,product_name,product_description,product_url,price, sale_price,quantity) VALUES ('Dairy',  'Liberte Greek High In Protien Yogurt Mango 750 g','750g($1.00 per 100g)','https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/8b045b18-aadc-4174-b7f2-300cc0e31c26/300x300.jpg' ,7.49,1.5,5);
 INSERT INTO products (category_name_value,product_name,product_description,product_url,price, sale_price,quantity) VALUES ('Dairy', 'Liberte Greek Yogurt Wild Blueberry 750 g','750g($1.00 per 100g)','https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/ccdf95d5-8fa2-4157-a7a1-da4321932530/300x300.jpg' ,7.49,1.5,5);

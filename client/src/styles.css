@@ -432,9 +432,9 @@ color:#CC5500;
 
 }
 .eachStore {
-    /* width: 30%; */
+     width: 30%; 
     padding-top: 15px;
-    width: calc(100% / 3);
+    /* width: calc(100% / 3); */
 
 }
 

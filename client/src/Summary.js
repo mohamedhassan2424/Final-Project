@@ -1,14 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
-
-function Main(){
-
-    return(
-<div>
-
-    <h1>Welcome to the main Page</h1>
-    <nav className="navlistItems">
+function Summary(props) {
+    return (
+        <div>
+            <h1>Welcome to the Summary Cart Page</h1>
+            <nav className="navlistItems">
                         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -38,9 +34,8 @@ function Main(){
         </ul>
                          
                         </nav>
-</div>
-    );
+        </div>
+    )
 }
 
-
-export default Main;
+export default Summary;

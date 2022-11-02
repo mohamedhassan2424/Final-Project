@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./styles.css"
 import  axios  from "axios";
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function Users(props) {
 const [buttonState,setButtonState] = useState(false)
 const [firstName, setFirstName] = useState('')
@@ -52,6 +52,36 @@ const removingClass = ()=>{
 
     return (
         <section>
+            <nav className="navlistItems">
+                        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/stores">Stores</Link>
+          </li>
+          <li>
+            <Link to="/product">Product</Link>
+          </li>
+          <li>
+            <Link to="/users">Users</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          
+          <li>
+            <Link to="/main">Main</Link>
+          </li>
+          <li>
+            <Link to="/cart"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link>
+          </li>
+          <li>
+            <Link to="/summary">Summary Cart</Link>
+          </li>
+        </ul>
+                         
+                        </nav>
             <h1>Connected to the User page</h1>
             <div className='bigContainer'>
                 <div className="formContainer" >

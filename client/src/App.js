@@ -8,6 +8,9 @@ import About from "./About.js"
 import Users from "./Users"
 import Main from "./Main.js";
 import Product from "./Products.js";
+import Stores from "./Stores";
+import Cart from "./Cart";
+import Summary from './Summary'
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -28,25 +31,7 @@ function App() {
   return (
   <Router>
     <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/users">Users</Link>
-          </li>
-          <li>
-            <Link to="/main">Main</Link>
-          </li>
-          <li>
-            <Link to="/product">Product</Link>
-          </li>
-        </ul>
-      </nav>
+      
 
       {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
@@ -62,6 +47,15 @@ function App() {
         </Route>
         <Route path="/product">
           <Product />
+        </Route>
+        <Route path="/stores">
+          <Stores />
+        </Route>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+        <Route path="/summary">
+          <Summary />
         </Route>
         <Route path="/">
           <Home />
