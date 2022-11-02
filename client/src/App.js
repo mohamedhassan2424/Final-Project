@@ -9,7 +9,7 @@ import Users from "./Users"
 import Main from "./Main.js";
 import Product from "./Products.js";
 import Stores from "./Stores";
-import Cart from "./Cart";
+import Carts from "./Carts";
 import Summary from './Summary'
 function App() {
   // const getData = async () => {
@@ -52,7 +52,7 @@ function App() {
           <Stores />
         </Route>
         <Route path="/cart">
-          <Cart />
+          <Carts />
         </Route>
         <Route path="/summary">
           <Summary />

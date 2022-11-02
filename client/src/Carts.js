@@ -1,12 +1,13 @@
-import React from "react";
+import React ,{ useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 
-function Cart(props) {
+
+function Carts(props) {
 
     return (
         <div>
             <h1>welcome to the cart page</h1>
+            <h2>hello world</h2>
             <nav className="navlistItems">
                 <ul>
                     <li>
@@ -43,4 +44,4 @@ function Cart(props) {
     )
 }
 
-export default Cart
+export default Carts;
