@@ -58,6 +58,23 @@ app.get('/sampleProductData', (req,res)=>{
 
 
 })
+
+app.get('/allStores', (req,res)=>{
+
+    return pool.query(`SELECT * FROM stores ;`)
+    .then((response)=>{
+    
+        //res.send("hello world")
+        res.json(response.rows)
+    })
+    .catch((error)=>{
+        console.log(error.message)
+    })
+
+
+
+})
+
 app.post("/reigister", (req,res)=>{
     const firstName = req.body.firstName
     const lastName = req.body.lastName

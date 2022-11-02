@@ -1,6 +1,16 @@
-import React from "react"
+import React ,{useState, useEffect} from "react"
+import axios from "axios"
 
 function Home(props) {
+const [stores,setStores] = useState([])
+  useEffect(() => {
+
+    axios.get('http://localhost:8080/allStores')
+    .then(response =>{
+    console.log(response.data)
+    setStores(response.data)
+    })
+    },[])
   return (
 
     <div>
@@ -42,8 +52,39 @@ function Home(props) {
 
 <div>
 <h3 className ="storeTitle">All Stores in Toronto</h3>
-<ul className ="storeContainer">
-  <li className="eachStore">
+
+
+
+
+<ul>
+{ stores && stores.map((store) => (
+  <ul className ="storeContainer">
+<li className="eachStore">
+  <div className="mainClassInStores">
+<div className="logoImage">
+<img src={store.image_link} />
+
+  
+</div>
+<div className="contentOfStore">
+<p className ="newText"> NEW</p>
+<p> {store.store_name}</p>
+<p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
+<p className="storePriceText"> In-stores prices</p>
+</div>
+</div>
+  </li>
+  </ul>
+  )
+  )
+}
+
+
+
+
+
+
+  {/* <li className="eachStore">
   <div className="mainClassInStores">
 <div className="logoImage">
 <img src="https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2138/19b444c0-481d-41cf-b017-4d1666e81006.png" / >
@@ -644,7 +685,7 @@ function Home(props) {
 
 
 
-</li>
+</li> */}
 
 
 
