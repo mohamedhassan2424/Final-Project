@@ -73,8 +73,14 @@ function Home(props) {
                                 <li>
                                     <Link to="/about">About</Link>
                                 </li>
+
+                                <li>
+                                    <Link to="/cart">
+                                    <img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img>
+                                    </Link>
+                                </li>
                             </ul>
-                            <img className="cartIcon" alt="Image cart" src="../Images/5a364b6d2c5557.7578312615135076931816 (1).png"></img>
+                            
                         </nav>
                     </div>
                     <div className="eachrow">
