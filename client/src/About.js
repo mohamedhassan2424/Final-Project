@@ -1,38 +1,47 @@
 import React, { useState, useEffect } from "react"
-
+import axios from "axios"
 
 function About(props) {
 
-    const dummyProducts = [
-        {
-            imageUrl: "https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg",
-            name: "Nestlé Aero Milk Chocolate",
-            description: "Chocalte",
-            saleprice: 3.99,
-            price: 5.99
-        },
-        {
-            imageUrl: "https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg",
-            name: "Nesque",
-            description: "Cerails",
-            saleprice: 3.99,
-            price: 5.99
-        },
-        {
-            imageUrl: "https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg",
-            name: "Lays",
-            description: "Chips",
-            saleprice: 3.99,
-            price: 5.99
-        }
-    ]
+    // const dummyProducts = [
+    //     {
+    //         imageUrl: "https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg",
+    //         name: "Nestlé Aero Milk Chocolate",
+    //         description: "Chocalte",
+    //         saleprice: 3.99,
+    //         price: 5.99
+    //     },
+    //     {
+    //         imageUrl: "https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg",
+    //         name: "Nesque",
+    //         description: "Cerails",
+    //         saleprice: 3.99,
+    //         price: 5.99
+    //     },
+    //     {
+    //         imageUrl: "https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg",
+    //         name: "Lays",
+    //         description: "Chips",
+    //         saleprice: 3.99,
+    //         price: 5.99
+    //     }
+    // ]
 
-
+// /sampleProductData
     const [products, setProducts] = useState([])
 
+    // useEffect(() => {
+    //     setProducts(dummyProducts)
+    // }, [])
+
     useEffect(() => {
-        setProducts(dummyProducts)
-    }, [])
+
+        axios.get('http://localhost:8080/sampleProductData')
+        .then(response =>{
+        console.log(response.data)
+        setProducts(response.data)
+        })
+        },[])
 
     return (
         <div>
@@ -91,11 +100,11 @@ function About(props) {
                                     </div>
                                 </div>
                                 <div className="chocalteImage">
-                                    <img src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg" />
+                                    <img src={product.product_url} />
                                 </div>
                                 <hr></hr>
                                 <div className="ProductInforamtion">
-                                    {product.name}
+                                    {product.product_name}
                                 </div>
 
                                 <div className="saleImage">
@@ -103,10 +112,10 @@ function About(props) {
                                 </div>
                                 <hr></hr>
                                 <div className="caloriesDescription">
-                                   {product.description}
+                                   {product.product_description}
                                 </div>
                                 <div className="priceInformation">
-                                    <span className="firstPrice">{product.saleprice}</span> <span className="secoundPrice">         {product.price}</span>
+                                    <span className="firstPrice">{product.price}</span> <span className="secoundPrice">         {product.sale_price}</span>
                                 </div>
                                 <div className="addContent"> <h3>Add</h3>
                                 </div>
@@ -129,7 +138,7 @@ function About(props) {
 
             </div>
             <div className="otherPossibleProducts">
-                <div className="outlineBox">
+                {/* <div className="outlineBox">
                     <div className="outerTopProduCtontainer">
                         <div className="toptopheaderName">
                             <div className="topheaderName">
@@ -219,8 +228,8 @@ function About(props) {
                         </div>
                         <div className="addContent"> <h3>Add</h3>
                         </div>
-                    </div>
-                </div>
+                    </div> */}
+                {/* </div> */}
 
 
 

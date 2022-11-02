@@ -45,7 +45,7 @@ app.get("/car", (req,res)=>{
 
 app.get('/sampleProductData', (req,res)=>{
 
-    return pool.query(`SELECT * FROM products;`)
+    return pool.query(`SELECT * FROM samplep ;`)
     .then((response)=>{
     
         //res.send("hello world")
