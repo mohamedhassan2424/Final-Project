@@ -4,6 +4,7 @@ CREATE TABLE products (
   -- store_id integer REFERENCES stores(id) ON DELETE CASCADE NOT NULL,
   product_name VARCHAR(255) NOT NULL,
   product_description VARCHAR(255) NOT NULL,
+  product_url VARCHAR(255) NOT NULL,
   price FLOAT, 
   sale_price FLOAT,
   quantity INTEGER
