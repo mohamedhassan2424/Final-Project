@@ -1,29 +1,50 @@
 import React, { useState } from "react"
 import "./styles.css"
+
 import  axios  from "axios";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 function Users(props) {
 const [buttonState,setButtonState] = useState(false)
 const [firstName, setFirstName] = useState('')
 const [lastName, setLastName] = useState('')
 const [emailName, setEmailName] = useState('')
 const [passwordName, setPasswordName] = useState('')
-
+const [otherpasswordName, setOtherpasswordName] = useState('')
 const [emailDatabase, setEmailDatabase] = useState('')
 const [passwordDatabase, setPasswordDatabase] = useState('')
-
+const history = useHistory();
 
 const linkServer = "http://localhost:8080/"
 
 
 const register = ()=> {
+    console.log("Check point one")
     axios.post(`${linkServer}reigister`,{firstName, lastName, email:emailName, password:passwordName})
     .then((response)=>{
-        console.log(response.data)
+        console.log("Gotten to this part",response.data)
+        setFirstName('')
+        setLastName('')
+        setEmailName('')
+        setPasswordName('')
+        setOtherpasswordName('')
+
+        let path = `/home`;
+        // let history = useHistory();
+        history.push(path);
+
     })
     .catch((error)=>{
         console.log(error)
     })
+
+console.log("Checkpoint 2")
+   
+
+
+  console.log("Checkpoint 3")
+        
+ 
+console.log("Checkpoint 4")
 
 }
 
@@ -95,31 +116,35 @@ const removingClass = ()=>{
            
 
                 <div className ="inputText">
-                    <input type = "text" placeholder="First Name" onChange={(event)=> {
+                    <input value={firstName} type = "text" placeholder="First Name" onChange={(event)=> {
                 setFirstName(event.target.value)
                 console.log(firstName)
 }} />
                 </div>
                 <div className ="inputText">
-                    <input type = "text" placeholder="Last Name"  onChange={(event)=> {
+                    <input value={lastName} type = "text" placeholder="Last Name"  onChange={(event)=> {
                 setLastName(event.target.value)
                 console.log(lastName)
 }}/>
                 </div>
                 <div className ="inputText">
-                    <input type = "email" placeholder="Email" onChange={(event)=> {
+                    <input value={emailName} type = "email" placeholder="Email" onChange={(event)=> {
                 setEmailName(event.target.value)
                 console.log(emailName)
 }}/>
                 </div>
                 <div className ="inputText">
-                    <input type = "password" placeholder="Create New Password" onChange={(event)=> {
+                    <input value={passwordName} type = "password" placeholder="Create New Password" onChange={(event)=> {
                 setPasswordName(event.target.value)
+                
                 console.log(passwordName)
 }}/>
                 </div>
                 <div className ="inputText">
-                    <input type = "password" placeholder="Confirm Password" />
+                    <input value={otherpasswordName} type = "password" placeholder="Confirm Password" onChange={(event)=> {
+                setOtherpasswordName(event.target.value)
+                console.log(firstName)
+}} />
                 </div>
                 <div className= "sumbitButtonCenter">
                 <button class="sumbitButton" type="sumbit" onClick={register}>Signup</button>

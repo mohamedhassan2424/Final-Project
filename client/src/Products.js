@@ -64,7 +64,7 @@ function Products(props) {
                                 </div>
                             </div>
                             <div className="chocalteImage">
-                                <img src={product.product_url} />
+                            <Link to={`/products/${product.id}`}><img src={product.product_url} /></Link>
                             </div>
                             <hr></hr>
                             <div className="ProductInforamtion">
