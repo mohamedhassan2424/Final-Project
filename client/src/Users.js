@@ -52,16 +52,21 @@ const logInButton = () =>{
     axios.post(`${linkServer}login`,{email:emailDatabase, password:passwordDatabase})
     .then((response)=>{
         
-        console.log("Gotten to this part",response.data)
+        console.log("Gotten to this part, data response :",response.data)
         setFirstName('')
         setLastName('')
         setEmailName('')
         setPasswordName('')
         setOtherpasswordName('')
-
-        let path = `/home`;
+        console.log(response.data)
+        if(response.data !== "Incorrect email and Password") {
+           let path = `/home`;
       
-        history.push(path);
+            history.push(path);
+        } else{
+            console.log("Wrong password")
+        }
+       
     })
     .catch((error)=>{
         console.log(error)
