@@ -14,14 +14,14 @@ CREATE TABLE sales (
 
 
 
-CREATE TABLE sales_items (
-id SERIAL PRIMARY KEY,
-sales_id REFERENCES ,
-quantity INTEGER NOT NULL,
-product_id interger REFERENCES,
-price ,
-total_price
-created_at TIMESTAMP
-)
+-- CREATE TABLE sales_items (
+-- id SERIAL PRIMARY KEY,
+-- sales_id REFERENCES ,
+-- quantity INTEGER NOT NULL,
+-- product_id interger REFERENCES,
+-- price ,
+-- total_price
+-- created_at TIMESTAMP
+-- )
 
 -- sales item table, which would have the qunatinty of the product and cost
