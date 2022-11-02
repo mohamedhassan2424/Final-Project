@@ -57,14 +57,14 @@ function App() {
         <Route path="/users">
           <Users />
         </Route>
-        <Route path="/">
-          <Home />
-        </Route>
         <Route path="/main">
           <Main />
         </Route>
         <Route path="/product">
           <Product />
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </div>
