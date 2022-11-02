@@ -59,9 +59,9 @@ const logInButton = () =>{
         setPasswordName('')
         setOtherpasswordName('')
 
-        // let path = `/home`;
+        let path = `/home`;
       
-        // history.push(path);
+        history.push(path);
     })
     .catch((error)=>{
         console.log(error)
@@ -162,7 +162,7 @@ const removingClass = ()=>{
 
         
             </form>
-            <form  className={buttonState ? "form loginForm": "form"}>
+            <form onSubmit={(event) => event.preventDefault()}  className={buttonState ? "form loginForm": "form"}>
                 <div className ="inputText">
                     <input type = "email" placeholder="Email" onChange={(event)=> {
                 setEmailDatabase(event.target.value)
