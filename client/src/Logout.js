@@ -24,6 +24,7 @@ function Logout() {
     return (
         <div>
             <Nav />
+            <h1 className ="userStatment">User Must Logout before access user Page</h1>
             <button className= "buttonStyle" onClick={removingState}>Logout Button</button>
         </div>
     )
