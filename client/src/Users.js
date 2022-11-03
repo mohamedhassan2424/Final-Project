@@ -6,7 +6,7 @@ import useVerification from "./hooks/useVerification";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { userContext } from "./providers/UserProvider";
-
+import Cookies from 'universal-cookie';
 
 
  
@@ -26,6 +26,7 @@ const [wrongPasswordComment, setWrongPasswordComment]= useState(false)
 const [existingEmail, setExistingEmail]= useState(false)
 const [allUsersInformation, setAllUsersInformation] = useState([])
 const history = useHistory();
+const cookies = new Cookies();
 
 const linkServer = "http://localhost:8080/"
 useEffect(() => {
@@ -61,10 +62,13 @@ const register = ()=> {
         console.log("Email doesn't exists your good to sign in")
         axios.post(`${linkServer}reigister`,{firstName, lastName, email:emailName, password:passwordName})
         .then((response)=>{
+            cookies.set('emailValue',`${emailName}`)
+            cookies.set('firstNameValue',`${firstName}`)
+            cookies.set('lastNameValue',`${lastName}`)
             savingEmail(emailName)
             savingFirstName(firstName)
             savingLastName(lastName)
-
+            console.log(cookies.get('emailValue'))
             console.log("Gotten to this part",response.data)
             setFirstName('')
             setLastName('')
@@ -124,6 +128,9 @@ const logInButton = () =>{
                     savingEmail(emailDatabase)
                     savingFirstName(eachObject.firstname)
                     savingLastName(eachObject.lastname)
+                    cookies.set('emailValue',`${emailDatabase}`)
+                    cookies.set('firstNameValue',`${eachObject.firstname}`)
+                    cookies.set('lastNameValue',`${eachObject.lastname}`)
                     console.log("The whole Object of that email",eachObject)
                     return eachObject
                 }}
