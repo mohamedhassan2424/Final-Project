@@ -9,10 +9,9 @@ function Nav(props) {
 <nav className="navlistItems">
                         <ul>
                             <li>
-                        Welcome Back :{firstNameSaved}
-                            </li>
-                            <li>
-                    {lastNameSaved}
+                                {firstNameSaved ? <h1>Welcome Back :{ firstNameSaved} {lastNameSaved} </h1>: <h3>Please Sighn-up or Log-In</h3>}
+                                
+                        
                             </li>
           <li>
             <Link to="/home">Home </Link>
