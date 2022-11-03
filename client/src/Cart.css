@@ -14,7 +14,7 @@ h1 {
   font-family: FoundersGroteskWeb, sans-serif;
 }
 
-.cart-show {
+.cart-show, .checkout {
   display: flex;
     text-align: center;
     padding: 5px;

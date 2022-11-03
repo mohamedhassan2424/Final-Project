@@ -138,7 +138,9 @@ function Carts(props) {
                         </div>
                      </div>
             </div>
-            
+                <div>
+                    <button className="checkout"><i className="fa-regular fa-credit-card"></i>Checkout</button>
+                </div>
         </div>
         
     )
