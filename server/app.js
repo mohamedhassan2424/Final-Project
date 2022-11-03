@@ -207,7 +207,7 @@ app.get("/content", (req, res) => {
 })
 
 app.get("/frozenFood", (req,res)=>{
-    return pool.query(`SELECT * FROM products WHERE category_name_value = 'Frozen Fodd';`)
+    return pool.query(`SELECT * FROM products WHERE category_name_value = 'Frozen Food';`)
     .then((response)=>{
         res.json(response.rows)
     })
@@ -216,8 +216,8 @@ app.get("/frozenFood", (req,res)=>{
     })
 })
 
-app.get("/dairy", (req,res)=>{
-    return pool.query(`SELECT * FROM products WHERE category_name_value = 'Frozen Fodd';`)
+app.get("/Dairy", (req,res)=>{
+    return pool.query(`SELECT * FROM products WHERE category_name_value = 'Dairy';`)
     .then((response)=>{
         res.json(response.rows)
     })
@@ -226,8 +226,8 @@ app.get("/dairy", (req,res)=>{
     })
 })
 
-app.get("/frozenFood", (req,res)=>{
-    return pool.query(`SELECT * FROM products WHERE category_name_value = 'Frozen Fodd';`)
+app.get("/Beverage", (req,res)=>{
+    return pool.query(`SELECT * FROM products WHERE category_name_value = 'Beverage';`)
     .then((response)=>{
         res.json(response.rows)
     })

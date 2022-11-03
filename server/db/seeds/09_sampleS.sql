@@ -15,6 +15,6 @@ INSERT INTO sampleS (store_name, rating,image_link) VALUES ('Bulk Barn', 4.8, 'h
 
 
 
-SELECT * FROM products 
-JOIN categories ON product_id = products.product_id
-WHERE category_name_value= 'Dairy';
+-- SELECT * FROM products 
+-- JOIN categories ON product_id = products.product_id
+-- WHERE category_name_value= 'Dairy';
