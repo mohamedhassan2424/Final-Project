@@ -50,9 +50,9 @@ function Carts(props) {
                 <div className="outlineBox">
                             <div className="outerTopProduCtontainer">
                                 <div className="toptopheaderName">
-                                    <div className="topheaderName">
+                                    {/* <div className="topheaderName">
                                         Featured Products
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="chocolateImage">
                                     <img className="image" src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg" />
@@ -80,9 +80,9 @@ function Carts(props) {
                         <div className="outlineBox">
                             <div className="outerTopProduCtontainer">
                                 <div className="toptopheaderName">
-                                    <div className="topheaderName">
+                                    {/* <div className="topheaderName">
                                         Featured Products
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="chocolateImage">
                                     <img className="image" src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/96c1ec03-cef1-4824-8b61-32fcd55a03e8/300x300.jpg" />
@@ -110,9 +110,9 @@ function Carts(props) {
                         <div className="outlineBox">
                             <div className="outerTopProduCtontainer">
                                 <div className="toptopheaderName">
-                                    <div className="topheaderName">
+                                    {/* <div className="topheaderName">
                                         Featured Products
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="chocolateImage">
                                     <img className="image" src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/e705341e-c803-4794-83f1-f30ccc6b9629/300x300.jpg" />
