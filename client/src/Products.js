@@ -12,11 +12,13 @@ function Products(props) {
     const [frozenFood, setFrozenFood] = useState([])
     // useEffect(() => {
 
-    //     axios.get('http://localhost:8080/allProducts')
-    //         .then(response => {
-    //             console.log(response.data)
-    //             setProducts(response.data)
-    //         })
+    //     Promise.all([
+    //       axios.get('http://localhost:8080/frozenFood'),
+    //       axios.get('http://localhost:8080/Beverage'),
+    //       axios.get('http://localhost:8080/dairy')].
+     //       .then((all)=>{
+       //  })
+    
     // }, [])
     useEffect(() => {
 
@@ -53,7 +55,7 @@ function Products(props) {
                 </div>
                <Nav />
             </div>
-            <h1>{dairy[0].category_name_value}</h1>
+            <h1>{dairy[0] ? dairy[0].category_name_value:<h1>Waiting .......</h1>}</h1>
             <div className="eachrow">
              
                 {dairy && dairy.map((product) => (
@@ -96,7 +98,7 @@ function Products(props) {
                 }
  </div>
  <div className="eachrow">
-          <h1>{frozenFood[0].category_name_value}</h1>       
+ <div className ="titlePageCategoryProduct">  <h1>{frozenFood[0]?frozenFood[0].category_name_value :<h1>Waiting .......</h1>}</h1></div>
 {frozenFood && frozenFood.map((product) => (
 
 <div className="outlineBox">
@@ -137,7 +139,7 @@ function Products(props) {
 }
  </div>
 
- <div className ="titlePageCategoryProduct"><h1>{beverage[0].category_name_value}</h1></div>     
+ <div className ="titlePageCategoryProduct"><h1>{beverage[0]?beverage[0].category_name_value:<h1>Waiting.......</h1>}</h1></div>     
  <div className="eachrow">
 
 {beverage && beverage.map((product) => (
