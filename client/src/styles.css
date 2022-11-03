@@ -507,6 +507,16 @@ color:#CC5500;
      justify-content: center;
  }
 
+ .userStatment {
+   padding-top: 400px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+ }
+.buttonStyle {
+ justify-content: center;
+ margin-left: 900px;
+}
 /* .parentcontainerrow {
     max-width:1080px;
     margin: auto;

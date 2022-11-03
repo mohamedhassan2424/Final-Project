@@ -22,10 +22,13 @@ function Logout() {
             history.push(path);
     }
     return (
-        <div>
+        <div >
             <Nav />
-            <h1 className ="userStatment">User Must Logout before access user Page</h1>
-            <button className= "buttonStyle" onClick={removingState}>Logout Button</button>
+            
+            <h1 className ="userStatment">User Must Logout before access user Page</h1><br></br>
+            <div className="buttonStyle">
+            <button onClick={removingState}>Logout Button</button>
+            </div>
         </div>
     )
 }
