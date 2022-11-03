@@ -518,7 +518,9 @@ color:#CC5500;
  margin-left: 900px;
 }
 
-
+table, th, td {
+    border:1px solid black;
+  }
 /* .parentcontainerrow {
     max-width:1080px;
     margin: auto;
