@@ -119,11 +119,11 @@ const logInButton = () =>{
         if(response.data !== "Incorrect email and Password") {
 
             const newArrayFiltered = allUsersInformation.filter((eachObject) => {
-                if(eachObject.email === emailName){
+                if(eachObject.email === emailDatabase){
                     console.log("The whole Object of that email",eachObject)
-                    savingEmail(emailName)
-                    savingFirstName(eachObject.firstName)
-                    savingLastName(eachObject.lastName)
+                    savingEmail(emailDatabase)
+                    savingFirstName(eachObject.firstname)
+                    savingLastName(eachObject.lastname)
                     console.log("The whole Object of that email",eachObject)
                     return eachObject
                 }}
