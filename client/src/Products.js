@@ -26,7 +26,7 @@ function Products(props) {
             </div>
 
             <div className="eachrow">
-
+                
                 {products && products.map((product) => (
 
                     <div className="outlineBox">
@@ -35,6 +35,8 @@ function Products(props) {
                                 <div className="topheaderName">
                                     Featured Products
                                 </div>
+
+                                
                             </div>
                             <div className="chocalteImage">
                             <Link to={`/products/${product.id}`}><img src={product.product_url} /></Link>

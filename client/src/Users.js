@@ -4,14 +4,15 @@ import  axios  from "axios";
 import Nav from "./Nav";
 import useVerification from "./hooks/useVerification";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
-// import { useContext } from "react";
-// import CookieProvider from "./providers/CookieProvider";
+import { useContext } from "react";
+import { userContext } from "./providers/UserProvider";
+
 
 
  
 
 function Users(props) {
-    // const {cookie} = useContext(CookieProvider)
+    const {userName, changingUsername} = useContext(userContext)
     // const {buttonState, firstName, lastName,emailName,passwordName , otherpasswordName, emailDatabase, passwordDatabase ,wrongPasswordComment ,addingClass, removingClass, logInButton, register } = useVerification();
 const [buttonState,setButtonState] = useState(false)
 const [firstName, setFirstName] = useState('')
@@ -60,6 +61,7 @@ const register = ()=> {
         console.log("Email doesn't exists your good to sign in")
         axios.post(`${linkServer}reigister`,{firstName, lastName, email:emailName, password:passwordName})
         .then((response)=>{
+            changingUsername(emailName)
             console.log("Gotten to this part",response.data)
             setFirstName('')
             setLastName('')
