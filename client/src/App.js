@@ -7,11 +7,13 @@ import Home from "./Home"
 import About from "./About.js"
 import Users from "./Users"
 import Main from "./Main.js";
-import Product from "./Products.js";
+import Products from "./Products.js";
 import Stores from "./Stores";
 import Carts from "./Carts";
 import Summary from './Summary'
-
+import ErrorPage from "./ErrorPage";
+import Product from "./Prodcut";
+import Logout from "./Logout";
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -22,49 +24,63 @@ function App() {
   // },[])
   useEffect(() => {
 
-  axios.get('http://localhost:8080/dogs')
-  .then(response =>{
-  console.log(response.data)
-  })
-  },[])
+    axios.get('http://localhost:8080/dogs')
+      .then(response => {
+        console.log(response.data)
+      })
+  }, [])
 
-  
+
   return (
-  <Router>
-    <div>
-      
+    <Router>
+      <div>
 
-      {/* A <Switch> looks through its children <Route>s and
+
+        {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
-      <Switch>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/users">
-          <Users />
-        </Route>
-        <Route path="/main">
-          <Main />
-        </Route>
-        <Route path="/product">
-          <Product />
-        </Route>
-        <Route path="/stores">
-          <Stores />
-        </Route>
-        <Route path="/cart">
-          <Carts />
-        </Route>
-        <Route path="/summary">
-          <Summary />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </div>
-  </Router>
-)
+        <Switch>
+
+          <Route path="/about">
+            <About />
+          </Route>
+
+          <Route path="/users">
+            <Users />
+          </Route>
+          <Route path="/main">
+            <Main />
+
+          </Route>
+          <Route path="/products/:id">
+            <Product />
+          </Route>
+          <Route path="/products">
+            <Products />
+          </Route>
+          <Route path="/stores">
+            <Stores />
+          </Route>
+          <Route path="/cart">
+            <Carts />
+          </Route>
+          <Route path="/summary">
+            <Summary />
+          </Route>
+
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/logout">
+            <Logout />
+          </Route>
+          
+          <Route path='*' >
+            <ErrorPage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  )
 }
 
 

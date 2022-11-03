@@ -484,6 +484,44 @@ color:#CC5500;
     font-weight:bold;
     font-size: 20px;
 }
+
+.ErrorPage {
+    padding-top:350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginConfirmationNotShow {
+   display: none;
+}
+.loginConfirmationShow {
+    display: flex;
+    justify-content: center;
+}
+
+.emailConfirmationNotShow {
+    display: none;
+ }
+ .emailConfirmationShow {
+     display: flex;
+     justify-content: center;
+ }
+
+ .userStatment {
+   padding-top: 400px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+ }
+.buttonStyle {
+ justify-content: center;
+ margin-left: 900px;
+}
+
+table, th, td {
+    border:1px solid black;
+  }
 /* .parentcontainerrow {
     max-width:1080px;
     margin: auto;

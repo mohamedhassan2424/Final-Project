@@ -12,3 +12,9 @@ INSERT INTO sampleS (store_name, rating,image_link) VALUES ('Pusateris', 4.6, 'h
 INSERT INTO sampleS ( store_name, rating,image_link) VALUES ( 'Staples', 4.7, 'https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/551/0231a932-a563-49ca-8da7-532cb5cdfeb6.png');
 INSERT INTO sampleS (store_name, rating,image_link) VALUES ('M&M Food Market', 4.3, 'https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/610/2a87c25b-5a28-4cb8-b1bc-cd5c57d3dae6.png');
 INSERT INTO sampleS (store_name, rating,image_link) VALUES ('Bulk Barn', 4.8, 'https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/635/8731ed2a-42a0-46a1-baf3-07713a8c6475.png');
+
+
+
+-- SELECT * FROM products 
+-- JOIN categories ON product_id = products.product_id
+-- WHERE category_name_value= 'Dairy';
