@@ -89,6 +89,7 @@ app.get('/sampleStores', (req, res) => {
 
 })
 
+
 app.get('/allProducts', (req, res) => {
 
     return pool.query(`SELECT * FROM products ;`)

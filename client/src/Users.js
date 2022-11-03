@@ -1,11 +1,11 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "./styles.css"
-
 import  axios  from "axios";
 import Nav from "./Nav";
-
+import useVerification from "./hooks/useVerification";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 function Users(props) {
+    // const {buttonState, firstName, lastName,emailName,passwordName , otherpasswordName, emailDatabase, passwordDatabase ,wrongPasswordComment ,addingClass, removingClass, logInButton, register } = useVerification();
 const [buttonState,setButtonState] = useState(false)
 const [firstName, setFirstName] = useState('')
 const [lastName, setLastName] = useState('')
@@ -15,41 +15,72 @@ const [otherpasswordName, setOtherpasswordName] = useState('')
 const [emailDatabase, setEmailDatabase] = useState('')
 const [passwordDatabase, setPasswordDatabase] = useState('')
 const [wrongPasswordComment, setWrongPasswordComment]= useState(false)
+const [allUsersInformation, setAllUsersInformation] = useState([])
 const history = useHistory();
 
 const linkServer = "http://localhost:8080/"
+useEffect(() => {
 
+    axios.get('http://localhost:8080/content')
+        .then(response => {
+            console.log(response.data)
+            setAllUsersInformation(response.data)
+        })
+}, [])
+console.log("allUsersInformation",allUsersInformation)
 
 const register = ()=> {
     console.log("Check point one")
-    axios.post(`${linkServer}reigister`,{firstName, lastName, email:emailName, password:passwordName})
-    .then((response)=>{
-        console.log("Gotten to this part",response.data)
-        setFirstName('')
-        setLastName('')
-        setEmailName('')
-        setPasswordName('')
-        setOtherpasswordName('')
 
-        let path = `/home`;
-        // let history = useHistory();
-        history.push(path);
-
-    })
-    .catch((error)=>{
-        console.log(error)
-    })
-
-console.log("Checkpoint 2")
+    const newArrayFiltered = allUsersInformation.filter((eachObject) => {
+        if(eachObject.email === emailName){
+            console.log("email is the same")
+            console.log(emailName)
+            return true;
+        }else{
+            console.log('Email doesnt exisit')
+            console.log(emailName)
+            return false;
+        }}
+    )
+    console.log(newArrayFiltered)
    
+    if(newArrayFiltered.length > 0){
+        console.log("Email already exists")
+    } else {
+        console.log("Email doesn't exists your good to sign in")
+        axios.post(`${linkServer}reigister`,{firstName, lastName, email:emailName, password:passwordName})
+        .then((response)=>{
+            console.log("Gotten to this part",response.data)
+            setFirstName('')
+            setLastName('')
+            setEmailName('')
+            setPasswordName('')
+            setOtherpasswordName('')
+    
+            let path = `/home`;
+            // let history = useHistory();
+            history.push(path);
+    
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    
+    console.log("Checkpoint 2")
+       
+    
+    
+      console.log("Checkpoint 3")
+            
+     
+    console.log("Checkpoint 4")
+    }
 
 
-  console.log("Checkpoint 3")
-        
- 
-console.log("Checkpoint 4")
+}   
 
-}
+
 
 const logInButton = () =>{
     axios.post(`${linkServer}login`,{email:emailDatabase, password:passwordDatabase})
