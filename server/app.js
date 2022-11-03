@@ -24,7 +24,7 @@ const pool = new Pool({
 
 app.use(
     cookieSession({
-        name: "cookieName",
+        name: "session",
         keys: ["secretKey1", "secretKey2"],
     })
 );
@@ -49,7 +49,8 @@ app.get("/dogs", (req, res) => {
         "Cooper",
         "Daisy"]
         const userObjectValue = req.session.userObject
-        console.log("UserObjectValue", userObjectValue)
+        // console.log("UserObjectValue", userObjectValue)
+        console.log(req.session)
     res.json(dogs);
 })
 app.get("/car", (req, res) => {
@@ -145,10 +146,10 @@ app.post("/reigister", (req, res) => {
         password: req.body.password }
 
         req.session.userObject = userObjectDetails 
-
+        req.session.test = "test123"
     const userObjectValue = req.session.userObject
-    console.log("UserObjectValue", userObjectValue)
-
+    // console.log("UserObjectValue", userObjectValue)
+        console.log(req.session)
     const firstName = req.body.firstName
     const lastName = req.body.lastName
     const email = req.body.email
