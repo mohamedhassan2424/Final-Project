@@ -15,6 +15,7 @@ const [otherpasswordName, setOtherpasswordName] = useState('')
 const [emailDatabase, setEmailDatabase] = useState('')
 const [passwordDatabase, setPasswordDatabase] = useState('')
 const [wrongPasswordComment, setWrongPasswordComment]= useState(false)
+const [existingEmail, setExistingEmail]= useState(false)
 const [allUsersInformation, setAllUsersInformation] = useState([])
 const history = useHistory();
 
@@ -47,6 +48,7 @@ const register = ()=> {
    
     if(newArrayFiltered.length > 0){
         console.log("Email already exists")
+        setExistingEmail(true)
     } else {
         console.log("Email doesn't exists your good to sign in")
         axios.post(`${linkServer}reigister`,{firstName, lastName, email:emailName, password:passwordName})
@@ -174,7 +176,8 @@ const removingClass = ()=>{
                 <div className= "sumbitButtonCenter">
                 <button class="sumbitButton" type="sumbit" onClick={register}>Signup</button>
                 </div>
-
+                <h3 className = {existingEmail?"emailConfirmationShow" : "emailConfirmationNotShow"}>The email you typed in doesn't exist</h3>
+                <h3 className = {existingEmail?"emailConfirmationShow" : "emailConfirmationNotShow"}>Please type in a Different email</h3>
         
             </form>
             <form onSubmit={(event) => event.preventDefault()}  className={buttonState ? "form loginForm": "form"}>

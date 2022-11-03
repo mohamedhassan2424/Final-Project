@@ -499,6 +499,14 @@ color:#CC5500;
     justify-content: center;
 }
 
+.emailConfirmationNotShow {
+    display: none;
+ }
+ .emailConfirmationShow {
+     display: flex;
+     justify-content: center;
+ }
+
 /* .parentcontainerrow {
     max-width:1080px;
     margin: auto;
