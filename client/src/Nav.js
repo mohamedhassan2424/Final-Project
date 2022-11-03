@@ -1,13 +1,21 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
-
+import { useContext } from "react";
+import { userContext } from "./providers/UserProvider";
 function Nav(props) {
+    const {firstNameSaved,lastNameSaved,emailSaved ,savingFirstName,savingLastName,savingEmail } = useContext(userContext)
     return(
         <div>
 <nav className="navlistItems">
                         <ul>
+                            <li>
+                        Welcome Back :{firstNameSaved}
+                            </li>
+                            <li>
+                    {lastNameSaved}
+                            </li>
           <li>
-            <Link to="/home">Home</Link>
+            <Link to="/home">Home </Link>
           </li>
           <li>
             <Link to="/stores">Stores</Link>
@@ -30,6 +38,9 @@ function Nav(props) {
           </li>
           <li>
             <Link to="/summary">Summary Cart</Link>
+          </li>
+          <li>
+            <Link to="/logout">Logout</Link>
           </li>
         </ul>
                          
