@@ -12,7 +12,7 @@ import { userContext } from "./providers/UserProvider";
  
 
 function Users(props) {
-    const {userName, changingUsername} = useContext(userContext)
+    const {firstNameSaved,lastNameSaved,emailSaved ,savingFirstName,savingLastName,savingEmail } = useContext(userContext)
     // const {buttonState, firstName, lastName,emailName,passwordName , otherpasswordName, emailDatabase, passwordDatabase ,wrongPasswordComment ,addingClass, removingClass, logInButton, register } = useVerification();
 const [buttonState,setButtonState] = useState(false)
 const [firstName, setFirstName] = useState('')
@@ -61,7 +61,10 @@ const register = ()=> {
         console.log("Email doesn't exists your good to sign in")
         axios.post(`${linkServer}reigister`,{firstName, lastName, email:emailName, password:passwordName})
         .then((response)=>{
-            changingUsername(emailName)
+            savingEmail(emailName)
+            savingFirstName(firstName)
+            savingLastName(lastName)
+
             console.log("Gotten to this part",response.data)
             setFirstName('')
             setLastName('')
@@ -94,9 +97,14 @@ const register = ()=> {
 
 
 const logInButton = () =>{
+
+    
+
+
     axios.post(`${linkServer}login`,{email:emailDatabase, password:passwordDatabase})
     .then((response)=>{
         
+          
         console.log("Gotten to this part, data response :",response.data)
         setFirstName('')
         setLastName('')
@@ -109,6 +117,18 @@ const logInButton = () =>{
 
         console.log(response.data)
         if(response.data !== "Incorrect email and Password") {
+
+            const newArrayFiltered = allUsersInformation.filter((eachObject) => {
+                if(eachObject.email === emailName){
+                    console.log("The whole Object of that email",eachObject)
+                    savingEmail(emailName)
+                    savingFirstName(eachObject.firstName)
+                    savingLastName(eachObject.lastName)
+                    console.log("The whole Object of that email",eachObject)
+                    return eachObject
+                }}
+            )
+
            let path = `/home`;
       
             history.push(path);

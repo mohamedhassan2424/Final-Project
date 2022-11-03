@@ -3,17 +3,26 @@ import React ,{ useState,createContext} from "react";
 export const userContext = createContext();
 
 export default function UserProvider(props) {
-const [userName, setUserName] = useState('')
+const [firstNameSaved, setFirstNameSaved] = useState('')
+const [lastNameSaved, setLastNameSaved] = useState('')
 const [emailSaved, setEmailSaved] = useState('')
 
-const changingUsername = (nameValue) =>{
-    setUserName(nameValue)
-    console.log("Username Value Email :",nameValue)
+const savingFirstName = (nameValue) =>{
+    setFirstNameSaved(nameValue)
+    console.log("FirstNameSaved :",nameValue)
 }
 
-const savingEmail
+const savingEmail = (email) =>{
+    setEmailSaved(email)
+    console.log("Email address :",email)
+}
 
-const providerData = {userName,changingUsername }
+const savingLastName = (lastName) =>{
+    setLastNameSaved(lastName)
+    console.log("Email address :",lastName)
+}
+
+const providerData = {firstNameSaved,lastNameSaved,emailSaved ,savingFirstName,savingLastName,savingEmail }
 return(
     <userContext.Provider value ={providerData}>
         {props.children}
