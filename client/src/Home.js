@@ -118,7 +118,7 @@ function Home(props) {
                                 <div className="priceInformation">
                                     <span className="firstPrice">{product.price}</span> <span className="secoundPrice">         {product.sale_price}</span>
                                 </div>
-                                <div className="addContent"> <h3>Add</h3>
+                               <div className="addContent"><Link to="/stores">  <h3>Choose a Store</h3></Link> 
                                 </div>
                             </div>
                         </div>
