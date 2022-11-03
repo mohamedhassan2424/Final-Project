@@ -77,3 +77,8 @@ justify-content: space-evenly;
     box-sizing: border-box;
     font-family: FoundersGroteskWeb, sans-serif;
 }
+
+.chocolateImage {
+  display: flex;
+  justify-content: center;
+}
