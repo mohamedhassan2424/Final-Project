@@ -14,32 +14,36 @@ function Nav(props) {
                         
                             </li>
           <li>
-            <Link to="/home">Home </Link>
+            {firstNameSaved ?<Link to="/home">Home </Link>:<Link to="/users">Home </Link>}
+
+          </li>
+          <li>{ firstNameSaved ? <Link to="/stores">Stores</Link>:<Link to="/users">Stores</Link>}
+  
+          </li>
+          <li> {firstNameSaved ? <Link to="/products">Products</Link>:<Link to="/users">Products</Link>}
+
+          </li>
+          <li>{firstNameSaved ? <Link to="/users">Users</Link> :<Link to="/users">Users</Link>
+            }
+            
           </li>
           <li>
-            <Link to="/stores">Stores</Link>
-          </li>
-          <li>
-            <Link to="/products">Products</Link>
-          </li>
-          <li>
-            <Link to="/users">Users</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
+            {firstNameSaved ? <Link to="/about">About</Link>:<Link to="/users">About</Link>}
+            
           </li>
           
           <li>
-            <Link to="/main">Main</Link>
+            { firstNameSaved?<Link to="/main">Main</Link>:<Link to="/users">Main</Link>}
+    
+          </li>
+          <li>{firstNameSaved?  <Link to="/cart"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link>:  <Link to="/users"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link> }
+            
           </li>
           <li>
-            <Link to="/cart"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link>
+            {firstNameSaved?<Link to="/summary">Summary Cart</Link>:  <Link to="/users">Summary Cart</Link>  }
+
           </li>
-          <li>
-            <Link to="/summary">Summary Cart</Link>
-          </li>
-          <li>
-            <Link to="/logout">Logout</Link>
+          <li>{firstNameSaved? <Link to="/logout">Logout</Link>: <Link to="/users">Logout</Link>}
           </li>
         </ul>
                          
