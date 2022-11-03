@@ -304,6 +304,7 @@ color:gray;
 .chocalteImage {
     display:flex;
     justify-content: center;
+    max-width: 200px;
 }
 
 .ProductInforamtion {

@@ -11,6 +11,7 @@ import Product from "./Products.js";
 import Stores from "./Stores";
 import Carts from "./Carts";
 import Summary from './Summary'
+
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
