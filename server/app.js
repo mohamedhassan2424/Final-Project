@@ -20,6 +20,16 @@ const pool = new Pool({
     host: 'localhost',
     database: 'final'
 });
+
+
+app.use(
+    cookieSession({
+        name: "cookieName",
+        keys: ["secretKey1", "secretKey2"],
+    })
+);
+
+
 pool.connect()
 //console.log("pool",pool)
 
@@ -38,11 +48,13 @@ app.get("/dogs", (req, res) => {
         "Bailey",
         "Cooper",
         "Daisy"]
-        req.session.userId = "Mohamed Hassan"
-        console.log(req.session.userId)
+        const userObjectValue = req.session.userObject
+        console.log("UserObjectValue", userObjectValue)
     res.json(dogs);
 })
 app.get("/car", (req, res) => {
+    // const currentSession = req.session.userObject
+    console.log("CurrentSession", req.session.userObject)
     res.send("Hello world")
 })
 
@@ -125,15 +137,27 @@ app.get('/allProducts', (req, res) => {
 })
 
 app.post("/reigister", (req, res) => {
+
+    userObjectDetails = { firstName: req.body.firstName, 
+        lastName: req.body.lastName, 
+        email: req.body.email, 
+        password: req.body.password }
+
+        req.session.userObject = userObjectDetails 
+
+    const userObjectValue = req.session.userObject
+    console.log("UserObjectValue", userObjectValue)
+
     const firstName = req.body.firstName
     const lastName = req.body.lastName
     const email = req.body.email
     const password = req.body.password
+
     const sqlQuery = "INSERT INTO users (firstName, lastName, email, password) VALUES ($1,$2,$3,$4);"
     pool.query(sqlQuery, [firstName, lastName, email, password])
-    .then((response)=>{
-        res.send(response)
-    })
+        .then((response) => {
+            res.send(response)
+        })
 
 })
 app.post("/login", (req, res) => {

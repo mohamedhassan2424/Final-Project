@@ -490,6 +490,15 @@ color:#CC5500;
     justify-content: center;
     align-items: center;
 }
+
+.loginConfirmationNotShow {
+   display: none;
+}
+.loginConfirmationShow {
+    display: flex;
+    justify-content: center;
+}
+
 /* .parentcontainerrow {
     max-width:1080px;
     margin: auto;

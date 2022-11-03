@@ -14,6 +14,7 @@ const [passwordName, setPasswordName] = useState('')
 const [otherpasswordName, setOtherpasswordName] = useState('')
 const [emailDatabase, setEmailDatabase] = useState('')
 const [passwordDatabase, setPasswordDatabase] = useState('')
+const [wrongPasswordComment, setWrongPasswordComment]= useState(false)
 const history = useHistory();
 
 const linkServer = "http://localhost:8080/"
@@ -60,6 +61,10 @@ const logInButton = () =>{
         setEmailName('')
         setPasswordName('')
         setOtherpasswordName('')
+
+
+
+
         console.log(response.data)
         if(response.data !== "Incorrect email and Password") {
            let path = `/home`;
@@ -67,6 +72,7 @@ const logInButton = () =>{
             history.push(path);
         } else{
             console.log("Wrong password")
+            setWrongPasswordComment(true)
         }
        
     })
@@ -156,6 +162,8 @@ const removingClass = ()=>{
                 <div className= "sumbitButtonCenter">
                 <button className="sumbitButton" type="sumbit" onClick = {logInButton}>Signup</button>
                 </div>
+                <h4 className ={wrongPasswordComment ? "loginConfirmationShow" :"loginConfirmationNotShow" }>Incorrect Email or Password Typed In. </h4>
+                <h4 className ={wrongPasswordComment ? "loginConfirmationShow" :"loginConfirmationNotShow" }>Please Try Again. </h4>
             </form>
             </div>
             </div>
