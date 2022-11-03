@@ -4,7 +4,14 @@ import  axios  from "axios";
 import Nav from "./Nav";
 import useVerification from "./hooks/useVerification";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
+// import { useContext } from "react";
+// import CookieProvider from "./providers/CookieProvider";
+
+
+ 
+
 function Users(props) {
+    // const {cookie} = useContext(CookieProvider)
     // const {buttonState, firstName, lastName,emailName,passwordName , otherpasswordName, emailDatabase, passwordDatabase ,wrongPasswordComment ,addingClass, removingClass, logInButton, register } = useVerification();
 const [buttonState,setButtonState] = useState(false)
 const [firstName, setFirstName] = useState('')

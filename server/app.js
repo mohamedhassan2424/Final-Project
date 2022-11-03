@@ -7,6 +7,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 const app = express();
 const { Pool } = require('pg');
+// const LocalStorage = require('node-localstorage').LocalStorage, 
+// localStorage = new LocalStorage('./scratch');
+const store = require('store')
 const cookieSession = require("cookie-session");
 // middleware setup
 app.use(morgan(ENVIROMENT));
@@ -48,9 +51,9 @@ app.get("/dogs", (req, res) => {
         "Bailey",
         "Cooper",
         "Daisy"]
-        const userObjectValue = req.session.userObject
+        const userObjectValue = store.get('userObject')
         // console.log("UserObjectValue", userObjectValue)
-        console.log(req.session)
+        console.log("UserObjectValue",userObjectValue)
     res.json(dogs);
 })
 app.get("/car", (req, res) => {
@@ -148,6 +151,7 @@ app.post("/reigister", (req, res) => {
         req.session.userObject = userObjectDetails 
         req.session.test = "test123"
     const userObjectValue = req.session.userObject
+        store.set("userObject",userObjectValue)
     // console.log("UserObjectValue", userObjectValue)
         console.log(req.session)
     const firstName = req.body.firstName
