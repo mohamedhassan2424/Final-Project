@@ -2,6 +2,7 @@ import React, {useEffect,useState} from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Nav from "./Nav";
 function Product(){
     const [product, setProduct] = useState([])
     const params = useParams();
@@ -21,36 +22,7 @@ function Product(){
    
     return (
         <div>
-<nav className="navlistItems">
-                    <ul>
-                        <li>
-                            <Link to="/home">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/stores">Stores</Link>
-                        </li>
-                        <li>
-                            <Link to="/products">Products</Link>
-                        </li>
-                        <li>
-                            <Link to="/users">Users</Link>
-                        </li>
-                        <li>
-                            <Link to="/about">About</Link>
-                        </li>
-
-                        <li>
-                            <Link to="/main">Main</Link>
-                        </li>
-                        <li>
-                            <Link to="/cart"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link>
-                        </li>
-                        <li>
-                            <Link to="/summary">Summary Cart</Link>
-                        </li>
-                    </ul>
-
-                </nav>
+<Nav />
 
             <h1>
                 The product component which was clicked on was {params.id} 

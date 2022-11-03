@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 const app = express();
 const { Pool } = require('pg');
+const cookieSession = require("cookie-session");
 // middleware setup
 app.use(morgan(ENVIROMENT));
 app.set("view engine", "ejs");
@@ -37,6 +38,8 @@ app.get("/dogs", (req, res) => {
         "Bailey",
         "Cooper",
         "Daisy"]
+        req.session.userId = "Mohamed Hassan"
+        console.log(req.session.userId)
     res.json(dogs);
 })
 app.get("/car", (req, res) => {
