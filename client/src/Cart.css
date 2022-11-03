@@ -28,14 +28,15 @@
     height: 50px;
     width: 100px;
     font-size: 14px;
+    cursor: pointer
 }
 
 .checkout {
     display: flex;
     text-align: center;
     padding: 5px;
-    color: rgb(0, 84, 0);
-    background-color: aqua;
+    color: rgb(0, 0, 0);
+    background-color: rgb(0, 249, 0);
     border-radius: 5.5px 5.5px;
     justify-content: center;
     font-weight: 600;
@@ -47,13 +48,12 @@
     width: 230px;
     height: 90px;
     font-size: 30px;
+    cursor: pointer;
 }
 
 .check-out {
   display: flex;
   justify-content: center;
-  padding-top: 155px;
-
 }
 
 .my-items {
@@ -85,16 +85,16 @@ justify-content: space-evenly;
 }
 
 .summary {
-    display: row;
+    display: flex;
+    flex-direction: column;
     padding: 5px 5px 5px 5px;
     background-color: white;
-    box-shadow: 0px 0px 0px 4px darkgrey;
+    box-shadow: 0px 5px 30px 3px grey;
     width: 25%;
     padding-left: 7.5px;
     padding-right: 7.5px;
     margin: 60px;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     height: 400px;
 }
 
