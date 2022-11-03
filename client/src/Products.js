@@ -6,18 +6,18 @@ import Product from "./Prodcut";
 import './styles.css'
 import Nav from "./Nav";
 function Products(props) {
-    const [products, setProducts] = useState([])
+    // const [products, setProducts] = useState([])
     const [dairy, setDairy] = useState([])
     const [beverage ,setBeverage] = useState([])
     const [frozenFood, setFrozenFood] = useState([])
-    useEffect(() => {
+    // useEffect(() => {
 
-        axios.get('http://localhost:8080/allProducts')
-            .then(response => {
-                console.log(response.data)
-                setProducts(response.data)
-            })
-    }, [])
+    //     axios.get('http://localhost:8080/allProducts')
+    //         .then(response => {
+    //             console.log(response.data)
+    //             setProducts(response.data)
+    //         })
+    // }, [])
     useEffect(() => {
 
         axios.get('http://localhost:8080/frozenFood')
@@ -43,6 +43,7 @@ function Products(props) {
                 setDairy(response.data)
             })
     }, [])
+
     return (
         <div className="mainContainerElement">
             <div className="navbar">
@@ -135,9 +136,10 @@ function Products(props) {
 
 }
  </div>
- <div className="eachrow">
 
  <div className ="titlePageCategoryProduct"><h1>{beverage[0].category_name_value}</h1></div>     
+ <div className="eachrow">
+
 {beverage && beverage.map((product) => (
 
 <div className="outlineBox">
