@@ -148,26 +148,35 @@ function Carts(props) {
 
       <div className="summary-box">
       <div className="summary">
-        <div>
+        <div className="title-summary">
           <h1>Summary</h1>
         </div>
-        <div>
-          <h2>3 Items</h2>
+
+
+        <div className="row">
+          <h2>3 Items</h2> <h2>$18.47</h2>
         </div>
-        <div>
-          <h2>Savings $3.00</h2>
+
+        <div className="row">
+          <h2>Savings</h2> <h2>$3.00</h2>
         </div>
-        <div>
-          <h1>Total $13.47</h1>
-        </div>
-      </div>
-      </div>
+
       <hr></hr>
+
+      <div className="row">
+          <h1>Total</h1> <h1>$13.47</h1>
+        </div>
+
+
+
             <div className="check-out">
               <button className="checkout">
                 <i className="fa-regular fa-credit-card"></i>Checkout
               </button>
             </div>
+      </div>
+      </div>
+      <hr></hr>
           </div>   
   );
 }

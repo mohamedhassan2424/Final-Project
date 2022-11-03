@@ -40,7 +40,7 @@
     justify-content: center;
     font-weight: 600;
     line-height: 1.42857;
-    margin: 45px;
+    margin: 5px;
     text-transform: none;
     font-family: FoundersGroteskWeb, sans-serif;
     align-items: center;
@@ -52,6 +52,7 @@
 .check-out {
   display: flex;
   justify-content: center;
+  padding-top: 155px;
 
 }
 
@@ -98,6 +99,17 @@ justify-content: space-evenly;
 }
 
 .summary-box {
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title-summary {
   display: flex;
   justify-content: center;
 }
