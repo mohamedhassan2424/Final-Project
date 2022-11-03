@@ -164,29 +164,9 @@ function Carts(props) {
 
       <hr></hr>
 
-    return (
-        <div>
-            <Nav />
-            <h1>welcome to the cart page</h1>
-            <h2>hello world</h2>
-            <table className="">
-  <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-</table>
-        </div>
+         <div className="row">
+          <h2>Total</h2> <h2>$18.47</h2>
+         </div>
 
 
 
