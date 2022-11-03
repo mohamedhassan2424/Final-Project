@@ -206,6 +206,35 @@ app.get("/content", (req, res) => {
         })
 })
 
+app.get("/frozenFood", (req,res)=>{
+    return pool.query(`SELECT * FROM products WHERE category_name_value = 'Frozen Fodd';`)
+    .then((response)=>{
+        res.json(response.rows)
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+})
+
+app.get("/dairy", (req,res)=>{
+    return pool.query(`SELECT * FROM products WHERE category_name_value = 'Frozen Fodd';`)
+    .then((response)=>{
+        res.json(response.rows)
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+})
+
+app.get("/frozenFood", (req,res)=>{
+    return pool.query(`SELECT * FROM products WHERE category_name_value = 'Frozen Fodd';`)
+    .then((response)=>{
+        res.json(response.rows)
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+})
 app.get('/', (req, res) => {
     res.json({ greetings: 'hello world' });
 })
