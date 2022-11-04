@@ -27,6 +27,11 @@ function Product(){
 const storeNameSaved= cookies.get('storeName')
     console.log("Productdata",product)
    console.log("SavingStoreName",storeNameSaved)
+
+const addingProductDatabase = ()=>{
+    
+}
+
     return (
         <div>
 <Nav />
@@ -74,7 +79,7 @@ const storeNameSaved= cookies.get('storeName')
             <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
         </div>
         <div > 
-        <button className="addContent" ><h3>Confirm to Add Product</h3></button>
+        <button className="addContent" onClick={addingProductDatabase}><h3>Confirm to Add Product</h3></button>
         </div>
         
     </div>
