@@ -50,7 +50,8 @@ function StoreProduct(props){
     <h1>The store Selected is {storeParamter.id}</h1>
     <h1>Welcome to {storeParamter.id} </h1>
     <div className="eachrow">
-    <h1>{dairy[0] ? dairy[0].category_name_value:<h1>Waiting .......</h1>}</h1>
+    <h1>{
+    dairy[0] ? dairy[0].category_name_value:<h1>Waiting .......</h1>}</h1>
                 {dairy && dairy.map((product) => (
 
                     <div className="outlineBox">
@@ -80,7 +81,7 @@ function StoreProduct(props){
                             <div className="priceInformation">
                                 <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
                             </div>
-                            <div className="addContent"> <Link to={`/product/${product.id}`}><h3>Add</h3></Link>
+                            <div className="addContent"> <Link to={`/products/${product.id}`}><h3>Add</h3></Link>
                             </div>
                         </div>
                     </div>
@@ -88,8 +89,9 @@ function StoreProduct(props){
                 ))
 
 
-                }
+                
              }
+
             </div>
  <div className="eachrow">
  <div className ="titlePageCategoryProduct">  <h1>{frozenFood[0]?frozenFood[0].category_name_value :<h1>Waiting .......</h1>}</h1></div>
@@ -122,7 +124,7 @@ function StoreProduct(props){
         <div className="priceInformation">
             <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
         </div>
-        <div className="addContent"> <Link to={`/product/${product.id}`}> <h3>Add</h3></Link>
+        <div className="addContent"> <Link to={`/products/${product.id}`}> <h3>Add</h3></Link>
         </div>
     </div>
 </div>
@@ -167,7 +169,7 @@ function StoreProduct(props){
         <div className="priceInformation">
             <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
         </div>
-        <div className="addContent"><Link to={`/product/${product.id}`}> <h3>Add</h3></Link>
+        <div className="addContent"><Link to={`/products/${product.id}`}> <h3>Add</h3></Link>
         </div>
     </div>
 </div>
