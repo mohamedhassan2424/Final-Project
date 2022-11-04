@@ -6,7 +6,7 @@ function StoreProduct(props){
     console.log('The storeNameid',params)
     return(
 <div>
-    <h1>The store Selected is {params}</h1>
+    <h1>The store Selected is {params.id}</h1>
     <h1>hello world</h1>
 </div>
     );

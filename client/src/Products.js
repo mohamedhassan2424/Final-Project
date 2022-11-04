@@ -45,7 +45,7 @@ function Products(props) {
                 setDairy(response.data)
             })
     }, [])
-  
+//   console.log("Paramter")
     return (
         <div className="mainContainerElement">
             <div className="navbar">

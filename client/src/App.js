@@ -53,15 +53,16 @@ function App() {
             <Main />
 
           </Route>
+          <Route path="/stores">
+            <Stores />
+          </Route>
           <Route path="/products/:id">
-            <Product />
+            <StoreProduct />
           </Route>
           <Route path="/products">
             <Products />
           </Route>
-          <Route path="/stores">
-            <Stores />
-          </Route>
+          
           <Route path="/cart">
             <Carts />
           </Route>
@@ -72,9 +73,7 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/products/:id">
-            <StoreProduct />
-          </Route>
+          
           <Route path="/logout">
             <Logout />
           </Route>
