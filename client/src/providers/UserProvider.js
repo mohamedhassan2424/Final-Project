@@ -9,6 +9,20 @@ const [lastNameSaved, setLastNameSaved] = useState(cookies.get('lastNameValue') 
 const [emailSaved, setEmailSaved] = useState(cookies.get('emailValue') ? cookies.get('emailValue'): "")
 const [savingStoreName, setSavingStoreName] = useState(cookies.get('storeName') ? cookies.get('storeName'): "")
 const [userId, setUserId] = useState('')
+const [counterValue, setCounterValue] = useState(0);
+
+
+const increment = function() {
+    setCounterValue(counterValue + 1);
+  };
+  const decrement = function() {
+    setCounterValue(counterValue - 1);
+  };
+  const clear = function() {
+    setCounterValue(0);
+  };
+
+
 console.log("FirstNameSaved",firstNameSaved)
 console.log("LastNameSaved",lastNameSaved)
 console.log("EmailSaved",emailSaved)
@@ -36,7 +50,7 @@ const savingStoreFunction = (store)=>{
     setSavingStoreName(store)
     console.log(savingStoreFunction)
 }
-const providerData = {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction}
+const providerData = {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,increment ,decrement,clear}
 return(
     <userContext.Provider value ={providerData}>
         {props.children}
