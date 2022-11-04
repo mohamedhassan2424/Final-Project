@@ -80,7 +80,7 @@ function StoreProduct(props){
                             <div className="priceInformation">
                                 <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
                             </div>
-                            <div className="addContent"> <Link to={`/products/${product.id}`}><h3>Add</h3></Link>
+                            <div className="addContent"> <Link to={`/product/${product.id}`}><h3>Add</h3></Link>
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@ function StoreProduct(props){
         <div className="priceInformation">
             <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
         </div>
-        <div className="addContent"> <Link to={`/products/${product.id}`}> <h3>Add</h3></Link>
+        <div className="addContent"> <Link to={`/product/${product.id}`}> <h3>Add</h3></Link>
         </div>
     </div>
 </div>
@@ -167,7 +167,7 @@ function StoreProduct(props){
         <div className="priceInformation">
             <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
         </div>
-        <div className="addContent"><Link to={`/products/${product.id}`}> <h3>Add</h3></Link>
+        <div className="addContent"><Link to={`/product/${product.id}`}> <h3>Add</h3></Link>
         </div>
     </div>
 </div>
