@@ -15,7 +15,7 @@ function StoreProduct(props){
     const {storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,settingStoreIdValue , savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction} = useContext(userContext)
     const storeParamter=  useParams()
     console.log('The storeNameid',storeParamter)
-    // cookies.set('storeName',storeParamter.id)
+    cookies.set('storeName',storeParamter.id)
     const [dairy, setDairy] = useState([])
     const [beverage ,setBeverage] = useState([])
     const [frozenFood, setFrozenFood] = useState([])

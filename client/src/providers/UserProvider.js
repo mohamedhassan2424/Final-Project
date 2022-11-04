@@ -25,6 +25,7 @@ useEffect(() => {
 }, [])
 
 
+
 const incrementFunction = function() {
     setCounterValue(counterValue + 1);
   };
@@ -68,7 +69,7 @@ const settingStoreIdValue = (id)=>{
     setStoreIdNumber(id)
     console.log(id)
 }
-const providerData = {storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue , savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction}
+const providerData = {allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue , savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction}
 return(
     <userContext.Provider value ={providerData}>
         {props.children}

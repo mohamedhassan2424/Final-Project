@@ -9,11 +9,15 @@ import Cookies from 'universal-cookie';
 import Nav from "./Nav";
 
 function Product() {
-
-    const { firstNameSaved, lastNameSaved, emailSaved, savingStoreName, counterValue, userId, savingFirstName, savingLastName, savingEmail, savingUserId, savingStoreFunction, incrementFunction, decrementFunction, clearFunction } = useContext(userContext)
+    
+    const {allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue , savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction} = useContext(userContext)
     const [product, setProduct] = useState([])
+    const [storeName, setStoreName] = useState('')
     const params = useParams();
+    const cookies = new Cookies();
     console.log(params)
+    console.log('allTheStore',allTheStore)
+    let storeIDValue = cookies.get('storeId')
 
     useEffect(() => {
 
@@ -24,7 +28,7 @@ function Product() {
 
             })
     }, [])
-    const cookies = new Cookies();
+   
     const storeNameSaved = cookies.get('storeName')
     console.log("Productdata", product)
     console.log("SavingStoreName", storeNameSaved)
