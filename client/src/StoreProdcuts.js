@@ -8,16 +8,18 @@ import { BrowserRouter as Router, Switch, Route, Link, useLocation,  } from "rea
 import Nav from "./Nav";
 import axios from "axios";
 import Cookies from 'universal-cookie';
+import { cookie } from "request";
 const cookies = new Cookies();
 
 function StoreProduct(props){
-    const {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction} = useContext(userContext)
+    const {storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,settingStoreIdValue , savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction} = useContext(userContext)
     const storeParamter=  useParams()
     console.log('The storeNameid',storeParamter)
     cookies.set('storeName',storeParamter.id )
     const [dairy, setDairy] = useState([])
     const [beverage ,setBeverage] = useState([])
     const [frozenFood, setFrozenFood] = useState([])
+    const [storeIdState, setStoreIdState] = useState([])
     console.log(savingStoreName,"savingStoreName")
     useEffect(() => {
 
@@ -44,6 +46,22 @@ function StoreProduct(props){
                 setDairy(response.data)
             })
     }, [])
+
+    useEffect(() => {
+
+        axios.get('http://localhost:8080/allStores')
+            .then(response => {
+                console.log(response.data)
+                setStoreIdState(response.data)
+
+            })
+    }, [])
+
+    const filteredStoreData = storeIdState.filter((storeObject)=>{
+        // if(storeObject. === storeParamter.id){
+        //     cookie.set('storeId',storeObject.id)
+        // }
+    })
     return(
 <div>
     <Nav />
