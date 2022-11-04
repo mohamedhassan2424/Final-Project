@@ -75,7 +75,60 @@ function About(props) {
         </h1>
       </div>
 
+      <div className="one">
+        <h3>
+        The groceries you ordered. No letdowns.
+        </h3>
+        <p>
+        Straight from our warehouse to your door.
+        </p>     
+      </div>
+
+      <div className="two">
+        <h3>
+        Delivered on time.
+        </h3>
+          <p>
+          Pick a time. We'll be there.
+          </p>
+      </div>
+
+      <div className="three">
+        <h3>
+        Thousands of products.
+        </h3>
+          <p>
+          Everything on your grocery list or discover something new.
+          </p>
+      </div>
+
+      <div className="four">
+        <h3>
+        Guaranteed fresh.
+        </h3>
+          <p>
+          Our food is fresh or it's free.
+          </p>
+      </div>
       
+      <div className="five">
+      <h3>
+      Affordable prices. Hot deals.
+          </h3>
+            <p>
+            No hidden fees.
+            </p>
+      </div>
+
+      <div className="six">
+      <h3>
+      Grocery delivery reimagined.
+          </h3>
+            <p>
+            Our team and the tech behind it, at your service.
+            </p>
+      </div>
+
     </div>
   );
 }
