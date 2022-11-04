@@ -5,3 +5,4 @@
 -- INSERT INTO sales (total, delivery_time) VALUES (39.10,5);
 
 INSERT INTO sales (user_id_sales,stores_id_sales, products_id ) VALUES (1,1,1);
+INSERT INTO sales (user_id_sales,stores_id_sales, products_id ) VALUES (3,6,4);

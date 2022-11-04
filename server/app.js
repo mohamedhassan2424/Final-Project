@@ -200,7 +200,17 @@ app.post('/addingToSalesDatabase',(req,res)=>{
     console.log("ProductIdValue",productIdValue)
     console.log("userIdValue",userIdValue)
     console.log('StoreIdValue',storeIdValue)
-    
+
+    const sqlQuery = "INSERT INTO sales (user_id_sales,stores_id_sales, products_id ) VALUES ($1,$2,$3);"
+    pool.query(sqlQuery, [userIdValue,storeIdValue,productIdValue])
+        .then((response) => {
+            res.send(response)
+            // res.send("All is good it has been sent off")
+        })
+        .catch((error) =>{
+            console.log(error)
+        })
+
 })
 app.get("/content", (req, res) => {
     return pool.query(`SELECT * FROM users;`)
