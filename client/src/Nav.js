@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { userContext } from "./providers/UserProvider";
+import "./Nav.css";
+
 function Nav(props) {
     const {firstNameSaved,lastNameSaved,emailSaved ,savingFirstName,savingLastName,savingEmail } = useContext(userContext)
     return(

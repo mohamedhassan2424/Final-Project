@@ -1,13 +1,12 @@
 * {
   font-family: FoundersGroteskWeb, sans-serif;
-  background-color: #f1e4d1;
+  /* background-color: #f1e4d1; */
 }
 
 .your-cart {
   display: flex;
   padding: 20px;
   color: rgb(0, 84, 0);
-  background-color: white;
   font-size: 1.71429rem;
   font-weight: 600;
   line-height: 1.42857;
@@ -30,7 +29,7 @@
     height: 50px;
     width: 100px;
     font-size: 14px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .checkout {
