@@ -74,13 +74,16 @@ function Home(props) {
                             <p>To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.</p>
                             <a href="" className="firstbutton">CHECK IT OUT &#x2192;</a>
                         </div>
+                    </div>
                         <div className="eachcloumn">
                             <img className="secoundlogoImage" src="https://image.s11.sfmc-content.com/lib/fe3e157175640479711675/m/10/b7102c92-08fc-4bea-8ee9-0b595a543f04.png" />
+                        <div className="eachcloumn">
+                            <img className="secoundlogoImage" src="https://image.s11.sfmc-content.com/lib/fe3e157175640479711675/m/10/404a4ff9-d8c4-4f48-975e-79d421962f47.png" />
+                       </div>
                         </div>
-                    </div>
                 </div>
             </header>
-            v
+            
             <div className="catergories">
                 <div className="parentcontainerrow">
                     <div className="eachrow">
