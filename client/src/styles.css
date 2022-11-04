@@ -179,7 +179,7 @@ background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%); */
     padding-left: 15px;
 }
 .navbar {
-    display:flex;
+    /* display:flex; */
     align-items: center;
     padding-bottom:20px;
 }
@@ -226,10 +226,28 @@ color:rgb(210, 210, 210);
 }
 
 .eachcloumn h1{
-    font-size:30px;
-    line-height: 25px;
-    margin: 15px 0;
+    display: flex;
+    padding: 20px;
+    color: rgb(0, 84, 0);
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.42857;
+    text-transform: none;
+    font-family: FoundersGroteskWeb, sans-serif;
+    justify-content: center;
 }
+
+.paragraph {
+    display: flex;
+    padding: 20px;
+    color: rgb(0, 84, 0);
+    font-size: 20px;
+    line-height: 1.42857;
+    text-transform: none;
+    font-family: FoundersGroteskWeb, sans-serif;
+    justify-content: center;
+}
+
 
 .secoundlogoImage {
     width:620px;
