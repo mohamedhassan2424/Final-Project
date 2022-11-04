@@ -193,7 +193,7 @@ app.get("/mainpage", (req, res) => {
     res.render("mainpage")
 })
 
-app.get('/addingToSalesDatabase',(req,res)=>{
+app.post('/addingToSalesDatabase',(req,res)=>{
     const productIdValue = req.body.productId;
     const userIdValue = req.body.userId;
     console.log("ProductIdValue",productIdValue)

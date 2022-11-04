@@ -16,6 +16,7 @@ function Logout() {
         cookies.remove('emailValue')
         cookies.remove('firstNameValue')
         cookies.remove('lastNameValue')
+        cookies.remove('userId')
 
         let path = `/users`;
             // let history = useHistory();

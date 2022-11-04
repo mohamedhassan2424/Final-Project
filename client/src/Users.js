@@ -12,7 +12,7 @@ import Cookies from 'universal-cookie';
  
 
 function Users(props) {
-    const {firstNameSaved,lastNameSaved,emailSaved ,savingFirstName,savingLastName,savingEmail } = useContext(userContext)
+    const {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction} = useContext(userContext)
     // const {buttonState, firstName, lastName,emailName,passwordName , otherpasswordName, emailDatabase, passwordDatabase ,wrongPasswordComment ,addingClass, removingClass, logInButton, register } = useVerification();
 const [buttonState,setButtonState] = useState(false)
 const [firstName, setFirstName] = useState('')
@@ -125,9 +125,11 @@ const logInButton = () =>{
             const newArrayFiltered = allUsersInformation.filter((eachObject) => {
                 if(eachObject.email === emailDatabase){
                     console.log("The whole Object of that email",eachObject)
+                    savingUserId(eachObject.id)
                     savingEmail(emailDatabase)
                     savingFirstName(eachObject.firstname)
                     savingLastName(eachObject.lastname)
+                    cookies.set('userId',`${eachObject.id}`)
                     cookies.set('emailValue',`${emailDatabase}`)
                     cookies.set('firstNameValue',`${eachObject.firstname}`)
                     cookies.set('lastNameValue',`${eachObject.lastname}`)
