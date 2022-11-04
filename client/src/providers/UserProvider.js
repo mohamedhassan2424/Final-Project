@@ -10,7 +10,7 @@ const [emailSaved, setEmailSaved] = useState(cookies.get('emailValue') ? cookies
 const [savingStoreName, setSavingStoreName] = useState(cookies.get('storeName') ? cookies.get('storeName'): "")
 const [userId, setUserId] = useState(0)
 const [counterValue, setCounterValue] = useState(cookies.get('userId') ? cookies.get('userId'): 0);
-
+const [storeIdNumber, setStoreIdNumber] = useState('')
 
 const incrementFunction = function() {
     setCounterValue(counterValue + 1);

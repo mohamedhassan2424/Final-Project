@@ -63,34 +63,31 @@ const register = ()=> {
         axios.post(`${linkServer}reigister`,{firstName, lastName, email:emailName, password:passwordName})
         .then((response)=>{
             const newArrayFiltered = allUsersInformation.slice(-1)
-            console.log(newArrayFiltered)
-            // const newArrayFiltered = allUsersInformation.filter((eachObject) => {
-            //     console.log("EmailName:",emailName)
-            //     console.log('eachObjectValue',eachObject)
-            //     if(eachObject.email === emailName){
-            //         console.log("Reached this point")
-            //             console.log("EachObject",eachObject)
-            //             cookies.set('userId',`${eachObject.id}`)
-            //             savingUserId(eachObject.id)
-            // //             cookies.set('emailValue',`${emailName}`)
-            // // cookies.set('firstNameValue',`${firstName}`)
-            // // cookies.set('lastNameValue',`${lastName}`)
-            // // savingEmail(emailName)
-            // // savingFirstName(firstName)
-            // // savingLastName(lastName)
-            // // console.log(cookies.get('emailValue'))
-            // // console.log("Gotten to this part",response.data)
-            // // setFirstName('')
-            // // setLastName('')
-            // // setEmailName('')
-            // // setPasswordName('')
-            // // setOtherpasswordName('')
+            console.log("newArrayFiltered",newArrayFiltered)
+            const convertToNumber = Number(newArrayFiltered[0].id)
+            console.log('convertToNumber',convertToNumber)
+            const userIdValue = convertToNumber +1;
+            console.log('userIdValue ',userIdValue)
+            cookies.set('userId',`${userIdValue}`)
     
-            // // let path = `/home`;
-            // // // let history = useHistory();
-            // // history.push(path);
-            //     }
-            // })
+            cookies.set('emailValue',`${emailName}`)
+            cookies.set('firstNameValue',`${firstName}`)
+            cookies.set('lastNameValue',`${lastName}`)
+            savingEmail(emailName)
+            savingFirstName(firstName)
+            savingLastName(lastName)
+            console.log(cookies.get('emailValue'))
+            console.log("Gotten to this part",response.data)
+            setFirstName('')
+            setLastName('')
+            setEmailName('')
+            setPasswordName('')
+            setOtherpasswordName('')
+    
+            let path = `/home`;
+            // let history = useHistory();
+            history.push(path);
+
             
             
     

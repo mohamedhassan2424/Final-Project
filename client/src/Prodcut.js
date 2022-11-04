@@ -9,7 +9,8 @@ import Cookies from 'universal-cookie';
 import Nav from "./Nav";
 
 function Product(){
-    const {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction} = useContext(userContext)
+    
+    const {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction} = useContext(userContext)
     const [product, setProduct] = useState([])
     const params = useParams();
     console.log(params)
@@ -28,9 +29,10 @@ const storeNameSaved= cookies.get('storeName')
     console.log("Productdata",product)
    console.log("SavingStoreName",storeNameSaved)
    const linkServer = "http://localhost:8080/"
-   let userIdValue = 5
+   const userIdValue= cookies.get('userId')
+   const storeIdValue = cookies.get('storeName')
 const addingProductDatabase = ()=>{
-axios.post(`${linkServer}addingToSalesDatabase`,{productId:product.id, userId:userIdValue})
+axios.post(`${linkServer}addingToSalesDatabase`,{productId:product.id, userId:userIdValue, storeId:storeIdValue })
 }
 
     return (
