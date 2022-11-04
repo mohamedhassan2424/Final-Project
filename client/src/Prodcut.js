@@ -34,7 +34,9 @@ function Product() {
     console.log("SavingStoreName", storeNameSaved)
     const linkServer = "http://localhost:8080/"
     const userIdValue = cookies.get('userId')
-    const storeIdValue = cookies.get('storeName')
+    const storeIdName = cookies.get('storeName')
+    const storeIdValue = cookies.get('storeId')
+
     const addingProductDatabase = () => {
         axios.post(`${linkServer}addingToSalesDatabase`, { productId: product.id, userId: userIdValue, storeId: storeIdValue })
     }
