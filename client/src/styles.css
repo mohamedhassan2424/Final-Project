@@ -11,7 +11,7 @@
 .fontName {
     font-family: FoundersGroteskWeb, sans-serif;
     font-weight: 700;
-    color:black;
+    color: rgb(0, 84, 0);
     display: flex;
     justify-content: center;
 
@@ -44,6 +44,7 @@
     display: flex;
     align-items: center ;
     flex-direction: column;
+    margin-bottom: 5em;
 }
 
 .allButtons {
@@ -123,7 +124,8 @@
     border-radius: 50px;
     border:none;
     outline: none;
-    background-color: blueviolet;
+    background-color: rgb(0, 84, 0);
+    color: white;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);;
     cursor: pointer;
     font-size: 0.8em;

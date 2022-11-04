@@ -197,7 +197,7 @@ const removingClass = ()=>{
 }}/>
                 </div>
                 <div className ="inputText">
-                    <input value={passwordName} type = "password" placeholder="Create New Password" onChange={(event)=> {
+                    <input value={passwordName} type = "password" placeholder="Password" onChange={(event)=> {
                 setPasswordName(event.target.value)
                 
                 console.log(passwordName)
