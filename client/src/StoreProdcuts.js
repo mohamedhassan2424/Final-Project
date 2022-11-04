@@ -44,6 +44,7 @@ function StoreProduct(props){
             .then(response => {
                 console.log(response.data)
                 setDairy(response.data)
+                
             })
     }, [])
 
@@ -51,17 +52,19 @@ function StoreProduct(props){
 
         axios.get('http://localhost:8080/allStores')
             .then(response => {
-                console.log(response.data)
+                console.log('setStoreIdState',response.data)
                 setStoreIdState(response.data)
 
             })
     }, [])
 
-    // const filteredStoreData = storeIdState.filter((storeObject)=>{
-    //     // if(storeObject. === storeParamter.id){
-    //     //     cookie.set('storeId',storeObject.id)
-    //     // }
-    // })
+    const filteredStoreData = storeIdState.filter((storeObject)=>{
+        if(storeObject.store_name === storeParamter.id){
+        cookies.set('storeId',storeObject.id)
+        console.log("Cookies StoreId",cookies.get('storeId'))
+        settingStoreIdValue(storeObject.id)
+        }
+    })
 
     return(
 <div>

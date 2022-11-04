@@ -1,5 +1,6 @@
-import React ,{ useState,createContext} from "react";
+import React ,{ useState,createContext, useEffect} from "react";
 import Cookies from 'universal-cookie';
+import axios from "axios";
 const cookies = new Cookies();
 export const userContext = createContext();
 
@@ -10,7 +11,19 @@ const [emailSaved, setEmailSaved] = useState(cookies.get('emailValue') ? cookies
 const [savingStoreName, setSavingStoreName] = useState(cookies.get('storeName') ? cookies.get('storeName'): "")
 const [userId, setUserId] = useState(0)
 const [counterValue, setCounterValue] = useState(cookies.get('userId') ? cookies.get('userId'): 0);
-const [storeIdNumber, setStoreIdNumber] = useState('')
+const [storeIdNumber, setStoreIdNumber] = useState(cookies.get('storeId')? cookies.get('storeId'):0)
+const [allTheStore, setAllTheStore] = useState('')
+
+useEffect(() => {
+
+    axios.get('http://localhost:8080/allStores')
+        .then(response => {
+            console.log('setAllTheStore',response.data)
+            setAllTheStore(response.data)
+
+        })
+}, [])
+
 
 const incrementFunction = function() {
     setCounterValue(counterValue + 1);
