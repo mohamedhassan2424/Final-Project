@@ -18,13 +18,12 @@
 
 .about {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 35px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     background: #01d0ff;
-    padding-top: 30px;
+    padding-top: 6%;
     padding-bottom: 30px;
     height: 300px;
 }
@@ -43,13 +42,14 @@
     margin-right: 20%;
 }
 
-.p {
-  margin-bottom: 20px;
+.paragraph {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .graphic {
     box-sizing: border-box;
-    margin-left: -35%;
+    margin-left: 0;
     padding: 0;
     font-size: 80px;
     line-height: 74px;
@@ -59,5 +59,4 @@
     color: #003e38 !important;
     margin-bottom: 10px;
     text-align: center;
-    margin-top: 4%;
 }
