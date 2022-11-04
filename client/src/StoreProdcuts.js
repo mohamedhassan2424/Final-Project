@@ -89,7 +89,7 @@ function StoreProduct(props){
 
 
                 }
-             }
+             
             </div>
  <div className="eachrow">
  <div className ="titlePageCategoryProduct">  <h1>{frozenFood[0]?frozenFood[0].category_name_value :<h1>Waiting .......</h1>}</h1></div>
