@@ -60,7 +60,7 @@ function About(props) {
           LiteCart is a cutting-edge online grocery home delivery service in the
           Greater Toronto Area.</p>
           
-           <p className="paragraph">We have partnered with many of your favourite grocery stores to build automated options that improve
+           <p className="para">We have partnered with many of your favourite grocery stores to build automated options that improve
           the quality of the service experience for Canadians.</p> 
           
           <p>At LiteCart, we
