@@ -93,3 +93,28 @@ h5 {
   justify-content: center;
   margin-bottom: 55px;
 }
+
+h4 {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003e38 !important;
+    margin-bottom: 26px;
+}
+
+.seniors {
+  box-sizing: border-box;
+  margin: 0;
+  padding-bottom: 130px;
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #003e38 !important;
+  margin-top: 70px;
+}
+

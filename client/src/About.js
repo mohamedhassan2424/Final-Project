@@ -166,7 +166,26 @@ function About(props) {
                   src="https://image.email.voila.ca/lib/fe37157175640479721077/m/1/a4cb2769-c709-426d-89e2-11b8abb16f94.png"                />
         </div>
 
+        <div className="terms">
+          <h5>
+          Please see our Terms & Conditions for full details.
+          </h5>
+        </div>
 
+        <div className="seniors">
+          <h3>
+            Seniors & Mobility Discount
+          </h3>
+          <h5>
+            Please contact our customer service team about our seniors and mobility discount:
+            </h5>
+            <h5>
+             1.877.LITECART
+          </h5>
+          <h5>
+          (1.877.864.5222)
+          </h5>
+        </div>
       </div>
     </div>
   );
