@@ -75,60 +75,99 @@ function About(props) {
         </h1>
       </div>
 
+      <div className="group">
+
       <div className="one">
         <h3>
         The groceries you ordered. No letdowns.
         </h3>
-        <p>
+        <h5>
         Straight from our warehouse to your door.
-        </p>     
-      </div>
-
+        </h5>     
+        </div>
+        <div className="photo">
+      <img
+                  className="image"
+                  src="https://image.email.voila.ca/lib/fe37157175640479721077/m/1/cf24aaa6-c5d9-494f-a89e-7ae6342ba308.png"
+                />
+        </div>
       <div className="two">
         <h3>
         Delivered on time.
         </h3>
-          <p>
+          <h5>
           Pick a time. We'll be there.
-          </p>
+          </h5>
       </div>
+      <div className="photo">
+      <img
+                  className="image"
+                  src="https://image.email.voila.ca/lib/fe37157175640479721077/m/1/3152b52f-7c01-405f-99f7-63f753a2d659.png"
+                />
+        </div>
+
 
       <div className="three">
         <h3>
         Thousands of products.
         </h3>
-          <p>
+          <h5>
           Everything on your grocery list or discover something new.
-          </p>
+          </h5>
       </div>
+<div className="photo">
+      <img
+                  className="image"
+                  src="https://image.email.voila.ca/lib/fe37157175640479721077/m/8/985ed8cb-6c02-421e-a57e-b81096836b74.png"                />
+        </div>
+
 
       <div className="four">
         <h3>
         Guaranteed fresh.
         </h3>
-          <p>
+          <h5>
           Our food is fresh or it's free.
-          </p>
+          </h5>
       </div>
-      
+      <div className="photo">
+      <img
+                  className="image"
+                  src="https://image.email.voila.ca/lib/fe37157175640479721077/m/1/e5ad386f-46f7-4663-b430-0280e54cdb3f.png"                />
+        </div>
+
+
       <div className="five">
       <h3>
       Affordable prices. Hot deals.
           </h3>
-            <p>
+            <h5>
             No hidden fees.
-            </p>
+            </h5>
       </div>
+<div className="photo">
+      <img
+                  className="image"
+                  src="https://image.email.voila.ca/lib/fe37157175640479721077/m/1/87d411eb-cf86-4f90-94d2-e0f35103d10e.png"                />
+        </div>
+
 
       <div className="six">
       <h3>
       Grocery delivery reimagined.
           </h3>
-            <p>
+            <h5>
             Our team and the tech behind it, at your service.
-            </p>
+            </h5>
       </div>
+      <div className="photo">
+      <img
+                  className="image"
+                  src="https://image.email.voila.ca/lib/fe37157175640479721077/m/1/a4cb2769-c709-426d-89e2-11b8abb16f94.png"                />
+        </div>
 
+
+      </div>
     </div>
   );
 }
