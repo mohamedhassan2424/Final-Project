@@ -9,7 +9,7 @@ function Nav(props) {
 <nav className="navlistItems">
                         <ul>
                             <li>
-                                {firstNameSaved ? <h1>Welcome Back :{ firstNameSaved} {lastNameSaved} </h1>: <h3>Please Sighn-up or Log-In</h3>}
+                                {firstNameSaved ? <h1>Welcome Back :{ firstNameSaved} {lastNameSaved} </h1>: <h3>Please Sign-up or Log-In</h3>}
                                 
                         
                             </li>

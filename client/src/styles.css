@@ -29,7 +29,8 @@
 .bigContainer {
     width:100vw;
     height:100vh;
-    background-image: url("https://media.istockphoto.com/photos/fresh-fruits-and-vegetables-picture-id589415708?s=612x612");
+    /* background-image: url("https://media.istockphoto.com/photos/fresh-fruits-and-vegetables-picture-id589415708?s=612x612"); */
+    background-color: #f1e4d1;
     position: fixed;
     display: flex;
     justify-content: center ;
