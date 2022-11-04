@@ -8,14 +8,14 @@ import { BrowserRouter as Router, Switch, Route, Link, useLocation,  } from "rea
 import Nav from "./Nav";
 import axios from "axios";
 import Cookies from 'universal-cookie';
-import { cookie } from "request";
-const cookies = new Cookies();
+
 
 function StoreProduct(props){
+    const cookies = new Cookies();
     const {storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,settingStoreIdValue , savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction} = useContext(userContext)
     const storeParamter=  useParams()
     console.log('The storeNameid',storeParamter)
-    cookies.set('storeName',storeParamter.id )
+    // cookies.set('storeName',storeParamter.id)
     const [dairy, setDairy] = useState([])
     const [beverage ,setBeverage] = useState([])
     const [frozenFood, setFrozenFood] = useState([])
@@ -57,11 +57,12 @@ function StoreProduct(props){
             })
     }, [])
 
-    const filteredStoreData = storeIdState.filter((storeObject)=>{
-        // if(storeObject. === storeParamter.id){
-        //     cookie.set('storeId',storeObject.id)
-        // }
-    })
+    // const filteredStoreData = storeIdState.filter((storeObject)=>{
+    //     // if(storeObject. === storeParamter.id){
+    //     //     cookie.set('storeId',storeObject.id)
+    //     // }
+    // })
+
     return(
 <div>
     <Nav />

@@ -200,6 +200,7 @@ app.post('/addingToSalesDatabase',(req,res)=>{
     console.log("ProductIdValue",productIdValue)
     console.log("userIdValue",userIdValue)
     console.log('StoreIdValue',storeIdValue)
+    
 })
 app.get("/content", (req, res) => {
     return pool.query(`SELECT * FROM users;`)

@@ -4,7 +4,6 @@ CREATE TABLE sales (
   -- user_id who bought its 
   id SERIAL PRIMARY KEY,
   user_id_sales integer REFERENCES users(id) ON DELETE CASCADE NOT NULL,
-  stores_id_sales integer REFERENCES stores(id) ON DELETE CASCADE NOT NULL,
   products_id integer REFERENCES products(id) ON DELETE CASCADE NOT NULL
   -- transactions_id integer REFERENCES transactions(id) ON DELETE CASCADE NOT NULL,
   -- total INTEGER NOT NULL,
