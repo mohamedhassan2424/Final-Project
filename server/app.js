@@ -193,6 +193,12 @@ app.get("/mainpage", (req, res) => {
     res.render("mainpage")
 })
 
+app.get('/addingToSalesDatabase',(req,res)=>{
+    const productIdValue = req.body.productId;
+    const userIdValue = req.body.userId;
+    console.log("ProductIdValue",productIdValue)
+    console.log("userIdValue",userIdValue)
+})
 app.get("/content", (req, res) => {
     return pool.query(`SELECT * FROM users;`)
         .then((response) => {

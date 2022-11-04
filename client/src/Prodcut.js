@@ -27,9 +27,10 @@ function Product(){
 const storeNameSaved= cookies.get('storeName')
     console.log("Productdata",product)
    console.log("SavingStoreName",storeNameSaved)
-
+   const linkServer = "http://localhost:8080/"
+   let userIdValue = 5
 const addingProductDatabase = ()=>{
-    
+axios.post(`${linkServer}addingToSalesDatabase`,{productId:product.id, userId:userIdValue})
 }
 
     return (
