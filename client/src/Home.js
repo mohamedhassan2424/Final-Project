@@ -75,7 +75,7 @@ function Home(props) {
                             <a href="" className="firstbutton">CHECK IT OUT &#x2192;</a>
                         </div>
                         <div className="eachcloumn">
-                            <img className="secoundlogoImage" src="https://media.istockphoto.com/photos/shopping-basket-with-fresh-food-grocery-supermarket-food-and-eats-picture-id1216828053?k=20&m=1216828053&s=612x612&w=0&h=mMGSO8bG8aN0gP4wyXC17WDIcf9zcqIxBd-WZto-yeg=" />
+                            <img className="secoundlogoImage" src="https://image.s11.sfmc-content.com/lib/fe3e157175640479711675/m/10/b7102c92-08fc-4bea-8ee9-0b595a543f04.png" />
                         </div>
                     </div>
                 </div>
