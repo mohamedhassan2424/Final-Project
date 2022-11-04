@@ -73,7 +73,8 @@ const storeNameSaved= cookies.get('storeName')
         <div className="priceInformation">
             <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
         </div>
-        <div className="addContent"> <h3>Confirm to Add Product</h3>
+        <div > 
+        <button className="addContent" ><h3>Confirm to Add Product</h3></button>
         </div>
         
     </div>

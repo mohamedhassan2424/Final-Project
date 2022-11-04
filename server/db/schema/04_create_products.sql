@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS products CASCADE;
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
-  -- user_id integer REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+  -- user_id_products integer REFERENCES users(id) ON DELETE CASCADE NOT NULL,
   category_name_value VARCHAR(255) NOT NULL,
   product_name VARCHAR(255) NOT NULL,
   product_description VARCHAR(255) NOT NULL,
