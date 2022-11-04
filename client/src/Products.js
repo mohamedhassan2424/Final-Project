@@ -1,11 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react-router-dom";
 import Product from "./Prodcut";
 import './styles.css'
 import Nav from "./Nav";
 function Products(props) {
+//     const search = useLocation().search;
+//   const id=new URLSearchParams(search).get('id');
+//   
+//   console.log("IDDDDDD",id);//12345.
+// const fullUrl = window.location.href
+// const pathName = window.location.origin
+// console.log(window.location.origin)
     // const [products, setProducts] = useState([])
     const [dairy, setDairy] = useState([])
     const [beverage ,setBeverage] = useState([])
@@ -55,9 +62,6 @@ function Products(props) {
                 </div>
                <Nav />
             </div>
-            <div>
-                <h1>Store Selected </h1>
-            </div>
             <h1>{dairy[0] ? dairy[0].category_name_value:<h1>Waiting .......</h1>}</h1>
             <div className="eachrow">
              
@@ -90,7 +94,7 @@ function Products(props) {
                             <div className="priceInformation">
                                 <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
                             </div>
-                            <div className="addContent"> <Link to={`/products/${product.id}`}><h3>Add</h3></Link>
+                            <div className="addContent"> <Link to="/stores">  <h3>Choose a Store</h3></Link> 
                             </div>
                         </div>
                     </div>
@@ -99,7 +103,7 @@ function Products(props) {
 
 
                 }
- </div>
+            </div>
  <div className="eachrow">
  <div className ="titlePageCategoryProduct">  <h1>{frozenFood[0]?frozenFood[0].category_name_value :<h1>Waiting .......</h1>}</h1></div>
 {frozenFood && frozenFood.map((product) => (
@@ -131,7 +135,7 @@ function Products(props) {
         <div className="priceInformation">
             <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
         </div>
-        <div className="addContent"> <Link to={`/products/${product.id}`}> <h3>Add</h3></Link>
+        <div className="addContent"> <Link to="/stores">  <h3>Choose a Store</h3></Link> 
         </div>
     </div>
 </div>
@@ -174,7 +178,7 @@ function Products(props) {
         <div className="priceInformation">
             <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
         </div>
-        <div className="addContent"><Link to={`/products/${product.id}`}> <h3>Add</h3></Link>
+        <div className="addContent"><Link to="/stores">  <h3>Choose a Store</h3></Link> 
         </div>
     </div>
 </div>

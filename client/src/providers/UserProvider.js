@@ -7,6 +7,7 @@ export default function UserProvider(props) {
 const [firstNameSaved, setFirstNameSaved] = useState(cookies.get('firstNameValue') ? cookies.get('firstNameValue'): "")
 const [lastNameSaved, setLastNameSaved] = useState(cookies.get('lastNameValue') ? cookies.get('lastNameValue'): "")
 const [emailSaved, setEmailSaved] = useState(cookies.get('emailValue') ? cookies.get('emailValue'): "")
+const [savingStoreName, setSavingStoreName] = useState(cookies.get('storeName') ? cookies.get('storeName'): "")
 const [userId, setUserId] = useState('')
 console.log("FirstNameSaved",firstNameSaved)
 console.log("LastNameSaved",lastNameSaved)
@@ -30,7 +31,12 @@ const savingUserId = (id) =>{
     setUserId(id)
     console.log("The userid for the logged in User is: ",id)
 }
-const providerData = {firstNameSaved,lastNameSaved,emailSaved ,savingFirstName,savingLastName,savingEmail ,savingUserId}
+
+const savingStoreFunction = (store)=>{
+    setSavingStoreName(store)
+    console.log(savingStoreFunction)
+}
+const providerData = {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction}
 return(
     <userContext.Provider value ={providerData}>
         {props.children}

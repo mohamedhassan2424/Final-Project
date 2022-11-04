@@ -59,6 +59,9 @@ function App() {
           <Route path="/products/:id">
             <StoreProduct />
           </Route>
+          <Route path="/products/:id">
+            <Product />
+          </Route>
           <Route path="/products">
             <Products />
           </Route>
