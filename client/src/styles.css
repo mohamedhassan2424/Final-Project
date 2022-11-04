@@ -522,6 +522,10 @@ color:#CC5500;
 table, th, td {
     border:1px solid black;
   }
+
+ .counterButton {
+    width: 25px;
+ }
 /* .parentcontainerrow {
     max-width:1080px;
     margin: auto;

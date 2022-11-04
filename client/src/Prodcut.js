@@ -1,9 +1,14 @@
 import React, {useEffect,useState} from "react";
+import { useContext } from "react";
+import { userContext } from "./providers/UserProvider";
+
 import axios from "axios";
+
 import { useParams } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Nav from "./Nav";
 function Product(){
+    const {firstNameSaved,lastNameSaved,emailSaved ,counterValue,counterIncrement, counterDecrement,clearCounter, savingFirstName,savingLastName,savingEmail } = useContext(userContext)
     const [product, setProduct] = useState([])
     const params = useParams();
     console.log(params)
@@ -37,6 +42,13 @@ function Product(){
             <div className="topheaderName">
                 Featured Products
             </div>
+            <div>
+            Counter 
+            <button  className="counterButton"onClick={counterIncrement}>+</button>
+            <span>{counterValue}</span>
+            <button  className="counterButton" onClick={counterDecrement}>-</button>
+            <button> Clear</button>
+        </div>
         </div>
         <div className="chocalteImage">
             <img src={product.product_url} />
@@ -58,6 +70,7 @@ function Product(){
         </div>
         <div className="addContent"> <h3>Add</h3>
         </div>
+        
     </div>
 </div>
 

@@ -39,7 +39,7 @@ const clearCounter = ()=>{
 }
 
 
-const providerData = {firstNameSaved,lastNameSaved,emailSaved ,counterIncrement, counterDecrement,clearCounter, savingFirstName,savingLastName,savingEmail }
+const providerData = {firstNameSaved,lastNameSaved,emailSaved,counterValue ,counterIncrement, counterDecrement,clearCounter, savingFirstName,savingLastName,savingEmail }
 return(
     <userContext.Provider value ={providerData}>
         {props.children}
