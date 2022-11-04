@@ -175,7 +175,7 @@ const removingClass = ()=>{
     <button className={buttonState ? "moveButtonState RightButton": "moveButtonState"}>{buttonState ? "Login": "Signup"}</button>
 </div>
             <form onSubmit={(event) => event.preventDefault()} class={buttonState ? "form": "form signupForm"}>
-            <h1 className ="fontName">Create an LITECART Account</h1><br />
+            <h1 className ="fontName">Create a LiteCart Account!</h1><br />
            
 
                 <div className ="inputText">
