@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Link,Route } from "react-router-dom";
 import Home from "./Home"
 import About from "./About.js"
 import Users from "./Users"
@@ -15,6 +15,8 @@ import ErrorPage from "./ErrorPage";
 import Product from "./Prodcut";
 import Logout from "./Logout";
 import StoresProducts from './StoreProducts'
+import TestingPage from "./TestingPage";
+
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -52,15 +54,21 @@ function App() {
             <Main />
 
           </Route>
-          <Route path="/products/:id">
-            <StoresProducts />
-          </Route>
-          <Route path="/products">
-            <Products />
-          </Route>
           <Route path="/stores">
             <Stores />
           </Route>
+          <Route path="/product/:id">
+            <StoresProducts />
+          </Route>
+          <Route path="/products/:id">
+            <Product />
+          </Route>
+          <Route path="/allproducts">
+            <Products />
+          </Route>
+          
+          
+          
           <Route path="/cart">
             <Carts />
           </Route>
