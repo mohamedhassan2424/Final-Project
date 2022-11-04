@@ -1,15 +1,24 @@
 import React , {useEffect, useState} from "react";
+import { useContext } from "react";
+
+import { userContext } from "./providers/UserProvider";
+
 import { useParams } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route, Link, useLocation,  } from "react-router-dom";
 import Nav from "./Nav";
 import axios from "axios";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+
 function StoreProduct(props){
+    const {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction} = useContext(userContext)
     const storeParamter=  useParams()
     console.log('The storeNameid',storeParamter)
+    cookies.set('storeName',storeParamter.id )
     const [dairy, setDairy] = useState([])
     const [beverage ,setBeverage] = useState([])
     const [frozenFood, setFrozenFood] = useState([])
-    
+    console.log(savingStoreName,"savingStoreName")
     useEffect(() => {
 
         axios.get('http://localhost:8080/frozenFood')
