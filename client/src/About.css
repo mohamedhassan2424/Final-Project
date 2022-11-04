@@ -1,4 +1,4 @@
-* {
+.whole-page {
   font-family: FoundersGroteskWeb, sans-serif;
   background: #f1e4d1;
 }
@@ -16,6 +16,19 @@
   justify-content: center;
 }
 
+.about {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #01d0ff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 300px;
+}
+
 .info {
     box-sizing: border-box;
     margin: 0;
@@ -28,4 +41,23 @@
     margin-bottom: 26px;
     margin-left: 20%;
     margin-right: 20%;
+}
+
+.p {
+  margin-bottom: 20px;
+}
+
+.graphic {
+    box-sizing: border-box;
+    margin-left: -35%;
+    padding: 0;
+    font-size: 80px;
+    line-height: 74px;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003e38 !important;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 4%;
 }

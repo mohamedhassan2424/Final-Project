@@ -3,7 +3,7 @@ import "./About.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function About(props) {
   return (
-    <div>
+    <div className="whole-page">
   
       <nav className="navlistItems">
         <ul>
@@ -42,7 +42,11 @@ function About(props) {
       </nav>
 
       <div className="about">
-        <h1>Welcome to LiteCart!</h1>
+        <h1 className="graphic">Welcome 
+          <p>
+          to LiteCart!
+          </p>
+         </h1>
       </div>
 
       <div className="info">
