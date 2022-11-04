@@ -2,6 +2,7 @@ import React, {useEffect,useState} from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 import Nav from "./Nav";
 function Product(){
     const [product, setProduct] = useState([])

@@ -45,7 +45,7 @@ function Products(props) {
                 setDairy(response.data)
             })
     }, [])
-    console.log("Parameter Props",props.paramter)
+  
     return (
         <div className="mainContainerElement">
             <div className="navbar">
@@ -56,7 +56,7 @@ function Products(props) {
                <Nav />
             </div>
             <div>
-                <h1>Store Selected {props.paramter}</h1>
+                <h1>Store Selected </h1>
             </div>
             <h1>{dairy[0] ? dairy[0].category_name_value:<h1>Waiting .......</h1>}</h1>
             <div className="eachrow">
