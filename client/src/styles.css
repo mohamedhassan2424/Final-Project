@@ -181,7 +181,7 @@ background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%); */
 .navbar {
     display:flex;
     align-items: center;
-    padding:20px;
+    padding-bottom:20px;
 }
 
 .navlistItems {
@@ -233,7 +233,7 @@ color:rgb(210, 210, 210);
 
 .secoundlogoImage {
     width:620px;
-    height:300px;
+    height:260px;
 }
 .firstbutton {
     display:inline-block;
