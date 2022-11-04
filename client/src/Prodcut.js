@@ -9,7 +9,7 @@ import Cookies from 'universal-cookie';
 import Nav from "./Nav";
 
 function Product(){
-    const {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,increment ,decrement,clear} = useContext(userContext)
+    const {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction} = useContext(userContext)
     const [product, setProduct] = useState([])
     const params = useParams();
     console.log(params)
@@ -42,10 +42,18 @@ const storeNameSaved= cookies.get('storeName')
 <div className="outlineBox">
     <div className="outerTopProduCtontainer">
         <div className="toptopheaderName">
+        <div>
             <div className="topheaderName">
                 Featured Products
-                <h3>Count</h3>
             </div>
+        </div>
+        <div>
+            Counter : 
+            <button className="incrementDecrementButton" onClick={incrementFunction }>+</button>
+            <span>{counterValue}</span>
+            <button className="incrementDecrementButton"onClick={decrementFunction}>-</button>
+            {/* <button onClick={clearFunction}>0</button> */}
+        </div>
         </div>
         <div className="chocalteImage">
             <img src={product.product_url} />
@@ -67,6 +75,7 @@ const storeNameSaved= cookies.get('storeName')
         </div>
         <div className="addContent"> <h3>Confirm to Add Product</h3>
         </div>
+        
     </div>
 </div>
 

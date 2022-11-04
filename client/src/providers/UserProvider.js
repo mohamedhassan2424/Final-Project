@@ -12,13 +12,13 @@ const [userId, setUserId] = useState('')
 const [counterValue, setCounterValue] = useState(0);
 
 
-const increment = function() {
+const incrementFunction = function() {
     setCounterValue(counterValue + 1);
   };
-  const decrement = function() {
+  const decrementFunction = function() {
     setCounterValue(counterValue - 1);
   };
-  const clear = function() {
+  const clearFunction = function() {
     setCounterValue(0);
   };
 
@@ -50,7 +50,7 @@ const savingStoreFunction = (store)=>{
     setSavingStoreName(store)
     console.log(savingStoreFunction)
 }
-const providerData = {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,increment ,decrement,clear}
+const providerData = {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction}
 return(
     <userContext.Provider value ={providerData}>
         {props.children}
