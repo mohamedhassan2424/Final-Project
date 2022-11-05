@@ -66,7 +66,7 @@ function Product() {
                     <div className="toptopheaderName">
                         <div>
                             <div className="topheaderName">
-                                Featured Products
+                                Featured
                             </div>
                         </div>
                         <div>

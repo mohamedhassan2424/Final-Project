@@ -79,7 +79,7 @@ function StoreProduct(props){
                         <div className="outerTopProduCtontainer">
                             <div className="toptopheaderName">
                                 <div className="topheaderName">
-                                    Featured Products
+                                    Featured
                                 </div>
 
                                 
@@ -121,7 +121,7 @@ function StoreProduct(props){
     <div className="outerTopProduCtontainer">
         <div className="toptopheaderName">
             <div className="topheaderName">
-                Featured Products
+                Featured
             </div>
 
             
@@ -166,7 +166,7 @@ function StoreProduct(props){
     <div className="outerTopProduCtontainer">
         <div className="toptopheaderName">
             <div className="topheaderName">
-                Featured Products
+                Featured
             </div>
 
             
