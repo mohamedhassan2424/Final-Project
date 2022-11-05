@@ -30,6 +30,7 @@ useEffect(() => {
 
 const changinSalesHistory =  (newArray) =>{
     setSalesHistory([newArray])
+    
 }
 
 
