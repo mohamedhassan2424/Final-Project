@@ -343,9 +343,8 @@ a {
 }
 
 .ProductInforamtion {
-    display:flex;
-    justify-content: center;
-    font-weight: 700;
+    font-size: 13px;
+    margin-top: 7px;
     color:#006A4E;
 }
 
