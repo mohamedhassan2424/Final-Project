@@ -14,19 +14,6 @@ function Summary(props) {
     const cookies = new Cookies();
     const userIdValueNum = cookies.get('userId')
     console.log('userIdValueNum', userIdValueNum)
-    // const gettingData = () => {
-    //     console.log("Hitting the axios request for getting the data information")
-    //     axios.post(`${linkServer}extratingData`, { userIdInt: userIdValueNum })
-    //         .then((response) => {
-    //             console.log("DATA recieved from the database", response.data)
-    //             setSalesHistory(response.data)
-    //         })
-    //         .catch((error) => {
-    //             console.log('error received from the database', error)
-    //         })
-
-    // }
-    // gettingData()
     useEffect(() => {
 
         axios.post('http://localhost:8080/extratingData',{ userIdInt: userIdValueNum })
@@ -50,8 +37,14 @@ function Summary(props) {
     }
     totalSumFunction()
     console.log("Calling the sum Function above",totalSumFunction())
-    const deleteProduct = () => {
-
+    const deleteProduct = (productObject) => {
+      const userIDVal = productObject.user_id_sales
+      const productValue = productObject.products_id
+      console.log('userIDVal',userIDVal)
+      console.log('productValue',productValue)
+        console.log('ProductObject',productObject)
+        axios.post('http://localhost:8080/removingProduct',{userIDNam:userIDVal, productIdVal :productValue })
+        
     }
     return (
         <div>

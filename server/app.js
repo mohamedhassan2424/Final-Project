@@ -229,6 +229,14 @@ app.post("/extratingData", (req,res)=>{
     })
 })
 
+app.post('/removingProduct',(req,res)=>{
+    const productRemoving = req.body.productIdVal
+    const userIDOfProductRemoving= req.body.userIDNam
+    console.log('productRemoving',productRemoving)
+    console.log('userIDOfProductRemoving',userIDOfProductRemoving)
+    pool.query(`DELETE FROM sales WHERE  user_id_sales =$1 AND products_id =$2;`,[userIDOfProductRemoving,productRemoving])
+})
+
 app.get("/content", (req, res) => {
     return pool.query(`SELECT * FROM users;`)
         .then((response) => {

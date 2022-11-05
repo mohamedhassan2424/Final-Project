@@ -8,8 +8,10 @@
 -- INSERT INTO sales (user_id_sales,stores_id_sales, products_id ) VALUES (3,6,4);
 
 
-SELECT * FROM sales
-JOIN products ON products.id = products_id
-JOIN users ON users.id = user_id_sales
-JOIN stores ON stores.id = stores_id_sales
-WHERE users.id =10 ;
+-- SELECT * FROM sales
+-- JOIN products ON products.id = products_id
+-- JOIN users ON users.id = user_id_sales
+-- JOIN stores ON stores.id = stores_id_sales
+-- WHERE users.id =10 ;
+
+DELETE FROM sales WHERE  user_id_sales =1 AND products_id =1;
