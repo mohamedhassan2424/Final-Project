@@ -326,10 +326,12 @@ a {
     touch-action: manipulation;
 }
 
-.saleImage img{
+.saleImage img {
     width: 10%;
     height: 10%;
+    margin-left: -24px;
 }
+
 .outerTopProduCtontainer {
    
     
@@ -367,7 +369,7 @@ a {
 
 .saleDescription {
     display:flex;
-    padding-top: 8px;
+    padding-top: 1px;
     padding-left: 6px;
     color:#ff1010;
     /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
