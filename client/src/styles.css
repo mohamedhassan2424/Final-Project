@@ -219,8 +219,8 @@ color:rgb(210, 210, 210);
 
 .sale-photo {
     display: flex;
-    flex-basis:50%;
-    min-width:300px;
+    flex-basis: 50%;
+    min-width: 300px;
 }
 
 .eachcloumn h1{
@@ -249,7 +249,7 @@ color:rgb(210, 210, 210);
 
 .secoundlogoImage {
     width: 50%;
-    height: 24px;
+    height: 240px;
 }
 
 .firstbutton {
