@@ -215,6 +215,7 @@ app.post('/addingToSalesDatabase',(req,res)=>{
 app.post("/extratingData", (req,res)=>{
     const extractedUserId = req.body.userIdInt
     console.log("UserValue",extractedUserId)
+    pool.query()
 })
 
 app.get("/content", (req, res) => {

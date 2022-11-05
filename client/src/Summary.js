@@ -17,6 +17,7 @@ const gettingData = ()=>{
     console.log("Hitting the axios request for getting the data information")
     axios.post(`${linkServer}extratingData`,{userIdInt:userIdValueNum})
 }
+gettingData()
     return (
         <div>
             <h1>The userId recorded is {userIdValueNum}</h1>
