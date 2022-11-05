@@ -92,7 +92,7 @@ function Products(props) {
                                 <Link to={`/products/${product.id}`}> {product.product_description}</Link>
                             </div>
                             <div className="priceInformation">
-                                <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
+                                <span className="firstPrice">${product.price}</span> <span className="secoundPrice">          ${product.sale_price}</span>
                             </div>
                             <div className="addContent"> <Link to="/stores">  <h3>Choose a Store</h3></Link> 
                             </div>
@@ -133,7 +133,7 @@ function Products(props) {
             <Link to={`/products/${product.id}`}> {product.product_description}</Link>
         </div>
         <div className="priceInformation">
-            <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
+            <span className="firstPrice">${product.price}</span> <span className="secoundPrice">          ${product.sale_price}</span>
         </div>
         <div className="addContent"> <Link to="/stores">  <h3>Choose a Store</h3></Link> 
         </div>
@@ -176,7 +176,7 @@ function Products(props) {
             <Link to={`/products/${product.id}`}> {product.product_description}</Link>
         </div>
         <div className="priceInformation">
-            <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
+            <span className="firstPrice">${product.price}</span> <span className="secoundPrice">          ${product.sale_price}</span>
         </div>
         <div className="addContent"><Link to="/stores">  <h3>Choose a Store</h3></Link> 
         </div>

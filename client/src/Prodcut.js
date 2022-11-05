@@ -93,7 +93,7 @@ function Product() {
                         <Link to={`/products/${product.id}`}> {product.product_description}</Link>
                     </div>
                     <div className="priceInformation">
-                        <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
+                        <span className="firstPrice">${product.price}</span> <span className="secoundPrice">          ${product.sale_price}</span>
                     </div>
                     <div >
                         <button className="addContent" onClick={addingProductDatabase}><h3>Confirm to Add Product</h3></button>
