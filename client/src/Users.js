@@ -12,7 +12,7 @@ import Cookies from 'universal-cookie';
  
 
 function Users(props) {
-    const {firstNameSaved,lastNameSaved,emailSaved ,savingFirstName,savingLastName,savingEmail } = useContext(userContext)
+    const {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction} = useContext(userContext)
     // const {buttonState, firstName, lastName,emailName,passwordName , otherpasswordName, emailDatabase, passwordDatabase ,wrongPasswordComment ,addingClass, removingClass, logInButton, register } = useVerification();
 const [buttonState,setButtonState] = useState(false)
 const [firstName, setFirstName] = useState('')
@@ -62,6 +62,14 @@ const register = ()=> {
         console.log("Email doesn't exists your good to sign in")
         axios.post(`${linkServer}reigister`,{firstName, lastName, email:emailName, password:passwordName})
         .then((response)=>{
+            const newArrayFiltered = allUsersInformation.slice(-1)
+            console.log("newArrayFiltered",newArrayFiltered)
+            const convertToNumber = Number(newArrayFiltered[0].id)
+            console.log('convertToNumber',convertToNumber)
+            const userIdValue = convertToNumber +1;
+            console.log('userIdValue ',userIdValue)
+            cookies.set('userId',`${userIdValue}`)
+    
             cookies.set('emailValue',`${emailName}`)
             cookies.set('firstNameValue',`${firstName}`)
             cookies.set('lastNameValue',`${lastName}`)
@@ -79,6 +87,9 @@ const register = ()=> {
             let path = `/home`;
             // let history = useHistory();
             history.push(path);
+
+            
+            
     
         })
         .catch((error)=>{
@@ -125,9 +136,11 @@ const logInButton = () =>{
             const newArrayFiltered = allUsersInformation.filter((eachObject) => {
                 if(eachObject.email === emailDatabase){
                     console.log("The whole Object of that email",eachObject)
+                    savingUserId(eachObject.id)
                     savingEmail(emailDatabase)
                     savingFirstName(eachObject.firstname)
                     savingLastName(eachObject.lastname)
+                    cookies.set('userId',`${eachObject.id}`)
                     cookies.set('emailValue',`${emailDatabase}`)
                     cookies.set('firstNameValue',`${eachObject.firstname}`)
                     cookies.set('lastNameValue',`${eachObject.lastname}`)

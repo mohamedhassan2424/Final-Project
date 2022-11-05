@@ -1,32 +1,26 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react-router-dom";
-import Product from "./Prodcut";
-import './styles.css'
+import React , {useEffect, useState} from "react";
+import { useContext } from "react";
+
+import { userContext } from "./providers/UserProvider";
+
+import { useParams } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useLocation,  } from "react-router-dom";
 import Nav from "./Nav";
-function Products(props) {
-//     const search = useLocation().search;
-//   const id=new URLSearchParams(search).get('id');
-//   
-//   console.log("IDDDDDD",id);//12345.
-// const fullUrl = window.location.href
-// const pathName = window.location.origin
-// console.log(window.location.origin)
-    // const [products, setProducts] = useState([])
+import axios from "axios";
+import Cookies from 'universal-cookie';
+
+
+function StoreProduct(props){
+    const cookies = new Cookies();
+    const {storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,settingStoreIdValue , savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction} = useContext(userContext)
+    const storeParamter=  useParams()
+    console.log('The storeNameid',storeParamter)
+    cookies.set('storeName',storeParamter.id)
     const [dairy, setDairy] = useState([])
     const [beverage ,setBeverage] = useState([])
     const [frozenFood, setFrozenFood] = useState([])
-    // useEffect(() => {
-
-    //     Promise.all([
-    //       axios.get('http://localhost:8080/frozenFood'),
-    //       axios.get('http://localhost:8080/Beverage'),
-    //       axios.get('http://localhost:8080/dairy')].
-     //       .then((all)=>{
-       //  })
-    
-    // }, [])
+    const [storeIdState, setStoreIdState] = useState([])
+    console.log(savingStoreName,"savingStoreName")
     useEffect(() => {
 
         axios.get('http://localhost:8080/frozenFood')
@@ -50,21 +44,35 @@ function Products(props) {
             .then(response => {
                 console.log(response.data)
                 setDairy(response.data)
+                
             })
     }, [])
-//   console.log("Paramter")
-    return (
-        <div className="mainContainerElement">
-            <div className="navbar">
-                <div className="logo">
-                    <span className="logoName">LITE CART</span>
-                    <img className="logoImage" src="https://media.istockphoto.com/vectors/vegetables-on-shopping-cart-trolley-grocery-logo-icon-design-vector-vector-id1205419959?k=20&m=1205419959&s=612x612&w=0&h=F4gyp5wuFkCaZr00OQS8KPCSE1_4pHmFiOIM2TQlOPI=" />
-                </div>
-               <Nav />
-            </div>
-            <h1>{dairy[0] ? dairy[0].category_name_value:<h1>Waiting .......</h1>}</h1>
-            <div className="eachrow">
-             
+
+    useEffect(() => {
+
+        axios.get('http://localhost:8080/allStores')
+            .then(response => {
+                console.log('setStoreIdState',response.data)
+                setStoreIdState(response.data)
+
+            })
+    }, [])
+
+    const filteredStoreData = storeIdState.filter((storeObject)=>{
+        if(storeObject.store_name === storeParamter.id){
+        cookies.set('storeId',storeObject.id)
+        console.log("Cookies StoreId",cookies.get('storeId'))
+        settingStoreIdValue(storeObject.id)
+        }
+    })
+
+    return(
+<div>
+    <Nav />
+    <h1>The store Selected is {storeParamter.id}</h1>
+    <h1>Welcome to {storeParamter.id} </h1>
+    <div className="eachrow">
+    <h1>{dairy[0] ? dairy[0].category_name_value:<h1>Waiting .......</h1>}</h1>
                 {dairy && dairy.map((product) => (
 
                     <div className="outlineBox">
@@ -94,7 +102,7 @@ function Products(props) {
                             <div className="priceInformation">
                                 <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
                             </div>
-                            <div className="addContent"> <Link to="/stores">  <h3>Choose a Store</h3></Link> 
+                            <div className="addContent"> <Link to={`/product/${product.id}`}><h3>Add</h3></Link>
                             </div>
                         </div>
                     </div>
@@ -103,6 +111,7 @@ function Products(props) {
 
 
                 }
+             
             </div>
  <div className="eachrow">
  <div className ="titlePageCategoryProduct">  <h1>{frozenFood[0]?frozenFood[0].category_name_value :<h1>Waiting .......</h1>}</h1></div>
@@ -135,7 +144,7 @@ function Products(props) {
         <div className="priceInformation">
             <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
         </div>
-        <div className="addContent"> <Link to="/stores">  <h3>Choose a Store</h3></Link> 
+        <div className="addContent"> <Link to={`/product/${product.id}`}> <h3>Add</h3></Link>
         </div>
     </div>
 </div>
@@ -145,6 +154,8 @@ function Products(props) {
 
 }
  </div>
+
+
 
  <div className ="titlePageCategoryProduct"><h1>{beverage[0]?beverage[0].category_name_value:<h1>Waiting.......</h1>}</h1></div>     
  <div className="eachrow">
@@ -178,7 +189,7 @@ function Products(props) {
         <div className="priceInformation">
             <span className="firstPrice">{product.price}</span> <span className="secoundPrice">          {product.sale_price}</span>
         </div>
-        <div className="addContent"><Link to="/stores">  <h3>Choose a Store</h3></Link> 
+        <div className="addContent"><Link to={`/product/${product.id}`}> <h3>Add</h3></Link>
         </div>
     </div>
 </div>
@@ -192,13 +203,10 @@ function Products(props) {
 
 
 
-                
-           
 
-        </div>
-
-
+            
+</div>
     );
 }
 
-export default Products;
+export default StoreProduct;

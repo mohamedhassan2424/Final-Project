@@ -3,6 +3,7 @@ import axios from "axios"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Nav from "./Nav";
 function Stores(props) {
+  
 const [stores,setStores] = useState([])
   useEffect(() => {
 
@@ -55,13 +56,14 @@ const [stores,setStores] = useState([])
 <li className="eachStore">
   <div className="mainClassInStores">
 <div className="logoImage">
-<img src={store.image_link} />
+<Link to="/products"><img src={store.image_link} /></Link>
 
   
 </div>
+
 <div className="contentOfStore">
 <p className ="newText"> NEW</p>
-<Link to={`/product/${store.store_name}`}><p> {store.store_name}</p></Link>
+<Link   to={`/products/${store.store_name}`}><p> {store.store_name}</p></Link>
 <p className ="deliveryText"> DELEIVER WITHTIN AN HOUR</p>
 <p className="storePriceText"> In-stores prices</p>
 </div>

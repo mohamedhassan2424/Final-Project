@@ -193,6 +193,50 @@ app.get("/mainpage", (req, res) => {
     res.render("mainpage")
 })
 
+app.post('/addingToSalesDatabase',(req,res)=>{
+    const productIdValue = req.body.productId;
+    const userIdValue = req.body.userId;
+    const storeIdValue= req.body.storeId
+    console.log("ProductIdValue",productIdValue)
+    console.log("userIdValue",userIdValue)
+    console.log('StoreIdValue',storeIdValue)
+
+    const sqlQuery = "INSERT INTO sales (user_id_sales,stores_id_sales, products_id ) VALUES ($1,$2,$3);"
+    pool.query(sqlQuery, [userIdValue,storeIdValue,productIdValue])
+        .then((response) => {
+            res.send(response)
+            // res.send("All is good it has been sent off")
+        })
+        .catch((error) =>{
+            console.log(error)
+        })
+
+})
+app.post("/extratingData", (req,res)=>{
+    const extractedUserId = req.body.userIdInt
+    console.log(extractedUserId, "extractedUserId")
+    console.log("UserValue",extractedUserId)
+    pool.query(`SELECT * FROM sales
+    JOIN products ON products.id = products_id
+    JOIN users ON users.id = user_id_sales
+    JOIN stores ON stores.id = stores_id_sales
+    WHERE users.id =$1 ;`,[extractedUserId])
+    .then((response)=>{
+        res.json(response.rows)
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+})
+
+app.post('/removingProduct',(req,res)=>{
+    const productRemoving = req.body.productIdVal
+    const userIDOfProductRemoving= req.body.userIDNam
+    console.log('productRemoving',productRemoving)
+    console.log('userIDOfProductRemoving',userIDOfProductRemoving)
+    pool.query(`DELETE FROM sales WHERE  user_id_sales =$1 AND products_id =$2;`,[userIDOfProductRemoving,productRemoving])
+})
+
 app.get("/content", (req, res) => {
     return pool.query(`SELECT * FROM users;`)
         .then((response) => {

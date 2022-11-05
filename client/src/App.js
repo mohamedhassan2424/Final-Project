@@ -14,8 +14,7 @@ import Summary from './Summary'
 import ErrorPage from "./ErrorPage";
 import Product from "./Prodcut";
 import Logout from "./Logout";
-import StoresProducts from './StoreProducts'
-import TestingPage from "./TestingPage";
+import StoreProduct from "./StoreProdcuts";
 
 function App() {
   // const getData = async () => {
@@ -57,17 +56,15 @@ function App() {
           <Route path="/stores">
             <Stores />
           </Route>
-          <Route path="/product/:id">
-            <StoresProducts />
-          </Route>
           <Route path="/products/:id">
+            <StoreProduct />
+          </Route>
+          <Route path="/product/:id">
             <Product />
           </Route>
-          <Route path="/allproducts">
+          <Route path="/products">
             <Products />
           </Route>
-          
-          
           
           <Route path="/cart">
             <Carts />
@@ -79,6 +76,7 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
+          
           <Route path="/logout">
             <Logout />
           </Route>
