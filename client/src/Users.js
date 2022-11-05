@@ -179,7 +179,7 @@ const removingClass = ()=>{
     return (
         <section>
             <Nav />
-            <h1>Connected to the User page</h1>
+            {/* <h1>Connected to the User page</h1> */}
             <div className='bigContainer'>
                 <div className="formContainer" >
 <div className ="allButtons">
@@ -188,7 +188,7 @@ const removingClass = ()=>{
     <button className={buttonState ? "moveButtonState RightButton": "moveButtonState"}>{buttonState ? "Login": "Signup"}</button>
 </div>
             <form onSubmit={(event) => event.preventDefault()} class={buttonState ? "form": "form signupForm"}>
-            <h1 className ="fontName">Create an INSTA-CART Account</h1><br />
+            <h1 className ="fontName">Create a LiteCart Account!</h1><br />
            
 
                 <div className ="inputText">
@@ -210,7 +210,7 @@ const removingClass = ()=>{
 }}/>
                 </div>
                 <div className ="inputText">
-                    <input value={passwordName} type = "password" placeholder="Create New Password" onChange={(event)=> {
+                    <input value={passwordName} type = "password" placeholder="Password" onChange={(event)=> {
                 setPasswordName(event.target.value)
                 
                 console.log(passwordName)

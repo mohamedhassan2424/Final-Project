@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Link,Route } from "react-router-dom";
 import Home from "./Home"
 import About from "./About.js"
 import Users from "./Users"

@@ -60,27 +60,27 @@ function Home(props) {
                 <div className="navContainer">
                     {/* <h1>Hello world Mohamed Hassan</h1> */}
                     <div className="navbar">
-                        <div className="logo">
-                            <span className="logoName">LITE CART</span>
-                            <img className="logoImage" src="https://media.istockphoto.com/vectors/vegetables-on-shopping-cart-trolley-grocery-logo-icon-design-vector-vector-id1205419959?k=20&m=1205419959&s=612x612&w=0&h=F4gyp5wuFkCaZr00OQS8KPCSE1_4pHmFiOIM2TQlOPI=" />
-                        </div>
+                        
                         <Nav />
                         
                     </div>
+                        <div className="sale-photo">
+                            <img className="secoundlogoImage" src="https://image.s11.sfmc-content.com/lib/fe3e157175640479711675/m/10/b7102c92-08fc-4bea-8ee9-0b595a543f04.png" />
+                        <div className="sale-photo">
+                            <img className="secoundlogoImage" src="https://image.s11.sfmc-content.com/lib/fe3e157175640479711675/m/10/404a4ff9-d8c4-4f48-975e-79d421962f47.png" />
+                       </div>
+                        </div>
                     <div className="eachrow">
                         <div className="eachcloumn">
-                            <h1>Look no Further! We got Everything for you.</h1>
+                            <h1>Look no Further!<br /> We got Everything for you.</h1>
                             <h1>Grocery Shoppping has never been this fun.</h1>
-                            <p>To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.</p>
+                            <p className="paragraph">To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.</p>
                             <a href="" className="firstbutton">CHECK IT OUT &#x2192;</a>
-                        </div>
-                        <div className="eachcloumn">
-                            <img className="secoundlogoImage" src="https://media.istockphoto.com/photos/shopping-basket-with-fresh-food-grocery-supermarket-food-and-eats-picture-id1216828053?k=20&m=1216828053&s=612x612&w=0&h=mMGSO8bG8aN0gP4wyXC17WDIcf9zcqIxBd-WZto-yeg=" />
                         </div>
                     </div>
                 </div>
             </header>
-            v
+            
             <div className="catergories">
                 <div className="parentcontainerrow">
                     <div className="eachrow">

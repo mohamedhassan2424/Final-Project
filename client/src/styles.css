@@ -4,24 +4,23 @@
 *{
     padding:0;
     margin:0;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: FoundersGroteskWeb, sans-serif;
     box-sizing:border-box;
 }
 
 .fontName {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: FoundersGroteskWeb, sans-serif;
     font-weight: 700;
-    color:black;
+    color: rgb(0, 84, 0);
     display: flex;
     justify-content: center;
 
 
 }
 .linkClass {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: FoundersGroteskWeb, sans-serif;
     font-weight: 500;
     color: aqua;
-
     display: flex;
     justify-content: center;
 
@@ -29,7 +28,8 @@
 .bigContainer {
     width:100vw;
     height:100vh;
-    background-image: url("https://media.istockphoto.com/photos/fresh-fruits-and-vegetables-picture-id589415708?s=612x612");
+    /* background-image: url("https://media.istockphoto.com/photos/fresh-fruits-and-vegetables-picture-id589415708?s=612x612"); */
+    background-color: #f1e4d1;
     position: fixed;
     display: flex;
     justify-content: center ;
@@ -44,6 +44,7 @@
     display: flex;
     align-items: center ;
     flex-direction: column;
+    margin-bottom: 5em;
 }
 
 .allButtons {
@@ -123,7 +124,8 @@
     border-radius: 50px;
     border:none;
     outline: none;
-    background-color: blueviolet;
+    background-color: rgb(0, 84, 0);
+    color: white;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);;
     cursor: pointer;
     font-size: 0.8em;
@@ -157,19 +159,18 @@
 }
 
 .navContainer {
-max-width:1300px;
-margin:auto;
-padding-left:25px;
-padding-right:25px;
-
+    max-width:100%;
+    margin:auto;
+    background: #f1e4d1;
 }
 
 .header {
    
-    background-color: #FBAB7E;
-background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    /* background-color: #FBAB7E;
+background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%); */
 
 }
+
 .logoImage {
     width:100px;
     height:100px;
@@ -178,9 +179,7 @@ background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
     padding-left: 15px;
 }
 .navbar {
-    display:flex;
     align-items: center;
-    padding:20px;
 }
 
 .navlistItems {
@@ -200,7 +199,7 @@ background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 
 .navlistItems a {
 text-decoration: none;
-color:gray;
+color:rgb(210, 210, 210);
 }
 .row p {
     color:gray;
@@ -218,18 +217,39 @@ color:gray;
     min-width:300px;
 }
 
-.eachcloumn h1{
-    font-size:30px;
-    line-height: 25px;
-    margin: 15px 0;
+.sale-photo {
+    display: flex;
+    flex-basis:50%;
+    min-width:300px;
 }
 
+.eachcloumn h1{
+    display: flex;
+    padding: 20px;
+    color: rgb(0, 84, 0);
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.42857;
+    text-transform: none;
+    font-family: FoundersGroteskWeb, sans-serif;
+    justify-content: center;
+}
+
+.paragraph {
+    display: flex;
+    padding: 20px;
+    color: rgb(0, 84, 0);
+    font-size: 20px;
+    line-height: 1.42857;
+    text-transform: none;
+    font-family: FoundersGroteskWeb, sans-serif;
+    justify-content: center;
+}
+
+
 .secoundlogoImage {
-    border-radius:30px 30px 30px 30px;
     width:620px;
-    height:400px;
-    padding-left:150px;
-    
+    height:260px;
 }
 .firstbutton {
     display:inline-block;
@@ -304,7 +324,8 @@ color:gray;
 .chocalteImage {
     display:flex;
     justify-content: center;
-    max-width: 200px;
+    width: 200px;
+    height: 200px;
 }
 
 .ProductInforamtion {
@@ -319,7 +340,7 @@ color:gray;
     padding: 5px 5px 5px 5px;
     background-color: white;
     box-shadow: 0px 0px 0px 4px darkgray;
-    
+    border-radius: 20px 20px 20px 20px;
     width: 25%;
     padding-left: 7.5px;
     padding-right: 7.5px;

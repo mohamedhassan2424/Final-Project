@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { userContext } from "./providers/UserProvider";
+import "./Nav.css";
+
 function Nav(props) {
     const {firstNameSaved,lastNameSaved,emailSaved ,savingFirstName,savingLastName,savingEmail } = useContext(userContext)
     return(
@@ -9,7 +11,7 @@ function Nav(props) {
 <nav className="navlistItems">
                         <ul>
                             <li>
-                                {firstNameSaved ? <h1>Welcome Back :{ firstNameSaved} {lastNameSaved} </h1>: <h3>Please Sighn-up or Log-In</h3>}
+                                {firstNameSaved ? <h1>Welcome Back :{ firstNameSaved} {lastNameSaved} </h1>: <h1></h1>}
                                 
                         
                             </li>
@@ -20,7 +22,7 @@ function Nav(props) {
           <li>{ firstNameSaved ? <Link to="/stores">Stores</Link>:<Link to="/users">Stores</Link>}
   
           </li>
-          <li> {firstNameSaved ? <Link to="/products">Products</Link>:<Link to="/users">Products</Link>}
+          <li> {firstNameSaved ? <Link to="/allproducts">Products</Link>:<Link to="/users">Products</Link>}
 
           </li>
           <li>{firstNameSaved ? <Link to="/logout">Users</Link> :<Link to="/users">Users</Link>

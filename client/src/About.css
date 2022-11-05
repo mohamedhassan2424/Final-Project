@@ -1,0 +1,120 @@
+.whole-page {
+  font-family: FoundersGroteskWeb, sans-serif;
+  background: #f1e4d1;
+}
+
+.about, .list {
+  display: flex;
+  padding: 20px;
+  color: rgb(0, 84, 0);
+  font-size: 1.71429rem;
+  font-weight: 600;
+  line-height: 1.42857;
+  /* margin: 0px; */
+  text-transform: none;
+  font-family: FoundersGroteskWeb, sans-serif;
+  justify-content: center;
+}
+
+.about {
+    box-sizing: border-box;
+    margin-bottom: 35px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #01d0ff;
+    padding-top: 6%;
+    padding-bottom: 30px;
+    height: 300px;
+}
+
+.info {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003e38 !important;
+    margin-bottom: 26px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.para {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.graphic {
+    box-sizing: border-box;
+    margin-left: 0;
+    padding: 0;
+    font-size: 80px;
+    line-height: 74px;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003e38 !important;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h3 {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003e38 !important;
+    margin-bottom: 6px;
+    justify-content: center;
+    display: flex;
+}
+
+h5 {
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003e38 !important;
+    justify-content: center;
+    display: flex;
+}
+
+.photo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 55px;
+}
+
+h4 {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003e38 !important;
+    margin-bottom: 26px;
+}
+
+.seniors {
+  box-sizing: border-box;
+  margin: 0;
+  padding-bottom: 130px;
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #003e38 !important;
+  margin-top: 70px;
+}
+
