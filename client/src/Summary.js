@@ -16,6 +16,13 @@ console.log('userIdValueNum',userIdValueNum)
 const gettingData = ()=>{
     console.log("Hitting the axios request for getting the data information")
     axios.post(`${linkServer}extratingData`,{userIdInt:userIdValueNum})
+    .then((response) => {
+        console.log("DATA recieved from the database",response.data)
+    })
+    .catch((error)=>{
+        console.log('error received from the database',error)
+    })
+
 }
 gettingData()
     return (

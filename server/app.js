@@ -214,8 +214,19 @@ app.post('/addingToSalesDatabase',(req,res)=>{
 })
 app.post("/extratingData", (req,res)=>{
     const extractedUserId = req.body.userIdInt
+    console.log(extractedUserId, "extractedUserId")
     console.log("UserValue",extractedUserId)
-    pool.query()
+    pool.query(`SELECT * FROM sales
+    JOIN products ON products.id = products_id
+    JOIN users ON users.id = user_id_sales
+    JOIN stores ON stores.id = stores_id_sales
+    WHERE users.id =$1 ;`,[extractedUserId])
+    .then((response)=>{
+        res.json(response.rows)
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
 })
 
 app.get("/content", (req, res) => {
