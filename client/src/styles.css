@@ -29,7 +29,7 @@
     width:100vw;
     height:100vh;
     /* background-image: url("https://media.istockphoto.com/photos/fresh-fruits-and-vegetables-picture-id589415708?s=612x612"); */
-    background-color: #f1e4d1;
+    background-color: rgb(251, 248, 243);
     position: fixed;
     display: flex;
     justify-content: center ;
@@ -262,7 +262,8 @@ color:rgb(210, 210, 210);
 }
 
 .header .eachrow {
-    margin-top:50px;
+    background-color: rgb(251, 248, 243);
+    /* margin-top:50px; */
 }
 
 .cartIcon {
@@ -275,8 +276,7 @@ color:rgb(210, 210, 210);
 }
 
 .catergories {
-    background-color: #f1e4d1;
-}
+    background-color: rgb(251, 248, 243);}
 
 .othercolumn {
     flex-basis: 22%;
