@@ -248,9 +248,10 @@ color:rgb(210, 210, 210);
 
 
 .secoundlogoImage {
-    width:620px;
-    height:260px;
+    width: 50%;
+    height: 24px;
 }
+
 .firstbutton {
     display:inline-block;
     background :red;
