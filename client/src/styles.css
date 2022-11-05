@@ -250,11 +250,15 @@ color:rgb(210, 210, 210);
 .secoundlogoImage {
     width: 50%;
     height: 240px;
+    margin-top: 5px;
+    margin-right: 2.5px;
 }
 
 .secound-logoImage {
     width: 100%;
     height: 240px;
+    margin-top: 5px;
+    margin-left: 2.5px;
 }
 
 .firstbutton {
