@@ -307,7 +307,7 @@ color:rgb(210, 210, 210);
 } */
 
 .addContent {
-    border-radius: 10px;
+    border-radius: 3px;
     display :flex;
     justify-content: center;
     align-items: center;
@@ -316,6 +316,12 @@ color:rgb(210, 210, 210);
     border-style: solid;
     border-color: rgb(0, 197, 255);
     flex: 1 0 auto;
+    color: rgb(0, 71, 64);
+    touch-action: manipulation;
+}
+
+a {
+    margin: 6px;
     color: rgb(0, 71, 64);
     touch-action: manipulation;
 }
