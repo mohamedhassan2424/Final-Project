@@ -307,11 +307,9 @@ color:rgb(210, 210, 210);
 } */
 
 .addContent {
-    padding-bottom: 25px;
     background-color: #89CFF0;
     outline:0.1em solid #002D62;
     border-radius: 10px;
-    padding:20px 20px 20px 20px;
     display :flex;
     justify-content: center;
     align-items: center;
