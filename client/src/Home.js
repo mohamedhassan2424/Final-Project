@@ -111,7 +111,7 @@ function Home(props) {
                                 <div className="saleImage">
                                     <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" /><span className="saleDescription">SALE</span>
                                 </div>
-                                <hr></hr>
+                                
                                 <div className="caloriesDescription">
                                    {product.product_description}
                                 </div>
