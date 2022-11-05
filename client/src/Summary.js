@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Nav from "./Nav";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { userContext } from "./providers/UserProvider";
 import Cookies from 'universal-cookie';
@@ -11,6 +11,7 @@ function Summary(props) {
     const { allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction} = useContext(userContext)
     const [salesHistory, setSalesHistory] = useState([])
     const linkServer = "http://localhost:8080/"
+    const history = useHistory();
     const cookies = new Cookies();
     const userIdValueNum = cookies.get('userId')
     console.log('userIdValueNum', userIdValueNum)
@@ -46,6 +47,7 @@ function Summary(props) {
         
         axios.post('http://localhost:8080/removingProduct',{userIDNam:userIDVal, productIdVal :productValue })
         
+        window.location.reload(false)
     }
     return (
         <div>
