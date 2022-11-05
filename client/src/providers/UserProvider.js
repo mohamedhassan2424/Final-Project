@@ -13,6 +13,28 @@ const [userId, setUserId] = useState(0)
 const [counterValue, setCounterValue] = useState(cookies.get('userId') ? cookies.get('userId'): 0);
 const [storeIdNumber, setStoreIdNumber] = useState(cookies.get('storeId')? cookies.get('storeId'):0)
 const [allTheStore, setAllTheStore] = useState('')
+const [salesHistory, setSalesHistory] = useState([])
+
+const userIdValueNum = cookies.get('userId')
+useEffect(() => {
+
+    axios.post('http://localhost:8080/extratingData',{ userIdInt: userIdValueNum })
+        .then(response => {
+            console.log("DATA recieved from the database", response.data)
+            setSalesHistory(response.data)
+        })
+        .catch((error) => {
+        console.log('error received from the database', error)
+            })
+}, [])
+
+const changinSalesHistory =  (newArray) =>{
+    setSalesHistory([newArray])
+}
+
+
+
+
 
 useEffect(() => {
 
@@ -69,7 +91,7 @@ const settingStoreIdValue = (id)=>{
     setStoreIdNumber(id)
     console.log(id)
 }
-const providerData = {allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue , savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction}
+const providerData = {salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction}
 return(
     <userContext.Provider value ={providerData}>
         {props.children}

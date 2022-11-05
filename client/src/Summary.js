@@ -8,23 +8,23 @@ import axios from "axios";
 
 
 function Summary(props) {
-    const { allTheStore, storeIdNumber, firstNameSaved, lastNameSaved, emailSaved, savingStoreName, counterValue, userId, settingStoreIdValue, savingFirstName, savingLastName, savingEmail, savingUserId, savingStoreFunction, incrementFunction, decrementFunction, clearFunction } = useContext(userContext)
-    const [salesHistory, setSalesHistory] = useState([])
+    const {salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction} = useContext(userContext)
+    // const [salesHistory, setSalesHistory] = useState([])
     const linkServer = "http://localhost:8080/"
     const cookies = new Cookies();
     const userIdValueNum = cookies.get('userId')
     console.log('userIdValueNum', userIdValueNum)
-    useEffect(() => {
+    // useEffect(() => {
 
-        axios.post('http://localhost:8080/extratingData',{ userIdInt: userIdValueNum })
-            .then(response => {
-                console.log("DATA recieved from the database", response.data)
-                setSalesHistory(response.data)
-            })
-            .catch((error) => {
-            console.log('error received from the database', error)
-                })
-    }, [])
+    //     axios.post('http://localhost:8080/extratingData',{ userIdInt: userIdValueNum })
+    //         .then(response => {
+    //             console.log("DATA recieved from the database", response.data)
+    //             setSalesHistory(response.data)
+    //         })
+    //         .catch((error) => {
+    //         console.log('error received from the database', error)
+    //             })
+    // }, [])
 
     const totalSumFunction = ()=>{
         let totalSumValue= 0
@@ -43,6 +43,7 @@ function Summary(props) {
       console.log('userIDVal',userIDVal)
       console.log('productValue',productValue)
         console.log('ProductObject',productObject)
+        
         axios.post('http://localhost:8080/removingProduct',{userIDNam:userIDVal, productIdVal :productValue })
         
     }
