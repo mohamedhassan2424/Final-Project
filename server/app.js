@@ -212,6 +212,8 @@ app.post('/addingToSalesDatabase',(req,res)=>{
         })
 
 })
+
+
 app.get("/content", (req, res) => {
     return pool.query(`SELECT * FROM users;`)
         .then((response) => {
