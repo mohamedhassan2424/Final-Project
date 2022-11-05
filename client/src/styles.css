@@ -330,6 +330,7 @@ a {
     width: 10%;
     height: 10%;
     margin-left: -24px;
+    padding-top: 15px;
 }
 
 .outerTopProduCtontainer {
@@ -369,7 +370,7 @@ a {
 
 .saleDescription {
     display:flex;
-    padding-top: 1px;
+    padding-top: 17px;
     padding-left: 6px;
     color:#ff1010;
     /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
