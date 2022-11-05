@@ -11,7 +11,7 @@ function Nav(props) {
 <nav className="navlistItems">
                         <ul>
                             <li>
-                                {firstNameSaved ? <h1>Welcome Back :{ firstNameSaved} {lastNameSaved} </h1>: <h1></h1>}
+                                {firstNameSaved ? <h1>Welcome Back { firstNameSaved} {lastNameSaved} </h1>: <h1></h1>}
                                 
                         
                             </li>

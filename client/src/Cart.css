@@ -1,6 +1,7 @@
 * {
   font-family: FoundersGroteskWeb, sans-serif;
-  /* background-color: #f1e4d1; */
+  /* background-color: #f1e4d1;
+   */
 }
 
 .your-cart {
@@ -70,7 +71,7 @@ justify-content: space-evenly;
 
 .outlineBox {
     margin: 10px,10px,10px,10px;
-    padding: 40px 5px 5px 5px;
+    padding: 10px 5px 5px 5px;
     background-color: white;
     box-shadow: 0px 5px 5px 3px grey;
     width: 25%;
