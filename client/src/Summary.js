@@ -50,6 +50,9 @@ function Summary(props) {
     }
     totalSumFunction()
     console.log("Calling the sum Function above",totalSumFunction())
+    const deleteProduct = () => {
+
+    }
     return (
         <div>
             <h1>The userId recorded is {userIdValueNum}</h1>
@@ -78,7 +81,8 @@ function Summary(props) {
                             <td> {eachDataObject.store_name}</td>
                             <td> {eachDataObject.rating}</td>
                             <td>{eachDataObject.quantity *eachDataObject.price}</td>
-                        </tr>
+                        <td><button onClick={() => {deleteProduct(eachDataObject)}}>DELETE Product</button></td>
+                            </tr>
                     ))}
 
 
@@ -92,7 +96,7 @@ function Summary(props) {
                         <td>{totalSumFunction()}</td>
                     </tr>
                 </table>
-                <button>Proceded to Checkout</button>
+                <button >Proceded to Checkout</button>
             </div>
         </div>
     )
