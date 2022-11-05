@@ -324,8 +324,8 @@ color:rgb(210, 210, 210);
 .chocalteImage {
     display:flex;
     justify-content: center;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 }
 
 .ProductInforamtion {
@@ -336,7 +336,7 @@ color:rgb(210, 210, 210);
 }
 
 .outlineBox {
-    margin: 10px,10px,10px,10px ;
+    margin: 10px;
     padding: 5px 5px 5px 5px;
     background-color: white;
     box-shadow: 0px 0px 0px 4px darkgray;
