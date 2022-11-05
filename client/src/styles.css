@@ -307,12 +307,17 @@ color:rgb(210, 210, 210);
 } */
 
 .addContent {
-    background-color: #89CFF0;
-    outline:0.1em solid #002D62;
     border-radius: 10px;
     display :flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(178, 242, 255);
+    border-width: 0.0714286rem;
+    border-style: solid;
+    border-color: rgb(0, 197, 255);
+    flex: 1 0 auto;
+    color: rgb(0, 71, 64);
+    touch-action: manipulation;
 }
 
 .saleImage img{
