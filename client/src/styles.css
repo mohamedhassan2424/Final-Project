@@ -324,6 +324,7 @@ a {
     margin: 6px;
     color: rgb(0, 71, 64);
     touch-action: manipulation;
+    text-decoration: none;
 }
 
 .saleImage img {
@@ -395,10 +396,10 @@ hr {
 }
 
 .secoundPrice {
-    padding-top: 10px;
+    padding-top: 3px;
     padding-left: 8px;
     color:#006A4E;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: line-through;
 }
 
