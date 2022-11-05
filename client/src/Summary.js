@@ -14,19 +14,42 @@ function Summary(props) {
     const cookies = new Cookies();
     const userIdValueNum = cookies.get('userId')
     console.log('userIdValueNum', userIdValueNum)
-    const gettingData = () => {
-        console.log("Hitting the axios request for getting the data information")
-        axios.post(`${linkServer}extratingData`, { userIdInt: userIdValueNum })
-            .then((response) => {
+    // const gettingData = () => {
+    //     console.log("Hitting the axios request for getting the data information")
+    //     axios.post(`${linkServer}extratingData`, { userIdInt: userIdValueNum })
+    //         .then((response) => {
+    //             console.log("DATA recieved from the database", response.data)
+    //             setSalesHistory(response.data)
+    //         })
+    //         .catch((error) => {
+    //             console.log('error received from the database', error)
+    //         })
+
+    // }
+    // gettingData()
+    useEffect(() => {
+
+        axios.post('http://localhost:8080/extratingData',{ userIdInt: userIdValueNum })
+            .then(response => {
                 console.log("DATA recieved from the database", response.data)
                 setSalesHistory(response.data)
             })
             .catch((error) => {
-                console.log('error received from the database', error)
-            })
+            console.log('error received from the database', error)
+                })
+    }, [])
 
+    const totalSumFunction = ()=>{
+        let totalSumValue= 0
+        for(let i=0; i<salesHistory.length; i++){
+            const totalPrice = salesHistory[i].price
+            const totalQuantity= salesHistory[i].quantity
+            totalSumValue +=totalPrice*totalQuantity;
+        }
+        return totalSumValue;
     }
-    gettingData()
+    totalSumFunction()
+    console.log("Calling the sum Function above",totalSumFunction())
     return (
         <div>
             <h1>The userId recorded is {userIdValueNum}</h1>
@@ -41,24 +64,35 @@ function Summary(props) {
                         <th>Quantity </th>
                         <th>Store</th>
                         <th>Rating</th>
+                        <th>Total Price </th>
                     </tr>
 
-                    {salesHistory && salesHistory.map((eachDataObject) => {
+                    {salesHistory && salesHistory.map((eachDataObject) => (
                         <tr>
-                            <td> Product Image</td>
-                            <td> data for the column</td>
-                            <td> data for the column</td>
-                            <td> data for the column</td>
-                            <td> data for the column</td>
-                            <td> data for the column</td>
+                            <td> <img src={eachDataObject.product_url} /></td>
+                            <td> {eachDataObject.product_name} <br />
+                            Prodcut Description{eachDataObject.product_description}
+                            </td>
+                            <td> ${eachDataObject.price}</td>
+                            <td> {eachDataObject.quantity}</td>
+                            <td> {eachDataObject.store_name}</td>
+                            <td> {eachDataObject.rating}</td>
+                            <td>{eachDataObject.quantity *eachDataObject.price}</td>
                         </tr>
-                    })}
+                    ))}
 
 
                     <tr>
-                        <td> Total:</td>
+                        <td> Total: </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>{totalSumFunction()}</td>
                     </tr>
                 </table>
+                <button>Proceded to Checkout</button>
             </div>
         </div>
     )
