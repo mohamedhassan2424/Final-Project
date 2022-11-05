@@ -15,7 +15,7 @@ const userIdValueNum = cookies.get('userId')
 console.log('userIdValueNum',userIdValueNum)
 const gettingData = ()=>{
     console.log("Hitting the axios request for getting the data information")
-    axios.post(`${linkServer}`,{userIdInt:userIdValueNum})
+    axios.post(`${linkServer}extratingData`,{userIdInt:userIdValueNum})
 }
     return (
         <div>
