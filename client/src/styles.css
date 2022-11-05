@@ -389,8 +389,9 @@ hr {
     
 }
 .firstPrice {
-font-size:25px;
-color:#CC5500;
+    font-size: 25px;
+    color:#00a41b;
+    padding-top: 8px;
 }
 
 .secoundPrice {
@@ -403,9 +404,9 @@ color:#CC5500;
 
 .caloriesDescription {
     padding-top: 5px;
-    padding-left: 25px;
     color:#006A4E;
-    font-weight: 700;
+    width: 100%;
+    font-size: 12px;
 }
 
 .SaleImage {
