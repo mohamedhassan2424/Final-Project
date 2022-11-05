@@ -3,7 +3,7 @@ import { useContext } from "react";
 import UserProvider, { userContext } from "./providers/UserProvider";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link ,useHistory} from "react-router-dom";
 import Cookies from 'universal-cookie';
 
 import Nav from "./Nav";
@@ -15,6 +15,7 @@ function Product() {
     const [storeName, setStoreName] = useState('')
     const params = useParams();
     const cookies = new Cookies();
+    const history = useHistory();
     console.log(params)
     console.log('allTheStore',allTheStore)
     let storeIDValue = cookies.get('storeId')
@@ -39,12 +40,18 @@ function Product() {
 
     const addingProductDatabase = () => {
         axios.post(`${linkServer}addingToSalesDatabase`, { productId: product.id, userId: userIdValue, storeId: storeIdValue })
+        .then((response)=>{
+            console.log("Response When adding the data",response)
+            let path = `/products/${storeNameSaved}`;
+            // // let history = useHistory();
+            history.push(path);
+        })
     }
 
     return (
         <div>
             <Nav />
-            <h1>The store Selected: {storeNameSaved}</h1>
+            <h1>The store Selected : {storeNameSaved}</h1>
             <h1>
                 The product component which was clicked on was {params.id}
             </h1>
