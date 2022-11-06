@@ -295,7 +295,8 @@ color:rgb(210, 210, 210);
 }
 
 .othercolumn img {
-    width:100%;
+    height: 370.78px;
+    margin-top: 15px;
 }
 
 .topheaderName {
