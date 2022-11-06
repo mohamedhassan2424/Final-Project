@@ -49,6 +49,11 @@ function Summary(props) {
         
         window.location.reload(false)
     }
+
+    const editProduct = (productObject)=>{
+        console.log("productObject",productObject)
+
+    }
     return (
         <div>
             <h1>The userId recorded is {userIdValueNum}</h1>
@@ -60,7 +65,7 @@ function Summary(props) {
                         <th>Product</th>
                         <th>Product Description</th>
                         <th>Unit Price </th>
-                        <th>Quantity </th>
+                        <th>Quantity Selected </th>
                         <th>Store</th>
                         <th>Rating</th>
                         <th>Total Price </th>
@@ -73,11 +78,12 @@ function Summary(props) {
                             Prodcut Description{eachDataObject.product_description}
                             </td>
                             <td> ${eachDataObject.price}</td>
-                            <td> {eachDataObject.quantity}</td>
+                            <td> {eachDataObject.count_product}</td>
                             <td> {eachDataObject.store_name}</td>
                             <td> {eachDataObject.rating}</td>
                             <td>{eachDataObject.quantity *eachDataObject.price}</td>
                         <td><button onClick={() => {deleteProduct(eachDataObject)}}>DELETE Product</button></td>
+                            <td><button onClick={()=>{editProduct(eachDataObject)}}>Edit Product</button></td>
                             </tr>
                     ))}
 
