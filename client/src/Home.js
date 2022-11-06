@@ -142,11 +142,12 @@ function Home(props) {
  
 <li className="eachStore">
   <div className="mainClassInStores">
+    <div className="store-logo">
 <div className="logoImage">
 <img src={store.image_link} />
-
-  
 </div>
+</div>
+
 <div className="contentOfStore">
 <p className ="newText"> NEW</p>
 <p> {store.store_name}</p>

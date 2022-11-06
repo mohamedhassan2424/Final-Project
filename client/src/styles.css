@@ -443,6 +443,11 @@ hr {
 
 }
 
+.store-logo {
+    height: 72px;
+    width: 72px;
+}
+
 .mainClassInStores {
     display: flex;
     outline:0.1em solid #E1D9D1;
