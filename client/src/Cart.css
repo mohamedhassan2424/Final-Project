@@ -63,6 +63,13 @@
     cursor: pointer;
 }
 
+h6 {
+    font-size: 87.5%;
+    color: rgb(0, 71, 64);
+    line-height: 2.42857;
+    font-weight: 600;
+}
+
 .check-out {
   display: flex;
   justify-content: center;
