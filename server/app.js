@@ -240,14 +240,16 @@ app.post('/removingProduct',(req,res)=>{
 
 app.post('/updateingSaleCount',(req,res)=>{
 let counterIdVal = req.body.counterData
-let userIdVal = req.body.userId
+let userIdVal = req.body.userIdValue
 let productIdVal = req.body.productId
 let storeVal= req.body.storeId
-
+let previousCounter = req.body.previousCount
 console.log('CounterId', counterIdVal)
-console.log('UserId',counterIdVal)
+console.log('UserId',userIdVal)
 console.log('ProductId',productIdVal)
 console.log('StoreVal',storeVal)
+console.log("previousCount",previousCounter)
+pool.query(`UPDATE sales SET  user_id_sales =$1, stores_id_sales =$2, products_id =$3, count_product = $4 WHERE count_product = $5;`,[userIdVal,storeVal,productIdVal,counterIdVal,previousCounter])
 })
 
 app.get("/content", (req, res) => {

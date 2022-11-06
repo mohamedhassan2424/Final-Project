@@ -18,7 +18,8 @@ function EditProduct(props) {
     console.log("stateCookie",editProdObj)
     const UpdateFunction = ()=>{
         console.log('CounterValueData',counterUpdate)
-        axios.post(`${linkServer}updateingSaleCount`, { productId: editProduct.id, userId: editProduct.user_id_sales, storeId: editProduct.stores_id_sales, counterData:counterUpdate})
+        console.log("userId",editProduct.user_id_sales)
+        axios.post(`${linkServer}updateingSaleCount`, { productId: editProduct.products_id, userIdValue: editProduct.user_id_sales, storeId: editProduct.stores_id_sales, counterData:counterUpdate, previousCount: editProduct.count_product})
     }
 
     const DeleteFunction = ()=>{

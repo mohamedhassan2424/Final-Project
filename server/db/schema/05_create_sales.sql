@@ -28,3 +28,5 @@ CREATE TABLE sales (
 -- )
 
 -- sales item table, which would have the qunatinty of the product and cost
+
+
