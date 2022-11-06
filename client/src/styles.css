@@ -472,7 +472,7 @@ hr {
 }
 .mainClassInStores img {
     border-radius: 50%;
-    outline:0.1em solid #E1D9D1;
+    outline: 0.1em solid rgb(0 0 0 / 75%);
     width: 72px;
     height: 72px;
 }

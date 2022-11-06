@@ -144,7 +144,7 @@ function Home(props) {
 <div className="contentOfStore">
 <p className ="newText"> NEW</p>
 <p> {store.store_name}</p>
-<p className ="deliveryText"> DELIVER WITHTIN AN HOUR</p>
+<p className ="deliveryText"> DELIVER WITHIN AN HOUR</p>
 <p className="storePriceText"> In-store prices</p>
 </div>
 </div>
