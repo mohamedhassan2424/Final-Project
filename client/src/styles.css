@@ -489,8 +489,13 @@ hr {
     font-weight: 900;
 }
 
+.store-name {
+    font-weight: 700;
+    
+}
+
 .deliveryText {
-    color: #32de84;
+    color: #2c8e5b;
     font-weight: 500;
 }
 
