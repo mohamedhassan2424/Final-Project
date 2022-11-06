@@ -46,7 +46,7 @@ const [stores,setStores] = useState([])
 </div>
 
 <div>
-<h3 className ="storeTitle">Stores Near You</h3>
+<h3 className ="storeTitle">Stores Near Me</h3>
 
 
 
