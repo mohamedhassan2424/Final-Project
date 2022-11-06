@@ -9,7 +9,7 @@ function Carts(props) {
       <Nav />
      <div className="background-image">
       <div className="your-cart">
-        <h1>YOUR CART</h1>
+        <h1 className="yourcart">YOUR CART</h1>
       </div>
 
       <div>
