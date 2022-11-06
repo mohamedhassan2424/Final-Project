@@ -18,6 +18,9 @@ function Logout() {
         cookies.remove('lastNameValue')
         cookies.remove('userId')
         cookies.remove('storeId')
+        cookies.remove('specfiedAddressId')
+        cookies.remove('editProductObj')
+        cookies.remove('storeName')
         let path = `/users`;
             // let history = useHistory();
             history.push(path);

@@ -64,11 +64,25 @@ function OrderCheckout(){
                         cookies.set("specfiedAddressId",eachAddressObject)
                     }
                 })
-
+                const SpecfiedAddress = cookies.get("specfiedAddressId")
+                console.log("specfifedAddresss",SpecfiedAddress)
     return (
 <div>
     <Nav />
     <h1>Welcome to the OrderCheckout Page</h1>
+    {SpecfiedAddress ?<div>
+        <h5>Full Name :{SpecfiedAddress.full_name}</h5>
+        <h5>Address Line 1 :{SpecfiedAddress.address_line_1}</h5>
+        <h5>Address Line 2 :{SpecfiedAddress.address_line_2}</h5>
+        <h5>City Selected :{SpecfiedAddress.city}</h5>
+        <h5>State/Province/Region :{SpecfiedAddress.state_region}</h5>
+        <h5>Country:{SpecfiedAddress.country}</h5>
+    </div>
+    
+    
+    
+    
+    :<div className="AddresssSection">
     <form onSubmit={(event) => event.preventDefault()} >
             <h1 className ="fontName">Mailing Addres</h1><br />
 
@@ -115,6 +129,9 @@ function OrderCheckout(){
                 </div>
                 <button class="sumbitButton" type="sumbit" onClick={registerAddress}>Signup</button>
             </form>
+            </div>}
+
+   
 </div>
     )
 }
