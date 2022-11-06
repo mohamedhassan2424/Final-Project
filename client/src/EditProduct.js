@@ -1,25 +1,39 @@
 import react from 'react'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { userContext } from "./providers/UserProvider";
 import Cookies from 'universal-cookie';
-
+import axios from 'axios';
 import Nav from './Nav'
 function EditProduct(props) {
+    const linkServer = "http://localhost:8080/"
     const cookies = new Cookies();
     const {editProdObj,salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction,settingCounter} = useContext(userContext)
     const editProduct = cookies.get('editProductObj')
-    settingCounter(editProduct.count_product)
+    const [counterUpdate, setCounterUpdate] = useState(editProduct.count_product)
+    // settingCounter(editProduct.count_product)
     
+
+
     console.log('editProduct',editProduct)
     console.log("stateCookie",editProdObj)
     const UpdateFunction = ()=>{
-        console.log('CounterValueData',counterValue)
-        
+        console.log('CounterValueData',counterUpdate)
+        axios.post(`${linkServer}updateingSaleCount`, { productId: editProduct.id, userId: editProduct.user_id_sales, storeId: editProduct.stores_id_sales, counterData:counterUpdate})
     }
 
     const DeleteFunction = ()=>{
 
     }
+
+    const incrementFunctions = ()=>{
+        console.log("hitting here increment func")
+        setCounterUpdate(counterUpdate + 1)
+    }
+    const decrementFunctions = ()=>{
+        console.log("hitting here increment func")
+        setCounterUpdate(counterUpdate - 1)
+    }
+
     return (
         <div>
             <Nav />
@@ -42,9 +56,9 @@ function EditProduct(props) {
                         </div>
                         <div>
                             Counter :
-                            <button className="incrementDecrementButton" onClick={incrementFunction}>+</button>
-                            <span>{counterValue}</span>
-                            <button className="incrementDecrementButton" onClick={decrementFunction}>-</button>
+                            <button className="incrementDecrementButton" onClick={incrementFunctions}>+</button>
+                            <span>{counterUpdate}</span>
+                            <button className="incrementDecrementButton" onClick={decrementFunctions}>-</button>
             
                         </div>
                     </div>

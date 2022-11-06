@@ -239,13 +239,15 @@ app.post('/removingProduct',(req,res)=>{
 })
 
 app.post('/updateingSaleCount',(req,res)=>{
-const CounterId= 
-const UserId  = 
-const ProductId = 
+let counterIdVal = req.body.counterData
+let userIdVal = req.body.userId
+let productIdVal = req.body.productId
+let storeVal= req.body.storeId
 
-console.log('CounterId', CounterId)
-console.log('UserId',UserId)
-console.log('ProductId',ProductId)
+console.log('CounterId', counterIdVal)
+console.log('UserId',counterIdVal)
+console.log('ProductId',productIdVal)
+console.log('StoreVal',storeVal)
 })
 
 app.get("/content", (req, res) => {

@@ -49,17 +49,17 @@ useEffect(() => {
 
 
 
-const incrementFunction =()=> {
+const incrementFunction = function() {
     setCounterValue(counterValue + 1);
   };
-  const decrementFunction = ()=> {
+  const decrementFunction = function() {
     setCounterValue(counterValue - 1);
   };
-  const clearFunction = ()=> {
+  const clearFunction = function() {
     setCounterValue(0);
   };
-const settingCounter = (previousCount)=>{
-    setCounterValue(previousCount)
+const settingCounter = function(counterValueChanging) {
+    setCounterValue(counterValueChanging);
 }
 
 console.log("FirstNameSaved",firstNameSaved)
