@@ -213,6 +213,27 @@ app.post('/addingToSalesDatabase',(req,res)=>{
         })
 
 })
+app.post('/reigisterAddress',(req,res)=>{
+    const addresOne= req.body.addressLineOne
+    const addresTwo = req.body.addressLineTwo
+    const cityAdd= req.body.cityAddress
+    const stateR= req.body.stateRegion
+    const postalCode= req.body.postalCode
+    const countrySelected =req.body.country
+    const currentUserIdVal = req.body.currentUserId
+    console.log('addresOne',addresOne)
+    console.log('addresTwo',addresTwo)
+    console.log('cityAdd',cityAdd)
+    console.log('stateR',stateR)
+    console.log('postalCode',postalCode)
+    console.log('countrySelected',countrySelected)
+    console.log('currentUserIdVal',currentUserIdVal)
+    const sqlQuery = "INSERT INTO address (user_id_address,full_Name,address_line_1,address_line_2,city ,state_region, zip_code, country) VALUES ($1,$2,$3,$4);"
+    pool.query(sqlQuery, [firstName, lastName, email, password])
+        .then((response) => {
+            res.send(response)
+        })
+})
 app.post("/extratingData", (req,res)=>{
     const extractedUserId = req.body.userIdInt
     console.log(extractedUserId, "extractedUserId")

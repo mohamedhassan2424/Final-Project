@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import Nav from "./Nav";
+import Cookies from 'universal-cookie';
 
 function OrderCheckout(){
     const [addressLineOne,setAddressLineOne] = useState('')
@@ -9,7 +10,10 @@ function OrderCheckout(){
     const [stateRegion,setStateRegion] = useState('')
     const[postalCode, setPostalCode] = useState('')
     const [country, setCountry] = useState('')
+    const cookies = new Cookies();
     const linkServer = "http://localhost:8080/"
+    const currentUserId = cookies.get('userId')
+    console.log("currentUserId",currentUserId)
     const registerAddress = ()=>{
         console.log("check point one")
         console.log('addressLineOne',addressLineOne)
@@ -19,7 +23,10 @@ function OrderCheckout(){
         console.log('postalCode',postalCode)
         console.log('country',country)
 
-        axios.post(`${linkServer}reigisterAddres`,{addressLineOne, lastName, email:emailName, password:passwordName})
+        axios.post(`${linkServer}reigisterAddress`,{currentUserId, addressLineOne, addressLineTwo, cityAddress, stateRegion,postalCode, country})
+        .then((response)=>{
+            console.log("Data Saved")
+        })
     }
     return (
 <div>
