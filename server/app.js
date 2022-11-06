@@ -221,6 +221,7 @@ app.post('/reigisterAddress',(req,res)=>{
     const postalCode= req.body.postalCode
     const countrySelected =req.body.country
     const currentUserIdVal = req.body.currentUserId
+    const fullName = req.body.fullName
     console.log('addresOne',addresOne)
     console.log('addresTwo',addresTwo)
     console.log('cityAdd',cityAdd)
@@ -228,8 +229,9 @@ app.post('/reigisterAddress',(req,res)=>{
     console.log('postalCode',postalCode)
     console.log('countrySelected',countrySelected)
     console.log('currentUserIdVal',currentUserIdVal)
-    const sqlQuery = "INSERT INTO address (user_id_address,full_Name,address_line_1,address_line_2,city ,state_region, zip_code, country) VALUES ($1,$2,$3,$4);"
-    pool.query(sqlQuery, [firstName, lastName, email, password])
+    console.log('fullName',fullName)
+    const sqlQuery = "INSERT INTO address (user_id_address,full_Name,address_line_1,address_line_2,city ,state_region, zip_code, country) VALUES ($1,$2,$3,$4,$5,$6,$7,$8);"
+    pool.query(sqlQuery, [currentUserIdVal,fullName,addresOne, addresTwo,cityAdd,stateR,postalCode,countrySelected])
         .then((response) => {
             res.send(response)
         })

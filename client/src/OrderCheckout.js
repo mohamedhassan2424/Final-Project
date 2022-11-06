@@ -12,7 +12,12 @@ function OrderCheckout(){
     const [country, setCountry] = useState('')
     const cookies = new Cookies();
     const linkServer = "http://localhost:8080/"
-    const currentUserId = cookies.get('userId')
+    let currentUserId = cookies.get('userId')
+    let firstNameVal = cookies.get('firstNameValue')
+    let lastNameVal = cookies.get('lastNameValue')
+
+    let fullName = firstNameVal + " " +lastNameVal;
+    console.log("fullName",fullName)
     console.log("currentUserId",currentUserId)
     const registerAddress = ()=>{
         console.log("check point one")
@@ -23,7 +28,7 @@ function OrderCheckout(){
         console.log('postalCode',postalCode)
         console.log('country',country)
 
-        axios.post(`${linkServer}reigisterAddress`,{currentUserId, addressLineOne, addressLineTwo, cityAddress, stateRegion,postalCode, country})
+        axios.post(`${linkServer}reigisterAddress`,{currentUserId,fullName, addressLineOne, addressLineTwo, cityAddress, stateRegion,postalCode, country})
         .then((response)=>{
             console.log("Data Saved")
         })
