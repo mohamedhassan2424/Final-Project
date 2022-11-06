@@ -1,15 +1,20 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
+import { useContext } from "react";
+import UserProvider, { userContext } from "./providers/UserProvider";
 import Nav from "./Nav";
 import Cookies from 'universal-cookie';
 
 function OrderCheckout(){
+    const {fullAddressId, editProdObj,salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,changingAddressId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction,settingCounter} = useContext(userContext) 
+   
     const [addressLineOne,setAddressLineOne] = useState('')
     const [addressLineTwo,setAddressLineTwo] = useState('')
     const [cityAddress,setCityAddress] = useState('')
     const [stateRegion,setStateRegion] = useState('')
     const[postalCode, setPostalCode] = useState('')
     const [country, setCountry] = useState('')
+    const [allAddress, setAllAddress] = useState([])
     const cookies = new Cookies();
     const linkServer = "http://localhost:8080/"
     let currentUserId = cookies.get('userId')
@@ -19,6 +24,11 @@ function OrderCheckout(){
     let fullName = firstNameVal + " " +lastNameVal;
     console.log("fullName",fullName)
     console.log("currentUserId",currentUserId)
+
+
+
+
+
     const registerAddress = ()=>{
         console.log("check point one")
         console.log('addressLineOne',addressLineOne)
@@ -31,8 +41,25 @@ function OrderCheckout(){
         axios.post(`${linkServer}reigisterAddress`,{currentUserId,fullName, addressLineOne, addressLineTwo, cityAddress, stateRegion,postalCode, country})
         .then((response)=>{
             console.log("Data Saved")
+            
         })
+
     }
+
+    useEffect(() => {
+
+        axios.get('http://localhost:8080/gettingAddress')
+            .then(response => {
+                console.log("gettingadddressData",response.data)
+                setAllAddress(response.data)
+                // const specfiedAddress = response.data.map((eachAddressObject)=> {
+                //     if(eachAddressObject.user_id_address === cookies.get('userId')){
+                //         return eachAddressObject;
+                //     }
+                // })
+                // console.log("specfied Addresss",specfiedAddress())
+            })
+    }, [])
     return (
 <div>
     <Nav />

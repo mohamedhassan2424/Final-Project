@@ -236,6 +236,16 @@ app.post('/reigisterAddress',(req,res)=>{
             res.send(response)
         })
 })
+
+app.get('/gettingAddress',(req,res) => {
+    return pool.query(`SELECT * FROM address;`)
+    .then((response) => {
+        res.json(response.rows)
+    })
+    .catch((error) => {
+        console.log(error.message)
+    })
+})
 app.post("/extratingData", (req,res)=>{
     const extractedUserId = req.body.userIdInt
     console.log(extractedUserId, "extractedUserId")

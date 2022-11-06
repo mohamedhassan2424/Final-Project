@@ -15,6 +15,7 @@ const [storeIdNumber, setStoreIdNumber] = useState(cookies.get('storeId')? cooki
 const [allTheStore, setAllTheStore] = useState('')
 const [salesHistory, setSalesHistory] = useState([])
 const [editProdObj, setEditProdObj] =useState(cookies.get('editProductObj')? cookies.get('editProductObj'):'')
+const [fullAddressId, setFullAddressId] = useState()
 const userIdValueNum = cookies.get('userId')
 useEffect(() => {
 
@@ -31,6 +32,10 @@ useEffect(() => {
 const changinSalesHistory =  (newArray) =>{
     setSalesHistory([newArray])
     
+}
+
+const changingAddressId= (addressIdObject)=>{
+    setFullAddressId(addressIdObject)
 }
 
 
@@ -94,7 +99,7 @@ const settingStoreIdValue = (id)=>{
     setStoreIdNumber(id)
     console.log(id)
 }
-const providerData = {editProdObj,salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction,settingCounter}
+const providerData = {fullAddressId, editProdObj,salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,changingAddressId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction,settingCounter}
 return(
     <userContext.Provider value ={providerData}>
         {props.children}
