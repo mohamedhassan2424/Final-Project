@@ -264,6 +264,7 @@ color:rgb(210, 210, 210);
 
 
 .secoundlogoImage {
+    border-radius: 0px;
     width: 50%;
     height: 240px;
     margin-top: 5px;
