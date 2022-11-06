@@ -243,7 +243,7 @@ const removingClass = ()=>{
 }}/>
                 </div>
                 <div className= "sumbitButtonCenter">
-                <button className="sumbitButton" type="sumbit" onClick = {logInButton}>Signup</button>
+                <button className="sumbitButton" type="sumbit" onClick = {logInButton}>Login</button>
                 </div>
                 <h4 className ={wrongPasswordComment ? "loginConfirmationShow" :"loginConfirmationNotShow" }>Incorrect Email or Password Typed In. </h4>
                 <h4 className ={wrongPasswordComment ? "loginConfirmationShow" :"loginConfirmationNotShow" }>Please Try Again. </h4>
