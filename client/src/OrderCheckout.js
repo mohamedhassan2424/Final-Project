@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, {useEffect, useState} from "react";
 import Nav from "./Nav";
 
@@ -8,9 +9,17 @@ function OrderCheckout(){
     const [stateRegion,setStateRegion] = useState('')
     const[postalCode, setPostalCode] = useState('')
     const [country, setCountry] = useState('')
-
+    const linkServer = "http://localhost:8080/"
     const registerAddress = ()=>{
-        
+        console.log("check point one")
+        console.log('addressLineOne',addressLineOne)
+        console.log('addressLineTwo',addressLineTwo)
+        console.log('cityAddress',cityAddress)
+        console.log('stateRegion',stateRegion)
+        console.log('postalCode',postalCode)
+        console.log('country',country)
+
+        axios.post(`${linkServer}reigisterAddres`,{addressLineOne, lastName, email:emailName, password:passwordName})
     }
     return (
 <div>
@@ -27,21 +36,21 @@ function OrderCheckout(){
                 </div>
 
                 <div className ="inputText">
-                    <input value={addressLineOne} type = "text" placeholder="Address Line 1" onChange={(event)=> {
+                    <input value={addressLineTwo} type = "text" placeholder="Address Line 1" onChange={(event)=> {
                 setAddressLineTwo(event.target.value)
                 console.log(addressLineTwo)
 }} />
                 </div>
 
                 <div className ="inputText">
-                    <input value={addressLineTwo} type = "text" placeholder="City" onChange={(event)=> {
-                setAddressLineTwo(event.target.value)
-                console.log(addressLineTwo)
+                    <input value={cityAddress} type = "text" placeholder="City Name" onChange={(event)=> {
+                setCityAddress(event.target.value)
+                console.log(cityAddress)
 }} />
                 </div>
 
                 <div className ="inputText">
-                    <input value={cityAddress} type = "text" placeholder="State/Province/Region" onChange={(event)=> {
+                    <input value={stateRegion} type = "text" placeholder="State/Province/Region" onChange={(event)=> {
                 setStateRegion(event.target.value)
                 console.log(stateRegion)
 }} />
