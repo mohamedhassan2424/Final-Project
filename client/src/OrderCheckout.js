@@ -41,7 +41,7 @@ function OrderCheckout(){
         axios.post(`${linkServer}reigisterAddress`,{currentUserId,fullName, addressLineOne, addressLineTwo, cityAddress, stateRegion,postalCode, country})
         .then((response)=>{
             console.log("Data Saved")
-            
+            window.location.reload(false)
         })
 
     }
