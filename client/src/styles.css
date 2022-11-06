@@ -450,7 +450,9 @@ hr {
 
 .mainClassInStores {
     display: flex;
-    outline:0.1em solid #E1D9D1;
+    background-color: white;
+    box-shadow: 1px 1px 3px 1px grey;
+    /* outline: 0.1em solid rgb(210 210 210); */
     padding-top:15px;
     width: 90%;
     border-radius: 5%;
@@ -468,9 +470,10 @@ hr {
 }
 
 .storePriceText {
-    color: gray;
-    outline:0.1em solid #E1D9D1;
-    /* box-shadow:39px 28px 33px 17px rgba(0,0,0,0.85); */
+    color: black;
+    margin-top: 3px;
+    margin-bottom: 3px;
+
 }
 
 .newText {
