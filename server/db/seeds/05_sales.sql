@@ -4,8 +4,8 @@
 -- INSERT INTO sales (total, delivery_time) VALUES (56.78,7);
 -- INSERT INTO sales (total, delivery_time) VALUES (39.10,5);
 
-INSERT INTO sales (user_id_sales,stores_id_sales, products_id,count_product ) VALUES (1,1,1,1);
-INSERT INTO sales (user_id_sales,stores_id_sales, products_id,count_product ) VALUES (3,6,4,1);
+-- INSERT INTO sales (user_id_sales,stores_id_sales, products_id,count_product ) VALUES (1,1,1,1);
+-- INSERT INTO sales (user_id_sales,stores_id_sales, products_id,count_product ) VALUES (3,6,4,1);
 
 
 -- SELECT * FROM sales
