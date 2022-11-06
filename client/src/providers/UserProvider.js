@@ -49,16 +49,18 @@ useEffect(() => {
 
 
 
-const incrementFunction = function() {
+const incrementFunction =()=> {
     setCounterValue(counterValue + 1);
   };
-  const decrementFunction = function() {
+  const decrementFunction = ()=> {
     setCounterValue(counterValue - 1);
   };
-  const clearFunction = function() {
+  const clearFunction = ()=> {
     setCounterValue(0);
   };
-
+const settingCounter = (previousCount)=>{
+    setCounterValue(previousCount)
+}
 
 console.log("FirstNameSaved",firstNameSaved)
 console.log("LastNameSaved",lastNameSaved)
@@ -92,7 +94,7 @@ const settingStoreIdValue = (id)=>{
     setStoreIdNumber(id)
     console.log(id)
 }
-const providerData = {editProdObj,salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction}
+const providerData = {editProdObj,salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction,settingCounter}
 return(
     <userContext.Provider value ={providerData}>
         {props.children}

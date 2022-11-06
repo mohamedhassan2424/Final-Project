@@ -15,7 +15,7 @@ import ErrorPage from "./ErrorPage";
 import Product from "./Prodcut";
 import Logout from "./Logout";
 import StoreProduct from "./StoreProdcuts";
-
+import EditProduct from "./EditProduct";
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -61,6 +61,9 @@ function App() {
           </Route>
           <Route path="/product/:id">
             <Product />
+          </Route>
+          <Route path="/editProduct">
+            <EditProduct />
           </Route>
           <Route path="/products">
             <Products />

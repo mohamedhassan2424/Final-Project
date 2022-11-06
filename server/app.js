@@ -238,6 +238,16 @@ app.post('/removingProduct',(req,res)=>{
     pool.query(`DELETE FROM sales WHERE  user_id_sales =$1 AND products_id =$2;`,[userIDOfProductRemoving,productRemoving])
 })
 
+app.post('/updateingSaleCount',(req,res)=>{
+const CounterId= 
+const UserId  = 
+const ProductId = 
+
+console.log('CounterId', CounterId)
+console.log('UserId',UserId)
+console.log('ProductId',ProductId)
+})
+
 app.get("/content", (req, res) => {
     return pool.query(`SELECT * FROM users;`)
         .then((response) => {
