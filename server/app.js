@@ -197,6 +197,7 @@ app.post('/addingToSalesDatabase',(req,res)=>{
     const productIdValue = req.body.productId;
     const userIdValue = req.body.userId;
     const storeIdValue= req.body.storeId
+    const counterInput = req.body.counterData
     console.log("ProductIdValue",productIdValue)
     console.log("userIdValue",userIdValue)
     console.log('StoreIdValue',storeIdValue)

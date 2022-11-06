@@ -27,7 +27,7 @@ function Product() {
             .then(response => {
                 //console.log("FirstProduct",response.data)
                 setProduct(response.data[params.id - 1])
-
+                clearFunction()
             })
     }, [])
    
@@ -38,9 +38,11 @@ function Product() {
     const userIdValue = cookies.get('userId')
     const storeIdName = cookies.get('storeName')
     const storeIdValue = cookies.get('storeId')
+    let counterValueData = counterValue
 
     const addingProductDatabase = () => {
-        axios.post(`${linkServer}addingToSalesDatabase`, { productId: product.id, userId: userIdValue, storeId: storeIdValue })
+        console.log('CounterValueData',counterValueData)
+        axios.post(`${linkServer}addingToSalesDatabase`, { productId: product.id, userId: userIdValue, storeId: storeIdValue, counterData:counterValue })
         .then((response)=>{
             console.log("Response When adding the data",response)
             let path = `/products/${storeNameSaved}`;
@@ -74,7 +76,7 @@ function Product() {
                             <button className="incrementDecrementButton" onClick={incrementFunction}>+</button>
                             <span>{counterValue}</span>
                             <button className="incrementDecrementButton" onClick={decrementFunction}>-</button>
-                            {/* <button onClick={clearFunction}>0</button> */}
+            
                         </div>
                     </div>
                     <div className="chocalteImage">
