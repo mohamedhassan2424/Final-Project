@@ -1,5 +1,5 @@
-INSERT INTO sampleS (store_name, rating,image_link) VALUES ('METRO', 4.5, 'https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/227/0b338c85-d46f-4a49-a48c-9dd281ccfdcf.png');
-INSERT INTO sampleS (store_name, rating,image_link) VALUES ('City Market', 4.6, 'https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2138/19b444c0-481d-41cf-b017-4d1666e81006.png');
+INSERT INTO sampleS (store_name, rating,image_link) VALUES ('City Market', 4.5, 'https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/227/0b338c85-d46f-4a49-a48c-9dd281ccfdcf.png');
+INSERT INTO sampleS (store_name, rating,image_link) VALUES ('Metro', 4.6, 'https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/2138/19b444c0-481d-41cf-b017-4d1666e81006.png');
 INSERT INTO sampleS ( store_name, rating,image_link) VALUES ( 'Loblaws', 4.7, 'https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/311/e206e4c7-3dd9-48b1-8dc2-f4ce50df7414.png');
 INSERT INTO sampleS (store_name, rating,image_link) VALUES ('Costco', 4.3, 'https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/354/fc4be33a-bff9-4076-9d57-4b5e08377771.png');
 INSERT INTO sampleS (store_name, rating,image_link) VALUES ('Walmart', 4.8, 'https://www.instacart.com/image-server/72x/www.instacart.com/assets/domains/warehouse/logo/462/2eba6946-8810-481e-bd3c-6852d5121d51.png');

@@ -31,7 +31,7 @@ const [stores,setStores] = useState([])
 
   
 </div>
-<p className="textAlighnment"> METRO</p>
+<p className="textAlighnment">City Market</p>
 </div>
 <div className="storeContent">
 <div className="logoImages">
@@ -39,7 +39,7 @@ const [stores,setStores] = useState([])
 
 
 </div>
-<p className="textAlighnments"> City Market</p>
+<p className="textAlighnments">Metro</p>
 </div>
 </div>
 </div>
