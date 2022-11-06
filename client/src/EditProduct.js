@@ -23,7 +23,13 @@ function EditProduct(props) {
     }
 
     const DeleteFunction = ()=>{
-
+        const userIDVal = editProduct.user_id_sales
+      const productValue = editProduct.products_id
+      console.log('userIDVal',userIDVal)
+      console.log('productValue',productValue)
+        
+        axios.post('http://localhost:8080/removingProduct',{userIDNam:userIDVal, productIdVal :productValue })
+        
     }
 
     const incrementFunctions = ()=>{
