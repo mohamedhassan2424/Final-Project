@@ -7,7 +7,7 @@ function Carts(props) {
   return (
     <div>
       <Nav />
-     
+     <div className="background-image">
       <div className="your-cart">
         <h1>YOUR CART</h1>
       </div>
@@ -145,6 +145,7 @@ function Carts(props) {
       </div>
       <hr></hr>
           </div>   
+          </div>
   );
 }
 

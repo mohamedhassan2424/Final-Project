@@ -1,7 +1,9 @@
 * {
-  font-family: FoundersGroteskWeb, sans-serif;
-  /* background-color: #f1e4d1;
-   */
+  font-family: FoundersGroteskWeb, sans-serif;  
+}
+
+.background-image {
+  background-color: #f1e4d1;
 }
 
 .your-cart {
@@ -60,8 +62,8 @@
 
 .my-items {
   display: flex;
-justify-content: space-evenly;
-}
+  flex-direction: row;
+  margin: 20px;}
 
 .image {
   display:flex;

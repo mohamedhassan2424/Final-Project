@@ -72,7 +72,7 @@ function Home(props) {
                         </div>
                     <div className="eachrow">
                         <div className="eachcloumn">
-                            <h1>Look no Further!<br /> We got Everything for you.</h1>
+                            <h1>Look no Further! We got Everything for you.</h1>
                             <h1>Grocery Shoppping has never been this fun.</h1>
                             <p className="paragraph">To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.</p>
                             <a href="" className="firstbutton">CHECK IT OUT &#x2192;</a>
