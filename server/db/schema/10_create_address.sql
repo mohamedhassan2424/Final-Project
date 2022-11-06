@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS address CASCADE;
 -- CREATE USERS
 CREATE TABLE address  (
+  user_id_address integer REFERENCES users(id) ON DELETE CASCADE NOT NULL,
   id SERIAL PRIMARY KEY,
   full_Name VARCHAR(255) NOT NULL,
   address_line_1 VARCHAR(255) NOT NULL,
