@@ -52,14 +52,19 @@ function OrderCheckout(){
             .then(response => {
                 console.log("gettingadddressData",response.data)
                 setAllAddress(response.data)
-                // const specfiedAddress = response.data.map((eachAddressObject)=> {
-                //     if(eachAddressObject.user_id_address === cookies.get('userId')){
-                //         return eachAddressObject;
-                //     }
-                // })
-                // console.log("specfied Addresss",specfiedAddress())
             })
     }, [])
+
+         const specfiedAddress = allAddress.map((eachAddressObject) => {
+            let currentUserId = cookies.get('userId')
+            console.log('currentUserId',currentUserId)
+            console.log('eachAddressObject',eachAddressObject)
+                    if(eachAddressObject.user_id_address === Number(currentUserId)){
+                        console.log('SpecfifedAddressObject',eachAddressObject)
+                        cookies.set("specfiedAddressId",eachAddressObject)
+                    }
+                })
+
     return (
 <div>
     <Nav />
