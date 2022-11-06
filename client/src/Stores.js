@@ -24,7 +24,7 @@ const [stores,setStores] = useState([])
       <Nav/>
       </div>
       <div>
-  <h3  className ="storeTitle" >Recentely Visted</h3>
+  <h3  className ="storeTitle" >Recently Visited</h3>
   <div className="sampleDataContainer">
   <div className="storeContent">
 <div className="logoImages">
@@ -32,7 +32,7 @@ const [stores,setStores] = useState([])
 
   
 </div>
-<p className="textAlighnment">Metro</p>
+{/* <p className="textAlighnment">Metro</p> */}
 </div>
 <div className="storeContent">
 <div className="logoImages">
@@ -40,13 +40,13 @@ const [stores,setStores] = useState([])
 
 
 </div>
-<p className="textAlighnments">City Market</p>
+{/* <p className="textAlighnments">City Market</p> */}
 </div>
 </div>
 </div>
 
 <div>
-<h3 className ="storeTitle">All Stores in Toronto</h3>
+<h3 className ="storeTitle">Stores Near You</h3>
 
 
 

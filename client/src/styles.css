@@ -68,6 +68,11 @@
     box-shadow: 5px;
 }
 
+/* .logoImages-store {
+    border-radius: 50px;
+    width: 150px;
+} */
+
 .eachButton {
     padding:1em;
     width:50%;
@@ -538,8 +543,8 @@ hr {
 .storeTitle {
     /* padding-left:200px; */
     font-weight:bold;
-    font-size: 25px;
-    padding-top: 25px;
+    font-size: 45px;
+    padding-top: 55px;
     
     
 }
@@ -554,13 +559,13 @@ hr {
     
 }
 .sampleDataContainer {
-    margin-right: 100px;
+    /* margin-right: 100px; */
     margin-top: 30px;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    padding-left:200px;
-    padding-right: 100px;
+    /* padding-left:200px;
+    padding-right: 100px; */
 }
 
 .textAlighnment {
