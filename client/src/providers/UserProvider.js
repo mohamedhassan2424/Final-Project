@@ -14,7 +14,8 @@ const [counterValue, setCounterValue] = useState(cookies.get('userId') ? cookies
 const [storeIdNumber, setStoreIdNumber] = useState(cookies.get('storeId')? cookies.get('storeId'):0)
 const [allTheStore, setAllTheStore] = useState('')
 const [salesHistory, setSalesHistory] = useState([])
-
+const [editProdObj, setEditProdObj] =useState(cookies.get('editProductObj')? cookies.get('editProductObj'):'')
+const [fullAddressId, setFullAddressId] = useState(cookies.get('specfiedAddressId')? cookies.get('specfiedAddressId'):'')
 const userIdValueNum = cookies.get('userId')
 useEffect(() => {
 
@@ -31,6 +32,10 @@ useEffect(() => {
 const changinSalesHistory =  (newArray) =>{
     setSalesHistory([newArray])
     
+}
+
+const changingAddressId= (addressIdObject)=>{
+    setFullAddressId(addressIdObject)
 }
 
 
@@ -58,7 +63,9 @@ const incrementFunction = function() {
   const clearFunction = function() {
     setCounterValue(0);
   };
-
+const settingCounter = function(counterValueChanging) {
+    setCounterValue(counterValueChanging);
+}
 
 console.log("FirstNameSaved",firstNameSaved)
 console.log("LastNameSaved",lastNameSaved)
@@ -92,7 +99,7 @@ const settingStoreIdValue = (id)=>{
     setStoreIdNumber(id)
     console.log(id)
 }
-const providerData = {salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction}
+const providerData = {fullAddressId, editProdObj,salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,changingAddressId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction,settingCounter}
 return(
     <userContext.Provider value ={providerData}>
         {props.children}

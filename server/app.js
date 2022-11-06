@@ -197,12 +197,13 @@ app.post('/addingToSalesDatabase',(req,res)=>{
     const productIdValue = req.body.productId;
     const userIdValue = req.body.userId;
     const storeIdValue= req.body.storeId
+    const counterInput = req.body.counterData
     console.log("ProductIdValue",productIdValue)
     console.log("userIdValue",userIdValue)
     console.log('StoreIdValue',storeIdValue)
-
-    const sqlQuery = "INSERT INTO sales (user_id_sales,stores_id_sales, products_id ) VALUES ($1,$2,$3);"
-    pool.query(sqlQuery, [userIdValue,storeIdValue,productIdValue])
+    console.log('counterInput',counterInput)
+    const sqlQuery = "INSERT INTO sales (user_id_sales,stores_id_sales, products_id,count_product ) VALUES ($1,$2,$3,$4);"
+    pool.query(sqlQuery, [userIdValue,storeIdValue,productIdValue,counterInput])
         .then((response) => {
             res.send(response)
             // res.send("All is good it has been sent off")
@@ -211,6 +212,39 @@ app.post('/addingToSalesDatabase',(req,res)=>{
             console.log(error)
         })
 
+})
+app.post('/reigisterAddress',(req,res)=>{
+    const addresOne= req.body.addressLineOne
+    const addresTwo = req.body.addressLineTwo
+    const cityAdd= req.body.cityAddress
+    const stateR= req.body.stateRegion
+    const postalCode= req.body.postalCode
+    const countrySelected =req.body.country
+    const currentUserIdVal = req.body.currentUserId
+    const fullName = req.body.fullName
+    console.log('addresOne',addresOne)
+    console.log('addresTwo',addresTwo)
+    console.log('cityAdd',cityAdd)
+    console.log('stateR',stateR)
+    console.log('postalCode',postalCode)
+    console.log('countrySelected',countrySelected)
+    console.log('currentUserIdVal',currentUserIdVal)
+    console.log('fullName',fullName)
+    const sqlQuery = "INSERT INTO address (user_id_address,full_Name,address_line_1,address_line_2,city ,state_region, zip_code, country) VALUES ($1,$2,$3,$4,$5,$6,$7,$8);"
+    pool.query(sqlQuery, [currentUserIdVal,fullName,addresOne, addresTwo,cityAdd,stateR,postalCode,countrySelected])
+        .then((response) => {
+            res.send(response)
+        })
+})
+
+app.get('/gettingAddress',(req,res) => {
+    return pool.query(`SELECT * FROM address;`)
+    .then((response) => {
+        res.json(response.rows)
+    })
+    .catch((error) => {
+        console.log(error.message)
+    })
 })
 app.post("/extratingData", (req,res)=>{
     const extractedUserId = req.body.userIdInt
@@ -235,6 +269,20 @@ app.post('/removingProduct',(req,res)=>{
     console.log('productRemoving',productRemoving)
     console.log('userIDOfProductRemoving',userIDOfProductRemoving)
     pool.query(`DELETE FROM sales WHERE  user_id_sales =$1 AND products_id =$2;`,[userIDOfProductRemoving,productRemoving])
+})
+
+app.post('/updateingSaleCount',(req,res)=>{
+let counterIdVal = req.body.counterData
+let userIdVal = req.body.userIdValue
+let productIdVal = req.body.productId
+let storeVal= req.body.storeId
+let previousCounter = req.body.previousCount
+console.log('CounterId', counterIdVal)
+console.log('UserId',userIdVal)
+console.log('ProductId',productIdVal)
+console.log('StoreVal',storeVal)
+console.log("previousCount",previousCounter)
+pool.query(`UPDATE sales SET  user_id_sales =$1, stores_id_sales =$2, products_id =$3, count_product = $4 WHERE count_product = $5;`,[userIdVal,storeVal,productIdVal,counterIdVal,previousCounter])
 })
 
 app.get("/content", (req, res) => {
