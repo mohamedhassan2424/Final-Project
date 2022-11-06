@@ -19,10 +19,10 @@ const [stores,setStores] = useState([])
 
     <div>
     
+      <div className="back-color">
     <div>
       <Nav/>
       </div>
-      <div className="backcolor">
       <div>
   <h3  className ="storeTitle" >Recentely Visted</h3>
   <div className="sampleDataContainer">
@@ -690,9 +690,9 @@ const [stores,setStores] = useState([])
 
 
 </div>
-    </div>
 
 </div>
+    </div>
 
   );
 }

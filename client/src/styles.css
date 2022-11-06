@@ -12,6 +12,11 @@
     background-color: rgb(251, 248, 243);
 }
 
+.back-color {
+    background-color: rgb(251, 248, 243);
+    height: 2000px;
+}
+
 .fontName {
     font-family: FoundersGroteskWeb, sans-serif;
     font-weight: 700;
