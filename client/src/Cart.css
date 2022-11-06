@@ -70,6 +70,21 @@ h6 {
     font-weight: 600;
 }
 
+.row > h2 {
+  color: rgb(0, 71, 64);
+  line-height: 2.82857;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.row > h1 {
+    color: currentcolor;
+    display: inline-block;
+    font-size: 1.42857rem;
+    font-weight: 600;
+    line-height: 1.42857;
+}
+
 .check-out {
   display: flex;
   justify-content: center;

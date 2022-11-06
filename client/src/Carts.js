@@ -131,7 +131,7 @@ function Carts(props) {
       <hr></hr>
 
          <div className="row">
-          <h2>Total</h2> <h2>$18.47</h2>
+          <h1>Total</h1> <h1>$18.47</h1>
          </div>
 
 
