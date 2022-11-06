@@ -8,6 +8,10 @@
     box-sizing:border-box;
 }
 
+.backcolor {
+    background-color: rgb(251, 248, 243);
+}
+
 .fontName {
     font-family: FoundersGroteskWeb, sans-serif;
     font-weight: 700;
@@ -23,8 +27,8 @@
     color: aqua;
     display: flex;
     justify-content: center;
-
 }
+
 .bigContainer {
     width:100vw;
     height:100vh;
@@ -488,16 +492,17 @@ hr {
 
 .storeContainer {
     width: 100%;  
-     display: flex;   
-     justify-content: space-around;
-     flex-wrap: wrap;
-     padding-top: 15px;
+    display: flex;   
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 15px;
     padding-left: 200px;
     padding-right: 200px;
-  
+    margin-bottom: 12%;
     list-style: none;
-
 }
+
+
 .eachStore {
      width: 30%; 
     padding-top: 15px;

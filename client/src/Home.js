@@ -55,14 +55,14 @@ function Home(props) {
     
 
     return (
-        <div>
+        <div className="backcolor">
             <header className="header">
                 <div className="navContainer">
                     {/* <h1>Hello world Mohamed Hassan</h1> */}
                     <div className="navbar">
                         
                         <Nav />
-                        
+                        {/* <div className="backcolor"> */}
                     </div>
                         <div className="sale-photo">
                             <img className="secoundlogoImage" src="https://image.s11.sfmc-content.com/lib/fe3e157175640479711675/m/10/b7102c92-08fc-4bea-8ee9-0b595a543f04.png" />
@@ -268,8 +268,10 @@ function Home(props) {
             <div classNames="stores availble">
 
             </div>
+            
 
         </div>
+        
     );
 }
 
