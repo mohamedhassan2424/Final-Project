@@ -72,6 +72,8 @@ function Summary(props) {
                         <th>Store</th>
                         <th>Rating</th>
                         <th>Total Price </th>
+                        <th>Delete Button</th>
+                        <th>Edit Product</th>
                     </tr>
 
                     {salesHistory && salesHistory.map((eachDataObject) => (

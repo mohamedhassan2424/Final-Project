@@ -1,5 +1,6 @@
 import react from 'react'
 import { useContext, useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import { userContext } from "./providers/UserProvider";
 import Cookies from 'universal-cookie';
 import axios from 'axios';
@@ -7,6 +8,7 @@ import Nav from './Nav'
 function EditProduct(props) {
     const linkServer = "http://localhost:8080/"
     const cookies = new Cookies();
+    const history = useHistory();
     const {editProdObj,salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction,settingCounter} = useContext(userContext)
     const editProduct = cookies.get('editProductObj')
     const [counterUpdate, setCounterUpdate] = useState(editProduct.count_product)
@@ -20,6 +22,10 @@ function EditProduct(props) {
         console.log('CounterValueData',counterUpdate)
         console.log("userId",editProduct.user_id_sales)
         axios.post(`${linkServer}updateingSaleCount`, { productId: editProduct.products_id, userIdValue: editProduct.user_id_sales, storeId: editProduct.stores_id_sales, counterData:counterUpdate, previousCount: editProduct.count_product})
+   
+            let path = `/summary`;
+            history.push(path);
+         
     }
 
     const DeleteFunction = ()=>{
@@ -29,7 +35,8 @@ function EditProduct(props) {
       console.log('productValue',productValue)
         
         axios.post('http://localhost:8080/removingProduct',{userIDNam:userIDVal, productIdVal :productValue })
-        
+            let path = `/summary`;
+            history.push(path);
     }
 
     const incrementFunctions = ()=>{
