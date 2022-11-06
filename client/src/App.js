@@ -16,6 +16,7 @@ import Product from "./Prodcut";
 import Logout from "./Logout";
 import StoreProduct from "./StoreProdcuts";
 import EditProduct from "./EditProduct";
+import OrderCheckout from "./OrderCheckout";
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -75,7 +76,9 @@ function App() {
           <Route path="/summary">
             <Summary />
           </Route>
-
+          <Route path="/orderCheckout">
+            <OrderCheckout />
+          </Route>
           <Route path="/home">
             <Home />
           </Route>
