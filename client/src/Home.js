@@ -70,14 +70,7 @@ function Home(props) {
                             <img className="secound-logoImage" src="https://image.s11.sfmc-content.com/lib/fe3e157175640479711675/m/10/404a4ff9-d8c4-4f48-975e-79d421962f47.png" />
                        </div>
                         </div>
-                    <div className="eachrow">
-                        <div className="eachcloumn">
-                            <h1>Look no Further! We got Everything for you.</h1>
-                            <h1>Grocery Shoppping has never been this fun.</h1>
-                            <p className="paragraph">To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.</p>
-                            <a href="" className="firstbutton">CHECK IT OUT &#x2192;</a>
-                        </div>
-                    </div>
+
                 </div>
             </header>
             
@@ -136,7 +129,7 @@ function Home(props) {
 
                     </div>
                 </div>
-                <h3 className="productsSample">Stores Availble to Shop</h3>
+                <h3 className="productsSample">Shop at Your Favourite Stores</h3>
                 <ul className ="storeContainer">
 { sampleStores && sampleStores.map((store) => (
  
