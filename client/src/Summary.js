@@ -52,7 +52,8 @@ function Summary(props) {
 
     const editProduct = (productObject)=>{
         console.log("productObject",productObject)
-
+        cookies.set('editProductObj',productObject)
+        
     }
     return (
         <div>
