@@ -491,12 +491,18 @@ hr {
 
 .store-name {
     font-weight: 700;
-    
+}
+
+.bolt {
+    color: lawngreen;
+    margin-right: 8px;
 }
 
 .deliveryText {
     color: #2c8e5b;
     font-weight: 500;
+    display: flex;
+
 }
 
 .storeContainer {
@@ -525,7 +531,7 @@ hr {
 }
 
 .storeTitle {
-    padding-left:200px;
+    /* padding-left:200px; */
     font-weight:bold;
     font-size: 25px;
     padding-top: 25px;
@@ -546,6 +552,7 @@ hr {
     margin-right: 100px;
     margin-top: 30px;
     display: flex;
+    justify-content: center;
     flex-direction: row;
     padding-left:200px;
     padding-right: 100px;

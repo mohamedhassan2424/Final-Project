@@ -18,10 +18,11 @@ const [stores,setStores] = useState([])
   return (
 
     <div>
-      <h1>LITE-CART</h1>
-      <div>
+    
+    <div>
       <Nav/>
       </div>
+      <div className="backcolor">
       <div>
   <h3  className ="storeTitle" >Recentely Visted</h3>
   <div className="sampleDataContainer">
@@ -31,7 +32,7 @@ const [stores,setStores] = useState([])
 
   
 </div>
-<p className="textAlighnment">City Market</p>
+<p className="textAlighnment">Metro</p>
 </div>
 <div className="storeContent">
 <div className="logoImages">
@@ -39,7 +40,7 @@ const [stores,setStores] = useState([])
 
 
 </div>
-<p className="textAlighnments">Metro</p>
+<p className="textAlighnments">City Market</p>
 </div>
 </div>
 </div>
@@ -688,10 +689,10 @@ const [stores,setStores] = useState([])
 
 
 
-
 </div>
     </div>
 
+</div>
 
   );
 }

@@ -147,7 +147,16 @@ function Home(props) {
 <div className="contentOfStore">
 <p className ="newText"> NEW</p>
 <p className="store-name"> {store.store_name}</p>
-<p className ="deliveryText"> DELIVER WITHIN AN HOUR</p>
+
+<div className="eta-info">
+<p className ="deliveryText"> DELIVER WITHIN AN HOUR
+<div className="bolt">
+        <i className="fa-solid fa-bolt"></i>    
+        </div>
+        </p>
+</div>
+
+
 <p className="storePriceText"> In-store prices</p>
 </div>
 </div>
