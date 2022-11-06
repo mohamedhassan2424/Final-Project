@@ -441,6 +441,8 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 12%;
+    margin-bottom: 5%;
 }
 
 .logoName {
