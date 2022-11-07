@@ -219,20 +219,24 @@ function Carts(props) {
 
       <div>
         {SpecfiedAddress ? <div>
-          <h5>Full Name :{SpecfiedAddress.full_name}</h5>
-          <h5>Address Line 1 :{SpecfiedAddress.address_line_1}</h5>
+          <div className="abstractedAddress">
+          <h5>{SpecfiedAddress.full_name}</h5>
+          <h5>{SpecfiedAddress.address_line_1}</h5>
           <h5>Address Line 2 :{SpecfiedAddress.address_line_2}</h5>
           <h5>City Selected :{SpecfiedAddress.city}</h5>
           <h5>State/Province/Region :{SpecfiedAddress.state_region}</h5>
           <h5>Country:{SpecfiedAddress.country}</h5>
+          </div>
         </div>
 
 
 
 
-          : <div className="AddresssSection">
+          : <div className="addressSec">
+          <div className="AddresssSection">
+
             <form onSubmit={(event) => event.preventDefault()} >
-              <h1 className="fontName">Mailing Addres</h1><br />
+              <h1 className="fontName">Mailing Addresss</h1><br />
 
               <div className="inputText">
                 <input value={addressLineOne} type="text" placeholder="Address Line 1" onChange={(event) => {
@@ -275,8 +279,11 @@ function Carts(props) {
                   console.log(country)
                 }} />
               </div>
-              <button class="sumbitButton" type="sumbit" onClick={registerAddress}>Signup</button>
+     
+              <button class="othersumbitButton" type="sumbit" onClick={registerAddress}>Signup</button>
+
             </form>
+          </div>
           </div>}
       </div>
 
