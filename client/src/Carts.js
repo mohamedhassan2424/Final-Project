@@ -221,24 +221,28 @@ function Carts(props) {
           {SpecfiedAddress ? <div>
             <div className="abstractedAddress">
               <div className ="mainColorDiv">
-                <h3>Mailing Address</h3>
-                <div>
-                  <p className="fontAddress">Full Name: {SpecfiedAddress.full_name}</p>
+                <h3 className="titleStyling">Mailing Address</h3>
+                <div >
+                  <p className="fontAddress">Full Name:  <span className ="spanStyling">{SpecfiedAddress.full_name}</span> </p> 
                 </div>
                 <div>
-                  <p className="fontAddress">Address Line 1:{SpecfiedAddress.address_line_1}</p>
+                  <p className="fontAddress">Address Line 1: <span className ="spanStyling">{SpecfiedAddress.address_line_1}</span></p>
                 </div>
                 <div>
-                  <p className="fontAddress">Address Line 2: {SpecfiedAddress.address_line_2}</p>
+                  <p className="fontAddress">Address Line 2:<span className ="spanStyling"> {SpecfiedAddress.address_line_2}</span></p>
                 </div>
                 <div>
-                  <p className="fontAddress">City Selected: {SpecfiedAddress.city}</p>
+                  <p className="fontAddress">City Selected:<span className ="spanStyling"> {SpecfiedAddress.city}</span></p>
                 </div>
                 <div>
-                  <p className="fontAddress">State/Province/Region: {SpecfiedAddress.state_region}</p>
+                  <p className="fontAddress">State/Province/Region: <span className ="spanStyling">{SpecfiedAddress.state_region}</span></p>
                 </div>
                 <div>
-                  <p className="fontAddress">Country: {SpecfiedAddress.country}</p>
+                  <p className="fontAddress">Country: <span className ="spanStyling">{SpecfiedAddress.country}</span></p>
+                </div>
+                <div className= "editDeleteSection">
+                <button className="paddingSpace">Edit Address</button>
+                <button className="paddingSpace">Delete Address</button>
                 </div>
                 </div>
               </div>
