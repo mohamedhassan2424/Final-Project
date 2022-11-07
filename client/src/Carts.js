@@ -5,7 +5,7 @@ import UserProvider, { userContext } from "./providers/UserProvider";
 import Cookies from 'universal-cookie';
 import "./Cart.css";
 import Nav from "./Nav";
-
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 function Carts(props) {
 
   const { fullAddressId, editProdObj, salesHistory, allTheStore, storeIdNumber, firstNameSaved, lastNameSaved, emailSaved, savingStoreName, counterValue, userId, changingAddressId, settingStoreIdValue, changinSalesHistory, savingFirstName, savingLastName, savingEmail, savingUserId, savingStoreFunction, incrementFunction, decrementFunction, clearFunction, settingCounter } = useContext(userContext)
@@ -82,7 +82,7 @@ function Carts(props) {
       cookies.set("specfiedAddressId", eachAddressObject)
     }
   })
-  const SpecfiedAddress = cookies.get("specfiedAddressId")
+  let SpecfiedAddress = cookies.get("specfiedAddressId")
   console.log("specfifedAddresss", SpecfiedAddress)
 
   const totalSumFunction = ()=>{
@@ -110,12 +110,21 @@ const savingFunction = ()=>{
 }
 
 const deleteAddress = ()=>{
-
+  console.log("reached this point 1")
+  axios.post('http://localhost:8080/removingAddress',{userId:currentUserId})
+  .then((response)=>{
+    console.log('Everything is good', response.data)
+    console.log("reached this point 2")
+  })
+  cookies.remove("specfiedAddressId")
+  window.location.reload(false)
 }
 
 const editAdderss = () =>{
 
 }
+console.log('SpecfiedAddress',SpecfiedAddress)
+console.log('allAddress',allAddress)
   return (
     <div>
       <Nav />

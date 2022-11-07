@@ -276,6 +276,9 @@ app.post('/removingAddress',(req,res)=>{
 
     console.log('UserIdValue',userIdValue)
     pool.query(`DELETE FROM address WHERE  user_id_address =$1;`,[userIdValue])
+    .then((response)=>{
+        res.send("Deleted the Address corresponding to the userId")
+    })
 })
 
 app.post('/updateingSaleCount',(req,res)=>{
