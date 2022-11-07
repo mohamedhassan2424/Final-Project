@@ -152,13 +152,7 @@ console.log('allAddress',allAddress)
                     <div className="toptopheaderj">
                       <div className="productCountDiv">
                         <div className="topheader">
-                          <p>Product Count</p>
-
-                        </div>
-                        <div className="productCount">
-                          <div className="lowerDivComponent">
-                            <p >{eachProductObject.count_product}</p>
-                          </div>
+                          <p>Total Count :   {eachProductObject.count_product}</p>
                         </div>
                       </div>
 
