@@ -38,16 +38,15 @@ function Nav(props) {
             { firstNameSaved?<Link to="/main">Main</Link>:<Link to="/users">Main</Link>}
     
           </li>
-          <li>{firstNameSaved?  <Link to="/cart"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link>:  <Link to="/users"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link> }
-            
-          </li>
           <li>
-            {firstNameSaved?<Link to="/summary">Summary Cart</Link>:  <Link to="/users">Summary Cart</Link>  }
+            {firstNameSaved?<Link to="/summary"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link>:  <Link to="/summary"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link> }
 
           </li>
-          <li>
-            {firstNameSaved?<Link to ="/orderCheckout">Order Checkout</Link>:<Link to="/users">Order Checkout</Link>}
+          <li>{firstNameSaved?  <Link to="/cart">Summary Cart</Link>:<Link to="/cart">Summary Cart</Link> }
+            
           </li>
+          
+          
           <li>
             {firstNameSaved?<Link to="/cardPayment">Cart Payment</Link>:<Link to="/users">Cart Payment</Link>}
           </li>

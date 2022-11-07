@@ -370,8 +370,9 @@ a {
 }
 
 .chocalteImage {
+    padding-left: 10px;
     display:flex;
-    justify-content: center;
+    justify-content: flex-end;
     width: 150px;
     height: 150px;
 }

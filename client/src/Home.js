@@ -86,7 +86,7 @@ function Home(props) {
                             //<div key={product.name} >{product.name}</div>
                             
 
-                        <div key={product.name} className="outlineBox">
+                        <div key={product.name} className="otherOutlineBox">
                             <div className="outerTopProduCtontainer">
                                 <div className="toptopheaderName">
                                     <div className="topheaderName">

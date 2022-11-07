@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import UserProvider, { userContext } from "./providers/UserProvider";
 import Cookies from 'universal-cookie';
-import "./Cart.css";
+import './summary.css'
 import Nav from "./Nav";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 function Carts(props) {
@@ -142,7 +142,7 @@ console.log('allAddress',allAddress)
           </div>
 
           <div>
-            <div className="my-items">
+            <div className="othermy-items">
 
 
               {productOrdered && productOrdered.map((eachProductObject) => (

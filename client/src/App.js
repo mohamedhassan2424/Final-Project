@@ -19,7 +19,7 @@ import EditProduct from "./EditProduct";
 import OrderCheckout from "./OrderCheckout";
 import CardPayment from "./CardPayment";
 import {loadStripe} from '@stripe/stripe-js';
-import HomePage from "./HomePage";
+
 import {
   CardElement,
   Elements,
@@ -93,7 +93,7 @@ function App() {
             <OrderCheckout />
           </Route>
           <Route path="/cardPayment">
-            <HomePage />
+            <CardPayment />
           </Route>
           <Route path="/home">
             <Home />
