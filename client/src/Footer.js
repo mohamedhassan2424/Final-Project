@@ -13,11 +13,10 @@ function Footer() {
                                 Specifically, Lite-Cart  notes of the program, "A world with Zero Hunger | Zero Waste: that’s our commitment. As Canadian Startup grocer, we believe we have the size and scale, expertise and local connections to tackle this challenge."</p>
                         </div>
                         <div className="secoundRow">
-                            <h5>Site Links</h5>
+                            <h5 className= "titleStyle">Site Links</h5>
                             <ul className= "siteLinkColumn">
                                 <li>Home</li>
                                 <li>Stores</li>
-                                <li>Products</li>
                                 <li>Cart</li>
                                 <li>Summary Cart</li>
                                 <li>Payment</li>
@@ -27,7 +26,8 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-
+                <hr />
+<h2>hello world</h2>
             </footer>
         </div>
     );
