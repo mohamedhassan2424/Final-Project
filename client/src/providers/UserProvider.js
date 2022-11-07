@@ -16,7 +16,9 @@ const [allTheStore, setAllTheStore] = useState('')
 const [salesHistory, setSalesHistory] = useState([])
 const [editProdObj, setEditProdObj] =useState(cookies.get('editProductObj')? cookies.get('editProductObj'):'')
 const [fullAddressId, setFullAddressId] = useState(cookies.get('specfiedAddressId')? cookies.get('specfiedAddressId'):'')
+
 const userIdValueNum = cookies.get('userId')
+
 useEffect(() => {
 
     axios.post('http://localhost:8080/extratingData',{ userIdInt: userIdValueNum })

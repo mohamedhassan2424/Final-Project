@@ -17,6 +17,16 @@ import Logout from "./Logout";
 import StoreProduct from "./StoreProdcuts";
 import EditProduct from "./EditProduct";
 import OrderCheckout from "./OrderCheckout";
+import CardPayment from "./CardPayment";
+import Footer from "./Footer";
+import {loadStripe} from '@stripe/stripe-js';
+import {
+  CardElement,
+  Elements,
+  useStripe,
+  useElements,
+} from '@stripe/react-stripe-js';
+const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -35,6 +45,9 @@ function App() {
 
 
   return (
+    <Elements stripe={stripePromise}>
+
+  
     <Router>
       <div>
 
@@ -79,6 +92,9 @@ function App() {
           <Route path="/orderCheckout">
             <OrderCheckout />
           </Route>
+          <Route path="/cardPayment">
+            <CardPayment />
+          </Route>
           <Route path="/home">
             <Home />
           </Route>
@@ -86,13 +102,16 @@ function App() {
           <Route path="/logout">
             <Logout />
           </Route>
-          
+          <Route path="/footer">
+            <Footer />
+          </Route>
           <Route path='*' >
             <ErrorPage />
           </Route>
         </Switch>
       </div>
     </Router>
+    </Elements>
   )
 }
 

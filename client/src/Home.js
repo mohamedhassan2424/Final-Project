@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Nav from "./Nav";
+import Footer from "./Footer";
 function Home(props) {
 
     // const dummyProducts = [
@@ -86,7 +87,7 @@ function Home(props) {
                             //<div key={product.name} >{product.name}</div>
                             
 
-                        <div key={product.name} className="outlineBox">
+                        <div key={product.name} className="otherOutlineBox">
                             <div className="outerTopProduCtontainer">
                                 <div className="toptopheaderName">
                                     <div className="topheaderName">
@@ -281,7 +282,7 @@ function Home(props) {
 
             </div>
             
-
+<Footer />
         </div>
         
     );

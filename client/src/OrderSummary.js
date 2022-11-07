@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import Footer from "./Footer";
 export default function OrderSummary (product, price, quantity, subtotal) {
   const [orders, setOrders] = useState([])
     useEffect(() => {

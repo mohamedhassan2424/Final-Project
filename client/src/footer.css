@@ -1,0 +1,38 @@
+.footerContainer {
+    background-color: #707070;
+}
+
+.containerRow {
+  
+    display:flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.firstRow {
+    width:50%;
+}
+.secoundRow {
+    
+    padding-left: 450px;
+    width: 50%;
+}
+
+.titleStyle {
+    font-weight: 550;
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-start;
+}
+.siteLinkColumn {
+    list-style-type: none;
+}
+
+.lineCss {
+    background-color:#B8B8B8;
+}
+
+.picSection {
+weight :10;
+height: 15;
+
+}

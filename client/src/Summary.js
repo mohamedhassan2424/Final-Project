@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Nav from "./Nav";
+import Footer from "./Footer";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { userContext } from "./providers/UserProvider";
@@ -21,17 +22,19 @@ function Summary(props) {
             .then(response => {
                 console.log("DATA recieved from the database", response.data)
                 setSalesHistory(response.data)
+                
             })
             .catch((error) => {
             console.log('error received from the database', error)
                 })
     }, [])
 
+
     const totalSumFunction = ()=>{
         let totalSumValue= 0
         for(let i=0; i<salesHistory.length; i++){
-            const totalPrice = salesHistory[i].price
-            const totalQuantity= salesHistory[i].quantity
+            const totalPrice = salesHistory[i].sale_price
+            const totalQuantity= salesHistory[i].count_product
             totalSumValue +=totalPrice*totalQuantity;
         }
         return totalSumValue;
@@ -54,6 +57,13 @@ function Summary(props) {
         console.log("productObject",productObject)
         cookies.set('editProductObj',productObject)
         let path = `/editProduct`;
+            // let history = useHistory();
+            history.push(path);
+    }
+
+
+    const reDirectPage = ()=>{
+        let path = `/cart`;
             // let history = useHistory();
             history.push(path);
     }
@@ -103,8 +113,9 @@ function Summary(props) {
                         <td>{totalSumFunction()}</td>
                     </tr>
                 </table>
-                <button >Proceded to Checkout</button>
+                <button onClick={reDirectPage}>Proceded to Checkout</button>
             </div>
+            <Footer /> 
         </div>
     )
 }

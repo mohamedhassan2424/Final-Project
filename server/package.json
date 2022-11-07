@@ -21,6 +21,7 @@
     "node-localstorage": "^2.2.1",
     "pg": "^8.5.0",
     "store": "^2.0.12",
+    "stripe": "^10.16.0",
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {

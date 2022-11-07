@@ -6,6 +6,7 @@ import { userContext } from "./providers/UserProvider";
 import { useParams } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route, Link, useLocation,  } from "react-router-dom";
 import Nav from "./Nav";
+import Footer from "./Footer";
 import axios from "axios";
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
@@ -184,7 +185,7 @@ function StoreProduct(props){
 
 
 
-            
+        <Footer />    
 </div>
     );
 }

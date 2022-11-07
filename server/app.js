@@ -271,6 +271,16 @@ app.post('/removingProduct',(req,res)=>{
     pool.query(`DELETE FROM sales WHERE  user_id_sales =$1 AND products_id =$2;`,[userIDOfProductRemoving,productRemoving])
 })
 
+app.post('/removingAddress',(req,res)=>{
+    const userIdValue = req.body.userId
+
+    console.log('UserIdValue',userIdValue)
+    pool.query(`DELETE FROM address WHERE  user_id_address =$1;`,[userIdValue])
+    .then((response)=>{
+        res.send("Deleted the Address corresponding to the userId")
+    })
+})
+
 app.post('/updateingSaleCount',(req,res)=>{
 let counterIdVal = req.body.counterData
 let userIdVal = req.body.userIdValue
@@ -330,5 +340,17 @@ app.get("/Beverage", (req,res)=>{
 app.get('/', (req, res) => {
     res.json({ greetings: 'hello world' });
 })
+
+app.post('/pay', async (req, res) => {
+    const {email} = req.body
+    const paymentIntent = await stripe.checkout.sessions.create({
+     amount:5000,
+     currency:'usd',
+     metadata:{integration_check: 'accept_a_payment'},
+     recepient_email :email,
+    });
+    res.json({'client_secret':paymentIntent['client_secret']})
+    res.redirect(303, session.url);
+  });
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
