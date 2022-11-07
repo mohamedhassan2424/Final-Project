@@ -504,6 +504,7 @@ hr {
 
 .store-name {
     font-weight: 700;
+    margin: -6px;
 }
 
 .bolt {
