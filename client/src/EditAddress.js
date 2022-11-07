@@ -12,11 +12,11 @@ function Carts(props) {
   const { fullAddressId, editProdObj, salesHistory, allTheStore, storeIdNumber, firstNameSaved, lastNameSaved, emailSaved, savingStoreName, counterValue, userId, changingAddressId, settingStoreIdValue, changinSalesHistory, savingFirstName, savingLastName, savingEmail, savingUserId, savingStoreFunction, incrementFunction, decrementFunction, clearFunction, settingCounter } = useContext(userContext)
   let SpecfiedAddress = cookies.get("specfiedAddressId")
   const [addressLineOneUpdate, setAddressLineOneUpdate] = useState(SpecfiedAddress.address_line_1)
-  const [addressLineTwoUpdate, setAddressLineTwoUpdate] = useState('')
-  const [cityAddressUpdate, setCityAddressUpdate] = useState('')
-  const [stateRegionUpdate, setStateRegionUpdate] = useState('')
-  const [postalCodeUpdate, setPostalCodeUpdate] = useState('')
-  const [countryUpdate, setCountryUpdate] = useState('')
+  const [addressLineTwoUpdate, setAddressLineTwoUpdate] = useState(SpecfiedAddress.address_line_2)
+  const [cityAddressUpdate, setCityAddressUpdate] = useState(SpecfiedAddress.city)
+  const [stateRegionUpdate, setStateRegionUpdate] = useState(SpecfiedAddress.state_region)
+  const [postalCodeUpdate, setPostalCodeUpdate] = useState(SpecfiedAddress.zip_code)
+  const [countryUpdate, setCountryUpdate] = useState(SpecfiedAddress.country)
   const [allAddress, setAllAddress] = useState([])
   const [productOrdered, setProductOrdered] = useState([])
   
@@ -277,7 +277,7 @@ console.log('addressLineTwo',addressLineTwoUpdate)
                   </div>
 
                   <div className="inputText">
-                    <input value={SpecfiedAddress.address_line_2} type="text" placeholder="Address Line 1" onChange={(event) => {
+                    <input value={addressLineTwoUpdate} type="text" placeholder="Address Line 1" onChange={(event) => {
                       setAddressLineTwoUpdate(event.target.value)
                       console.log(addressLineTwoUpdate)
                     }} />
@@ -291,21 +291,21 @@ console.log('addressLineTwo',addressLineTwoUpdate)
                   </div>
 
                   <div className="inputText">
-                    <input value={SpecfiedAddress.state_region} type="text" placeholder="State/Province/Region" onChange={(event) => {
+                    <input value={stateRegionUpdate} type="text" placeholder="State/Province/Region" onChange={(event) => {
                       setStateRegionUpdate(event.target.value)
                       console.log(stateRegionUpdate)
                     }} />
                   </div>
 
                   <div className="inputText">
-                    <input value={SpecfiedAddress.zip_code} type="text" placeholder="ZIP/Postal Code" onChange={(event) => {
+                    <input value={postalCodeUpdate} type="text" placeholder="ZIP/Postal Code" onChange={(event) => {
                       setPostalCodeUpdate(event.target.value)
                       console.log(postalCodeUpdate)
                     }} />
                   </div>
 
                   <div className="inputText">
-                    <input value={SpecfiedAddress.country} type="text" placeholder="Country:" onChange={(event) => {
+                    <input value={countryUpdate} type="text" placeholder="Country:" onChange={(event) => {
                       setCountryUpdate(event.target.value)
                       console.log(countryUpdate)
                     }} />
