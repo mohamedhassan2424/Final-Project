@@ -253,6 +253,7 @@ app.post('/reigisterAddressUpdate',(req,res)=>{
     console.log('postalCode',postalCodeUpdate)
     console.log('countrySelected',countrySelectedUpdate)
     console.log('currentUserIdVal',currentUserIdVal)
+    pool.query(`UPDATE address SET  user_id_address =$1, address_line_1 =$2, address_line_2 =$3, city = $4,state_region=$5, zip_code =$6, country= $7 WHERE user_id_address = $1;`,[userIdVal,storeVal,productIdVal,counterIdVal,previousCounter])
 })
 
 app.get('/gettingAddress',(req,res) => {
