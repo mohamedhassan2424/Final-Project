@@ -71,227 +71,242 @@ function Carts(props) {
 
   return (
     <div>
-      <Nav/>
-    <div className="background-image">
-      
-      <div >
-        <div className="your-cart">
-          <h1 className="yourcart">YOUR CART</h1>
+      <Nav />
+      <div className="background-image">
+
+        <div >
+          <div className="your-cart">
+            <h1 className="yourcart">YOUR CART</h1>
+          </div>
+
+          <div>
+            <button className="cart-show">
+              <i className="fa-solid fa-cart-arrow-down"></i>Clear Cart
+            </button>
+          </div>
+
+          <div>
+            <div className="my-items">
+              <div className="outlineBox">
+                <div className="outerTopProduCtontainer">
+                  <div className="toptopheaderName"></div>
+                  <div className="chocolateImage">
+                    <img
+                      className="image"
+                      src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg"
+                    />
+                  </div>
+                  <hr></hr>
+                  <div className="ProductInforamtion">
+                    Nestlé Aero Milk Chocolate Bar 4 Pack 42 g
+                  </div>
+
+                  <div className="saleImage">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" />
+                    <h4 className="saleDescription">SALE</h4>
+                  </div>
+                  <hr></hr>
+                  <div className="caloriesDescription">4 x 42g($2.67 per 100g)</div>
+                  <div className="priceInformation">
+                    <span className="firstPrice">$4.49</span>{" "}
+                    <span className="secoundPrice"> $5.49</span>
+                  </div>
+                  <div className="addContent">
+                    {" "}
+                    <h3>Add</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="outlineBox">
+                <div className="outerTopProduCtontainer">
+                  <div className="toptopheaderName"></div>
+                  <div className="chocolateImage">
+                    <img
+                      className="image"
+                      src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/96c1ec03-cef1-4824-8b61-32fcd55a03e8/300x300.jpg"
+                    />
+                  </div>
+                  <hr></hr>
+                  <div className="ProductInforamtion">
+                    Liberté Mediterranee Yogurt Blackberry 500 g
+                  </div>
+
+                  <div className="saleImage">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" />
+                    <h4 className="saleDescription">SALE</h4>
+                  </div>
+                  <hr></hr>
+                  <div className="caloriesDescription">500g($0.80 per 100g)</div>
+                  <div className="priceInformation">
+                    <span className="firstPrice">$4.49</span>{" "}
+                    <span className="secoundPrice"> $6.49</span>
+                  </div>
+                  <div className="addContent">
+                    {" "}
+                    <h3>Add</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="outlineBox">
+                <div className="outerTopProduCtontainer">
+                  <div className="toptopheaderName"></div>
+                  <div className="chocolateImage">
+                    <img
+                      className="image"
+                      src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/e705341e-c803-4794-83f1-f30ccc6b9629/300x300.jpg"
+                    />
+                  </div>
+                  <hr></hr>
+                  <div className="ProductInforamtion">
+                    Cheerios Honey Nut Cereal 430 g
+                  </div>
+
+                  <div className="saleImage">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" />
+                    <h4 className="saleDescription">SALE</h4>
+                  </div>
+                  <hr></hr>
+                  <div className="caloriesDescription">430g($1.04 per 100g)</div>
+                  <div className="priceInformation">
+                    <span className="firstPrice">$4.49</span>{" "}
+                    <span className="secoundPrice"> $6.49</span>
+                  </div>
+                  <div className="addContent">
+                    {" "}
+                    <h3>Add</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="summary-box">
+            <div className="summary">
+              <div className="title-summary">
+                <h1>Summary</h1>
+              </div>
+
+
+              <div className="row">
+                <h2>3 Items</h2> <h6>$18.47</h6>
+              </div>
+
+              <div className="row">
+                <h2>Savings</h2> <h6>$3.00</h6>
+              </div>
+
+              <hr></hr>
+
+              <div className="row">
+                <h1>Total</h1> <h1>$18.47</h1>
+              </div>
+
+
+
+              <div className="check-out">
+                <button className="checkout">
+                  <i className="fa-regular fa-credit-card"></i>Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr></hr>
         </div>
+
+
+
+
 
         <div>
-          <button className="cart-show">
-            <i className="fa-solid fa-cart-arrow-down"></i>Clear Cart
-          </button>
-        </div>
-
-        <div>
-          <div className="my-items">
-            <div className="outlineBox">
-              <div className="outerTopProduCtontainer">
-                <div className="toptopheaderName"></div>
-                <div className="chocolateImage">
-                  <img
-                    className="image"
-                    src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/051df510-051f-475a-afe7-47682b50381d/300x300.jpg"
-                  />
+          {SpecfiedAddress ? <div>
+            <div className="abstractedAddress">
+              <div className ="mainColorDiv">
+                <h3>Mailing Address</h3>
+                <div>
+                  <p className="fontAddress">Full Name: {SpecfiedAddress.full_name}</p>
                 </div>
-                <hr></hr>
-                <div className="ProductInforamtion">
-                  Nestlé Aero Milk Chocolate Bar 4 Pack 42 g
+                <div>
+                  <p className="fontAddress">Address Line 1:{SpecfiedAddress.address_line_1}</p>
                 </div>
-
-                <div className="saleImage">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" />
-                  <h4 className="saleDescription">SALE</h4>
+                <div>
+                  <p className="fontAddress">Address Line 2: {SpecfiedAddress.address_line_2}</p>
                 </div>
-                <hr></hr>
-                <div className="caloriesDescription">4 x 42g($2.67 per 100g)</div>
-                <div className="priceInformation">
-                  <span className="firstPrice">$4.49</span>{" "}
-                  <span className="secoundPrice"> $5.49</span>
+                <div>
+                  <p className="fontAddress">City Selected: {SpecfiedAddress.city}</p>
                 </div>
-                <div className="addContent">
-                  {" "}
-                  <h3>Add</h3>
+                <div>
+                  <p className="fontAddress">State/Province/Region: {SpecfiedAddress.state_region}</p>
+                </div>
+                <div>
+                  <p className="fontAddress">Country: {SpecfiedAddress.country}</p>
+                </div>
                 </div>
               </div>
             </div>
-            <div className="outlineBox">
-              <div className="outerTopProduCtontainer">
-                <div className="toptopheaderName"></div>
-                <div className="chocolateImage">
-                  <img
-                    className="image"
-                    src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/96c1ec03-cef1-4824-8b61-32fcd55a03e8/300x300.jpg"
-                  />
-                </div>
-                <hr></hr>
-                <div className="ProductInforamtion">
-                  Liberté Mediterranee Yogurt Blackberry 500 g
-                </div>
 
-                <div className="saleImage">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" />
-                  <h4 className="saleDescription">SALE</h4>
-                </div>
-                <hr></hr>
-                <div className="caloriesDescription">500g($0.80 per 100g)</div>
-                <div className="priceInformation">
-                  <span className="firstPrice">$4.49</span>{" "}
-                  <span className="secoundPrice"> $6.49</span>
-                </div>
-                <div className="addContent">
-                  {" "}
-                  <h3>Add</h3>
-                </div>
-              </div>
-            </div>
-            <div className="outlineBox">
-              <div className="outerTopProduCtontainer">
-                <div className="toptopheaderName"></div>
-                <div className="chocolateImage">
-                  <img
-                    className="image"
-                    src="https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/e705341e-c803-4794-83f1-f30ccc6b9629/300x300.jpg"
-                  />
-                </div>
-                <hr></hr>
-                <div className="ProductInforamtion">
-                  Cheerios Honey Nut Cereal 430 g
-                </div>
 
-                <div className="saleImage">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" />
-                  <h4 className="saleDescription">SALE</h4>
-                </div>
-                <hr></hr>
-                <div className="caloriesDescription">430g($1.04 per 100g)</div>
-                <div className="priceInformation">
-                  <span className="firstPrice">$4.49</span>{" "}
-                  <span className="secoundPrice"> $6.49</span>
-                </div>
-                <div className="addContent">
-                  {" "}
-                  <h3>Add</h3>
-                </div>
+
+
+            : <div className="addressSec">
+              <div className="AddresssSection">
+
+                <form onSubmit={(event) => event.preventDefault()} >
+                  <h1 className="fontName">Mailing Addresss</h1><br />
+
+                  <div className="inputText">
+                    <input value={addressLineOne} type="text" placeholder="Address Line 1" onChange={(event) => {
+                      setAddressLineOne(event.target.value)
+                      console.log(addressLineOne)
+                    }} />
+                  </div>
+
+                  <div className="inputText">
+                    <input value={addressLineTwo} type="text" placeholder="Address Line 1" onChange={(event) => {
+                      setAddressLineTwo(event.target.value)
+                      console.log(addressLineTwo)
+                    }} />
+                  </div>
+
+                  <div className="inputText">
+                    <input value={cityAddress} type="text" placeholder="City Name" onChange={(event) => {
+                      setCityAddress(event.target.value)
+                      console.log(cityAddress)
+                    }} />
+                  </div>
+
+                  <div className="inputText">
+                    <input value={stateRegion} type="text" placeholder="State/Province/Region" onChange={(event) => {
+                      setStateRegion(event.target.value)
+                      console.log(stateRegion)
+                    }} />
+                  </div>
+
+                  <div className="inputText">
+                    <input value={postalCode} type="text" placeholder="ZIP/Postal Code" onChange={(event) => {
+                      setPostalCode(event.target.value)
+                      console.log(postalCode)
+                    }} />
+                  </div>
+
+                  <div className="inputText">
+                    <input value={country} type="text" placeholder="Country:" onChange={(event) => {
+                      setCountry(event.target.value)
+                      console.log(country)
+                    }} />
+                  </div>
+
+                  <button class="othersumbitButton" type="sumbit" onClick={registerAddress}>Signup</button>
+
+                </form>
               </div>
-            </div>
+            </div>}
           </div>
-        </div>
-
-        <div className="summary-box">
-          <div className="summary">
-            <div className="title-summary">
-              <h1>Summary</h1>
-            </div>
-
-
-            <div className="row">
-              <h2>3 Items</h2> <h6>$18.47</h6>
-            </div>
-
-            <div className="row">
-              <h2>Savings</h2> <h6>$3.00</h6>
-            </div>
-
-            <hr></hr>
-
-            <div className="row">
-              <h1>Total</h1> <h1>$18.47</h1>
-            </div>
-
-
-
-            <div className="check-out">
-              <button className="checkout">
-                <i className="fa-regular fa-credit-card"></i>Checkout
-              </button>
-            </div>
-          </div>
-        </div>
-        <hr></hr>
-      </div>
-
-
-
-
-
-      <div>
-        {SpecfiedAddress ? <div>
-          <div className="abstractedAddress">
-          <h5>{SpecfiedAddress.full_name}</h5>
-          <h5>{SpecfiedAddress.address_line_1}</h5>
-          <h5>Address Line 2 :{SpecfiedAddress.address_line_2}</h5>
-          <h5>City Selected :{SpecfiedAddress.city}</h5>
-          <h5>State/Province/Region :{SpecfiedAddress.state_region}</h5>
-          <h5>Country:{SpecfiedAddress.country}</h5>
-          </div>
-        </div>
-
-
-
-
-          : <div className="addressSec">
-          <div className="AddresssSection">
-
-            <form onSubmit={(event) => event.preventDefault()} >
-              <h1 className="fontName">Mailing Addresss</h1><br />
-
-              <div className="inputText">
-                <input value={addressLineOne} type="text" placeholder="Address Line 1" onChange={(event) => {
-                  setAddressLineOne(event.target.value)
-                  console.log(addressLineOne)
-                }} />
-              </div>
-
-              <div className="inputText">
-                <input value={addressLineTwo} type="text" placeholder="Address Line 1" onChange={(event) => {
-                  setAddressLineTwo(event.target.value)
-                  console.log(addressLineTwo)
-                }} />
-              </div>
-
-              <div className="inputText">
-                <input value={cityAddress} type="text" placeholder="City Name" onChange={(event) => {
-                  setCityAddress(event.target.value)
-                  console.log(cityAddress)
-                }} />
-              </div>
-
-              <div className="inputText">
-                <input value={stateRegion} type="text" placeholder="State/Province/Region" onChange={(event) => {
-                  setStateRegion(event.target.value)
-                  console.log(stateRegion)
-                }} />
-              </div>
-
-              <div className="inputText">
-                <input value={postalCode} type="text" placeholder="ZIP/Postal Code" onChange={(event) => {
-                  setPostalCode(event.target.value)
-                  console.log(postalCode)
-                }} />
-              </div>
-
-              <div className="inputText">
-                <input value={country} type="text" placeholder="Country:" onChange={(event) => {
-                  setCountry(event.target.value)
-                  console.log(country)
-                }} />
-              </div>
-     
-              <button class="othersumbitButton" type="sumbit" onClick={registerAddress}>Signup</button>
-
-            </form>
-          </div>
-          </div>}
-      </div>
 
 
 
     </div>
-    </div>
-  );
+      </div>
+      );
 }
 
-export default Carts;
+      export default Carts;
