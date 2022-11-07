@@ -7,7 +7,6 @@ import './summary.css'
 import Nav from "./Nav";
 import Footer from "./Footer";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
-import { application } from "express";
 function Carts(props) {
 
   const { fullAddressId, editProdObj, salesHistory, allTheStore, storeIdNumber, firstNameSaved, lastNameSaved, emailSaved, savingStoreName, counterValue, userId, changingAddressId, settingStoreIdValue, changinSalesHistory, savingFirstName, savingLastName, savingEmail, savingUserId, savingStoreFunction, incrementFunction, decrementFunction, clearFunction, settingCounter } = useContext(userContext)
@@ -122,14 +121,15 @@ const deleteAddress = ()=>{
   window.location.reload(false)
 }
 
+const clearCart = ()=>{
+  axios.post('http://localhost:8080/removingAllProducts',{userId:currentUserId})
+  window.location.reload(false)
+}
+
 const editAdderss = () =>{
 
 }
 
-const clearCart = ()=>{
-  let currentUserId = cookies.get('userId')
-  axios.post('http://localhost:8080/removingAllProducts',{userId:currentUserId})
-}
 console.log('SpecfiedAddress',SpecfiedAddress)
 console.log('allAddress',allAddress)
   return (

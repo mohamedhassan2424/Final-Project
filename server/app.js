@@ -295,6 +295,11 @@ console.log("previousCount",previousCounter)
 pool.query(`UPDATE sales SET  user_id_sales =$1, stores_id_sales =$2, products_id =$3, count_product = $4 WHERE count_product = $5;`,[userIdVal,storeVal,productIdVal,counterIdVal,previousCounter])
 })
 
+app.post ('/removingAllProducts',(req,res)=>{
+    let userIdVal = req.body.userId
+    pool.query(`DELETE FROM sales WHERE  user_id_sales =$1 ;`,[userIdVal])
+})
+
 app.get("/content", (req, res) => {
     return pool.query(`SELECT * FROM users;`)
         .then((response) => {
