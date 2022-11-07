@@ -65,7 +65,19 @@ const [stores,setStores] = useState([])
 <div className="contentOfStore">
 <p className ="newText"> NEW</p>
 <Link   to={`/products/${store.store_name}`}><p> {store.store_name}</p></Link>
-<p className ="deliveryText"> DELIVER WITHIN AN HOUR</p>
+
+
+{/* <p className ="deliveryText"> DELIVER WITHIN AN HOUR</p>*/}
+
+<p className ="deliveryText"> DELIVER WITHIN AN HOUR
+<div className="bolt">
+        <i className="fa-solid fa-bolt"></i>    
+        </div>
+        </p>
+
+
+
+
 <p className="storePriceText"> In-store prices</p>
 </div>
 </div>
