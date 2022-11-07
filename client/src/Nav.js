@@ -46,7 +46,10 @@ function Nav(props) {
 
           </li>
           <li>
-            {firstNameSaved?<Link to ="/orderCheckout">Order Checkout</Link>:<Link to="/stores">Products</Link>}
+            {firstNameSaved?<Link to ="/orderCheckout">Order Checkout</Link>:<Link to="/users">Order Checkout</Link>}
+          </li>
+          <li>
+            {firstNameSaved?<Link to="/cardPayment">Cart Payment</Link>:<Link to="/users">Cart Payment</Link>}
           </li>
           <li>{firstNameSaved? <Link to="/logout">Logout</Link>: <Link to="/users">Logout</Link>}
           </li>

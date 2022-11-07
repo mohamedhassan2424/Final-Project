@@ -341,4 +341,16 @@ app.get('/', (req, res) => {
     res.json({ greetings: 'hello world' });
 })
 
+app.post('/pay', async (req, res) => {
+    const {email} = req.body
+    const paymentIntent = await stripe.checkout.sessions.create({
+     amount:5000,
+     currency:'usd',
+     metadata:{integration_check: 'accept_a_payment'},
+     recepient_email :email,
+    });
+    res.json({'client_secret':paymentIntent['client_secret']})
+    res.redirect(303, session.url);
+  });
+
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));

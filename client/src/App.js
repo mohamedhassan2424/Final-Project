@@ -17,6 +17,7 @@ import Logout from "./Logout";
 import StoreProduct from "./StoreProdcuts";
 import EditProduct from "./EditProduct";
 import OrderCheckout from "./OrderCheckout";
+import CardPayment from "./CardPayment";
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -78,6 +79,9 @@ function App() {
           </Route>
           <Route path="/orderCheckout">
             <OrderCheckout />
+          </Route>
+          <Route path="/cardPayment">
+            <CardPayment />
           </Route>
           <Route path="/home">
             <Home />
