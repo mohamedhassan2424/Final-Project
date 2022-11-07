@@ -32,8 +32,8 @@ function Summary(props) {
     const totalSumFunction = ()=>{
         let totalSumValue= 0
         for(let i=0; i<salesHistory.length; i++){
-            const totalPrice = salesHistory[i].price
-            const totalQuantity= salesHistory[i].quantity
+            const totalPrice = salesHistory[i].sale_price
+            const totalQuantity= salesHistory[i].count_product
             totalSumValue +=totalPrice*totalQuantity;
         }
         return totalSumValue;

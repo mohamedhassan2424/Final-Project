@@ -88,11 +88,23 @@ function Carts(props) {
   const totalSumFunction = ()=>{
     let totalSumValue= 0
     for(let i=0; i<productOrdered.length; i++){
-        const totalPrice = productOrdered[i].price
-        const totalQuantity= productOrdered[i].quantity
+        const totalPrice = productOrdered[i].sale_price
+        const totalQuantity= productOrdered[i].count_product
         totalSumValue +=totalPrice*totalQuantity;
     }
-    return totalSumValue;
+    return Math.round(totalSumValue * 10) / 10;
+}
+
+const savingFunction = ()=>{
+  let totalSumValueSalePrice= 0
+  let totalSumValueOriginalPrice= 0
+    for(let i=0; i<productOrdered.length; i++){
+        const totalSalePrice = productOrdered[i].sale_price
+        const originalPrice =productOrdered[i].price
+        const totalQuantity= productOrdered[i].count_product
+        totalSumValueSalePrice +=totalPrice*totalQuantity;
+    }
+    return Math.round(totalSumValue * 10) / 10;
 }
   return (
     <div>
@@ -195,13 +207,13 @@ function Carts(props) {
               </div>
 
               <div className="row">
-                <h2>Savings</h2> <h6>$3.00</h6>
+                <h2>Savings</h2> <h6>{totalSumFunction()}</h6>
               </div>
 
               <hr></hr>
 
               <div className="row">
-                <h1>Total</h1> <h1>{totalSumFunction()}</h1>
+                <h1>Total</h1> <h1>${totalSumFunction()}</h1>
               </div>
 
 
