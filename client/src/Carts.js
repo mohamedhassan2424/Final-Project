@@ -17,7 +17,7 @@ function Carts(props) {
   const [postalCode, setPostalCode] = useState('')
   const [country, setCountry] = useState('')
   const [allAddress, setAllAddress] = useState([])
-  const [productOrdered,setProductOrdered]= useState([])
+  const [productOrdered, setProductOrdered] = useState([])
   const cookies = new Cookies();
   const linkServer = "http://localhost:8080/"
   let currentUserId = cookies.get('userId')
@@ -59,20 +59,20 @@ function Carts(props) {
       })
   }, [])
 
-  
+
   useEffect(() => {
 
-    axios.post('http://localhost:8080/extratingData',{ userIdInt: currentUserId })
-        .then(response => {
-            console.log("DATA recieved from the database", response.data)
-            setProductOrdered(response.data)
-            
-        })
-        .catch((error) => {
+    axios.post('http://localhost:8080/extratingData', { userIdInt: currentUserId })
+      .then(response => {
+        console.log("DATA recieved from the database", response.data)
+        setProductOrdered(response.data)
+
+      })
+      .catch((error) => {
         console.log('error received from the database', error)
-            })
-}, [])
-console.log('ProductOrdered',productOrdered)
+      })
+  }, [])
+  console.log('ProductOrdered', productOrdered)
   const specfiedAddress = allAddress.map((eachAddressObject) => {
     let currentUserId = cookies.get('userId')
     console.log('currentUserId', currentUserId)
@@ -85,6 +85,15 @@ console.log('ProductOrdered',productOrdered)
   const SpecfiedAddress = cookies.get("specfiedAddressId")
   console.log("specfifedAddresss", SpecfiedAddress)
 
+  const totalSumFunction = ()=>{
+    let totalSumValue= 0
+    for(let i=0; i<productOrdered.length; i++){
+        const totalPrice = productOrdered[i].price
+        const totalQuantity= productOrdered[i].quantity
+        totalSumValue +=totalPrice*totalQuantity;
+    }
+    return totalSumValue;
+}
   return (
     <div>
       <Nav />
@@ -105,50 +114,50 @@ console.log('ProductOrdered',productOrdered)
             <div className="my-items">
 
 
-              {productOrdered && productOrdered.map((eachProductObject)=>(
+              {productOrdered && productOrdered.map((eachProductObject) => (
                 <div className="outlineBox">
-                <div className="outerTopProduCtontainer">
-                <div className="toptopheaderj">
-                        <div className="productCountDiv">
-                            <div className="topheader">
-                                <p>Product Count</p>
-                                
-                            </div>
-                            <div className="productCount">
-                              <div className="lowerDivComponent">
-                            <p >{eachProductObject.count_product}</p>
-                            </div>
-                              </div>
-                        </div>
-                        
-                    </div>
-                  <div className="chocolateImage">
-                    <img
-                      className="image"
-                      src={eachProductObject.product_url}
-                    />
-                  </div>
-                  <hr></hr>
-                  <div className="ProductInforamtion">
-                    {eachProductObject.product_name}
-                  </div>
+                  <div className="outerTopProduCtontainer">
+                    <div className="toptopheaderj">
+                      <div className="productCountDiv">
+                        <div className="topheader">
+                          <p>Product Count</p>
 
-                  <div className="saleImage">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" />
-                    <h4 className="saleDescription">SALE</h4>
-                  </div>
-                  <hr></hr>
-                  <div className="caloriesDescription">{eachProductObject.product_description}</div>
-                  <div className="priceInformation">
-                    <span className="firstPrice">{eachProductObject.sale_price}</span>{" "}
-                    <span className="secoundPrice"> {eachProductObject.price}</span>
-                  </div>
-                  <div className="addContent">
-                    {" "}
-                
+                        </div>
+                        <div className="productCount">
+                          <div className="lowerDivComponent">
+                            <p >{eachProductObject.count_product}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div className="chocolateImage">
+                      <img
+                        className="image"
+                        src={eachProductObject.product_url}
+                      />
+                    </div>
+                    <hr></hr>
+                    <div className="ProductInforamtion">
+                      {eachProductObject.product_name}
+                    </div>
+
+                    <div className="saleImage">
+                      <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" />
+                      <h4 className="saleDescription">SALE</h4>
+                    </div>
+                    <hr></hr>
+                    <div className="caloriesDescription">{eachProductObject.product_description}</div>
+                    <div className="priceInformation">
+                      <span className="firstPrice">{eachProductObject.sale_price}</span>{" "}
+                      <span className="secoundPrice"> {eachProductObject.price}</span>
+                    </div>
+                    <div className="addContent">
+                      {" "}
+
+                    </div>
                   </div>
                 </div>
-              </div>
 
               ))
               }
@@ -163,13 +172,26 @@ console.log('ProductOrdered',productOrdered)
               <div className="title-summary">
                 <h1>Summary</h1>
               </div>
-              <div className="row">
-                <h2>Product Items</h2> <h6>$18.47</h6>
-                <p> - Cerial</p>
-              </div>
-
-              <div className="row">
-                <h2>3 Items</h2> <h6>$18.47</h6>
+              <div>
+              <table className= "orderCheckoutTable">
+                <tr>
+                  <th>Item</th>
+                  <th>HRS/QTY</th>
+                  <th>Rate</th>
+                  <th>Subtotal</th>
+                </tr>
+                {productOrdered && productOrdered.map((eachProductObject) => (
+                  <tr>
+                       <td>{eachProductObject.product_name}</td>
+                       <td>{eachProductObject.count_product}</td>
+                       <td>${eachProductObject.sale_price}</td>
+                       <td>USD ${eachProductObject.sale_price*eachProductObject.count_product}</td>
+                     </tr>
+                  
+                ))
+                       
+                }
+              </table>
               </div>
 
               <div className="row">
@@ -179,7 +201,7 @@ console.log('ProductOrdered',productOrdered)
               <hr></hr>
 
               <div className="row">
-                <h1>Total</h1> <h1>$18.47</h1>
+                <h1>Total</h1> <h1>{totalSumFunction()}</h1>
               </div>
 
 
@@ -201,33 +223,33 @@ console.log('ProductOrdered',productOrdered)
         <div>
           {SpecfiedAddress ? <div>
             <div className="abstractedAddress">
-              <div className ="mainColorDiv">
+              <div className="mainColorDiv">
                 <h3 className="titleStyling">Mailing Address</h3>
                 <div >
-                  <p className="fontAddress">Full Name:  <span className ="spanStyling">{SpecfiedAddress.full_name}</span> </p> 
+                  <p className="fontAddress">Full Name:  <span className="spanStyling">{SpecfiedAddress.full_name}</span> </p>
                 </div>
                 <div>
-                  <p className="fontAddress">Address Line 1: <span className ="spanStyling">{SpecfiedAddress.address_line_1}</span></p>
+                  <p className="fontAddress">Address Line 1: <span className="spanStyling">{SpecfiedAddress.address_line_1}</span></p>
                 </div>
                 <div>
-                  <p className="fontAddress">Address Line 2:<span className ="spanStyling"> {SpecfiedAddress.address_line_2}</span></p>
+                  <p className="fontAddress">Address Line 2:<span className="spanStyling"> {SpecfiedAddress.address_line_2}</span></p>
                 </div>
                 <div>
-                  <p className="fontAddress">City Selected:<span className ="spanStyling"> {SpecfiedAddress.city}</span></p>
+                  <p className="fontAddress">City Selected:<span className="spanStyling"> {SpecfiedAddress.city}</span></p>
                 </div>
                 <div>
-                  <p className="fontAddress">State/Province/Region: <span className ="spanStyling">{SpecfiedAddress.state_region}</span></p>
+                  <p className="fontAddress">State/Province/Region: <span className="spanStyling">{SpecfiedAddress.state_region}</span></p>
                 </div>
                 <div>
-                  <p className="fontAddress">Country: <span className ="spanStyling">{SpecfiedAddress.country}</span></p>
+                  <p className="fontAddress">Country: <span className="spanStyling">{SpecfiedAddress.country}</span></p>
                 </div>
-                <div className= "editDeleteSection">
-                <button className="paddingSpace">Edit Address</button>
-                <button className="paddingSpace">Delete Address</button>
-                </div>
+                <div className="editDeleteSection">
+                  <button className="paddingSpace">Edit Address</button>
+                  <button className="paddingSpace">Delete Address</button>
                 </div>
               </div>
             </div>
+          </div>
 
 
 
@@ -285,13 +307,13 @@ console.log('ProductOrdered',productOrdered)
                 </form>
               </div>
             </div>}
-          </div>
+        </div>
 
 
 
-    </div>
       </div>
-      );
+    </div>
+  );
 }
 
-      export default Carts;
+export default Carts;
