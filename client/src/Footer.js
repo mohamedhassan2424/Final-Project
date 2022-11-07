@@ -1,6 +1,6 @@
 import React from "react";
 
-
+import './footer.css'
 function Footer() {
     return (
         <div>
@@ -8,6 +8,7 @@ function Footer() {
                 <div className="container">
                     <div className="containerRow">
                         <div className="firstRow">
+                        <h5 className= "titleStyle">About</h5>
                             <p className= "textdescription">Lite-Cart mission and values are focused on larger human causes. The chain's overarching mission statement is "To Feed the Human Spirit," and its "Zero Hunger, Zero Waste" mission includes helping end hunger while eliminating food waste.
                                 Specifically, Lite-Cart  notes of the program, "A world with Zero Hunger | Zero Waste: that’s our commitment. As Canadian Startup grocer, we believe we have the size and scale, expertise and local connections to tackle this challenge."</p>
                         </div>
@@ -23,9 +24,6 @@ function Footer() {
                                 <li>Logout</li>
 
                             </ul>
-                        </div>
-                        <div className="ThirdRow">
-
                         </div>
                     </div>
                 </div>

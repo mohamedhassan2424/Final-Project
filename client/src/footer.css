@@ -1,0 +1,11 @@
+.containerRow {
+    background-color: yellow;
+    display:flex;
+    flex-direction: row;
+}
+.firstRow {
+    width:50%;
+}
+.secoundRow {
+    width: 50%;
+}
