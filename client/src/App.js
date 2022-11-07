@@ -19,6 +19,7 @@ import EditProduct from "./EditProduct";
 import OrderCheckout from "./OrderCheckout";
 import CardPayment from "./CardPayment";
 import Footer from "./Footer";
+import EditAddress from './EditAddress'
 import {loadStripe} from '@stripe/stripe-js';
 import {
   CardElement,
@@ -101,6 +102,9 @@ function App() {
           
           <Route path="/logout">
             <Logout />
+          </Route>
+          <Route path='editAddress'>
+          <EditAddress />
           </Route>
           <Route path="/footer">
             <Footer />
