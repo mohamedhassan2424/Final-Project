@@ -108,7 +108,20 @@ console.log('ProductOrdered',productOrdered)
               {productOrdered && productOrdered.map((eachProductObject)=>(
                 <div className="outlineBox">
                 <div className="outerTopProduCtontainer">
-                  <div className="toptopheaderName"></div>
+                <div className="toptopheaderj">
+                        <div className="productCountDiv">
+                            <div className="topheader">
+                                <p>Product Count</p>
+                                
+                            </div>
+                            <div className="productCount">
+                              <div className="lowerDivComponent">
+                            <p >{eachProductObject.count_product}</p>
+                            </div>
+                              </div>
+                        </div>
+                        
+                    </div>
                   <div className="chocolateImage">
                     <img
                       className="image"
@@ -150,7 +163,10 @@ console.log('ProductOrdered',productOrdered)
               <div className="title-summary">
                 <h1>Summary</h1>
               </div>
-
+              <div className="row">
+                <h2>Product Items</h2> <h6>$18.47</h6>
+                <p> - Cerial</p>
+              </div>
 
               <div className="row">
                 <h2>3 Items</h2> <h6>$18.47</h6>

@@ -95,7 +95,9 @@ h6 {
 .my-items {
   display: flex;
   flex-direction: row;
-  margin: 20px;}
+  flex-wrap:wrap;
+  margin: 20px;
+}
 
 .image {
   display:flex;
@@ -223,5 +225,31 @@ margin: 10px;
 .paddingSpace {
   margin: 10px;
 }
+
+.topheader {
+  position: relative;
+  background-color: rgb(0, 71, 64);
+  border-radius: 0.214286rem;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0px 0.214286rem;
+  vertical-align: baseline;
+  z-index: 1;
+}
+.productCountDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.productCount {
+  
+  padding-left: 90px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
 
 
