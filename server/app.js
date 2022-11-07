@@ -237,6 +237,24 @@ app.post('/reigisterAddress',(req,res)=>{
         })
 })
 
+app.post('/reigisterAddressUpdate',(req,res)=>{
+    const addresOneUpdate= req.body.addressLineOneUpdate
+    const addresTwoUpdate = req.body.addressLineTwoUpdate
+    const cityAddUpdate= req.body.cityAddressUpdate
+    const stateRUpdate= req.body.stateRegionUpdate
+    const postalCodeUpdate= req.body.postalCodeUpdate
+    const countrySelectedUpdate =req.body.countryUpdate
+    const currentUserIdVal = req.body.currentUserId
+
+    console.log('addresOne',addresOneUpdate)
+    console.log('addresTwo',addresTwoUpdate)
+    console.log('cityAdd',cityAddUpdate)
+    console.log('stateR',stateRUpdate)
+    console.log('postalCode',postalCodeUpdate)
+    console.log('countrySelected',countrySelectedUpdate)
+    console.log('currentUserIdVal',currentUserIdVal)
+})
+
 app.get('/gettingAddress',(req,res) => {
     return pool.query(`SELECT * FROM address;`)
     .then((response) => {

@@ -34,7 +34,7 @@ function Carts(props) {
 
 
 
-  const registerAddress = () => {
+  const registerAddressUpdate = () => {
     console.log("check point one")
     console.log('addressLineOne', addressLineOneUpdate)
     console.log('addressLineTwo', addressLineTwoUpdate)
@@ -43,10 +43,9 @@ function Carts(props) {
     console.log('postalCode', postalCodeUpdate)
     console.log('country', countryUpdate)
 
-    axios.post(`${linkServer}reigisterAddress`, { currentUserId, fullName, addressLineOneUpdate, addressLineTwoUpdate, cityAddressUpdate, stateRegionUpdate, postalCodeUpdate, countryUpdate })
+    axios.post(`${linkServer}reigisterAddressUpdate`, { currentUserId, addressLineOneUpdate, addressLineTwoUpdate, cityAddressUpdate, stateRegionUpdate, postalCodeUpdate, countryUpdate })
       .then((response) => {
         console.log("Data Saved")
-        window.location.reload(false)
       })
 
   }
@@ -126,9 +125,7 @@ const clearCart = ()=>{
   window.location.reload(false)
 }
 
-const editAdderss = () =>{
 
-}
 
 console.log('SpecfiedAddress',SpecfiedAddress)
 console.log('allAddress',allAddress)
@@ -311,7 +308,7 @@ console.log('addressLineTwo',addressLineTwoUpdate)
                     }} />
                   </div>
 
-                  <button class="othersumbitButton" type="sumbit" onClick={registerAddress}>Signup</button>
+                  <button class="othersumbitButton" type="sumbit" onClick={registerAddressUpdate}>Signup</button>
 
                 </form>
               </div>
