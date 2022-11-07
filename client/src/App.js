@@ -103,7 +103,7 @@ function App() {
           <Route path="/logout">
             <Logout />
           </Route>
-          <Route path='editAddress'>
+          <Route path='/editAddress'>
           <EditAddress />
           </Route>
           <Route path="/footer">

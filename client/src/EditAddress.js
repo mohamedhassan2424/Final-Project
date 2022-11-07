@@ -11,12 +11,12 @@ function Carts(props) {
 
   const { fullAddressId, editProdObj, salesHistory, allTheStore, storeIdNumber, firstNameSaved, lastNameSaved, emailSaved, savingStoreName, counterValue, userId, changingAddressId, settingStoreIdValue, changinSalesHistory, savingFirstName, savingLastName, savingEmail, savingUserId, savingStoreFunction, incrementFunction, decrementFunction, clearFunction, settingCounter } = useContext(userContext)
 
-  const [addressLineOne, setAddressLineOne] = useState('')
-  const [addressLineTwo, setAddressLineTwo] = useState('')
-  const [cityAddress, setCityAddress] = useState('')
-  const [stateRegion, setStateRegion] = useState('')
-  const [postalCode, setPostalCode] = useState('')
-  const [country, setCountry] = useState('')
+  const [addressLineOneUpdate, setAddressLineOneUpdate] = useState('')
+  const [addressLineTwoUpdate, setAddressLineTwoUpdate] = useState('')
+  const [cityAddressUpdate, setCityAddressUpdate] = useState('')
+  const [stateRegionUpdate, setStateRegionUpdate] = useState('')
+  const [postalCodeUpdate, setPostalCodeUpdate] = useState('')
+  const [countryUpdate, setCountryUpdate] = useState('')
   const [allAddress, setAllAddress] = useState([])
   const [productOrdered, setProductOrdered] = useState([])
   const cookies = new Cookies();
@@ -36,14 +36,14 @@ function Carts(props) {
 
   const registerAddress = () => {
     console.log("check point one")
-    console.log('addressLineOne', addressLineOne)
-    console.log('addressLineTwo', addressLineTwo)
-    console.log('cityAddress', cityAddress)
-    console.log('stateRegion', stateRegion)
-    console.log('postalCode', postalCode)
-    console.log('country', country)
+    console.log('addressLineOne', addressLineOneUpdate)
+    console.log('addressLineTwo', addressLineTwoUpdate)
+    console.log('cityAddress', cityAddressUpdate)
+    console.log('stateRegion', stateRegionUpdate)
+    console.log('postalCode', postalCodeUpdate)
+    console.log('country', countryUpdate)
 
-    axios.post(`${linkServer}reigisterAddress`, { currentUserId, fullName, addressLineOne, addressLineTwo, cityAddress, stateRegion, postalCode, country })
+    axios.post(`${linkServer}reigisterAddress`, { currentUserId, fullName, addressLineOneUpdate, addressLineTwoUpdate, cityAddressUpdate, stateRegionUpdate, postalCodeUpdate, countryUpdate })
       .then((response) => {
         console.log("Data Saved")
         window.location.reload(false)
@@ -132,6 +132,9 @@ const editAdderss = () =>{
 
 console.log('SpecfiedAddress',SpecfiedAddress)
 console.log('allAddress',allAddress)
+console.log('addressLineOneeee',addressLineOneUpdate)
+
+console.log('addressLineTwo',addressLineTwoUpdate)
   return (
     <div>
       <Nav />
@@ -260,84 +263,51 @@ console.log('allAddress',allAddress)
 
 
         <div>
-          {SpecfiedAddress ? <div>
-            <div className="abstractedAddress">
-              <div className="mainColorDiv">
-                <h3 className="titleStyling">Mailing Address</h3>
-                <div >
-                  <p className="fontAddress">Full Name:  <span className="spanStyling">{SpecfiedAddress.full_name}</span> </p>
-                </div>
-                <div>
-                  <p className="fontAddress">Address Line 1: <span className="spanStyling">{SpecfiedAddress.address_line_1}</span></p>
-                </div>
-                <div>
-                  <p className="fontAddress">Address Line 2:<span className="spanStyling"> {SpecfiedAddress.address_line_2}</span></p>
-                </div>
-                <div>
-                  <p className="fontAddress">City Selected:<span className="spanStyling"> {SpecfiedAddress.city}</span></p>
-                </div>
-                <div>
-                  <p className="fontAddress">State/Province/Region: <span className="spanStyling">{SpecfiedAddress.state_region}</span></p>
-                </div>
-                <div>
-                  <p className="fontAddress">Country: <span className="spanStyling">{SpecfiedAddress.country}</span></p>
-                </div>
-                <div className="editDeleteSection">
-                  <button className="paddingSpace" onClick={editAdderss}>Edit Address</button>
-                  <button className="paddingSpace" onClick={deleteAddress}>Delete Address</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
-            : <div className="addressSec">
+          <div className="addressSec">
               <div className="AddresssSection">
 
                 <form onSubmit={(event) => event.preventDefault()} >
                   <h1 className="fontName">Mailing Addresss</h1><br />
 
                   <div className="inputText">
-                    <input value={addressLineOne} type="text" placeholder="Address Line 1" onChange={(event) => {
-                      setAddressLineOne(event.target.value)
-                      console.log(addressLineOne)
+                    <input value={SpecfiedAddress.address_line_1} type="text" placeholder="Address Line 1" onChange={(event) => {
+                      setAddressLineOneUpdate(event.target.value)
+                      console.log(addressLineOneUpdate)
                     }} />
                   </div>
 
                   <div className="inputText">
-                    <input value={addressLineTwo} type="text" placeholder="Address Line 1" onChange={(event) => {
-                      setAddressLineTwo(event.target.value)
-                      console.log(addressLineTwo)
+                    <input value={SpecfiedAddress.address_line_2} type="text" placeholder="Address Line 1" onChange={(event) => {
+                      setAddressLineTwoUpdate(event.target.value)
+                      console.log(addressLineTwoUpdate)
                     }} />
                   </div>
 
                   <div className="inputText">
-                    <input value={cityAddress} type="text" placeholder="City Name" onChange={(event) => {
-                      setCityAddress(event.target.value)
-                      console.log(cityAddress)
+                    <input value={SpecfiedAddress.city} type="text" placeholder="City Name" onChange={(event) => {
+                      setCityAddressUpdate(event.target.value)
+                      console.log(cityAddressUpdate)
                     }} />
                   </div>
 
                   <div className="inputText">
-                    <input value={stateRegion} type="text" placeholder="State/Province/Region" onChange={(event) => {
-                      setStateRegion(event.target.value)
-                      console.log(stateRegion)
+                    <input value={SpecfiedAddress.state_region} type="text" placeholder="State/Province/Region" onChange={(event) => {
+                      setStateRegionUpdate(event.target.value)
+                      console.log(stateRegionUpdate)
                     }} />
                   </div>
 
                   <div className="inputText">
-                    <input value={postalCode} type="text" placeholder="ZIP/Postal Code" onChange={(event) => {
-                      setPostalCode(event.target.value)
-                      console.log(postalCode)
+                    <input value={SpecfiedAddress.zip_code} type="text" placeholder="ZIP/Postal Code" onChange={(event) => {
+                      setPostalCodeUpdate(event.target.value)
+                      console.log(postalCodeUpdate)
                     }} />
                   </div>
 
                   <div className="inputText">
-                    <input value={country} type="text" placeholder="Country:" onChange={(event) => {
-                      setCountry(event.target.value)
-                      console.log(country)
+                    <input value={SpecfiedAddress.country} type="text" placeholder="Country:" onChange={(event) => {
+                      setCountryUpdate(event.target.value)
+                      console.log(countryUpdate)
                     }} />
                   </div>
 
@@ -345,7 +315,7 @@ console.log('allAddress',allAddress)
 
                 </form>
               </div>
-            </div>}
+            </div>
         </div>
 
 
