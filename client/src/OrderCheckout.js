@@ -131,7 +131,23 @@ function OrderCheckout(){
             </form>
             </div>}
 
-   
+   <div>
+    <h5>Order Summary</h5>
+    <div>
+        <h5>Total Items : 6</h5>
+        
+        <h5>Order Total :$54</h5>
+
+        <h5>Delivery Charges : $85</h5>
+
+    </div>
+    <div>
+        <h5>
+            Delivery Summary
+        </h5>
+
+    </div>
+   </div>
 </div>
     )
 }

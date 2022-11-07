@@ -57,6 +57,13 @@ function Summary(props) {
             // let history = useHistory();
             history.push(path);
     }
+
+
+    const reDirectPage = ()=>{
+        let path = `/orderCheckout`;
+            // let history = useHistory();
+            history.push(path);
+    }
     return (
         <div>
             <h1>The userId recorded is {userIdValueNum}</h1>
@@ -103,7 +110,7 @@ function Summary(props) {
                         <td>{totalSumFunction()}</td>
                     </tr>
                 </table>
-                <button >Proceded to Checkout</button>
+                <button onClick={reDirectPage}>Proceded to Checkout</button>
             </div>
         </div>
     )
