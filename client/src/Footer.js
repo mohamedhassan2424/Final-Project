@@ -1,5 +1,5 @@
 import React from "react";
-
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import './footer.css'
 function Footer() {
     return (
@@ -15,19 +15,22 @@ function Footer() {
                         <div className="secoundRow">
                             <h5 className= "titleStyle">Site Links</h5>
                             <ul className= "siteLinkColumn">
-                                <li>Home</li>
-                                <li>Stores</li>
-                                <li>Cart</li>
-                                <li>Summary Cart</li>
-                                <li>Payment</li>
-                                <li>Logout</li>
+                                <li><Link to="/home">Home </Link></li>
+                                <li><Link to="/stores">Stores</Link></li>
+                                <li><Link to="/cart">Summary Cart</Link></li>
+                                <li><Link to="/cart">Summary Cart</Link></li>
+                                <li><Link to="/cardPayment">Cart Payment</Link></li>
+                                <li><Link to="/logout">Logout</Link></li>
 
                             </ul>
                         </div>
                     </div>
                 </div>
-                <hr />
-<h2>hello world</h2>
+                <hr className ="lineCss"/>
+        <div>
+            <p>Copyright C 2022 All Rights Reserved by LiteCart</p>
+           
+        </div>
             </footer>
         </div>
     );

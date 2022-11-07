@@ -13,7 +13,7 @@
 }
 .secoundRow {
     
-    padding-left: 550px;
+    padding-left: 450px;
     width: 50%;
 }
 
@@ -25,4 +25,14 @@
 }
 .siteLinkColumn {
     list-style-type: none;
+}
+
+.lineCss {
+    background-color:#B8B8B8;
+}
+
+.picSection {
+weight :10;
+height: 15;
+
 }
