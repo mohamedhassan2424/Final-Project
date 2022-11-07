@@ -549,7 +549,7 @@ hr {
 }
 
 .storeTitle {
-    /* padding-left:200px; */
+    font-family: FoundersGroteskWeb, sans-serif;
     font-weight:bold;
     font-size: 45px;
     padding-top: 55px;
