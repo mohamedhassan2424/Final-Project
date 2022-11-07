@@ -502,9 +502,14 @@ hr {
     font-weight: 900;
 }
 
-.store-name {
+.storename {
     font-weight: 700;
     margin: -6px;
+    color: black;
+}
+
+.store-name {
+    font-weight: 700;
 }
 
 .bolt {
