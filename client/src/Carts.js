@@ -20,6 +20,7 @@ function Carts(props) {
   const [allAddress, setAllAddress] = useState([])
   const [productOrdered, setProductOrdered] = useState([])
   const cookies = new Cookies();
+  const history = useHistory();
   const linkServer = "http://localhost:8080/"
   let currentUserId = cookies.get('userId')
   let firstNameVal = cookies.get('firstNameValue')
@@ -130,6 +131,11 @@ const editAdderss = () =>{
 
 }
 
+
+const cardPayment = ()=>{
+  let path = `/cardPayment`;
+  history.push(path);
+}
 console.log('SpecfiedAddress',SpecfiedAddress)
 console.log('allAddress',allAddress)
   return (
@@ -246,7 +252,7 @@ console.log('allAddress',allAddress)
 
 
               <div className="check-out">
-                <button className="checkout">
+                <button className="checkout" onClick ={cardPayment}>
                   <i className="fa-regular fa-credit-card"></i>Checkout
                 </button>
               </div>

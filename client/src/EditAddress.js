@@ -8,10 +8,10 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 function Carts(props) {
-
+    const cookies = new Cookies();
   const { fullAddressId, editProdObj, salesHistory, allTheStore, storeIdNumber, firstNameSaved, lastNameSaved, emailSaved, savingStoreName, counterValue, userId, changingAddressId, settingStoreIdValue, changinSalesHistory, savingFirstName, savingLastName, savingEmail, savingUserId, savingStoreFunction, incrementFunction, decrementFunction, clearFunction, settingCounter } = useContext(userContext)
-
-  const [addressLineOneUpdate, setAddressLineOneUpdate] = useState('')
+  let SpecfiedAddress = cookies.get("specfiedAddressId")
+  const [addressLineOneUpdate, setAddressLineOneUpdate] = useState(SpecfiedAddress.address_line_1)
   const [addressLineTwoUpdate, setAddressLineTwoUpdate] = useState('')
   const [cityAddressUpdate, setCityAddressUpdate] = useState('')
   const [stateRegionUpdate, setStateRegionUpdate] = useState('')
@@ -19,7 +19,7 @@ function Carts(props) {
   const [countryUpdate, setCountryUpdate] = useState('')
   const [allAddress, setAllAddress] = useState([])
   const [productOrdered, setProductOrdered] = useState([])
-  const cookies = new Cookies();
+  
   const linkServer = "http://localhost:8080/"
   let currentUserId = cookies.get('userId')
   let firstNameVal = cookies.get('firstNameValue')
@@ -83,7 +83,7 @@ function Carts(props) {
       cookies.set("specfiedAddressId", eachAddressObject)
     }
   })
-  let SpecfiedAddress = cookies.get("specfiedAddressId")
+
   console.log("specfifedAddresss", SpecfiedAddress)
 
   const totalSumFunction = ()=>{
@@ -270,7 +270,7 @@ console.log('addressLineTwo',addressLineTwoUpdate)
                   <h1 className="fontName">Mailing Addresss</h1><br />
 
                   <div className="inputText">
-                    <input value={SpecfiedAddress.address_line_1} type="text" placeholder="Address Line 1" onChange={(event) => {
+                    <input value={addressLineOneUpdate} type="text" placeholder="Address Line 1" onChange={(event) => {
                       setAddressLineOneUpdate(event.target.value)
                       console.log(addressLineOneUpdate)
                     }} />

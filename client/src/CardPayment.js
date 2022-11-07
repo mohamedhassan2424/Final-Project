@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import {loadStripe} from '@stripe/stripe-js';
@@ -8,30 +8,31 @@ import {
     useStripe,
     useElements,
   } from '@stripe/react-stripe-js';
-
+import Checkout from "./Checkout";
 function CardPayment(){
+    const [payment, setPayment] = useState(false)
+
+
+    const payButton = ()=>{
+        setPayment(true)
+
+    }
+    const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
     return(
-        <div>
+        <div stripe={stripePromise}>
             <Nav />
+            {payment && <Checkout />  }
+            
             <h2>Welcome to Card Payment</h2>
             <div>
-                <form className="paymentForm">
-                    {/* <label htmlFor ="card-element"></label> */}
-                    <div>
-                    <CardElement />
-                    </div>
-            <button>Pay</button>
-                </form>
+            <button onClick= {payButton}>Pay</button>
+            
             </div>
+       
             <Footer />
         </div>
     )
 }
-// const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
-// const App = () => (
-//     <Elements stripe={stripePromise}>
-//       <CardPayment />
-//     </Elements>
-//   );
+
 
 export default CardPayment;
