@@ -271,6 +271,13 @@ app.post('/removingProduct',(req,res)=>{
     pool.query(`DELETE FROM sales WHERE  user_id_sales =$1 AND products_id =$2;`,[userIDOfProductRemoving,productRemoving])
 })
 
+app.post('/removingAddress',(req,res)=>{
+    const userIdValue = req.body.userId
+
+    console.log('UserIdValue',userIdValue)
+    pool.query(`DELETE FROM address WHERE  user_id_address =$1;`,[userIdValue])
+})
+
 app.post('/updateingSaleCount',(req,res)=>{
 let counterIdVal = req.body.counterData
 let userIdVal = req.body.userIdValue

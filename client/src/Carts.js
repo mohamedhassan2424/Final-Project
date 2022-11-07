@@ -108,6 +108,14 @@ const savingFunction = ()=>{
     }
     return Math.round((totalSumValueOriginalPrice-totalSumValueSalePrice) * 10) / 10;
 }
+
+const deleteAddress = ()=>{
+
+}
+
+const editAdderss = () =>{
+
+}
   return (
     <div>
       <Nav />
@@ -265,8 +273,8 @@ const savingFunction = ()=>{
                   <p className="fontAddress">Country: <span className="spanStyling">{SpecfiedAddress.country}</span></p>
                 </div>
                 <div className="editDeleteSection">
-                  <button className="paddingSpace">Edit Address</button>
-                  <button className="paddingSpace">Delete Address</button>
+                  <button className="paddingSpace" onClick={editAdderss}>Edit Address</button>
+                  <button className="paddingSpace" onClick={deleteAddress}>Delete Address</button>
                 </div>
               </div>
             </div>

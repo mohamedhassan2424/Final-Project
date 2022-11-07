@@ -62,7 +62,7 @@ function Summary(props) {
 
 
     const reDirectPage = ()=>{
-        let path = `/orderCheckout`;
+        let path = `/cart`;
             // let history = useHistory();
             history.push(path);
     }
