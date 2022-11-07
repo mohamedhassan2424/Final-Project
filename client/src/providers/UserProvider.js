@@ -16,7 +16,9 @@ const [allTheStore, setAllTheStore] = useState('')
 const [salesHistory, setSalesHistory] = useState([])
 const [editProdObj, setEditProdObj] =useState(cookies.get('editProductObj')? cookies.get('editProductObj'):'')
 const [fullAddressId, setFullAddressId] = useState(cookies.get('specfiedAddressId')? cookies.get('specfiedAddressId'):'')
+const [productsSelected,setProductsSelected]= useState(cookies.get('productsOrdered')?cookies.get('productsOrdered'):'')
 const userIdValueNum = cookies.get('userId')
+
 useEffect(() => {
 
     axios.post('http://localhost:8080/extratingData',{ userIdInt: userIdValueNum })
@@ -99,7 +101,7 @@ const settingStoreIdValue = (id)=>{
     setStoreIdNumber(id)
     console.log(id)
 }
-const providerData = {fullAddressId, editProdObj,salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,changingAddressId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction,settingCounter}
+const providerData = {productsSelected,fullAddressId, editProdObj,salesHistory, allTheStore, storeIdNumber, firstNameSaved,lastNameSaved,emailSaved ,savingStoreName,counterValue,userId,changingAddressId,settingStoreIdValue ,changinSalesHistory, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction ,incrementFunction ,decrementFunction,clearFunction,settingCounter}
 return(
     <userContext.Provider value ={providerData}>
         {props.children}

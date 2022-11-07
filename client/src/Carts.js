@@ -57,6 +57,8 @@ function Carts(props) {
       })
   }, [])
 
+  
+
   const specfiedAddress = allAddress.map((eachAddressObject) => {
     let currentUserId = cookies.get('userId')
     console.log('currentUserId', currentUserId)

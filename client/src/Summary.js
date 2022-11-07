@@ -21,6 +21,7 @@ function Summary(props) {
             .then(response => {
                 console.log("DATA recieved from the database", response.data)
                 setSalesHistory(response.data)
+                cookies.set('productsOrdered',[response.data])
             })
             .catch((error) => {
             console.log('error received from the database', error)
