@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 function Carts(props) {
     const cookies = new Cookies();
+    const history = useHistory();
   const { fullAddressId, editProdObj, salesHistory, allTheStore, storeIdNumber, firstNameSaved, lastNameSaved, emailSaved, savingStoreName, counterValue, userId, changingAddressId, settingStoreIdValue, changinSalesHistory, savingFirstName, savingLastName, savingEmail, savingUserId, savingStoreFunction, incrementFunction, decrementFunction, clearFunction, settingCounter } = useContext(userContext)
   let SpecfiedAddress = cookies.get("specfiedAddressId")
   const [addressLineOneUpdate, setAddressLineOneUpdate] = useState(SpecfiedAddress.address_line_1)
@@ -46,6 +47,7 @@ function Carts(props) {
     axios.post(`${linkServer}reigisterAddressUpdate`, { currentUserId, addressLineOneUpdate, addressLineTwoUpdate, cityAddressUpdate, stateRegionUpdate, postalCodeUpdate, countryUpdate })
       .then((response) => {
         console.log("Data Saved")
+
       })
 
   }
@@ -80,6 +82,8 @@ function Carts(props) {
     if (eachAddressObject.user_id_address === Number(currentUserId)) {
       console.log('SpecfifedAddressObject', eachAddressObject)
       cookies.set("specfiedAddressId", eachAddressObject)
+      let path = `/cart`;
+        history.push(path);
     }
   })
 
