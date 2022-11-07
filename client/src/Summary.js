@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Nav from "./Nav";
+import Footer from "./Footer";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { userContext } from "./providers/UserProvider";
@@ -114,6 +115,7 @@ function Summary(props) {
                 </table>
                 <button onClick={reDirectPage}>Proceded to Checkout</button>
             </div>
+            <Footer /> 
         </div>
     )
 }

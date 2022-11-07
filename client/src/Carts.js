@@ -5,6 +5,7 @@ import UserProvider, { userContext } from "./providers/UserProvider";
 import Cookies from 'universal-cookie';
 import './summary.css'
 import Nav from "./Nav";
+import Footer from "./Footer";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 function Carts(props) {
 
@@ -350,6 +351,7 @@ console.log('allAddress',allAddress)
 
 
       </div>
+      <Footer />
     </div>
   );
 }

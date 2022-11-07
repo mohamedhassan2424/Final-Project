@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
+import Footer from "./Footer";
 import {loadStripe} from '@stripe/stripe-js';
 import {
     CardElement,
@@ -22,6 +23,7 @@ function CardPayment(){
             <button>Pay</button>
                 </form>
             </div>
+            <Footer />
         </div>
     )
 }

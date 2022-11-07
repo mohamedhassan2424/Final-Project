@@ -6,7 +6,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route, Link ,useHistory} from "react-router-dom";
 import Cookies from 'universal-cookie';
-
+import Footer from "./Footer";
 import Nav from "./Nav";
 
 function Product() {
@@ -106,7 +106,7 @@ function Product() {
 
 
 
-
+<Footer />
         </div>
     )
 }

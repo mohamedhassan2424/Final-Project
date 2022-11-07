@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { userContext } from "./providers/UserProvider";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import Cookies from "universal-cookie";
+import Footer from "./Footer";
 const cookies = new Cookies()
 function Logout() {
     const history = useHistory();
@@ -34,6 +35,7 @@ function Logout() {
             <div className="buttonStyle">
             <button onClick={removingState}>Logout Button</button>
             </div>
+            <Footer />
         </div>
     )
 }

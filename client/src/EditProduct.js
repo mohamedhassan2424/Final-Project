@@ -5,6 +5,7 @@ import { userContext } from "./providers/UserProvider";
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 import Nav from './Nav'
+import Footer from './Footer';
 function EditProduct(props) {
     const linkServer = "http://localhost:8080/"
     const cookies = new Cookies();
@@ -104,7 +105,7 @@ function EditProduct(props) {
 
 
 
-
+<Footer />
         </div>
     )
 }

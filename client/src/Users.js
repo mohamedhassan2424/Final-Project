@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react"
 import "./styles.css"
 import  axios  from "axios";
 import Nav from "./Nav";
+import Footer from "./Footer";
 import useVerification from "./hooks/useVerification";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import { useContext } from "react";
+
 import { userContext } from "./providers/UserProvider";
 import Cookies from 'universal-cookie';
 
@@ -250,6 +252,7 @@ const removingClass = ()=>{
             </form>
             </div>
             </div>
+            <Footer />
         </section>
 
     );

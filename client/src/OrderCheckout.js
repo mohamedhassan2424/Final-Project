@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import { useContext } from "react";
 import UserProvider, { userContext } from "./providers/UserProvider";
 import Nav from "./Nav";
+import Footer from "./Footer";
 import Cookies from 'universal-cookie';
 
 function OrderCheckout(){
@@ -148,6 +149,7 @@ function OrderCheckout(){
 
     </div>
    </div>
+   <Footer />
 </div>
     )
 }

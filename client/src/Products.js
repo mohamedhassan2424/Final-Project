@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react
 import Product from "./Prodcut";
 import './styles.css'
 import Nav from "./Nav";
+import Footer from "./Footer";
 function Products(props) {
 //     const search = useLocation().search;
 //   const id=new URLSearchParams(search).get('id');
@@ -194,7 +195,7 @@ function Products(props) {
 
                 
            
-
+<Footer />
         </div>
 
 

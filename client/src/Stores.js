@@ -2,6 +2,7 @@ import React ,{useState, useEffect} from "react"
 import axios from "axios"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Nav from "./Nav";
+import Footer from "./Footer";
 function Stores(props) {
   
 const [stores,setStores] = useState([])
@@ -692,6 +693,7 @@ const [stores,setStores] = useState([])
 </div>
 
 </div>
+<Footer />
     </div>
 
   );
