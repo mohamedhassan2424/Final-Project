@@ -47,6 +47,8 @@ function Carts(props) {
     axios.post(`${linkServer}reigisterAddressUpdate`, { currentUserId, addressLineOneUpdate, addressLineTwoUpdate, cityAddressUpdate, stateRegionUpdate, postalCodeUpdate, countryUpdate })
       .then((response) => {
         console.log("Data Saved")
+              let path = `/cart`;
+        history.push(path);
 
       })
 
@@ -82,8 +84,7 @@ function Carts(props) {
     if (eachAddressObject.user_id_address === Number(currentUserId)) {
       console.log('SpecfifedAddressObject', eachAddressObject)
       cookies.set("specfiedAddressId", eachAddressObject)
-      let path = `/cart`;
-        history.push(path);
+
     }
   })
 
@@ -140,129 +141,6 @@ console.log('addressLineTwo',addressLineTwoUpdate)
     <div>
       <Nav />
       <div className="background-image">
-
-        <div >
-          <div className="your-cart">
-            <h1 className="yourcart">YOUR CART</h1>
-          </div>
-
-          <div>
-            <button className="cart-show" onClick = {clearCart}>
-              <i className="fa-solid fa-cart-arrow-down"></i>Clear Cart
-            </button>
-          </div>
-
-          <div>
-            <div className="othermy-items">
-
-
-              {productOrdered && productOrdered.map((eachProductObject) => (
-                <div className="outlineBox">
-                  <div className="outerTopProduCtontainer">
-                    <div className="toptopheaderj">
-                      <div className="productCountDiv">
-                        <div className="topheader">
-                          <p>Total Count :   {eachProductObject.count_product}</p>
-                        </div>
-                      </div>
-
-                    </div>
-                    <div className="chocolateImage">
-                      <img
-                        className="image"
-                        src={eachProductObject.product_url}
-                      />
-                    </div>
-                    <hr></hr>
-                    <div className="ProductInforamtion">
-                      {eachProductObject.product_name}
-                    </div>
-
-                    <div className="saleImage">
-                      <img src="https://cdn-icons-png.flaticon.com/512/3600/3600488.png" />
-                      <h4 className="saleDescription">SALE</h4>
-                    </div>
-                    <hr></hr>
-                    <div className="caloriesDescription">{eachProductObject.product_description}</div>
-                    <div className="priceInformation">
-                      <span className="firstPrice">{eachProductObject.sale_price}</span>{" "}
-                      <span className="secoundPrice"> {eachProductObject.price}</span>
-                    </div>
-                    <div className="addContent">
-                      {" "}
-
-                    </div>
-                  </div>
-                </div>
-
-              ))
-              }
-
-
-
-            </div>
-          </div>
-
-          <div className="summary-box">
-            <div className="summary">
-              <div className="title-summary">
-                <h1>Summary</h1>
-              </div>
-              <div>
-              <table className= "orderCheckoutTable">
-                <tr>
-                  <th>Item</th>
-                  <th>HRS/QTY</th>
-                  <th>Rate</th>
-                  <th>Subtotal</th>
-                </tr>
-                {productOrdered && productOrdered.map((eachProductObject) => (
-                  <tr>
-                       <td>{eachProductObject.product_name}</td>
-                       <td>{eachProductObject.count_product}</td>
-                       <td>${eachProductObject.sale_price}</td>
-                       <td>USD ${eachProductObject.sale_price*eachProductObject.count_product}</td>
-                     </tr>
-                  
-                ))
-                       
-                }
-              </table>
-              </div>
-
-              <div className="row">
-                <h2>Savings</h2> <h6>USD ${savingFunction()}</h6>
-              </div>
-
-              <div className="row">
-                <h2>Sub-Total</h2> <h6>USD$ {totalSumValue}</h6>
-              </div>
-              <div className="row">
-                <h2>HST</h2> <h6>USD$ {totalSumValue*0.13}</h6>
-              </div>
-              <hr></hr>
-              
-
-              <div className="row">
-                <h1>Total</h1> <h1>USD${totalSumValue*1.13}</h1>
-              </div>
-
-
-
-              <div className="check-out">
-                <button className="checkout">
-                  <i className="fa-regular fa-credit-card"></i>Checkout
-                </button>
-              </div>
-            </div>
-          </div>
-          <hr></hr>
-        </div>
-
-
-
-
-
         <div>
           <div className="addressSec">
               <div className="AddresssSection">

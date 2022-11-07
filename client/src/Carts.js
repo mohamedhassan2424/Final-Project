@@ -128,7 +128,8 @@ const clearCart = ()=>{
 }
 
 const editAdderss = () =>{
-
+  let path = `/editAddress`;
+  history.push(path);
 }
 
 
