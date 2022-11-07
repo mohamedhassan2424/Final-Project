@@ -102,9 +102,10 @@ const savingFunction = ()=>{
         const totalSalePrice = productOrdered[i].sale_price
         const originalPrice =productOrdered[i].price
         const totalQuantity= productOrdered[i].count_product
-        totalSumValueSalePrice +=totalPrice*totalQuantity;
+        totalSumValueSalePrice += totalSalePrice*totalQuantity;
+        totalSumValueOriginalPrice+=originalPrice*totalQuantity
     }
-    return Math.round(totalSumValue * 10) / 10;
+    return Math.round((totalSumValueOriginalPrice-totalSumValueSalePrice) * 10) / 10;
 }
   return (
     <div>
@@ -207,13 +208,13 @@ const savingFunction = ()=>{
               </div>
 
               <div className="row">
-                <h2>Savings</h2> <h6>{totalSumFunction()}</h6>
+                <h2>Savings</h2> <h6>USD ${savingFunction()}</h6>
               </div>
 
               <hr></hr>
 
               <div className="row">
-                <h1>Total</h1> <h1>${totalSumFunction()}</h1>
+                <h1>Total</h1> <h1>USD${totalSumFunction()}</h1>
               </div>
 
 
