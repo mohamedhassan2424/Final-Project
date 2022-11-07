@@ -503,6 +503,12 @@ hr {
     font-weight: 900;
 }
 
+.storename {
+    font-weight: 700;
+    margin: -6px;
+    color: black;
+}
+
 .store-name {
     font-weight: 700;
 }
@@ -516,7 +522,6 @@ hr {
     color: #2c8e5b;
     font-weight: 500;
     display: flex;
-
 }
 
 .storeContainer {
@@ -545,7 +550,7 @@ hr {
 }
 
 .storeTitle {
-    /* padding-left:200px; */
+    font-family: FoundersGroteskWeb, sans-serif;
     font-weight:bold;
     font-size: 45px;
     padding-top: 55px;
