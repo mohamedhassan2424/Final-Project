@@ -94,6 +94,7 @@ function Carts(props) {
     }
     return Math.round(totalSumValue * 10) / 10;
 }
+const totalSumValue = totalSumFunction()
 
 const savingFunction = ()=>{
   let totalSumValueSalePrice= 0
@@ -211,10 +212,17 @@ const savingFunction = ()=>{
                 <h2>Savings</h2> <h6>USD ${savingFunction()}</h6>
               </div>
 
+              <div className="row">
+                <h2>Sub-Total</h2> <h6>USD$ {totalSumValue}</h6>
+              </div>
+              <div className="row">
+                <h2>HST</h2> <h6>USD$ {totalSumValue*0.13}</h6>
+              </div>
               <hr></hr>
+              
 
               <div className="row">
-                <h1>Total</h1> <h1>USD${totalSumFunction()}</h1>
+                <h1>Total</h1> <h1>USD${totalSumValue*1.13}</h1>
               </div>
 
 
