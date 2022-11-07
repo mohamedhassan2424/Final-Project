@@ -17,8 +17,7 @@ function Footer() {
                             <ul className= "siteLinkColumn">
                                 <li><Link to="/home">Home </Link></li>
                                 <li><Link to="/stores">Stores</Link></li>
-                                <li><Link to="/cart">Summary Cart</Link></li>
-                                <li><Link to="/cart">Summary Cart</Link></li>
+                                <li><Link to="/cart">Summary Cart</Link></li>                              
                                 <li><Link to="/cardPayment">Cart Payment</Link></li>
                                 <li><Link to="/logout">Logout</Link></li>
 

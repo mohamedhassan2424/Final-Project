@@ -470,13 +470,23 @@ hr {
     width: 72px;
 }
 
-.mainClassInStores:hover {
+.mainClassInStores {
     display: flex;
-    background-color: rgb(253, 234, 158);
+    background-color: white;
     box-shadow: 1px 1px 3px 1px grey;
     padding-top:15px;
     width: 90%;
     border-radius: 5%;
+}
+
+.mainClassInStores:hover {
+    display: flex;
+    background-color: rgb(251, 236, 175);
+    box-shadow: 1px 1px 3px 1px grey;
+    padding-top:15px;
+    width: 90%;
+    border-radius: 5%;
+    cursor: pointer;
 }
 
 .contentOfStore {
