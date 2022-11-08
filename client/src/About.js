@@ -33,7 +33,7 @@ function About(props) {
               <img
                 className="cartIcon"
                 alt="Image cart"
-                src="https://img.icons8.com/parakeet/2x/shopping-cart.png"
+                src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-shopping-cart-tools-and-material-ecommerce-flaticons-lineal-color-flat-icons.png"
               ></img>
             </Link>
           </li>

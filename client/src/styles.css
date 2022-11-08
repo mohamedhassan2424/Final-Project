@@ -728,6 +728,11 @@ table, th, td {
     border:1px solid black;
   }
 
+.table {
+    margin: 15px;
+    padding-bottom: 40%;
+}
+
   .incrementDecrementButton {
     width:25px;
   }
