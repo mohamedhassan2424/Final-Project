@@ -27,7 +27,7 @@ function Footer() {
                 </div>
                 <hr className ="lineCss"/>
         <div>
-            <p>Copyright C 2022 All Rights Reserved by LiteCart</p>
+            <p>Copyright &copy; 2022 All Rights Reserved by LiteCart&trade;</p>
            
         </div>
             </footer>
