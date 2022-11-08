@@ -59,11 +59,7 @@ function Product() {
     return (
         <div>
             <Nav />
-            <h1>The store Selected : {storeNameSaved}</h1>
-            <h1>
-                The product component which was clicked on was {params.id}
-            </h1>
-            <h2>Confirm to add this product to your Cart</h2>
+            
 
 
 
