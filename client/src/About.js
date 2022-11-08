@@ -1,47 +1,13 @@
 import React from "react";
 import "./About.css";
 import Footer from "./Footer";
-
+import Nav from "./Nav";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function About(props) {
   return (
     <div className="whole-page">
   
-      <nav className="navlistItems">
-        <ul>
-          <li>
-            <Link to="/home">Home</Link>
-          </li>
-          <li>
-            <Link to="/stores">Stores</Link>
-          </li>
-          <li>
-            <Link to="/product">Product</Link>
-          </li>
-          <li>
-            <Link to="/users">Users</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-
-          <li>
-            <Link to="/main">Main</Link>
-          </li>
-          <li>
-            <Link to="/cart">
-              <img
-                className="cartIcon"
-                alt="Image cart"
-                src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-shopping-cart-tools-and-material-ecommerce-flaticons-lineal-color-flat-icons.png"
-              ></img>
-            </Link>
-          </li>
-          <li>
-            <Link to="/summary">Summary Cart</Link>
-          </li>
-        </ul>
-      </nav>
+     <Nav />
 
       <div className="about">
         <h1 className="graphic">Welcome 

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import {loadStripe} from '@stripe/stripe-js';
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import {
     CardElement,
     Elements,
@@ -11,6 +12,7 @@ import {
   import './styles.css'
 import Checkout from "./Checkout";
 function CardPayment(){
+    const history = useHistory();
     const [payment, setPayment] = useState(false)
 
 

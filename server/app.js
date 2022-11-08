@@ -236,7 +236,41 @@ app.post('/reigisterAddress',(req,res)=>{
             res.send(response)
         })
 })
+app.post('/addingToSalesHistory',(req,res)=>{
+    const userIdValue = req.body.userId
+    const productIdValue = req.body.products_id
+    const StoreIDValue = req.body.stores_id
+    const count_productVal = req.body.count_product
+    const deliveryTime= 30
+    console.log('userIdValue',userIdValue)
+    console.log('productIdValue',productIdValue)
+    console.log('StoreIDValue',StoreIDValue)
+    console.log('count_productVal',count_productVal)
 
+    const sqlQuery = "INSERT INTO saleshistory (user_id_sales,stores_id_sales,products_id,count_product,delivery_time) VALUES ($1,$2,$3,$4,$5);"
+    pool.query(sqlQuery, [userIdValue,StoreIDValue, productIdValue, count_productVal,deliveryTime])
+        .then((response) => {
+          res.send("Data has been inserteed into the SALES table")
+            // res.send(response)
+        })
+
+})
+
+app.post('/addingToSalesHistoryDelete',(req,res)=>{
+    const userIdValueDelete = req.body.userId
+    const productIdValueDelete = req.body.products_id
+    const StoreIDValueDelete = req.body.stores_id
+    const count_productValDelete = req.body.count_product
+    const deliveryTime= 30
+    console.log('userIdValueDelete',userIdValueDelete)
+    console.log('productIdValueDelete',productIdValueDelete)
+    console.log('StoreIDValueDelete',StoreIDValueDelete)
+    console.log('count_productValDelete',count_productValDelete)
+    pool.query(`DELETE FROM sales WHERE  user_id_sales =$1 AND stores_id_sales = $2 AND products_id=$3 AND count_product=$4;`,[userIdValueDelete,StoreIDValueDelete,productIdValueDelete,count_productValDelete])
+    .then((response)=>{
+        res.send("Deleted the Address corresponding to the userId")
+    })
+})
 app.post('/reigisterAddressUpdate',(req,res)=>{
     const addresOneUpdate= req.body.addressLineOneUpdate
     const addresTwoUpdate = req.body.addressLineTwoUpdate
@@ -261,6 +295,18 @@ app.post('/reigisterAddressUpdate',(req,res)=>{
 
 app.get('/gettingAddress',(req,res) => {
     return pool.query(`SELECT * FROM address;`)
+    .then((response) => {
+        res.json(response.rows)
+    })
+    .catch((error) => {
+        console.log(error.message)
+    })
+})
+
+app.post('/gettingAddressId',(req,res) => {
+    const userIdVal = req.body.userIdInt
+    console.log('userIdVal',userIdVal)
+    return pool.query(`SELECT * FROM address WHERE user_id_address = $1;`,[userIdVal])
     .then((response) => {
         res.json(response.rows)
     })
@@ -368,6 +414,26 @@ app.get('/', (req, res) => {
     res.json({ greetings: 'hello world' });
 })
 
+app.post("/allSalesHistory",(req,res)=>{
+    console.log("checkout point 1 for allSalesHistory")
+    const currentUserIdLoggedIn = req.body.userIdInt
+    console.log('currentUserIdLoggedIn',currentUserIdLoggedIn)
+
+    return pool.query(`SELECT * FROM salesHistory
+    JOIN products ON products.id = products_id
+    JOIN users ON users.id = user_id_sales
+    JOIN stores ON stores.id = stores_id_sales
+    WHERE users.id = $1 ;`,[currentUserIdLoggedIn])
+        .then((response) => {
+
+            //res.send("hello world")
+            res.json(response.rows)
+        })
+        .catch((error) => {
+            console.log(error.message)
+        })
+
+})
 app.post('/pay', async (req, res) => {
     const {email} = req.body
     const paymentIntent = await stripe.checkout.sessions.create({

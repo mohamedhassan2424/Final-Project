@@ -19,6 +19,8 @@ import EditProduct from "./EditProduct";
 import OrderCheckout from "./OrderCheckout";
 import CardPayment from "./CardPayment";
 import Footer from "./Footer";
+import SalesHistory from "./SalesHistory";
+import Status from "./Status";
 import EditAddress from './EditAddress'
 import {loadStripe} from '@stripe/stripe-js';
 import {
@@ -105,6 +107,12 @@ function App() {
           </Route>
           <Route path='/editAddress'>
           <EditAddress />
+          </Route>
+          <Route path="/status">
+            <Status />
+          </Route>
+          <Route path ="/salesHistory">
+            <SalesHistory />
           </Route>
           <Route path="/footer">
             <Footer />

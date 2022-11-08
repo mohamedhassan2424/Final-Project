@@ -90,13 +90,14 @@ function Carts(props) {
   const totalSumFunction = ()=>{
     let totalSumValue= 0
     for(let i=0; i<productOrdered.length; i++){
-        const totalPrice = productOrdered[i].sale_price
+        const totalPrice = productOrdered[i].price
         const totalQuantity= productOrdered[i].count_product
         totalSumValue +=totalPrice*totalQuantity;
     }
-    return Math.round(totalSumValue * 10) / 10;
+    return Math.ceil(totalSumValue*100)/100
 }
 const totalSumValue = totalSumFunction()
+const hstTotalValue = (totalSumValue*1.13).toFixed(2)
 
 const savingFunction = ()=>{
   let totalSumValueSalePrice= 0
@@ -108,7 +109,7 @@ const savingFunction = ()=>{
         totalSumValueSalePrice += totalSalePrice*totalQuantity;
         totalSumValueOriginalPrice+=originalPrice*totalQuantity
     }
-    return Math.round((totalSumValueOriginalPrice-totalSumValueSalePrice) * 10) / 10;
+    return Math.round((totalSumValueSalePrice-totalSumValueOriginalPrice) * 10) / 10;
 }
 
 const deleteAddress = ()=>{
@@ -188,8 +189,8 @@ console.log('allAddress',allAddress)
                     <hr></hr>
                     <div className="caloriesDescription">{eachProductObject.product_description}</div>
                     <div className="priceInformation">
-                      <span className="firstPrice">{eachProductObject.sale_price}</span>{" "}
-                      <span className="secoundPrice"> {eachProductObject.price}</span>
+                      <span className="firstPrice">{eachProductObject.price}</span>{" "}
+                      <span className="secoundPrice"> {eachProductObject.sale_price}</span>
                     </div>
                     <div className="addContent">
                       {" "}
@@ -223,8 +224,8 @@ console.log('allAddress',allAddress)
                   <tr>
                        <td>{eachProductObject.product_name}</td>
                        <td>{eachProductObject.count_product}</td>
-                       <td>${eachProductObject.sale_price}</td>
-                       <td>USD ${eachProductObject.sale_price*eachProductObject.count_product}</td>
+                       <td>${eachProductObject.price}</td>
+                       <td>USD ${(eachProductObject.price*eachProductObject.count_product).toFixed(2)}</td>
                      </tr>
                   
                 ))
@@ -247,7 +248,7 @@ console.log('allAddress',allAddress)
               
 
               <div className="row">
-                <h1>Total</h1> <h1>USD${totalSumValue*1.13}</h1>
+                <h1>Total</h1> <h1>USD${hstTotalValue}</h1>
               </div>
 
 
