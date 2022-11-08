@@ -44,3 +44,13 @@ justify-content: space-around;
 .productName {
     padding-right: 60px;
 }
+
+.footerHeader {
+
+    height: 100px;
+    width :800px;
+    outline: 0.1em solid rgb(0 0 0 / 75%);
+    background-color: yellow;
+    display: flex;
+    justify-content: space-between;
+}

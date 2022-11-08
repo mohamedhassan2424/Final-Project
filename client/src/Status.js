@@ -8,7 +8,7 @@ function Status(){
             <Nav />
             <h1>Welcome to the Status page</h1>
             <div className ="MainContainerReceipt">
-        <div className="headerStatment">
+            <div className="headerStatment">
         <div className="contentofheader">
         <div className="reciptId"><h2 >RECEIPT</h2></div>
         <div> <h2> ORDER # JF34RE67-01</h2></div>
@@ -56,8 +56,11 @@ function Status(){
 </div>
 
 <div className="footer">
-
-</div>
+        <div className="footerHeader">
+        <div className="reciptId"><h1 >Tracking</h1></div>
+        <div> <h2> ORDER # JF34RE67-01</h2></div>
+        </div>
+        </div>
             </div>
         </div>
     )
