@@ -3,6 +3,7 @@ import Nav from "./Nav";
 import axios from "axios";
 import Cookies from 'universal-cookie';
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
+import Footer from "./Footer";
 function SalesHistory(){
     const cookies = new Cookies();
     const history = useHistory();
@@ -73,6 +74,7 @@ function SalesHistory(){
                     </tr>
                 </table>
             </div>
+            <Footer />
         </div>
     )
 }
