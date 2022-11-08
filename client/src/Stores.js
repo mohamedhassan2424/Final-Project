@@ -58,7 +58,7 @@ const [stores,setStores] = useState([])
 <li className="eachStore">
   <div className="mainClassInStores">
 <div className="logoImage">
-<Link to="/products"><img src={store.image_link} /></Link>
+<Link to="/products/metro"><img src={store.image_link} /></Link>
 
   
 </div>
