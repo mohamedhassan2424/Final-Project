@@ -68,7 +68,7 @@ function Nav(props) {
           
           
           <li>
-            {firstNameSaved?<Link to="/cardPayment">Cart Payment</Link>:<Link to="/users">Cart Payment</Link>}
+            {firstNameSaved?<Link to="/cardPayment">Card Payment</Link>:<Link to="/users">Cart Payment</Link>}
           </li>
           <li>
             <button onClick={removingState}>Logout</button>
