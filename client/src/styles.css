@@ -370,11 +370,11 @@ a {
 }
 
 .chocalteImage {
-    padding-left: 10px;
+    /* padding-left: 10px; */
     display:flex;
-    justify-content: flex-end;
-    width: 150px;
-    height: 150px;
+    justify-content: center;
+    /* width: 150px; */
+    /* height: 150px; */
 }
 
 .ProductInforamtion {
