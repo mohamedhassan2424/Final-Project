@@ -71,9 +71,9 @@ function Product() {
                         </div>
                         <div className="counter">
                             Counter: 
-                            <button className="incrementDecrementButton" onClick={incrementFunction}>+</button>
+                            <button className="incrementButton" onClick={incrementFunction}>+</button>
                             <span>{counterValue}</span>
-                            <button className="incrementDecrementButton" onClick={decrementFunction}>-</button>
+                            <button className="decrementButton" onClick={decrementFunction}>-</button>
             
                         </div>
                     </div>
