@@ -2,10 +2,30 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { userContext } from "./providers/UserProvider";
+import Cookies from "universal-cookie";
 import "./Nav.css";
-
+const cookies = new Cookies()
 function Nav(props) {
-    const {firstNameSaved,lastNameSaved,emailSaved ,savingFirstName,savingLastName,savingEmail } = useContext(userContext)
+  const history = useHistory();
+  const {firstNameSaved,lastNameSaved,emailSaved ,savingFirstName,savingLastName,savingEmail } = useContext(userContext)
+  const removingState =() =>{
+      savingFirstName('')
+      savingLastName('')
+      savingEmail('')
+      cookies.remove('emailValue')
+      cookies.remove('firstNameValue')
+      cookies.remove('lastNameValue')
+      cookies.remove('userId')
+      cookies.remove('storeId')
+      cookies.remove('specfiedAddressId')
+      cookies.remove('editProductObj')
+      cookies.remove('storeName')
+
+      let path = `/users`;
+          // let history = useHistory();
+          history.push(path);
+  }
+    
     return(
         <div>
 <nav className="navlistItems">
@@ -39,18 +59,19 @@ function Nav(props) {
     
           </li>
           <li>
-            {firstNameSaved?<Link to="/summary"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link>:  <Link to="/summary"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link> }
+            {firstNameSaved?<Link to="/summary"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link>:  <Link to="/users"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link> }
 
           </li>
-          <li>{firstNameSaved?  <Link to="/cart">Summary Cart</Link>:<Link to="/cart">Summary Cart</Link> }
+          <li>{firstNameSaved?  <Link to="/cart">Summary Cart</Link>:<Link to="/users">Summary Cart</Link> }
             
           </li>
           
           
           <li>
-            {firstNameSaved?<Link to="/cardPayment">Cart Payment</Link>:<Link to="/users">Cart Payment</Link>}
+            {firstNameSaved?<Link to="/cardPayment">Cartd Payment</Link>:<Link to="/users">Cart Payment</Link>}
           </li>
-          <li>{firstNameSaved? <Link to="/logout">Logout</Link>: <Link to="/users">Logout</Link>}
+          <li>
+            <button onClick={removingState}>Logout</button>
           </li>
         </ul>
                          
