@@ -11,21 +11,10 @@ import Cookies from 'universal-cookie';
 import axios from 'axios';
 const Checkout = () => {
   const cookies = new Cookies();
-  const [salesHistoryTable, setSalesHistoryTable] = useState([])
-  const userIdValueNum = cookies.get('userId')
-  useEffect(() => {
 
-    axios.post('http://localhost:8080/extratingData',{ userIdInt: userIdValueNum })
-        .then(response => {
-            console.log("DATA recieved from the database", response.data)
-            setSalesHistoryTable(response.data)
-            
-        })
-        .catch((error) => {
-        console.log('error received from the database', error)
-            })
-}, [])
-console.log('salesHistoryTable',salesHistoryTable)
+  const userIdValueNum = cookies.get('userId')
+  const salesHistoryIdCookie = cookies.get('salesHistoryId')
+console.log('salesHistoryTableCookie',salesHistoryIdCookie)
 
   const stripe = useStripe();
   const elements = useElements();
@@ -46,7 +35,7 @@ console.log('salesHistoryTable',salesHistoryTable)
     console.log('error', error)
 
     if(paymentMethod){
-      axios.post('http://localhost:8080/addingToSalesHistory',{userId:5,prodcutID:"product"})
+      // axios.post('http://localhost:8080/addingToSalesHistory',{userId:salesHistoryIdCookie.user_id_sales,stores_id:salesHistoryIdCookie.stores_id_sales,products_id :salesHistoryIdCookie.products_id,count_product:salesHistoryIdCookie.count_product})
     }
   };
 

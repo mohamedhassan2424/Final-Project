@@ -22,14 +22,14 @@ function Summary(props) {
             .then(response => {
                 console.log("DATA recieved from the database", response.data)
                 setSalesHistory(response.data)
-                
+                cookies.set('salesHistoryId',response.data)
             })
             .catch((error) => {
             console.log('error received from the database', error)
                 })
     }, [])
 
-
+    const salesHistoryIdCookie = cookies.get('salesHistoryId')
     const totalSumFunction = ()=>{
         let totalSumValue= 0
         for(let i=0; i<salesHistory.length; i++){
@@ -86,7 +86,7 @@ function Summary(props) {
                         <th>Edit Product</th>
                     </tr>
 
-                    {salesHistory && salesHistory.map((eachDataObject) => (
+                    {salesHistoryIdCookie && salesHistoryIdCookie.map((eachDataObject) => (
                         <tr>
                             <td> <img src={eachDataObject.product_url} /></td>
                             <td> {eachDataObject.product_name} <br />

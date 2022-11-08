@@ -238,9 +238,14 @@ app.post('/reigisterAddress',(req,res)=>{
 })
 app.post('/addingToSalesHistory',(req,res)=>{
     const userIdValue = req.body.userId
-    const productIdValue = req.body.prodcutID
+    const productIdValue = req.body.prodcut_id
+    const StoreIDValue = req.body.stores_id
+    const count_productVal = req.body.count_product
+
     console.log('userIdValue',userIdValue)
     console.log('productIdValue',productIdValue)
+    console.log('StoreIDValue',StoreIDValue)
+    console.log('count_productVal',count_productVal)
 })
 app.post('/reigisterAddressUpdate',(req,res)=>{
     const addresOneUpdate= req.body.addressLineOneUpdate
