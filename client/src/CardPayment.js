@@ -8,6 +8,7 @@ import {
     useStripe,
     useElements,
   } from '@stripe/react-stripe-js';
+  import './styles.css'
 import Checkout from "./Checkout";
 function CardPayment(){
     const [payment, setPayment] = useState(false)
@@ -17,16 +18,16 @@ function CardPayment(){
         setPayment(true)
 
     }
+    console.log('paymenttt',payment)
     const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
     return(
         <div className="backcolor">
         <div stripe={stripePromise}>
             <Nav />
-            {payment && <Checkout />  }
-            
             <h2>Welcome to Card Payment</h2>
+            {payment && <Checkout />  }
             <div>
-            <button onClick= {payButton}>Pay</button>
+            <button className = {payment ? "payButtonShow" :"payButtonDoNotShow" } onClick= {payButton}>Pay</button>
             
             </div>
        

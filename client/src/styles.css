@@ -692,6 +692,13 @@ table, th, td {
   .incrementDecrementButton {
     width:25px;
   }
+  .payButtonShow {
+    display: none;
+  }
+  .payButtonDoNotShow {
+
+  }
+
 /* .parentcontainerrow {
     max-width:1080px;
     margin: auto;
