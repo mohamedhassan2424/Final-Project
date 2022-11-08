@@ -14,12 +14,9 @@
     background-color: 	#ADD8E6;
     display: flex;
     justify-content: space-between;
+    padding: 5px;
 }
 
-.contentofheader h2 {
-    /* padding-left: 100px;
-    padding-right: 100px; */
-}
 
 .reciptId {
     display: flex;
@@ -32,7 +29,9 @@
     width :800px;
     outline: 0.1em solid rgb(0 0 0 / 75%);
     background-color: 	#ADD8E6;
+    padding: 5px;
 }
+
 .bodyInformation {
     display: flex;
     justify-content:space-between;
@@ -47,7 +46,7 @@ justify-content: space-around;
 }
 
 .footerHeader {
-
+    padding: 5px;
     height: 50px;
     width :800px;
     outline: 0.1em solid rgb(0 0 0 / 75%);
@@ -79,6 +78,7 @@ padding-bottom: 50px;
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
+    padding: 5px;
 }
 
 .shippedValue{
