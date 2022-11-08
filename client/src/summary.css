@@ -247,7 +247,11 @@
     border-radius: 5px;
     font-weight: 900;
     cursor: pointer;
+  }
+
+  .delete-button, .edit-button:hover {
     background-color: rgb(255, 240, 130);
+    color: black;
   }
 
   .delete-button {
