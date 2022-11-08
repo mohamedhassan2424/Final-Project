@@ -9,8 +9,17 @@ function Footer() {
                     <div className="containerRow">
                         <div className="firstRow">
                         <h5 className= "titleStyle">About</h5>
-                            <p className= "textdescription">Lite-Cart mission and values are focused on larger human causes. The chain's overarching mission statement is "To Feed the Human Spirit," and its "Zero Hunger, Zero Waste" mission includes helping end hunger while eliminating food waste.
-                                Specifically, Lite-Cart  notes of the program, "A world with Zero Hunger | Zero Waste: that’s our commitment. As Canadian Startup grocer, we believe we have the size and scale, expertise and local connections to tackle this challenge."</p>
+                            {/* <p className= "textdescription">Lite-Cart mission and values are focused on larger human causes. The chain's overarching mission statement is "To Feed the Human Spirit," and its "Zero Hunger, Zero Waste" mission includes helping end hunger while eliminating food waste.
+                                Specifically, Lite-Cart  notes of the program, "A world with Zero Hunger | Zero Waste: that’s our commitment. As Canadian Startup grocer, we believe we have the size and scale, expertise and local connections to tackle this challenge."</p> */}
+                                <ul className="footer-notes">
+                                    <h5>Terms & Conditions</h5>
+                                    <h5>Accessibility</h5>
+                                    <h5>FAQ</h5>
+                                    <h5>Careers</h5>
+                                    <h5>Memberships</h5>
+                                    <h5>Private Policy</h5>
+
+                                </ul>
                         </div>
                         <div className="secoundRow">
                             <h5 className= "titleStyle">Site Links</h5>
