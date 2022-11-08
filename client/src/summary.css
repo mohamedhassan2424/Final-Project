@@ -3,9 +3,9 @@
   }
   
   .background-image {
-    background-color: #f1e4d1;
-  display: flex;
-  justify-content:space-around;
+    background-color: rgb(251, 248, 243);
+    display: flex;
+    justify-content:space-around;
   }
   
   .yourcart {
