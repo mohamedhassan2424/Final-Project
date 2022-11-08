@@ -63,7 +63,7 @@ function Products(props) {
                             <img className="banner" src="https://voila.ca/assets/content/2d92d19c-0354-49c0-8a91-5260ed0bf531/creatives/4af4835b-aab5-4b75-bd5e-3ed97cf6245d/71c68b3f75.png" />
                         </div>
             </div>
-            <h1 className="dairy">{dairy[0] ? dairy[0].category_name_value:<h1>Waiting .......</h1>}</h1>
+            <h1 className="dairy">{dairy[0] ? dairy[0].category_name_value:<h1>Please Wait</h1>}</h1>
             <div className="eachrow">
             <div className="dairyimage">
                             <img className="dairyimage" src="https://voila.ca/assets/content/creatives/2224a084-66d8-43ca-a07f-0b46c988c4c0/ef4661e772.png" />
@@ -108,7 +108,7 @@ function Products(props) {
                 }
             </div>
  <div className="eachrow">
- <div className ="titlePageCategoryProduct">  <h1>{frozenFood[0]?frozenFood[0].category_name_value :<h1>Waiting .......</h1>}</h1></div>
+ <div className ="titlePageCategoryProduct">  <h1 className="dairy">{frozenFood[0]?frozenFood[0].category_name_value :<h1>Waiting .......</h1>}</h1></div>
 {frozenFood && frozenFood.map((product) => (
 
 <div className="outlineBox">
@@ -149,7 +149,7 @@ function Products(props) {
 }
  </div>
 
- <div className ="titlePageCategoryProduct"><h1>{beverage[0]?beverage[0].category_name_value:<h1>Waiting.......</h1>}</h1></div>     
+ <div className ="titlePageCategoryProduct"><h1 className="dairy">{beverage[0]?beverage[0].category_name_value:<h1>Waiting.......</h1>}</h1></div>     
  <div className="eachrow">
 
 {beverage && beverage.map((product) => (
