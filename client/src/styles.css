@@ -726,8 +726,9 @@ hr {
 }
 
 table, th, td {
-    border:1px solid darkgreen;
+    border: 2px solid darkgreen;
     padding: 4px;
+    border-collapse: collapse;
   }
 
 .Table {
