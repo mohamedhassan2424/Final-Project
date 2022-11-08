@@ -123,6 +123,17 @@
       font-family: FoundersGroteskWeb, sans-serif;
   }
 
+  .update-delete {
+    width: 155px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003e38 !important;
+    justify-content: center;
+    display: flex;
+  }
 
   .outlineBox-confirm {
     margin: 60px;

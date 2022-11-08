@@ -92,8 +92,8 @@ function EditProduct(props) {
                         <span className="firstPrice">${editProduct.price}</span> <span className="secoundPrice">          ${editProduct.sale_price}</span>
                     </div>
                     <div >
-                        <button className="addContent" onClick={UpdateFunction}><h3>Confirm to Update Product</h3></button>
-                        <button className="addContent" onClick={DeleteFunction}><h3>Delete Product</h3></button>
+                        <button className="addContent" onClick={UpdateFunction}><h3 className='update-delete'>Update Product</h3></button>
+                        <button className="addContent" onClick={DeleteFunction}><h3 className='update-delete'>Delete Product</h3></button>
                     </div>
 
                 </div>
