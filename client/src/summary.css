@@ -122,6 +122,20 @@
       box-sizing: border-box;
       font-family: FoundersGroteskWeb, sans-serif;
   }
+
+  .dairy {
+    display: flex;
+    padding: 20px;
+    color: rgb(0, 84, 0);
+    font-size: 2.71429rem;
+    font-weight: 600;
+    line-height: 1.42857;
+    /* margin: 0px; */
+    text-transform: none;
+    font-family: FoundersGroteskWeb, sans-serif;
+    justify-content: center;
+}
+  
   .otherOutlineBox {
     margin: 10px,10px,10px,10px;
     padding: 10px 5px 5px 5px;

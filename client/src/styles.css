@@ -377,6 +377,13 @@ a {
     /* height: 150px; */
 }
 
+.dairyimage {
+    border-radius: 0px;
+    height: 471.28px;
+    margin-top: 15px;
+    width: 100%;
+}
+
 .ProductInforamtion {
     font-size: 13px;
     margin-top: 7px;

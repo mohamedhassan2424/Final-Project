@@ -60,9 +60,11 @@ function Products(props) {
                
                <Nav />
             </div>
-            <h1>{dairy[0] ? dairy[0].category_name_value:<h1>Waiting .......</h1>}</h1>
+            <h1 className="dairy">{dairy[0] ? dairy[0].category_name_value:<h1>Waiting .......</h1>}</h1>
             <div className="eachrow">
-             
+            <div className="othercolumn">
+                            <img className="dairyimage" src="https://voila.ca/assets/content/creatives/2224a084-66d8-43ca-a07f-0b46c988c4c0/ef4661e772.png" />
+                        </div>
                 {dairy && dairy.map((product) => (
 
                     <div className="outlineBox">
