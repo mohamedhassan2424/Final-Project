@@ -20,6 +20,16 @@ function SalesHistory(){
           })
       }, [])
       console.log('allSalesHistory',allSalesHistory)
+
+      const totalSumFunction = ()=>{
+        let totalSumValue= 0
+        for(let i=0; i<allSalesHistory.length; i++){
+            const totalPrice = allSalesHistory[i].sale_price
+            const totalQuantity= allSalesHistory[i].count_product
+            totalSumValue +=totalPrice*totalQuantity;
+        }
+        return totalSumValue;
+    }
     return(
         <div>
             <Nav />
@@ -34,8 +44,6 @@ function SalesHistory(){
                         <th>Store</th>
                         <th>Rating</th>
                         <th>Total Price </th>
-                        <th>Delete Button</th>
-                        <th>Edit Product</th>
                     </tr>
 
                     {allSalesHistory && allSalesHistory.map((eachDataObject) => (
@@ -49,8 +57,6 @@ function SalesHistory(){
                             <td> {eachDataObject.store_name}</td>
                             <td> {eachDataObject.rating}</td>
                             <td>{eachDataObject.quantity *eachDataObject.price}</td>
-                        <td><button >DELETE Product</button></td>
-                            <td><button >Edit Product</button></td>
                             </tr>
                     ))}
 
@@ -62,7 +68,7 @@ function SalesHistory(){
                         <td></td>
                         <td></td>
                         <td></td>
-                        {/* <td>{totalSumFunction()}</td> */}
+                        <td>{totalSumFunction()}</td>
                     </tr>
                 </table>
             </div>
