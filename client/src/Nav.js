@@ -71,7 +71,7 @@ function Nav(props) {
           </li>
           <li>{firstNameSaved?<Link to="/salesHistory">Sales History</Link>:<Link to="/users">Summary Cart</Link> }</li>
           <li>
-            <button onClick={removingState}>Logout</button>
+            <button className="logout" onClick={removingState}>Logout</button>
           </li>
         </ul>
                          

@@ -262,6 +262,20 @@
     background-color: rgb(85, 169, 0);
   }
 
+  .logout {
+    background-color: rgb(85, 169, 0);
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  .logout:hover {
+    background-color: rgb(255, 240, 130);
+    color: black;
+  }
+
   .checkout-button:hover {
     background-color: aqua;
     border-color: dodgerblue;
