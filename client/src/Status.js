@@ -1,6 +1,8 @@
-import React from "react";
+
 import Nav from "./Nav";
 import './recipet.css'
+import React from "react";
+
 function Status(){
 
     return (
@@ -60,6 +62,10 @@ function Status(){
         <div className="reciptId"><h1 >Tracking</h1></div>
         <div> <h2> ORDER # JF34RE67-01</h2></div>
         </div>
+        <div>
+            <h1>ergdfgd</h1>
+            <img src={"../Images/5a364b6d2c5557.7578312615135076931816 (1).png"}></img>
+        </div>
         </div>
             </div>
         </div>
@@ -67,3 +73,7 @@ function Status(){
 }
 
 export default Status;
+
+
+
+
