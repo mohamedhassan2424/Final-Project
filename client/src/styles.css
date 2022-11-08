@@ -341,8 +341,13 @@ color:rgb(210, 210, 210);
     width:40%;
 } */
 
+.addtocart {
+    margin-bottom: 0;
+}
+
 .addContent {
     border-radius: 3px;
+    height: 34.28px;
     display :flex;
     justify-content: center;
     align-items: center;
@@ -417,7 +422,18 @@ a {
     display: flex;
 }
 
-
+.metro {
+    display: flex;
+    padding: 20px;
+    color: rgb(0, 84, 0);
+    font-size: 2.71429rem;
+    font-weight: 300;
+    line-height: 1.42857;
+    /* margin: 0px; */
+    text-transform: none;
+    font-family: FoundersGroteskWeb, sans-serif;
+    justify-content: center;
+}
 
 .banner {
     max-width: 100%;
@@ -425,6 +441,7 @@ a {
     display: block;
     width: 100%;
     margin-top: 5px;
+    cursor: pointer;
 }
 
 .ProductInforamtion {

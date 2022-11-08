@@ -48,11 +48,11 @@ function StoreProduct(props){
     return(
 <div>
     <Nav />
-    <h1>The store Selected is {storeParamter.id}</h1>
+    <h1 className="metro">{storeParamter.id}</h1>
     <h1>Welcome to {storeParamter.id} </h1>
     <div className="eachrow">
     <h1>{
-    dairy[0] ? dairy[0].category_name_value:<h1>Waiting .......</h1>}</h1>
+    dairy[0] ? dairy[0].category_name_value:<h1></h1>}</h1>
                 {dairy && dairy.map((product) => (
 
                     <div className="outlineBox">
