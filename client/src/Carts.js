@@ -208,7 +208,7 @@ console.log('allAddress',allAddress)
                     <div className="caloriesDescription">{eachProductObject.product_description}</div>
                     <div className="priceInformation">
                       <span className="firstPrice">${eachProductObject.price}</span>{" "}
-                      <span className="secoundPrice">${eachProductObject.sale_price}</span>
+                      <span className="secoundPrice"> ${eachProductObject.sale_price}</span>
                     </div>
                     {/* <div className="addContent">
                       {" "}

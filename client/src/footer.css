@@ -10,6 +10,12 @@
     bottom: 0px;
 }
 
+.spacing-card {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+}
+
 .containerRow {
     /* padding-top: 12%; */
     display: flex;

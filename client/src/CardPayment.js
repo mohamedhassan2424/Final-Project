@@ -26,14 +26,14 @@ function CardPayment(){
         <div className="backcolor">
         <div stripe={stripePromise}>
             <Nav />
-            <h2>Welcome to Card Payment</h2>
+            
             {payment && <Checkout />  }
             <div>
             <button className = {payment ? "payButtonShow" :"payButtonDoNotShow" } onClick= {payButton}>Pay</button>
             
             </div>
        
-            <div className="spacing">
+            <div className="spacing-card">
             <Footer /> 
             </div>
         </div>
