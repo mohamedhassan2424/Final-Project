@@ -300,9 +300,9 @@ color:rgb(210, 210, 210);
 }
 
 .cartIcon {
-
-    width:25px;
-    height:25px;
+    border-radius: 0;
+    width:35px;
+    height:40px;
 }
 .firstbutton:hover {
     background: powderblue;
@@ -341,8 +341,35 @@ color:rgb(210, 210, 210);
     width:40%;
 } */
 
+.addtocart {
+    margin-bottom: 0;
+}
+
+.user {
+    color: wheat;
+    margin-right: 100px;
+    font-weight: 300;
+}
+
+.confirm-product {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 5px;
+    font-size: 18px;
+    line-height: 15px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003e38 !important;
+    /* margin-bottom: 6px; */
+    justify-content: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+
 .addContent {
     border-radius: 3px;
+    height: 34.28px;
     display :flex;
     justify-content: center;
     align-items: center;
@@ -417,7 +444,18 @@ a {
     display: flex;
 }
 
-
+.metro {
+    display: flex;
+    padding: 20px;
+    color: rgb(0, 84, 0);
+    font-size: 2.71429rem;
+    font-weight: 300;
+    line-height: 1.42857;
+    /* margin: 0px; */
+    text-transform: none;
+    font-family: FoundersGroteskWeb, sans-serif;
+    justify-content: center;
+}
 
 .banner {
     max-width: 100%;
@@ -425,6 +463,7 @@ a {
     display: block;
     width: 100%;
     margin-top: 5px;
+    cursor: pointer;
 }
 
 .ProductInforamtion {
@@ -688,6 +727,11 @@ hr {
 table, th, td {
     border:1px solid black;
   }
+
+.table {
+    margin: 15px;
+    padding-bottom: 40%;
+}
 
   .incrementDecrementButton {
     width:25px;

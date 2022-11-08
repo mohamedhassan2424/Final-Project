@@ -33,17 +33,22 @@ function Product() {
    
     const storeNameSaved = cookies.get('storeName')
     console.log("Productdata", product)
-    console.log("SavingStoreName", storeNameSaved)
+    
     const linkServer = "http://localhost:8080/"
     const userIdValue = cookies.get('userId')
     const storeIdName = cookies.get('storeName')
-    const storeIdValue = cookies.get('storeId')
+
+         cookies.set('storeId',params.id)
+         const storeIdValue = cookies.get('storeId')
+         console.log('storeIdValue',storeIdValue)
+        console.log('storeIdName',params.id)
     let counterValueData = counterValue
 
     const addingProductDatabase = () => {
         console.log('CounterValueData',counterValueData)
         axios.post(`${linkServer}addingToSalesDatabase`, { productId: product.id, userId: userIdValue, storeId: storeIdValue, counterData:counterValue })
         .then((response)=>{
+            console.log("checkpoint 4")
             console.log("Response When adding the data",response)
             let path = `/products/${storeNameSaved}`;
             // // let history = useHistory();
@@ -98,7 +103,7 @@ function Product() {
                         <span className="firstPrice">${product.price}</span> <span className="secoundPrice">          ${product.sale_price}</span>
                     </div>
                     <div >
-                        <button className="addContent" onClick={addingProductDatabase}><h3>Confirm to Add Product</h3></button>
+                        <button className="addContent" onClick={addingProductDatabase}><h3 className="confirm-product">Confirm Product</h3></button>
                     </div>
 
                 </div>

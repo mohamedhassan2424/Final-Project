@@ -32,7 +32,7 @@ function Nav(props) {
 <nav className="navlistItems">
                         <ul>
                             <li>
-                                {firstNameSaved ? <h1>Welcome Back { firstNameSaved} {lastNameSaved} </h1>: <h1></h1>}
+                                {firstNameSaved ? <h1 className="user">Welcome Back { firstNameSaved} {lastNameSaved} </h1>: <h1></h1>}
                                 
                         
                             </li>
@@ -55,7 +55,7 @@ function Nav(props) {
             
           </li>
           <li>
-            {firstNameSaved?<Link to="/summary"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link>:  <Link to="/users"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link> }
+            {firstNameSaved?<Link to="/summary"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-shopping-cart-tools-and-material-ecommerce-flaticons-lineal-color-flat-icons.png"></img></Link>:  <Link to="/users"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-shopping-cart-tools-and-material-ecommerce-flaticons-lineal-color-flat-icons.png"></img></Link> }
 
           </li>
           <li>{firstNameSaved?  <Link to="/summary">Summary Cart</Link>:<Link to="/users">Summary Cart</Link> }
