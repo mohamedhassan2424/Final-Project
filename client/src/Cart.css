@@ -116,6 +116,19 @@ h6 {
     box-sizing: border-box;
     font-family: FoundersGroteskWeb, sans-serif;
 }
+
+.outline-Box {
+  margin: 10px,10px,10px,10px;
+  padding: 10px 5px 5px 5px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px grey;
+  width: 20%;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  box-sizing: border-box;
+  font-family: FoundersGroteskWeb, sans-serif;
+}
+
 .otherOutlineBox {
   margin: 10px,10px,10px,10px;
   padding: 10px 5px 5px 5px;

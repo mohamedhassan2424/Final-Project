@@ -179,7 +179,7 @@ console.log('allAddress',allAddress)
 
 
               {productOrdered && productOrdered.map((eachProductObject) => (
-                <div className="outlineBox">
+                <div className="outline-Box">
                   <div className="outerTopProduCtontainer">
                     <div className="toptopheaderj">
                       <div className="productCountDiv">
