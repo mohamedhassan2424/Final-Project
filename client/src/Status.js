@@ -1,5 +1,6 @@
 
 import Nav from "./Nav";
+import Footer from "./Footer";
 import './recipet.css'
 import React, {useState, useEffect} from "react";
 import axios from "axios";
@@ -41,9 +42,21 @@ function Status(){
       console.log('allSalesHistoryRecipet',allSalesHistoryRecipet)
       console.log('specficAddress',specficAddress)
 
-
+      const totalSumFunction = ()=>{
+        let totalSumValue= 0
+        for(let i=0; i<allSalesHistoryRecipet.length; i++){
+            const totalPrice = allSalesHistoryRecipet[i].price
+            const totalQuantity= allSalesHistoryRecipet[i].count_product
+            totalSumValue +=totalPrice*totalQuantity;
+        }
+        return Math.ceil(totalSumValue*100)/100
+    }
+    const totalSumValue = totalSumFunction()
+    const hstTotalValue = (totalSumValue*1.13).toFixed(2)
+    
       return (
         <div>
+            <div className="marginSpacing">
             <Nav />
             <h1>Welcome to the Status page</h1>
             <div className ="MainContainerReceipt">
@@ -77,16 +90,22 @@ function Status(){
 <p>{eachSalesProduct.product_name} </p>
  ))
 }
+
 <br></br>
 <p>Subtotal:</p>
 <p>Tax:</p>
-<p>Total:</p>
+<p>Total: </p>
 </div>
 <div>
 {allSalesHistoryRecipet && allSalesHistoryRecipet.map((eachSalesProduct)=>(
 <p> ${eachSalesProduct.price} </p>
  ))
 }
+<br></br>
+<p>${totalSumValue}</p>
+<p>${(totalSumValue *0.13).toFixed(2)}</p>
+<p>${hstTotalValue}</p>
+
 </div>
 </div>
    
@@ -101,12 +120,27 @@ function Status(){
         <div className="reciptId"><h1 >Tracking</h1></div>
         <div> <h2> ORDER # JF34RE67-01</h2></div>
         </div>
+        <div className="imageSection">
         <div>
-            <h1>ergdfgd</h1>
-            <img src={statusImage}></img>
+            <img  className="timeLineImage"src={statusImage}></img>
+        </div>
+        <div className= "orderStatus">
+            <div>Ordered
+            <p>Nov 9</p>
+
+            </div>
+            <div className='shippedValue'>Shipped 
+            <p>Nov 9</p>
+            </div>
+            <div>Estimated Delivery
+            <p>Nov 9</p>
+            </div>
+        </div>
         </div>
         </div>
             </div>
+            </div>
+            <Footer />
         </div>
     )
 }

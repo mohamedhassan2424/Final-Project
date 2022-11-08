@@ -41,7 +41,7 @@ console.log('salesHistoryTableCookie',salesHistoryIdCookie)
         axios.post('http://localhost:8080/addingToSalesHistory',{userId:eachProductSales.user_id_sales,stores_id:eachProductSales.stores_id_sales,products_id :eachProductSales.products_id,count_product:eachProductSales.count_product})
         .then((response)=>{
          console.log("All is good the data has been sent offf")
-         let path =`/salesHistory`;
+         let path =`/status`;
          history.push(path);
         })
         axios.post('http://localhost:8080/addingToSalesHistoryDelete',{userId:eachProductSales.user_id_sales,stores_id:eachProductSales.stores_id_sales,products_id :eachProductSales.products_id,count_product:eachProductSales.count_product})

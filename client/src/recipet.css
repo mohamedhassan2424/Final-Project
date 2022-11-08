@@ -11,7 +11,7 @@
     height: 100px;
     width :800px;
     outline: 0.1em solid rgb(0 0 0 / 75%);
-    background-color: yellow;
+    background-color: 	#ADD8E6;
     display: flex;
     justify-content: space-between;
 }
@@ -24,13 +24,14 @@
 .reciptId {
     display: flex;
     justify-content: flex-start;
+
 }
 
 .mainBody {
     height: 200px;
     width :800px;
     outline: 0.1em solid rgb(0 0 0 / 75%);
-
+    background-color: 	#ADD8E6;
 }
 .bodyInformation {
     display: flex;
@@ -47,10 +48,49 @@ justify-content: space-around;
 
 .footerHeader {
 
-    height: 100px;
+    height: 50px;
     width :800px;
     outline: 0.1em solid rgb(0 0 0 / 75%);
-    background-color: yellow;
+    background-color: 	#ADD8E6;
     display: flex;
     justify-content: space-between;
 }
+
+
+.hstTotalValue {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.prodcutsValue {
+padding-bottom: 50px;
+}
+
+.timeLineImage {
+    margin-left:30px;
+    display: flex;
+    justify-content: center;
+    width:750px;
+    height: 50px;
+}
+
+.orderStatus {
+    color: gray;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shippedValue{
+    padding-right: 230px;
+}
+.imageSection {
+    padding-top: 20px;
+    outline: 0.1em solid rgb(0 0 0 / 75%);
+    background-color: 	#ADD8E6;
+}
+
+.marginSpacing {
+    margin-bottom: 150px;
+}
+
