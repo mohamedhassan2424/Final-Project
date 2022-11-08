@@ -226,6 +226,7 @@ color:rgb(210, 210, 210);
     }
 
 .eachrow {
+    padding-bottom: 12%;
     display: flex;
     align-items: center;
     flex-wrap:wrap;

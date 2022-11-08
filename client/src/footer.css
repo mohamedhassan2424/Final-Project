@@ -1,9 +1,9 @@
 .footerContainer {
-    background-color: rgb(251, 248, 243);
+    background-color: rgb(249, 231, 201);
 }
 
 .containerRow {
-    padding-top: 15%;
+    /* padding-top: 12%; */
     display: flex;
     flex-direction: row;
     padding-left: 10px;
