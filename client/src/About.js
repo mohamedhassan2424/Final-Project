@@ -1,5 +1,7 @@
 import React from "react";
 import "./About.css";
+import Footer from "./Footer";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function About(props) {
   return (
