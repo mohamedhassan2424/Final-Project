@@ -115,6 +115,7 @@ function Summary(props) {
                 </table>
                 <button onClick={reDirectPage}>Proceded to Checkout</button>
             </div>
+            <div className="spacing"></div>
             <Footer /> 
         </div>
     )
