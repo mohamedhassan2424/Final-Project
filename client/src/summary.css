@@ -133,6 +133,8 @@
     color: #003e38 !important;
     justify-content: center;
     display: flex;
+    font-size: 20px;
+    cursor: pointer;
   }
 
   .outlineBox-confirm {
