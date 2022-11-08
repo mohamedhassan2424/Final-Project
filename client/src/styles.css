@@ -345,6 +345,12 @@ color:rgb(210, 210, 210);
     margin-bottom: 0;
 }
 
+.user {
+    color: wheat;
+    margin-right: 100px;
+    font-weight: 300;
+}
+
 .addContent {
     border-radius: 3px;
     height: 34.28px;
