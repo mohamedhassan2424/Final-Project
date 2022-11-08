@@ -32,9 +32,9 @@ function SalesHistory(){
         return totalSumValue;
     }
     return(
-        <div>
+        <div className="backcolor">
             <Nav />
-            <h1>Welcom to Sales History</h1>
+            <h3 className="ordercomplete">Sales History</h3>
             <div className="Table">
                 <table>
                     <tr>
