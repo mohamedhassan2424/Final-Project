@@ -28,8 +28,8 @@ function CardPayment(){
             <Nav />
             
             {payment && <Checkout />  }
-            <div className="paybutton">
-            <button className = {payment ? "payButtonShow" :"payButtonDoNotShow" } onClick= {payButton}>Pay</button>
+            <div>
+            <button className = {payment ? "payButtonShow" :"payButtonDoNotShow" } onClick= {payButton}><h1 className="paybutton">Pay</h1></button>
             
             </div>
        
