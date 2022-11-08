@@ -18,3 +18,12 @@
 
 -- - UPDATE sales SET  user_id_sales =3, stores_id_sales =6, products_id =4, count_product = 10
 -- WHERE count_product = 9;
+
+
+-- salesHistory
+
+SELECT * FROM salesHistory
+JOIN products ON products.id = products_id
+JOIN users ON users.id = user_id_sales
+JOIN stores ON stores.id = stores_id_sales
+WHERE users.id =10 ;

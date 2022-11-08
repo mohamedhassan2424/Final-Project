@@ -386,6 +386,21 @@ app.get('/', (req, res) => {
     res.json({ greetings: 'hello world' });
 })
 
+app.get("/allSalesHistory",(req,res)=>{
+    const currentUserIdLoggedIn = req.body.userIdValue
+    console.log(currentUserIdLoggedIn)
+
+    return pool.query(`SELECT * FROM salesHistory WHERE user_id_sales ;`)
+        .then((response) => {
+
+            //res.send("hello world")
+            res.json(response.rows)
+        })
+        .catch((error) => {
+            console.log(error.message)
+        })
+
+})
 app.post('/pay', async (req, res) => {
     const {email} = req.body
     const paymentIntent = await stripe.checkout.sessions.create({
