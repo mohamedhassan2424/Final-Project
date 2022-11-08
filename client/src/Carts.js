@@ -243,7 +243,7 @@ console.log('allAddress',allAddress)
                        <td>{eachProductObject.product_name}</td>
                        <td>{eachProductObject.count_product}</td>
                        <td>${eachProductObject.price}</td>
-                       <td>USD ${(eachProductObject.price*eachProductObject.count_product).toFixed(2)}</td>
+                       <td>CAD ${(eachProductObject.price*eachProductObject.count_product).toFixed(2)}</td>
                      </tr>
                   
                 ))
@@ -253,14 +253,14 @@ console.log('allAddress',allAddress)
               </div>
 
               <div className="row">
-                <h2>Savings</h2> <h6>USD ${savingFunction()}</h6>
+                <h2>Savings</h2> <h6>CAD ${savingFunction()}</h6>
               </div>
 
               <div className="row">
-                <h2>Sub-Total</h2> <h6>USD$ {totalSumValue}</h6>
+                <h2>Sub-Total</h2> <h6>CAD$ {totalSumValue}</h6>
               </div>
               <div className="row">
-                <h2>HST</h2> <h6>USD$ {totalSumValue*0.13}</h6>
+                <h2>HST</h2> <h6>CAD$ {totalSumValue*0.13}</h6>
               </div>
               <hr></hr>
               <div className="row">
@@ -277,7 +277,7 @@ console.log('allAddress',allAddress)
               </div>
 
               <div className="row">
-                <h1>Total</h1> <h1>USD${hstTotalValue}</h1>
+                <h1>Total</h1> <h1>CAD${hstTotalValue}</h1>
               </div>
 
 
