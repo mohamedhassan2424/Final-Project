@@ -1,0 +1,13 @@
+.MainContainerReceipt {
+    display: flex;
+    justify-content: center;
+}
+.headerStatment {
+    display:flex;
+
+}
+.contentofheader {
+    background-color: yellow;
+    display: flex;
+    justify-content: flex-end;
+}
