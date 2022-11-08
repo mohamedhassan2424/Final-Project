@@ -396,6 +396,21 @@ a {
     display: flex;
 }
 
+.choose-store:hover {
+    background: powderblue;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 900;
+    font-family: FoundersGroteskWeb, sans-serif;
+    color: #003e38 !important;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+
 .banner {
     max-width: 100%;
     border-radius: 0.214286rem;
