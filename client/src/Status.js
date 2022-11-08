@@ -58,7 +58,7 @@ function Status(){
         <div className="backcolor">
             <div className="marginSpacing">
             <Nav />
-            <h3>Order Completed!</h3>
+            <h3 className="ordercomplete">Order Completed!</h3>
             <div className ="MainContainerReceipt">
             <div className="headerStatment">
         <div className="contentofheader">
