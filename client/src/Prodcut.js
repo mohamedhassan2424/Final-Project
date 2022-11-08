@@ -57,7 +57,7 @@ function Product() {
     }
 
     return (
-        <div>
+        <div className="backcolor">
             <Nav />
             
 
