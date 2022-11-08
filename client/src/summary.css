@@ -232,6 +232,30 @@
   .address-margin {
     margin: 50px;
   }
+
+  .checkout-button {
+    margin: 10px;
+    padding: 3px;
+    background: powderblue;
+  }
+
+  .delete-button, .edit-button {
+    padding: 3px;
+  }
+
+  .delete-button {
+    background-color: rgb(254, 60, 60);
+  }
+
+  .edit-button {
+    background-color: lawngreen;
+  }
+
+  .checkout-button:hover {
+    background-color: aqua;
+    border-color: dodgerblue;
+    cursor: pointer;
+  }
   
   .mainColorDiv {
     border: 3px solid #288C28;

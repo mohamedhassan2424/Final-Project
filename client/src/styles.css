@@ -349,6 +349,7 @@ color:rgb(210, 210, 210);
     color: wheat;
     margin-right: 100px;
     font-weight: 300;
+    font-size: 17px;
 }
 
 .confirm-product {
@@ -725,7 +726,8 @@ hr {
 }
 
 table, th, td {
-    border:1px solid black;
+    border:1px solid darkgreen;
+    padding: 4px;
   }
 
 .Table {

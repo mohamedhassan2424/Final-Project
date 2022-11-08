@@ -97,8 +97,8 @@ function Summary(props) {
                             <td> {eachDataObject.store_name}</td>
                             <td> {eachDataObject.rating}</td>
                             <td>{(eachDataObject.count_product *eachDataObject.price).toFixed(2)}</td>
-                        <td><button onClick={() => {deleteProduct(eachDataObject)}}>DELETE Product</button></td>
-                            <td><button onClick={()=>{editProduct(eachDataObject)}}>Edit Product</button></td>
+                        <td><button className="delete-button" onClick={() => {deleteProduct(eachDataObject)}}>DELETE Product</button></td>
+                            <td><button className="edit-button" onClick={()=>{editProduct(eachDataObject)}}>Edit Product</button></td>
                             </tr>
                     ))}
 
@@ -113,7 +113,7 @@ function Summary(props) {
                         <td>${totalSumFunction()}</td>
                     </tr>
                 </table>
-                <button onClick={reDirectPage}>Proceded to Checkout</button>
+                <button className="checkout-button" onClick={reDirectPage}>Proceded to Checkout</button>
             </div>
             <div className="spacing">
             <Footer /> 
