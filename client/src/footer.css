@@ -15,9 +15,10 @@
     margin-left: 5px;
 }
 
-.footer-notes {
+.footer-notes > h5 {
     box-sizing: border-box;
-    /* margin-bottom: 10px; */
+    justify-content: flex-start;
+    margin-bottom: 10px;
     padding: 0;
     font-size: 13px;
     line-height: 23px;
