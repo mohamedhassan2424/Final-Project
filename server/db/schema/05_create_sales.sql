@@ -30,3 +30,4 @@ CREATE TABLE sales (
 -- sales item table, which would have the qunatinty of the product and cost
 
 
+DELETE FROM sales WHERE  user_id_sales =10 AND stores_id_sales = 2 AND products_id=3 AND count_product=4;

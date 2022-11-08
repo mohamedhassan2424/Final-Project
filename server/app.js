@@ -255,6 +255,22 @@ app.post('/addingToSalesHistory',(req,res)=>{
         })
 
 })
+
+app.post('/addingToSalesHistoryDelete',(req,res)=>{
+    const userIdValueDelete = req.body.userId
+    const productIdValueDelete = req.body.products_id
+    const StoreIDValueDelete = req.body.stores_id
+    const count_productValDelete = req.body.count_product
+    const deliveryTime= 30
+    console.log('userIdValueDelete',userIdValueDelete)
+    console.log('productIdValueDelete',productIdValueDelete)
+    console.log('StoreIDValueDelete',StoreIDValueDelete)
+    console.log('count_productValDelete',count_productValDelete)
+    pool.query(`DELETE FROM sales WHERE  user_id_sales =$1 AND stores_id_sales = $2 AND products_id=$3 AND count_product=$4;`,[userIdValueDelete,StoreIDValueDelete,productIdValueDelete,count_productValDelete])
+    .then((response)=>{
+        res.send("Deleted the Address corresponding to the userId")
+    })
+})
 app.post('/reigisterAddressUpdate',(req,res)=>{
     const addresOneUpdate= req.body.addressLineOneUpdate
     const addresTwoUpdate = req.body.addressLineTwoUpdate

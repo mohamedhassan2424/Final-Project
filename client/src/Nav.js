@@ -54,22 +54,17 @@ function Nav(props) {
             {firstNameSaved ? <Link to="/about">About</Link>:<Link to="/users">About</Link>}
             
           </li>
-          
-          <li>
-            { firstNameSaved?<Link to="/main">Main</Link>:<Link to="/users">Main</Link>}
-    
-          </li>
           <li>
             {firstNameSaved?<Link to="/summary"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link>:  <Link to="/users"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link> }
 
           </li>
-          <li>{firstNameSaved?  <Link to="/cart">Summary Cart</Link>:<Link to="/users">Summary Cart</Link> }
+          <li>{firstNameSaved?  <Link to="/summary">Summary Cart</Link>:<Link to="/users">Summary Cart</Link> }
             
           </li>
           
           
           <li>
-            {firstNameSaved?<Link to="/cardPayment">Card Payment</Link>:<Link to="/users">Cart Payment</Link>}
+            {firstNameSaved?<Link to="/summary">Card Payment</Link>:<Link to="/users">Cart Payment</Link>}
           </li>
           <li>{firstNameSaved?<Link to="/salesHistory">Sales History</Link>:<Link to="/users">Summary Cart</Link> }</li>
           <li>
