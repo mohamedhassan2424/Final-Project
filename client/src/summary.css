@@ -244,6 +244,7 @@
     padding: 3px;
     color: white;
     border-radius: 5px;
+    font-weight: 900;
   }
 
   .delete-button {
