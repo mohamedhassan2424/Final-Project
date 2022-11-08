@@ -19,6 +19,7 @@ function CardPayment(){
     }
     const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
     return(
+        <div className="backcolor">
         <div stripe={stripePromise}>
             <Nav />
             {payment && <Checkout />  }
@@ -32,6 +33,7 @@ function CardPayment(){
             <div className="spacing">
             <Footer /> 
             </div>
+        </div>
         </div>
     )
 }
