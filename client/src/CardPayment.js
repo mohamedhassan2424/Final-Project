@@ -29,7 +29,9 @@ function CardPayment(){
             
             </div>
        
-            <Footer />
+            <div className="spacing">
+            <Footer /> 
+            </div>
         </div>
     )
 }
