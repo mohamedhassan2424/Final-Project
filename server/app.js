@@ -386,11 +386,15 @@ app.get('/', (req, res) => {
     res.json({ greetings: 'hello world' });
 })
 
-app.get("/allSalesHistory",(req,res)=>{
-    const currentUserIdLoggedIn = req.body.userIdValue
-    console.log(currentUserIdLoggedIn)
+app.post("/allSalesHistory",(req,res)=>{
+    const currentUserIdLoggedIn = req.body.userIdInt
+    console.log('currentUserIdLoggedIn',currentUserIdLoggedIn)
 
-    return pool.query(`SELECT * FROM salesHistory WHERE user_id_sales ;`)
+    return pool.query(`SELECT * FROM salesHistory
+    JOIN products ON products.id = products_id
+    JOIN users ON users.id = user_id_sales
+    JOIN stores ON stores.id = stores_id_sales
+    WHERE users.id = $1 ;`,[currentUserIdLoggedIn])
         .then((response) => {
 
             //res.send("hello world")
