@@ -69,8 +69,8 @@ function Summary(props) {
     }
     return (
         <div>
-            <h1>The userId recorded is {userIdValueNum}</h1>
-            <h1>Welcome to the Summary Cart Page</h1>
+            {/* <h1>The userId recorded is {userIdValueNum}</h1>
+            <h1>Welcome to the Summary Cart Page</h1> */}
             <Nav />
             <div className="Table">
                 <table>
