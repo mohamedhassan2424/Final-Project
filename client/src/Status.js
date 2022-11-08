@@ -55,10 +55,10 @@ function Status(){
     const hstTotalValue = (totalSumValue*1.13).toFixed(2)
     
       return (
-        <div>
+        <div className="backcolor">
             <div className="marginSpacing">
             <Nav />
-            <h1>Welcome to the Status page</h1>
+            <h3>Order Completed!</h3>
             <div className ="MainContainerReceipt">
             <div className="headerStatment">
         <div className="contentofheader">

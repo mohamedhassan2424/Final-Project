@@ -746,14 +746,15 @@ table, th, td {
   }
 
   .paybutton {
-    margin: 5px;
-    width: 3%;
     color: black;
-    border-radius: 15%;
     padding: 6px;
     cursor: pointer;
     font-weight: 900;
     background-color: lightskyblue;
+  }
+
+  .payButtonDoNotShow {
+    margin: 10px;
   }
 
   .incrementButton {
@@ -772,9 +773,7 @@ table, th, td {
   .payButtonShow {
     display: none;
   }
-  .payButtonDoNotShow {
 
-  }
 
 /* .parentcontainerrow {
     max-width:1080px;
