@@ -59,7 +59,7 @@ function Nav(props) {
     
           </li>
           <li>
-            {firstNameSaved?<Link to="/summary"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link>:  <Link to="/users"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link> }
+            {firstNameSaved?<Link to="/summary"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-shopping-cart-tools-and-material-ecommerce-flaticons-lineal-color-flat-icons.png"></img></Link>:  <Link to="/users"><img className="cartIcon" alt="Image cart" src="https://img.icons8.com/parakeet/2x/shopping-cart.png"></img></Link> }
 
           </li>
           <li>{firstNameSaved?  <Link to="/cart">Summary Cart</Link>:<Link to="/users">Summary Cart</Link> }

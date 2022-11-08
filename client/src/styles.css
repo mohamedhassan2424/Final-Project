@@ -300,9 +300,9 @@ color:rgb(210, 210, 210);
 }
 
 .cartIcon {
-
-    width:25px;
-    height:25px;
+    border-radius: 0;
+    width:35px;
+    height:40px;
 }
 .firstbutton:hover {
     background: powderblue;
