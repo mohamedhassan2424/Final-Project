@@ -136,6 +136,12 @@
     font-family: FoundersGroteskWeb, sans-serif;
 }
 
+.counter {
+  color: #006a4e;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
   .dairy {
     display: flex;
     padding: 20px;

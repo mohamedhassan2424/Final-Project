@@ -69,8 +69,8 @@ function Product() {
                                 Featured
                             </div>
                         </div>
-                        <div>
-                            Counter :
+                        <div className="counter">
+                            Counter: 
                             <button className="incrementDecrementButton" onClick={incrementFunction}>+</button>
                             <span>{counterValue}</span>
                             <button className="incrementDecrementButton" onClick={decrementFunction}>-</button>
