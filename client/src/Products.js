@@ -59,6 +59,9 @@ function Products(props) {
             <div className="navbar">
                
                <Nav />
+               <div className="banner">
+                            <img className="banner" src="https://voila.ca/assets/content/2d92d19c-0354-49c0-8a91-5260ed0bf531/creatives/4af4835b-aab5-4b75-bd5e-3ed97cf6245d/71c68b3f75.png" />
+                        </div>
             </div>
             <h1 className="dairy">{dairy[0] ? dairy[0].category_name_value:<h1>Waiting .......</h1>}</h1>
             <div className="eachrow">
