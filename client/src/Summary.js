@@ -33,7 +33,7 @@ function Summary(props) {
     const totalSumFunction = ()=>{
         let totalSumValue= 0
         for(let i=0; i<salesHistory.length; i++){
-            const totalPrice = salesHistory[i].sale_price
+            const totalPrice = salesHistory[i].price
             const totalQuantity= salesHistory[i].count_product
             totalSumValue +=totalPrice*totalQuantity;
         }
@@ -96,7 +96,7 @@ function Summary(props) {
                             <td> {eachDataObject.count_product}</td>
                             <td> {eachDataObject.store_name}</td>
                             <td> {eachDataObject.rating}</td>
-                            <td>{eachDataObject.quantity *eachDataObject.price}</td>
+                            <td>{(eachDataObject.count_product *eachDataObject.price).toFixed(2)}</td>
                         <td><button onClick={() => {deleteProduct(eachDataObject)}}>DELETE Product</button></td>
                             <td><button onClick={()=>{editProduct(eachDataObject)}}>Edit Product</button></td>
                             </tr>
@@ -110,7 +110,7 @@ function Summary(props) {
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>{totalSumFunction()}</td>
+                        <td>${totalSumFunction()}</td>
                     </tr>
                 </table>
                 <button onClick={reDirectPage}>Proceded to Checkout</button>
