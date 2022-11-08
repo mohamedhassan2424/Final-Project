@@ -98,7 +98,7 @@ function Product() {
                         <span className="firstPrice">${product.price}</span> <span className="secoundPrice">          ${product.sale_price}</span>
                     </div>
                     <div >
-                        <button className="addContent" onClick={addingProductDatabase}><h3>Confirm to Add Product</h3></button>
+                        <button className="addContent" onClick={addingProductDatabase}><h3 className="confirm-product">Confirm Product</h3></button>
                     </div>
 
                 </div>
