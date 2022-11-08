@@ -222,17 +222,21 @@
   }
   
   .abstractedAddress {
-  
-    width: 150%;
+    width: 101%;
     display: flex;
     flex-direction: column;
     padding-top: 200px;
-    padding-right: 400px;
+    margin-right: 150px;
+  }
+
+  .address-margin {
+    margin: 50px;
   }
   
   .mainColorDiv {
     border: 3px solid #288C28;
     background-color: #66FF99;
+    padding: 20px;
   }
   
   .fontAddress{

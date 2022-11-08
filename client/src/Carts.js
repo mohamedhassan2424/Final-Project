@@ -296,7 +296,7 @@ console.log('allAddress',allAddress)
 
 
 
-        <div>
+        <div className="address-margin">
           {SpecfiedAddress ? <div>
             <div className="abstractedAddress">
               <div className="mainColorDiv">
