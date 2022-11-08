@@ -97,8 +97,8 @@ function Summary(props) {
                             <td> {eachDataObject.store_name}</td>
                             <td> {eachDataObject.rating}</td>
                             <td>{(eachDataObject.count_product *eachDataObject.price).toFixed(2)}</td>
-                        <td><button className="delete-button" onClick={() => {deleteProduct(eachDataObject)}}>DELETE Product</button></td>
-                            <td><button className="edit-button" onClick={()=>{editProduct(eachDataObject)}}>Edit Product</button></td>
+                        <td><button className="delete-button" onClick={() => {deleteProduct(eachDataObject)}}>DELETE</button></td>
+                            <td><button className="edit-button" onClick={()=>{editProduct(eachDataObject)}}>EDIT</button></td>
                             </tr>
                     ))}
 
