@@ -50,13 +50,9 @@ function EditProduct(props) {
     }
 
     return (
-        <div>
+        <div className='backcolor'>
             <Nav />
-            <h1>The store Selected : {editProduct.store_name}</h1>
-            <h1>
-                The product component which was clicked on was {editProduct.products_id}
-            </h1>
-            <h2>Confirm to add this product to your Cart</h2>
+            
 
 
 
@@ -69,11 +65,11 @@ function EditProduct(props) {
                                 Featured
                             </div>
                         </div>
-                        <div>
-                            Counter :
-                            <button className="incrementDecrementButton" onClick={incrementFunctions}>+</button>
+                        <div className='counter'>
+                            Counter: 
+                            <button className="incrementButton" onClick={incrementFunctions}>+</button>
                             <span>{counterUpdate}</span>
-                            <button className="incrementDecrementButton" onClick={decrementFunctions}>-</button>
+                            <button className="decrementButton" onClick={decrementFunctions}>-</button>
             
                         </div>
                     </div>
