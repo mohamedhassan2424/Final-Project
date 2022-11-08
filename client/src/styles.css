@@ -383,6 +383,20 @@ a {
     width: 365px;
 }
 
+.choose-store {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 34px;
+    font-weight: 700;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    color: #003e38 !important;
+    margin-bottom: 6px;
+    justify-content: center;
+    display: flex;
+}
+
 .banner {
     max-width: 100%;
     border-radius: 0.214286rem;
