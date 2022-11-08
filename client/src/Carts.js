@@ -33,10 +33,12 @@ function Carts(props) {
   console.log("currentUserId", currentUserId)
 
 const veryfyingDiscountCode=  ()=>{
-
+if(discountCode.toLowerCase ==='sce1000p11' || "voilawelcome"){
+cookies.set('discountCode', true)
 }
-
-
+}
+const disCountCodeBooleean = cookies.get('discountCode')
+console.log('disCountCodeBooleean',disCountCodeBooleean)
 
   const registerAddress = () => {
     console.log("check point one")
@@ -91,13 +93,26 @@ const veryfyingDiscountCode=  ()=>{
   console.log("specfifedAddresss", SpecfiedAddress)
 
   const totalSumFunction = ()=>{
-    let totalSumValue= 0
-    for(let i=0; i<productOrdered.length; i++){
-        const totalPrice = productOrdered[i].price
-        const totalQuantity= productOrdered[i].count_product
-        totalSumValue +=totalPrice*totalQuantity;
+    if(disCountCodeBooleean){
+      let totalSumValue= 0
+      for(let i=0; i<productOrdered.length; i++){
+          const totalPrice = productOrdered[i].price
+          const totalQuantity= productOrdered[i].count_product
+          totalSumValue +=totalPrice*totalQuantity;
+      }
+      const sumValue= Math.ceil(totalSumValue*100)/100
+      return sumValue - 15;
+    } else {
+      let totalSumValue= 0
+      for(let i=0; i<productOrdered.length; i++){
+          const totalPrice = productOrdered[i].price
+          const totalQuantity= productOrdered[i].count_product
+          totalSumValue +=totalPrice*totalQuantity;
+      }
+      const sumValue= Math.ceil(totalSumValue*100)/100
+      return sumValue;
     }
-    return Math.ceil(totalSumValue*100)/100
+    
 }
 const totalSumValue = totalSumFunction()
 const hstTotalValue = (totalSumValue*1.13).toFixed(2)
