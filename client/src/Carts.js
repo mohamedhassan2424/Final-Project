@@ -19,6 +19,7 @@ function Carts(props) {
   const [country, setCountry] = useState('')
   const [allAddress, setAllAddress] = useState([])
   const [productOrdered, setProductOrdered] = useState([])
+  const [discountCode, setDiscountCode] = useState('')
   const cookies = new Cookies();
   const history = useHistory();
   const linkServer = "http://localhost:8080/"
@@ -31,7 +32,9 @@ function Carts(props) {
   console.log("fullName", fullName)
   console.log("currentUserId", currentUserId)
 
+const veryfyingDiscountCode=  ()=>{
 
+}
 
 
 
@@ -245,7 +248,18 @@ console.log('allAddress',allAddress)
                 <h2>HST</h2> <h6>USD$ {totalSumValue*0.13}</h6>
               </div>
               <hr></hr>
-              
+              <div className="row">
+                <h2>Discount Code :</h2> 
+                <form onSumbit ={(event) => event.preventDefault()}>
+                  <input type='text' placeholder="DiscountCode" onChange ={(event)=>{
+                      setDiscountCode(event.target.value)
+                      console.log(country)
+                  }
+
+                  }></input>
+                  <button onClick={veryfyingDiscountCode}>Sumbit</button>
+                </form>
+              </div>
 
               <div className="row">
                 <h1>Total</h1> <h1>USD${hstTotalValue}</h1>
