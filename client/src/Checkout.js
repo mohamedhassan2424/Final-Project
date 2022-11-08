@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import {loadStripe} from '@stripe/stripe-js';
 import {
@@ -7,8 +7,26 @@ import {
   useStripe,
   useElements,
 } from '@stripe/react-stripe-js';
+import Cookies from 'universal-cookie';
 import axios from 'axios';
 const Checkout = () => {
+  const cookies = new Cookies();
+  const [salesHistoryTable, setSalesHistoryTable] = useState([])
+  const userIdValueNum = cookies.get('userId')
+  useEffect(() => {
+
+    axios.post('http://localhost:8080/extratingData',{ userIdInt: userIdValueNum })
+        .then(response => {
+            console.log("DATA recieved from the database", response.data)
+            setSalesHistoryTable(response.data)
+            
+        })
+        .catch((error) => {
+        console.log('error received from the database', error)
+            })
+}, [])
+console.log('salesHistoryTable',salesHistoryTable)
+
   const stripe = useStripe();
   const elements = useElements();
 
