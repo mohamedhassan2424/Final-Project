@@ -1,6 +1,10 @@
 .footerContainer {
     background-color: rgb(242 237 229);
     padding-top: 20px;
+
+}
+
+.spacing {
     position: fixed;
     width: 100%;
     bottom: 0px;
