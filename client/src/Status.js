@@ -4,12 +4,13 @@ import './recipet.css'
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Cookies from 'universal-cookie';
-
+import statusImage from './Imagesss/Screenshot 2022-11-08 at 11.07.20 AM.png'
 function Status(){
+
     const cookies = new Cookies();
     let currentUserId = cookies.get('userId')
     const [allSalesHistoryRecipet, setAllSalesHistoryRecipet] = useState([])
-    const [allAddress, setAlAddress] = useState([])
+    const [specficAddress, setSpecficAddress] = useState([])
     useEffect(() => {
 
         axios.post('http://localhost:8080/allSalesHistory', { userIdInt: currentUserId })
@@ -25,10 +26,10 @@ function Status(){
 
       useEffect(() => {
 
-        axios.post('http://localhost:8080/gettingAddress', { userIdInt: currentUserId })
+        axios.post('http://localhost:8080/gettingAddressId', { userIdInt: currentUserId })
           .then(response => {
             console.log("DATA recieved from the database", response.data)
-            setAlAddress(response.data)
+            setSpecficAddress(response.data[0])
     
           })
           .catch((error) => {
@@ -38,7 +39,9 @@ function Status(){
 
 
       console.log('allSalesHistoryRecipet',allSalesHistoryRecipet)
-      console.log('allAddress',allAddress)
+      console.log('specficAddress',specficAddress)
+
+
       return (
         <div>
             <Nav />
@@ -55,9 +58,10 @@ function Status(){
 <div>
     <h1>Billing INFO</h1>
     <br></br>
-    <p>sample addresss</p>
-    <p>sample addresss</p>
-    <p>sample addresss</p>
+    <p>{specficAddress.address_line_1}</p>
+    <p>{specficAddress.address_line_2}</p>
+    <p>{specficAddress.city}, {specficAddress.state_region}</p>
+    <p>{specficAddress.country}</p>
     <br></br>
     <p>VISA Ending in 4242</p>
     <p>Nov 4, 2017 09:423</p>
@@ -65,28 +69,29 @@ function Status(){
 <div>
    <h2> Order Summary</h2>
     <br></br>
-    <div className= "orderSumDiv">
-        <div className="productName">
-        <p>sample product </p>
-        <p>sample product </p>
-        <p>sample product </p>
-        <br></br>
-        <p>Subtotal</p>
-        <p>Shipping</p>
-        <p>Tax</p>
-        <p>Total:</p>
-        </div>
-        <div>
-<p>$45.67</p>
-<p>$45.67</p>
-<p>$45.67</p>
-<p>$45.67</p>
-<p>$45.67</p>
-<p>$45.67</p>
-<p>$45.67</p>
-        </div>
-    </div>
     
+
+<div className= "orderSumDiv">
+<div className="productName">
+{allSalesHistoryRecipet && allSalesHistoryRecipet.map((eachSalesProduct)=>(
+<p>{eachSalesProduct.product_name} </p>
+ ))
+}
+<br></br>
+<p>Subtotal:</p>
+<p>Tax:</p>
+<p>Total:</p>
+</div>
+<div>
+{allSalesHistoryRecipet && allSalesHistoryRecipet.map((eachSalesProduct)=>(
+<p> ${eachSalesProduct.price} </p>
+ ))
+}
+</div>
+</div>
+   
+
+
 </div>
 </div>
 </div>
@@ -98,7 +103,7 @@ function Status(){
         </div>
         <div>
             <h1>ergdfgd</h1>
-            <img src={"../Images/5a364b6d2c5557.7578312615135076931816 (1).png"}></img>
+            <img src={statusImage}></img>
         </div>
         </div>
             </div>

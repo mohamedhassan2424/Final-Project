@@ -302,6 +302,18 @@ app.get('/gettingAddress',(req,res) => {
         console.log(error.message)
     })
 })
+
+app.post('/gettingAddressId',(req,res) => {
+    const userIdVal = req.body.userIdInt
+    console.log('userIdVal',userIdVal)
+    return pool.query(`SELECT * FROM address WHERE user_id_address = $1;`,[userIdVal])
+    .then((response) => {
+        res.json(response.rows)
+    })
+    .catch((error) => {
+        console.log(error.message)
+    })
+})
 app.post("/extratingData", (req,res)=>{
     const extractedUserId = req.body.userIdInt
     console.log(extractedUserId, "extractedUserId")
