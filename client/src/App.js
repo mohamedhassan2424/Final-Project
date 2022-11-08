@@ -22,14 +22,14 @@ import Footer from "./Footer";
 import SalesHistory from "./SalesHistory";
 import Status from "./Status";
 import EditAddress from './EditAddress'
-// import {loadStripe} from '@stripe/stripe-js';
-// import {
-//   CardElement,
-//   Elements,
-//   useStripe,
-//   useElements,
-// } from '@stripe/react-stripe-js';
-// const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+import {loadStripe} from '@stripe/stripe-js';
+import {
+  CardElement,
+  Elements,
+  useStripe,
+  useElements,
+} from '@stripe/react-stripe-js';
+const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
 function App() {
   // const getData = async () => {
   //   const {data} = await axios.get("http://localhost:8080/dogs")
@@ -48,7 +48,7 @@ function App() {
 
 
   return (
-    // <Elements stripe={stripePromise}>
+    <Elements stripe={stripePromise}>
 
   
     <Router>
@@ -123,7 +123,7 @@ function App() {
         </Switch>
       </div>
     </Router>
-    // </Elements>
+    </Elements>
   )
 }
 

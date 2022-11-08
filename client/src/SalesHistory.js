@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Nav from "./Nav";
-import axios from "axios";import Cookies from 'universal-cookie';
+import axios from "axios";
+import Cookies from 'universal-cookie';
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 function SalesHistory(){
     const cookies = new Cookies();

@@ -247,7 +247,7 @@ app.post('/addingToSalesHistory',(req,res)=>{
     console.log('StoreIDValue',StoreIDValue)
     console.log('count_productVal',count_productVal)
 
-    const sqlQuery = "INSERT INTO saleshistory (user_id_sales,stores_id_sales,products_id, count_product,delivery_time) VALUES ($1,$2,$3,$4,$5);"
+    const sqlQuery = "INSERT INTO saleshistory (user_id_sales,stores_id_sales,products_id,count_product,delivery_time) VALUES ($1,$2,$3,$4,$5);"
     pool.query(sqlQuery, [userIdValue,StoreIDValue, productIdValue, count_productVal,deliveryTime])
         .then((response) => {
           res.send("Data has been inserteed into the SALES table")
