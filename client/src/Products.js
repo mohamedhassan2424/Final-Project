@@ -107,8 +107,12 @@ function Products(props) {
 
                 }
             </div>
- <div className="eachrow">
  <div className ="titlePageCategoryProduct">  <h1 className="dairy">{frozenFood[0]?frozenFood[0].category_name_value :<h1>Waiting .......</h1>}</h1></div>
+ <div className="eachrow">
+ <div className="dairyimage">
+                            <img className="dairyimage" src="https://voila.ca/assets/content/creatives/9df00116-aed0-4748-8e43-3d507f211f1b/8a2d863b95.png" />
+                        </div>
+
 {frozenFood && frozenFood.map((product) => (
 
 <div className="outlineBox">

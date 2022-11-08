@@ -20,6 +20,7 @@ INSERT INTO products (user_id_products, category_name_value,product_name,product
 INSERT INTO products (user_id_products, category_name_value,product_name,product_description,product_url,price, sale_price,quantity) VALUES (1,'Dairy','Gray Ridge Grade A Brown Eggs Large 18 Count','18 per pack($0.38 per item)','https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/ddcbb1b6-e7cf-4436-b5f0-d3673acf2037/300x300.jpg' ,6.89,8.99,5);
 INSERT INTO products (user_id_products, category_name_value,product_name,product_description,product_url,price, sale_price,quantity) VALUES (1,'Dairy','Liberté 2% Pure Original Goat Milk 4 L','4L($0.40 per 100ml)','https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/25d08b36-d92c-42e6-a706-6ddf2db5924f/300x300.jpg' , 15.99,18.99,5);
 INSERT INTO products (user_id_products, category_name_value,product_name,product_description,product_url,price, sale_price,quantity) VALUES (1,'Dairy','Natrel Fine-Filtered 1% Milk 4 L','4L ($0.16 per 100ml)','https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/f3e82cf6-2cd5-48f9-a2d3-3810ad32e85f/500x500.jpg' ,6.39,9.99,5);
+INSERT INTO products (user_id_products,category_name_value,product_name,product_description,product_url,price, sale_price,quantity) VALUES (1,'Dairy',  'Liberte Greek High Protien Yogurt Mango 750 g','750g($1.00 per 100g)','https://voila.ca/images-v3/2d92d19c-0354-49c0-8a91-5260ed0bf531/8b045b18-aadc-4174-b7f2-300cc0e31c26/300x300.jpg' ,7.49,1.5,5);
 
 
 -- Frozen Food
