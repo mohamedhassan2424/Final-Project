@@ -35,7 +35,10 @@ console.log('salesHistoryTableCookie',salesHistoryIdCookie)
     console.log('error', error)
 
     if(paymentMethod){
-      // axios.post('http://localhost:8080/addingToSalesHistory',{userId:salesHistoryIdCookie.user_id_sales,stores_id:salesHistoryIdCookie.stores_id_sales,products_id :salesHistoryIdCookie.products_id,count_product:salesHistoryIdCookie.count_product})
+      const mappingTheAxiosPost = salesHistoryIdCookie.map((eachProductSales)=>{
+        axios.post('http://localhost:8080/addingToSalesHistory',{userId:eachProductSales.user_id_sales,stores_id:eachProductSales.stores_id_sales,products_id :eachProductSales.products_id,count_product:eachProductSales.count_product})
+      })
+      
     }
   };
 

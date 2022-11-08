@@ -238,7 +238,7 @@ app.post('/reigisterAddress',(req,res)=>{
 })
 app.post('/addingToSalesHistory',(req,res)=>{
     const userIdValue = req.body.userId
-    const productIdValue = req.body.prodcut_id
+    const productIdValue = req.body.products_id
     const StoreIDValue = req.body.stores_id
     const count_productVal = req.body.count_product
 
