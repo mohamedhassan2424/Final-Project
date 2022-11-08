@@ -745,6 +745,17 @@ table, th, td {
     cursor: pointer;
   }
 
+  .paybutton {
+    margin: 5px;
+    width: 3%;
+    color: black;
+    border-radius: 15%;
+    padding: 6px;
+    cursor: pointer;
+    font-weight: 900;
+    background-color: lightskyblue;
+  }
+
   .incrementButton {
     background-color: lightskyblue;
   }
@@ -753,7 +764,7 @@ table, th, td {
     background-color: orangered;
   }
 
-  .incrementButton:hover, .decrementButton:hover {
+  .incrementButton:hover, .decrementButton:hover, .paybutton:hover {
     background-color: rgb(255, 240, 130);
     color: black;
   }
