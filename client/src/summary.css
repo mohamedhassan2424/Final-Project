@@ -246,6 +246,8 @@
     color: white;
     border-radius: 5px;
     font-weight: 900;
+    cursor: pointer;
+    background-color: rgb(255, 240, 130);
   }
 
   .delete-button {
