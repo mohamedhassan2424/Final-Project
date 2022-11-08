@@ -18,9 +18,39 @@ function Status(){
 <div className="bodyInformation">
 <div>
     <h1>Billing INFO</h1>
+    <br></br>
+    <p>sample addresss</p>
+    <p>sample addresss</p>
+    <p>sample addresss</p>
+    <br></br>
+    <p>VISA Ending in 4242</p>
+    <p>Nov 4, 2017 09:423</p>
 </div>
 <div>
-    Order Summary
+   <h2> Order Summary</h2>
+    <br></br>
+    <div className= "orderSumDiv">
+        <div className="productName">
+        <p>sample product </p>
+        <p>sample product </p>
+        <p>sample product </p>
+        <br></br>
+        <p>Subtotal</p>
+        <p>Shipping</p>
+        <p>Tax</p>
+        <p>Total:</p>
+        </div>
+        <div>
+<p>$45.67</p>
+<p>$45.67</p>
+<p>$45.67</p>
+<p>$45.67</p>
+<p>$45.67</p>
+<p>$45.67</p>
+<p>$45.67</p>
+        </div>
+    </div>
+    
 </div>
 </div>
 </div>
