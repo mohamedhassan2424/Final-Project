@@ -10,12 +10,19 @@ function Status(){
             <div className ="MainContainerReceipt">
         <div className="headerStatment">
         <div className="contentofheader">
-            <div><h1 >RECEIPT</h1></div>
-            <div><h2> ORDER # JF34RE67-01</h2></div>
+        <div className="reciptId"><h2 >RECEIPT</h2></div>
+        <div> <h2> ORDER # JF34RE67-01</h2></div>
         </div>
         </div>
 <div className="mainBody">
-
+<div className="bodyInformation">
+<div>
+    <h1>Billing INFO</h1>
+</div>
+<div>
+    Order Summary
+</div>
+</div>
 </div>
 
 <div className="footer">
