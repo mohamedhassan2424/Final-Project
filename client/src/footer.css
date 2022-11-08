@@ -60,7 +60,8 @@
 }
 
 .lineCss {
-    background-color:#B8B8B8;
+    background-color: rgb(255 243 208);
+    height: 15px;
 }
 
 .picSection {

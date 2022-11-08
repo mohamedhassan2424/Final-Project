@@ -34,7 +34,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <hr className ="lineCss"/>
+                <div className="lineCss"></div>
         <div>
             <p>Copyright &copy; 2022 All Rights Reserved by LiteCart&trade;</p>
            
