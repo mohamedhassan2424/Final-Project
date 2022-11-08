@@ -187,6 +187,9 @@ function About(props) {
           </h5>
         </div>
       </div>
+
+            <Footer /> 
+ 
     </div>
   );
 }
