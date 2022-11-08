@@ -7,7 +7,7 @@ import {
   useStripe,
   useElements,
 } from '@stripe/react-stripe-js';
-
+import axios from 'axios';
 const Checkout = () => {
   const stripe = useStripe();
   const elements = useElements();
@@ -23,8 +23,13 @@ const Checkout = () => {
       type: 'card',
       card: elements.getElement(CardElement),
     });
+   
     console.log("paymentMethod", paymentMethod)
     console.log('error', error)
+
+    if(paymentMethod){
+      axios.post('http://localhost:8080/addingToSalesHistory',{userId:5,prodcutID:"product"})
+    }
   };
 
   return (

@@ -236,7 +236,12 @@ app.post('/reigisterAddress',(req,res)=>{
             res.send(response)
         })
 })
-
+app.post('/addingToSalesHistory',(req,res)=>{
+    const userIdValue = req.body.userId
+    const productIdValue = req.body.prodcutID
+    console.log('userIdValue',userIdValue)
+    console.log('productIdValue',productIdValue)
+})
 app.post('/reigisterAddressUpdate',(req,res)=>{
     const addresOneUpdate= req.body.addressLineOneUpdate
     const addresTwoUpdate = req.body.addressLineTwoUpdate
