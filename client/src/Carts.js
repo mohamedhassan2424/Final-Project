@@ -210,10 +210,10 @@ console.log('allAddress',allAddress)
                       <span className="firstPrice">{eachProductObject.price}</span>{" "}
                       <span className="secoundPrice"> {eachProductObject.sale_price}</span>
                     </div>
-                    <div className="addContent">
+                    {/* <div className="addContent">
                       {" "}
 
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 
