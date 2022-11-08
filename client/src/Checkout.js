@@ -25,7 +25,6 @@ console.log('salesHistoryTableCookie',salesHistoryIdCookie)
     if (elements == null) {
       return;
     }
-
     const {error, paymentMethod} = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
@@ -37,6 +36,10 @@ console.log('salesHistoryTableCookie',salesHistoryIdCookie)
     if(paymentMethod){
       const mappingTheAxiosPost = salesHistoryIdCookie.map((eachProductSales)=>{
         axios.post('http://localhost:8080/addingToSalesHistory',{userId:eachProductSales.user_id_sales,stores_id:eachProductSales.stores_id_sales,products_id :eachProductSales.products_id,count_product:eachProductSales.count_product})
+        .then((response)=>{
+         console.log("All is good the data has been sent offf")
+         
+        })
       })
       
     }

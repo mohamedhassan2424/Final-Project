@@ -20,6 +20,7 @@ function Nav(props) {
       cookies.remove('specfiedAddressId')
       cookies.remove('editProductObj')
       cookies.remove('storeName')
+      cookies.remove('salesHistoryId')
 
       let path = `/users`;
           // let history = useHistory();

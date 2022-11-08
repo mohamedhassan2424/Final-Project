@@ -250,7 +250,7 @@ app.post('/addingToSalesHistory',(req,res)=>{
     const sqlQuery = "INSERT INTO saleshistory (user_id_sales,stores_id_sales,products_id, count_product,delivery_time) VALUES ($1,$2,$3,$4,$5);"
     pool.query(sqlQuery, [userIdValue,StoreIDValue, productIdValue, count_productVal,deliveryTime])
         .then((response) => {
-            // res.send("Data has been inserteed into the SALES table")
+          res.send("Data has been inserteed into the SALES table")
             // res.send(response)
         })
 
@@ -387,6 +387,7 @@ app.get('/', (req, res) => {
 })
 
 app.post("/allSalesHistory",(req,res)=>{
+    console.log("checkout point 1 for allSalesHistory")
     const currentUserIdLoggedIn = req.body.userIdInt
     console.log('currentUserIdLoggedIn',currentUserIdLoggedIn)
 
