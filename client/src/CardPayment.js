@@ -23,7 +23,7 @@ function CardPayment(){
     console.log('paymenttt',payment)
     const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
     return(
-        <div className="backcolor">
+        <div className="back-color">
         <div stripe={stripePromise}>
             <Nav />
             
