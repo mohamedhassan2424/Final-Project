@@ -249,7 +249,7 @@
     cursor: pointer;
   }
 
-  .delete-button, .edit-button:hover {
+  .delete-button:hover, .edit-button:hover {
     background-color: rgb(255, 240, 130);
     color: black;
   }
