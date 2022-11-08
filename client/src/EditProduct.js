@@ -57,7 +57,7 @@ function EditProduct(props) {
 
 
 
-            <div className="outlineBox">
+            <div className="outlineBox-confirm">
                 <div className="outerTopProduCtontainer">
                     <div className="toptopheaderName">
                         <div>
