@@ -87,7 +87,7 @@ function Summary(props) {
                         <th>Edit Product</th>
                     </tr>
 
-                    {salesHistoryIdCookie && salesHistoryIdCookie.map((eachDataObject) => (
+                    {salesHistory && salesHistory.map((eachDataObject) => (
                         <tr>
                             <td> <img src={eachDataObject.product_url} /></td>
                             <td> {eachDataObject.product_name} <br />
