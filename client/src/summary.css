@@ -380,5 +380,12 @@
     box-sizing: border-box;
     font-family: FoundersGroteskWeb, sans-serif;
   }
+.discountCodeNotShow {
+  display: none;
+}
+
+.displayCodeShow {
+  color:red;
+}
 
 

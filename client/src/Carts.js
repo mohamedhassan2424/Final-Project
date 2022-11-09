@@ -32,13 +32,13 @@ function Carts(props) {
   console.log("fullName", fullName)
   console.log("currentUserId", currentUserId)
 
-const veryfyingDiscountCode=  ()=>{
-if(discountCode.toLowerCase ==='sce1000p11' || "voilawelcome"){
-cookies.set('discountCode', true)
-}
-}
-const disCountCodeBooleean = cookies.get('discountCode')
-console.log('disCountCodeBooleean',disCountCodeBooleean)
+// const veryfyingDiscountCode=  ()=>{
+// if(discountCode.toLowerCase ==='sce1000p11' || "voilawelcome"){
+// cookies.set('discountCode', true)
+// }
+// }
+// const disCountCodeBooleean = cookies.get('discountCode')
+// console.log('disCountCodeBooleean',disCountCodeBooleean)
 
   const registerAddress = () => {
     console.log("check point one")
@@ -93,16 +93,6 @@ console.log('disCountCodeBooleean',disCountCodeBooleean)
   console.log("specfifedAddresss", SpecfiedAddress)
 
   const totalSumFunction = ()=>{
-    if(disCountCodeBooleean){
-      let totalSumValue= 0
-      for(let i=0; i<productOrdered.length; i++){
-          const totalPrice = productOrdered[i].price
-          const totalQuantity= productOrdered[i].count_product
-          totalSumValue +=totalPrice*totalQuantity;
-      }
-      const sumValue= Math.ceil(totalSumValue*100)/100
-      return sumValue - 15;
-    } else {
       let totalSumValue= 0
       for(let i=0; i<productOrdered.length; i++){
           const totalPrice = productOrdered[i].price
@@ -111,7 +101,7 @@ console.log('disCountCodeBooleean',disCountCodeBooleean)
       }
       const sumValue= Math.ceil(totalSumValue*100)/100
       return sumValue;
-    }
+
     
 }
 const totalSumValue = totalSumFunction()
@@ -257,14 +247,14 @@ console.log('allAddress',allAddress)
               </div>
 
               <div className="row">
-                <h2>Sub-Total</h2> <h6>CAD$ {totalSumValue}</h6>
+                <h2>Sub-Total</h2> <h6>CAD$ {(totalSumValue).toFixed(2)}</h6>
               </div>
               <div className="row">
-                <h2>HST</h2> <h6>CAD$ {totalSumValue*0.13}</h6>
+                <h2>HST</h2> <h6>CAD$ {(totalSumValue*0.13).toFixed(2)}</h6>
               </div>
               <hr></hr>
               <div className="row">
-                <h2>Discount Code :</h2> 
+                {/* <h2>Discount Code :</h2> 
                 <form onSumbit ={(event) => event.preventDefault()}>
                   <input type='text' placeholder="DiscountCode" onChange ={(event)=>{
                       setDiscountCode(event.target.value)
@@ -273,9 +263,10 @@ console.log('allAddress',allAddress)
 
                   }></input>
                   <button onClick={veryfyingDiscountCode}>Sumbit</button>
-                </form>
+                </form> */}
+                
               </div>
-
+              
               <div className="row">
                 <h1>Total</h1> <h1>CAD${hstTotalValue}</h1>
               </div>

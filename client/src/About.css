@@ -90,7 +90,8 @@ h5 {
 
 .ordercomplete {
     box-sizing: border-box;
-    margin: 30px;
+    margin: 50px;
+    margin-left: 50px;
     padding: 0;
     font-size: 35px;
     line-height: 34px;
@@ -98,8 +99,9 @@ h5 {
     font-family: Arial, Helvetica, sans-serif;
     color: #003e38 !important;
     margin-bottom: 6px;
-    justify-content: center;
     display: flex;
+    justify-content: center;
+
 }
 
 .photo {

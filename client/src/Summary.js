@@ -39,7 +39,8 @@ function Summary(props) {
         }
         return totalSumValue;
     }
-    totalSumFunction()
+
+     const totalSumValue = totalSumFunction()
     console.log("Calling the sum Function above",totalSumFunction())
     const deleteProduct = (productObject) => {
       const userIDVal = productObject.user_id_sales
@@ -110,7 +111,7 @@ function Summary(props) {
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>${totalSumFunction()}</td>
+                        <td>${(totalSumValue).toFixed(2)}</td>
                     </tr>
                 </table>
                 <button className="checkout-button" onClick={reDirectPage}>Proceded to Checkout</button>

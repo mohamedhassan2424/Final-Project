@@ -4,6 +4,7 @@ import axios from "axios";
 import Cookies from 'universal-cookie';
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import Footer from "./Footer";
+import './styles.css'
 function SalesHistory(){
     const cookies = new Cookies();
     const history = useHistory();
@@ -32,6 +33,7 @@ function SalesHistory(){
         }
         return totalSumValue;
     }
+    const totalSumValue = totalSumFunction()
     return(
         <div className="backcolor">
             <Nav />
@@ -58,7 +60,7 @@ function SalesHistory(){
                             <td> {eachDataObject.count_product}</td>
                             <td> {eachDataObject.store_name}</td>
                             <td> {eachDataObject.rating}</td>
-                            <td>{eachDataObject.quantity *eachDataObject.price}</td>
+                            <td>{(eachDataObject.quantity *eachDataObject.price).toFixed(2)}</td>
                             </tr>
                     ))}
 
@@ -70,7 +72,7 @@ function SalesHistory(){
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>{totalSumFunction()}</td>
+                        <td> ${(totalSumValue ).toFixed(2)}</td>
                     </tr>
                 </table>
             </div>
