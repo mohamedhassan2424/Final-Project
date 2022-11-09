@@ -22,6 +22,7 @@ function Nav(props) {
       cookies.remove('storeName')
       cookies.remove('salesHistoryId')
       cookies.remove('disCountCodeBooleean')
+      cookies.remove('mainStoreID')
 
       let path = `/users`;
           // let history = useHistory();

@@ -47,6 +47,7 @@ function StoreProduct(props){
     }, [])
     return(
 <div>
+
     <Nav />
     <h1 className="metro">{storeParamter.id}</h1>
     <h1>Welcome to {storeParamter.id} </h1>

@@ -15,6 +15,7 @@ const [stores,setStores] = useState([])
     })
     },[])
 
+    // console.log("stores", stores)
     
   return (
 

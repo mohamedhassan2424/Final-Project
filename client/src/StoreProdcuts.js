@@ -6,28 +6,39 @@ import Product from "./Prodcut";
 import './styles.css'
 import Nav from "./Nav";
 import Footer from "./Footer";
+import { useContext } from "react";
+import Cookies from 'universal-cookie';
+import { userContext } from "./providers/UserProvider";
+import { useParams } from "react-router-dom";
 function Products(props) {
-//     const search = useLocation().search;
-//   const id=new URLSearchParams(search).get('id');
-//   
-//   console.log("IDDDDDD",id);//12345.
-// const fullUrl = window.location.href
-// const pathName = window.location.origin
-// console.log(window.location.origin)
-    // const [products, setProducts] = useState([])
+    const cookies = new Cookies()
+    const {firstNameSaved,lastNameSaved,emailSaved ,savingStoreName, savingFirstName,savingLastName,savingEmail ,savingUserId ,savingStoreFunction} = useContext(userContext)
+    const storeParamter=  useParams()
+    console.log('The storeNameid',storeParamter)
+    cookies.set('storeName',storeParamter.id)
     const [dairy, setDairy] = useState([])
+    const [storesCatelogue,setStoresCatelogue] = useState([])
     const [beverage ,setBeverage] = useState([])
     const [frozenFood, setFrozenFood] = useState([])
-    // useEffect(() => {
+    console.log(savingStoreName,"savingStoreName")
 
-    //     Promise.all([
-    //       axios.get('http://localhost:8080/frozenFood'),
-    //       axios.get('http://localhost:8080/Beverage'),
-    //       axios.get('http://localhost:8080/dairy')].
-     //       .then((all)=>{
-       //  })
-    
-    // }, [])
+  useEffect(() => {
+
+    axios.get('http://localhost:8080/allStores')
+    .then(response =>{
+    console.log(response.data)
+    setStoresCatelogue(response.data)
+    let allStores= response.data
+    console.log('allStores',allStores)
+    let filterStoreId= allStores.filter((eachObject) => eachObject.store_name ===storeParamter.id )
+    console.log('filterStoreId',filterStoreId[0])
+    let mainStoreObject = filterStoreId[0]
+    let idValue = mainStoreObject.id
+    console.log("idValue",idValue)
+    cookies.set('mainStoreID',idValue)
+    })
+    },[])
+
     useEffect(() => {
 
         axios.get('http://localhost:8080/frozenFood')
@@ -56,8 +67,8 @@ function Products(props) {
 //   console.log("Paramter")
     return (
         <div className="mainContainerElement">
+            
             <div className="navbar">
-               
                <Nav />
                <div className="products-backcolor">
                <div className="banner">

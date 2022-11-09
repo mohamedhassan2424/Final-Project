@@ -6,7 +6,9 @@ import Product from "./Prodcut";
 import './styles.css'
 import Nav from "./Nav";
 import Footer from "./Footer";
+import Cookies from 'universal-cookie';
 function Products(props) {
+    const cookies = new Cookies();
 //     const search = useLocation().search;
 //   const id=new URLSearchParams(search).get('id');
 //   
@@ -18,6 +20,8 @@ function Products(props) {
     const [dairy, setDairy] = useState([])
     const [beverage ,setBeverage] = useState([])
     const [frozenFood, setFrozenFood] = useState([])
+     let storeIDValue = cookies.get('storeId')
+    console.log('storeIDValue',storeIDValue)
     // useEffect(() => {
 
     //     Promise.all([
@@ -56,6 +60,7 @@ function Products(props) {
 //   console.log("Paramter")
     return (
         <div className="mainContainerElement">
+           
             <div className="navbar">
                
                <Nav />

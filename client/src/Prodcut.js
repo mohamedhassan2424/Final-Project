@@ -20,7 +20,7 @@ function Product() {
     console.log(params)
     console.log('allTheStore',allTheStore)
     let storeIDValue = cookies.get('storeId')
-
+    console.log('storeIDValue',storeIDValue)
     useEffect(() => {
 
         axios.get('http://localhost:8080/allProducts')
@@ -37,16 +37,19 @@ function Product() {
     const linkServer = "http://localhost:8080/"
     const userIdValue = cookies.get('userId')
     const storeIdName = cookies.get('storeName')
-
+    let storeIdV = cookies.get('mainStoreID')
+    console.log('storeIdV ',storeIdV )
          cookies.set('storeId',params.id)
          const storeIdValue = cookies.get('storeId')
+         const storeNameValue = cookies.get('storeName')
          console.log('storeIdValue',storeIdValue)
         console.log('storeIdName',params.id)
+        console.log('storeNameValue',storeNameValue)
     let counterValueData = counterValue
 
     const addingProductDatabase = () => {
         console.log('CounterValueData',counterValueData)
-        axios.post(`${linkServer}addingToSalesDatabase`, { productId: product.id, userId: userIdValue, storeId: storeIdValue, counterData:counterValue })
+        axios.post(`${linkServer}addingToSalesDatabase`, { productId: product.id, userId: userIdValue, storeId: storeIdV, counterData:counterValue })
         .then((response)=>{
             console.log("checkpoint 4")
             console.log("Response When adding the data",response)
