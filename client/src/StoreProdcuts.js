@@ -36,6 +36,7 @@ function Products(props) {
     let idValue = mainStoreObject.id
     console.log("idValue",idValue)
     cookies.set('mainStoreID',idValue)
+    console.log("cookies.set('mainStoreID',idValue):::",cookies.get('mainStoreID'))
     })
     },[])
 

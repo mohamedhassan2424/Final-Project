@@ -126,14 +126,14 @@ function Status(){
         </div>
         <div className= "orderStatus">
             <div>Ordered
-            <p>Nov 9</p>
+            <p>Nov 10</p>
 
             </div>
             <div className='shippedValue'>Shipped 
-            <p>Nov 9</p>
+            <p>Nov 10</p>
             </div>
             <div>Estimated Delivery
-            <p>Nov 9</p>
+            <p>Nov 10</p>
             </div>
         </div>
         </div>
